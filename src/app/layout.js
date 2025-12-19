@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import '../scss/global.scss';  
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 
