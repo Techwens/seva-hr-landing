@@ -1,7 +1,8 @@
 "use client"
 import React from 'react'
 import styled from 'styled-components';
-import {Logo} from "../../assets/Logo";
+import LogoImg from "../../assets/Logo.svg";
+import Image from 'next/image';
 // import { NavLink } from "react-router-dom";
 const HeaderLayout = styled.header({
   position: "fixed", top: 0, left: 0, width: '100%', paddingBlock: '1rem', zIndex: 10, backgroundColor: 'transparent', transition: 'all .3s',
@@ -55,7 +56,7 @@ export default function Header() {
       <HeaderLayout>
         <HeaderContainer className="container">
           <Brand>
-            <Logo/>
+            <Image src={LogoImg} alt="Logo" width={60} height={60} />
             logo
           </Brand>
           <NavStyle>
