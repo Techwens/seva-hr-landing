@@ -1,16 +1,17 @@
 "use client"
 import React from 'react'
 import styled from 'styled-components';
-// import Logo from "../Assets/Svgs/logo";
+import {Logo} from "../../assets/Logo";
 // import { NavLink } from "react-router-dom";
-const HeaderLayout = styled.header({ position: "fixed", top: 0, left: 0, width: '100%',paddingBlock:'1rem',zIndex:10,backgroundColor:'transparent', transition:'all .3s',
-  '&.sticky':{backgroundColor:'rgba(255,255,255,0.85)',backdropFilter:'blur(0.375rem)',},
+const HeaderLayout = styled.header({
+  position: "fixed", top: 0, left: 0, width: '100%', paddingBlock: '1rem', zIndex: 10, backgroundColor: 'transparent', transition: 'all .3s',
+  '&.sticky': { backgroundColor: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(0.375rem)', },
   '@media (max-width: 550px)': {
-    padding:' 0.625rem 1.25rem',
+    padding: ' 0.625rem 1.25rem',
   },
 });
-const HeaderContainer = styled.div({ display:'flex',alignItems:'center',});
-const Brand = styled.div({ display:'inline-flex',alignItems:'center',justifyContent:'center',height:'3.75rem'});
+const HeaderContainer = styled.div({ display: 'flex', alignItems: 'center', });
+const Brand = styled.div({ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '3.75rem' });
 const NavStyle = styled.nav({
   display: 'inline-flex',
   alignItems: 'center',
@@ -42,7 +43,7 @@ const NavStyle = styled.nav({
         transform: 'scaleX(1)',
       },
       '&:hover::after': {
-        opacity:"0.3",
+        opacity: "0.3",
       },
     }
   }
@@ -54,27 +55,34 @@ export default function Header() {
       <HeaderLayout>
         <HeaderContainer className="container">
           <Brand>
-            {/* <Logo/> */}
+            <Logo/>
+            logo
           </Brand>
           <NavStyle>
             <ul>
               <li>
-                <a to={'/'}>Home</a>
+                <a to={'/'}>Features</a>
               </li>
               <li>
-                <a to={'/about'}>Aboutus</a>
+                <a to={'/'}>Customization</a>
               </li>
               <li>
-                <a to={'/service'}>Service</a>
+                <a to={'/'}>Compliance</a>
               </li>
               <li>
-                <a to={'/blog'}>Blog</a>
+                <a to={'/'}>Contact</a>
               </li>
               <li>
-                <a to={'/portfolio'}>Portfolio</a>
+                <a to={'/'}>
+                  <span></span>
+                  +91-80-4567-8900
+                </a>
               </li>
               <li>
-                <a to={'/contact'}>Contactus</a>
+                <a to={'/contact'}>
+                  <span></span>
+                  View Demo
+                </a>
               </li>
             </ul>
           </NavStyle>
