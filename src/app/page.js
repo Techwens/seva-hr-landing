@@ -1,8 +1,12 @@
+import Revoluationhr from '@/components/Revolutionhr'
 import React from 'react'
 
 const Home = () => {
   return (
-    <div>page</div>
+    <section>
+      <div style={{marginBlockStart:'5rem'}}></div>
+      <Revoluationhr/>
+    </section>
   )
 }
 
