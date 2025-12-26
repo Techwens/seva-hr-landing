@@ -31,7 +31,7 @@ const Section = styled.section({
     marginBlockEnd: "0.625rem",
     borderRadius: '1.875rem',
     backgroundColor: '#fff',
-    padding: '0.625rem 1.25rem',
+    padding: '0.625rem 1.25rem 0.625rem 3.5rem',
     display: 'inline-block',
     position: 'relative',
     '&:after': {
@@ -39,8 +39,9 @@ const Section = styled.section({
       position: 'absolute',
       height: '1.313rem',
       width: '1.875rem',
-      left: '0',
-      top: '0',
+      left: '1rem',
+      top: '50%',
+      transform: "translateY(-50%)",
       backgroundImage: `url(${SparkleBg.src})`,
       backgroundRepeat: 'no-repeat',
     }
@@ -116,10 +117,10 @@ const IconWrap = styled.div({
   alignItems: "center",
   justifyContent: "start",
   marginBlockEnd: "0.938rem",
-  '& svg': {
-    height: "100%",
-    width: "100%",
-  }
+    "& img":{
+      height:"100% !important",
+      width:"100% !important",
+    }
 })
 
 const StatItem = styled.div({

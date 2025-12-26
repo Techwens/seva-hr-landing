@@ -44,7 +44,7 @@ const Section = styled.section({
     marginBlockEnd: "0.625rem",
     borderRadius: '1.875rem',
     background: 'linear-gradient(311.72deg, #B9D9FF 30.95%, #FFF9CA 70.45%)',
-    padding: '0.625rem 1.25rem',
+    padding: '0.625rem 1.25rem 0.625rem 3.5rem',
     display: 'inline-block',
     position: 'relative',
     '&:after': {
@@ -52,8 +52,9 @@ const Section = styled.section({
       position: 'absolute',
       height: '1.313rem',
       width: '1.875rem',
-      left: '0',
-      top: '0',
+      left: '1rem',
+      top: '50%',
+      transform: "translateY(-50%)",
       backgroundImage: 'url(../assets/sparkle.svg)',
       backgroundRepeat: 'no-repeat',
     }
@@ -92,13 +93,33 @@ const Left = styled.div({
     transform: "translateX(0)",
   },
 })
+const CardListHeading = styled.div({
+  background: 'linear-gradient(180deg, #476FFF 1.77%, #4600B6 71.94%)',
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  backgroundClip: 'text',
+  color: 'transparent',
+  fontSize:"1.125rem",
+  fontWeight:"700",
+  display:"flex",
+  gap:"0.5rem",
+  marginBlockEnd:"1.5rem",
+  "& div":{
+    height:"1.5rem",
+    width:"1.5rem",
+    "& img":{
+      height:"100% !important",
+      width:"100%  !important",
+    }
+  }
+})
 const CardList = styled.ul({
   listStyle: "none",
   padding: 0,
   margin: 0,
   display: "flex",
   flexDirection: "column",
-  gap: "1rem",
+  gap: "2rem",
   "& li": {
     padding: "1.25rem 1.5rem",
     borderRadius: "1.25rem",
@@ -124,6 +145,10 @@ const HeaderRow = styled.div({
     alignItems: "center",
     justifyContent: "start",
     flexShrink: 0,
+    "& img":{
+      height:"100% !important",
+      width:"100% !important",
+    }
   },
   "& h4": {
     marginBlockEnd: "0rem",
@@ -210,11 +235,18 @@ export const FloatingWrap = styled("ul")({
   },
 })
 export const Brand = styled.div({
-
+margin: "6rem 0rem 1rem 0rem",
+width:"8.75rem",
+height:"auto",
+"& img":{
+  height:"100%",
+  width:"100%",
+  objectFit:"contain",
+}
 })
 export const Detailslist = styled.ul({
   listStyle: "none",
-  margin: "5rem 0rem 0rem 0rem",
+  margin: "0",
   padding: 0,
   display: "flex",
   gap: "1rem",
@@ -302,10 +334,9 @@ export const Accuracy = styled.div({
 export const AccuracyList = styled.ul({
   listStyle: "none",
   padding: 0,
-  margin: "1.5rem 0 0 0",
+  margin: "1.5rem 0 0.875rem 0",
   display: "flex",
   gap: "1.25rem",
-  marginBlockEnd:"2.5rem",
 });
 
 export const AccuracyItem = styled.li({
@@ -392,15 +423,18 @@ export default function Security() {
         <p>Bank-level security meets statutory compliance automation. Your workforce data is safe, secure, and always audit-ready.</p>
         <SectionRow ref={sectionRef}>
           <Left className="animate">
-            <p> 
-              <Image src={packlock} alt="" width={22} height={22} />cirtificate
-            </p>
+            <CardListHeading> 
+            <div>
+              <Image src={packlock} alt="" width={100} height={100} />
+            </div>
+              Security Features
+            </CardListHeading>
             <CardList>
               {securityData?.map((item, index) => (
                 <li key={index}>
                   <HeaderRow>
                     <div>
-                      <Image src={item?.icon} alt="" width={22} height={22} />
+                      <Image src={item?.icon} alt="" width={100} height={100} />
                     </div>
                     <h4>{item?.title}</h4>
                   </HeaderRow>
@@ -440,7 +474,7 @@ export default function Security() {
               </li>
             </FloatingWrap>
             <Brand>
-            <Image src={brand}/>
+              <Image src={brand}/>
             </Brand>
             <Detailslist>
               <li>
