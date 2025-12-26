@@ -21,11 +21,16 @@ const SectionRow = styled.div({
   display: "flex",
   alignItems: "flex-start",
   gap: "2.5rem",
+    "@media (max-width: 991px)": {
+      flexDirection:"column",
+    },
 })
 
 const Left = styled.div({
   width: "30%",
-
+  "@media (max-width: 991px)": {
+    width: "100%",
+  },
   "& h2": {
     fontSize: "1.688rem",
     fontWeight: 700,
@@ -35,6 +40,9 @@ const Left = styled.div({
 
 const Right = styled.div({
   width: "70%",
+  "@media (max-width: 991px)": {
+    width: "100%",
+  },
   background: 'linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)',
   "& .logo-swiper .swiper-wrapper": {
     transitionTimingFunction: "linear !important",
