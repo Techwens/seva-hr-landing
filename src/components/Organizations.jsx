@@ -53,7 +53,7 @@ const logos = [
   Spotify,
   Airbnb,
   Google,
-  Slack
+  Slack,
 ]
 
 export default function Organizations() {
@@ -84,7 +84,7 @@ export default function Organizations() {
               allowTouchMove={false}
               className="logo-swiper"
             >
-              {logos?.map((logo, index) => (
+              {[...logos,...logos].map((logo, index) => (
                 <SwiperSlide key={index} style={{ width: "auto" }}>
                   <Image
                     src={logo}
