@@ -7,9 +7,9 @@ const Section = styled.section({
   paddingBlock: "3.5rem",
   background: "#BBD8F2",
   // backgroundImage: `linear-gradient(186deg, rgba(187, 216, 242, 1) 0%, rgba(237, 240, 206, 1) 100%), url("../assets/TextureBg.png")`,
-  backgroundImage: `linear-gradient(186deg, rgba(187, 216, 242, 1) 0%, rgba(237, 240, 206, 1) 100%), url(${TextureBg.src})`,
+  backgroundImage: `linear-gradient(186deg, rgb(187 216 242 / 93%) 0%, rgb(237 240 206 / 83%) 100%), url(${TextureBg.src})`,
   backgroundRepeat: "repeat",
-  backgroundSize: "contain",
+  
   "& .centerized":{
     display:"flex",
     justifyContent:"center",
