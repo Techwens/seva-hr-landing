@@ -1,3 +1,4 @@
+import Effortlessly from '@/components/Effortlessly'
 import Features from '@/components/Features'
 import Getstarted from '@/components/Getstarted'
 import Organizations from '@/components/Organizations'
@@ -15,6 +16,7 @@ const Home = () => {
       <Features/>
       <Security/>
       <Getstarted/>
+      <Effortlessly/>
       <Powerfullplatform/>
     </section>
   )
