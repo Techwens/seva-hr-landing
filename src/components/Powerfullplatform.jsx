@@ -6,6 +6,7 @@ import Power2 from "../assets/power2.svg"
 import Power3 from "../assets/power3.svg"
 import Power4 from "../assets/power4.svg"
 import Power5 from "../assets/power5.svg"
+import Power6 from "../assets/power6.svg"
 import Image from "next/image"
 
 
@@ -297,6 +298,31 @@ export default function Powerfullplatform() {
       title: "One Smart Shift Management",
       description: "Manual shift registers causing errors",
       icon: Power1
+    },
+    {
+      title: "Zero Overtime Disputes",
+      description: "Salary mismatches creating conflicts",
+      icon: Power2
+    },
+    {
+      title: "Real-Time accuracy",
+      description: "No idea where workers are",
+      icon: Power3
+    },
+    {
+      title: "Multi-Branch Control",
+      description: "Scattered workforce across locations",
+      icon: Power4
+    },
+    {
+      title: "60% Less HR Work For you",
+      description: "Drowning in manual paperwork",
+      icon: Power5
+    },
+    {
+      title: "Compliance on Autopilot",
+      description: "Government filing stress & penalties",
+      icon: Power6
     },
   ]
 
