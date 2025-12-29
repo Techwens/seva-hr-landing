@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
-
+import SparkleBg from "../assets/sparkle.svg"
 const featureData = [
   {
     step: 1,
@@ -61,7 +61,7 @@ const Section = styled.section({
       left: '1rem',
       top: '50%',
       transform: "translateY(-50%)",
-      backgroundImage: 'url(../assets/sparkle.svg)',
+      backgroundImage: `url(${SparkleBg.src})`,
       backgroundRepeat: 'no-repeat',
     }
   },

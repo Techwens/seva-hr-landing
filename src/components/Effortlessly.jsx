@@ -1,7 +1,8 @@
 "use client"
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components';
-import EffortlesslyImg from "../assets/effortlessly.png"
+import EffortlesslyImg from "../assets/effortlessly.png";
+import SparkleBg from "../assets/sparkle.svg"
 import Image from 'next/image';
 
 
@@ -26,7 +27,7 @@ const Section = styled.section({
       left: '1rem',
       top: '50%',
       transform: "translateY(-50%)",
-      // backgroundImage: `url(${SparkleBg.src})`,
+      backgroundImage: `url(${SparkleBg.src})`,
       backgroundRepeat: 'no-repeat',
     }
   },

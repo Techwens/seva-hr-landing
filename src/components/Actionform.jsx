@@ -4,7 +4,7 @@ import styled from "styled-components"
 import Image from "next/image"
 import cirtificate from "../assets/Vector.svg"
 import packlock from "../assets/padlock-check 2.svg"
-
+import SparkleBg from "../assets/sparkle.svg"
 const securityData = [
   {
     title: "Personalised Demo",
@@ -52,7 +52,7 @@ const Section = styled.section({
       left: '1rem',
       top: '50%',
       transform: "translateY(-50%)",
-      backgroundImage: 'url(../assets/sparkle.svg)',
+      backgroundImage: `url(${SparkleBg.src})`,
       backgroundRepeat: 'no-repeat',
     }
   },

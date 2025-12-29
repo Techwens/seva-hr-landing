@@ -194,7 +194,7 @@ export default function Features() {
     <Section>
       <div className="container">
         <div className="centerized">
-          <h3> Powerful Features</h3>
+          <h3>Powerful Features</h3>
         </div>
         <h2>Built for <span>Operational Excellence</span></h2>
         <p>Purpose-built for shift-based, multi-location operations with transparent automation and real-time visibility</p>

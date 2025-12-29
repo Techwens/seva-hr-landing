@@ -6,6 +6,7 @@ import Image from "next/image"
 import brand from "../assets/image 4.svg"
 import packlock from "../assets/padlock-check 1.svg"
 import cirtificate from "../assets/Vector.svg"
+import bojroBidduyt from "../assets/bojro-bidduyt.svg"
 
 const securityData = [
   {
@@ -54,8 +55,9 @@ const Section = styled.section({
       left: '1rem',
       top: '50%',
       transform: "translateY(-50%)",
-      backgroundImage: 'url(../assets/sparkle.svg)',
+      backgroundImage: `url(${bojroBidduyt.src})`,
       backgroundRepeat: 'no-repeat',
+      backgroundSize:'contain',
     }
   },
   "& h2": {
@@ -419,7 +421,7 @@ export default function Security() {
     <Section>
       <div className="container">
         <div className="centerized">
-          <h3>✨ Enterprise Security</h3>
+          <h3>Enterprise Security</h3>
         </div>
         <h2>Your Data. <span>Fully Encrypted. Fully Compliant.</span></h2>
         <p>Bank-level security meets statutory compliance automation. Your workforce data is safe, secure, and always audit-ready.</p>

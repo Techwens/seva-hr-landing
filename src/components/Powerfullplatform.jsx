@@ -8,7 +8,7 @@ import Power4 from "../assets/power4.svg"
 import Power5 from "../assets/power5.svg"
 import Power6 from "../assets/power6.svg"
 import Image from "next/image"
-
+import bojroBidduyt from "../assets/bojro-bidduyt.svg"
 
 
 const Section = styled.section({
@@ -35,8 +35,9 @@ const Section = styled.section({
       left: '1rem',
       top: '50%',
       transform: "translateY(-50%)",
-      backgroundImage: 'url(../assets/sparkle.svg)',
+      backgroundImage: `url(${bojroBidduyt.src})`,
       backgroundRepeat: 'no-repeat',
+      backgroundSize:'contain'
     }
   },
   "& h2": {
