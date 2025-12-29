@@ -169,7 +169,7 @@ export const Right = styled.div({
       "& div": {
         height: "1.188rem",
         width: "1.188rem",
-        "& img": {
+        "& svg": {
           height: "100%",
           width: "100%",
         }
@@ -354,25 +354,65 @@ export default function Powerfullplatform() {
             <ul>
               <li>
                 <div>
-
+                    <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#4F6BFF" />
+                      <path
+                        d="M14 24.5L21 31L34 17"
+                        fill="none"
+                        stroke="#FFFFFF"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
                 </div>
                 <h5>Employee Lifecycle Management</h5>
               </li>
               <li>
                 <div>
-
+                    <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#4F6BFF" />
+                      <path
+                        d="M14 24.5L21 31L34 17"
+                        fill="none"
+                        stroke="#FFFFFF"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
                 </div>
                 <h5>Smart Shift & Attendance</h5>
               </li>
               <li>
                 <div>
-
+                    <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#4F6BFF" />
+                      <path
+                        d="M14 24.5L21 31L34 17"
+                        fill="none"
+                        stroke="#FFFFFF"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
                 </div>
                 <h5>Multi-Level Payroll Engine</h5>
               </li>
               <li>
                 <div>
-
+                    <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#4F6BFF" />
+                      <path
+                        d="M14 24.5L21 31L34 17"
+                        fill="none"
+                        stroke="#FFFFFF"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
                 </div>
                 <h5>Geo-Fencing & GPS Tracking</h5>
               </li>
