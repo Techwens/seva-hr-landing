@@ -7,6 +7,7 @@ import brand from "../assets/image 4.svg"
 import packlock from "../assets/padlock-check 1.svg"
 import cirtificate from "../assets/Vector.svg"
 import bojroBidduyt from "../assets/bojro-bidduyt.svg"
+import BrandIconName from "../assets/brand-icon-name.svg"
 
 const securityData = [
   {
@@ -478,7 +479,7 @@ export default function Security() {
               </li>
             </FloatingWrap>
             <Brand>
-              <Image src={brand} />
+              <Image src={BrandIconName} alt="icon"/>
             </Brand>
             <Detailslist>
               <li>

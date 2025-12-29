@@ -2,6 +2,8 @@
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import Image from "next/image"
+import RoadMap from "../assets/roadmap.svg"
+import WebinarPlay from "../assets/webinar-play.svg"
 import cirtificate from "../assets/Vector.svg"
 import packlock from "../assets/padlock-check 2.svg"
 import SparkleBg from "../assets/sparkle.svg"
@@ -9,12 +11,12 @@ const securityData = [
   {
     title: "Personalised Demo",
     desc: "Custom walkthrough tailored to your industry needs \ed to your industry needs",
-    icon: cirtificate,
+    icon: WebinarPlay,
   },
   {
     title: "Implementation Roadmap",
     desc: "Clear timeline and migration strategy Custom walkthrough tailored to your industry needs \ed to your industry needs",
-    icon: cirtificate,
+    icon: RoadMap,
   },
   {
     title: "ROI Analysis",
