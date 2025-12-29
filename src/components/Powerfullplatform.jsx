@@ -63,10 +63,11 @@ const SectionRow = styled.div({
 })
 
 const Left = styled.div({
-  width: "36%",
+  width: "60%",
   opacity: 0,
   transform: "translateX(-3rem)",
   transition: "all 0.8s ease",
+  paddingInlineEnd:"1rem",
   "&.in-view": {
     opacity: 1,
     transform: "translateX(0)",
@@ -77,10 +78,9 @@ const Left = styled.div({
     listStyle:"none",
     display:"flex",
     flexWrap:"wrap",
-    justifyContent:"center",
     gap:"1rem",
     "& li":{
-      width:"calc((100% -2rem) / 3)",
+      width:"calc((100% - 2rem) / 3)",
       padding:"0.063rem",
       position:"relative",
       borderRadius:"1.188rem",
@@ -133,6 +133,7 @@ const Left = styled.div({
         marginBlockEnd:"0rem",
         position:"relative",
         zIndex:"3",
+        textAlign:"start",
       }
     }
   }
@@ -143,11 +144,49 @@ const Left = styled.div({
 
 
 export const Right = styled.div({
-  width: "56%",
+  width: "40%",
   opacity: 0,
   transform: "translateX(3rem)",
   transition: "all 0.8s ease",
+  "& ul":{
+    padding:"1.5rem",
+    margin:"0rem",
+    listStyle:"none",
+    display:"flex",
+    flexWrap:"wrap",
+    justifyContent:"center",
+    gap:"1rem",
+    "& li":{
+      width:"calc((100% - 1rem) / 2)",
+      padding:"1rem",
+      position:"relative",
+      borderRadius:"1.125rem",
+      display:"flex",
+      alignItems:"center",
+      boxShadow: "0px 4px 36px 0px #0010EF26",
+      gap:"0.5rem",
+      "& div":{
+        height:"1.188rem",
+        width:"1.188rem",
+        "& img":{
+          height:"100%",
+          width:"100%",
+        }
+      },
+      "& h5":{
+      background: 'linear-gradient(90deg, #002BFF -36.06%, #BC1DAF 96.9%)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text',
+      color: 'transparent',
+      marginBlockEnd:"0rem",
+      fontSize:"0.813rem",
+      fontWeight:"600",
+      }
+    }
+  
 
+  },
   "&.in-view": {
     opacity: 1,
     transform: "translateX(0)",
@@ -220,6 +259,32 @@ export default function Powerfullplatform() {
 
           </Left>
           <Right className="animate">
+            <ul>
+              <li>
+                <div>
+
+                </div>
+                <h5>Employee Lifecycle Management</h5>
+              </li>
+                  <li>
+                <div>
+
+                </div>
+                <h5>Smart Shift & Attendance</h5>
+              </li>
+                  <li>
+                <div>
+
+                </div>
+                <h5>Multi-Level Payroll Engine</h5>
+              </li>
+                  <li>
+                <div>
+
+                </div>
+                <h5>Geo-Fencing & GPS Tracking</h5>
+              </li>
+            </ul>
           </Right>
         </SectionRow>
       </div>
