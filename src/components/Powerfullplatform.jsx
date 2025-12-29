@@ -61,6 +61,9 @@ const SectionRow = styled.div({
   justifyContent: "space-between",
   marginBlockStart: "2.625rem",
   overflow: "hidden",
+  "@media (max-width: 991px)": {
+    flexDirection: "column",
+  },
 });
 
 const Left = styled.div({

@@ -23,8 +23,8 @@ const SectionRow = styled.div({
   borderRadius: "2.5rem",
   boxShadow: "0px 9px 14px 0px #16517A1A",
   "@media (max-width: 991px)": {
-      flexDirection:"column",
-    },
+    flexDirection: "column",
+  },
 })
 
 

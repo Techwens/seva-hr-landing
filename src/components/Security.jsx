@@ -82,6 +82,9 @@ const SectionRow = styled.div({
   justifyContent: "space-between",
   marginBlockStart: "2.625rem",
   overflow: "hidden",
+  "@media (max-width: 767px)": {
+    flexDirection: "column",
+  },
 })
 
 const Left = styled.div({
@@ -89,7 +92,7 @@ const Left = styled.div({
   opacity: 0,
   transform: "translateX(-3rem)",
   transition: "all 0.8s ease",
-  "@media (max-width: 991px)": {
+  "@media (max-width: 767px)": {
     width: "100%",
   },
   "&.in-view": {
@@ -166,7 +169,7 @@ export const Right = styled.div({
   opacity: 0,
   transform: "translateX(3rem)",
   transition: "all 0.8s ease",
-  "@media (max-width: 991px)": {
+  "@media (max-width: 767px)": {
     width: "100%",
   },
   "&.in-view": {

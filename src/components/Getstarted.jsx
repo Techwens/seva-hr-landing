@@ -30,16 +30,14 @@ const SectionRow = styled.div({
   display: "flex",
   alignItems: "center",
   gap: "2.5rem",
-
-  "@media (max-width: 991px)": {
+  "@media (max-width: 767px)": {
     flexDirection: "column",
-    alignItems: "flex-start",
   },
 })
 
 const Left = styled.div({
   width: "45%",
-  "@media (max-width: 991px)": {
+  "@media (max-width: 767px)": {
     width: "100%",
   },
 
@@ -79,7 +77,7 @@ const Right = styled.div({
   padding: "1.5rem 1rem",
   borderRadius: "1.3rem",
 
-  "@media (max-width: 991px)": {
+  "@media (max-width: 767px)": {
     width: "100%",
   },
 })

@@ -52,6 +52,9 @@ const SectionRow = styled.div({
   background: "#fff",
   padding: "3rem",
   overflow: "hidden",
+  "@media (max-width: 991px)": {
+    flexDirection: "column",
+  },
 });
 
 const Left = styled.div({
