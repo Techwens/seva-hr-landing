@@ -87,7 +87,9 @@ const Left = styled.div({
   opacity: 0,
   transform: "translateX(-3rem)",
   transition: "all 0.8s ease",
-
+  "@media (max-width: 991px)": {
+    width: "100%",
+  },
   "&.in-view": {
     opacity: 1,
     transform: "translateX(0)",
@@ -99,17 +101,17 @@ const CardListHeading = styled.div({
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
   color: 'transparent',
-  fontSize:"1.125rem",
-  fontWeight:"700",
-  display:"flex",
-  gap:"0.5rem",
-  marginBlockEnd:"1.5rem",
-  "& div":{
-    height:"1.5rem",
-    width:"1.5rem",
-    "& img":{
-      height:"100% !important",
-      width:"100%  !important",
+  fontSize: "1.125rem",
+  fontWeight: "700",
+  display: "flex",
+  gap: "0.5rem",
+  marginBlockEnd: "1.5rem",
+  "& div": {
+    height: "1.5rem",
+    width: "1.5rem",
+    "& img": {
+      height: "100% !important",
+      width: "100%  !important",
     }
   }
 })
@@ -145,9 +147,9 @@ const HeaderRow = styled.div({
     alignItems: "center",
     justifyContent: "start",
     flexShrink: 0,
-    "& img":{
-      height:"100% !important",
-      width:"100% !important",
+    "& img": {
+      height: "100% !important",
+      width: "100% !important",
     }
   },
   "& h4": {
@@ -162,7 +164,9 @@ export const Right = styled.div({
   opacity: 0,
   transform: "translateX(3rem)",
   transition: "all 0.8s ease",
-
+  "@media (max-width: 991px)": {
+    width: "100%",
+  },
   "&.in-view": {
     opacity: 1,
     transform: "translateX(0)",
@@ -235,14 +239,14 @@ export const FloatingWrap = styled("ul")({
   },
 })
 export const Brand = styled.div({
-margin: "6rem 0rem 1rem 0rem",
-width:"8.75rem",
-height:"auto",
-"& img":{
-  height:"100%",
-  width:"100%",
-  objectFit:"contain",
-}
+  margin: "6rem 0rem 1rem 0rem",
+  width: "8.75rem",
+  height: "auto",
+  "& img": {
+    height: "100%",
+    width: "100%",
+    objectFit: "contain",
+  }
 })
 export const Detailslist = styled.ul({
   listStyle: "none",
@@ -423,10 +427,10 @@ export default function Security() {
         <p>Bank-level security meets statutory compliance automation. Your workforce data is safe, secure, and always audit-ready.</p>
         <SectionRow ref={sectionRef}>
           <Left className="animate">
-            <CardListHeading> 
-            <div>
-              <Image src={packlock} alt="" width={100} height={100} />
-            </div>
+            <CardListHeading>
+              <div>
+                <Image src={packlock} alt="" width={100} height={100} />
+              </div>
               Security Features
             </CardListHeading>
             <CardList>
@@ -474,7 +478,7 @@ export default function Security() {
               </li>
             </FloatingWrap>
             <Brand>
-              <Image src={brand}/>
+              <Image src={brand} />
             </Brand>
             <Detailslist>
               <li>

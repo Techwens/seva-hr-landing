@@ -180,7 +180,7 @@ export default function Revoluationhr() {
       <div className="container">
         <SectionRow>
           <Left>
-            <h3>✨ We are Seva HR</h3>
+            <h3>We are Seva HR</h3>
             <h2>
               Revolutionize Your
               <br />
