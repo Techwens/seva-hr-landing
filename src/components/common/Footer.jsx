@@ -74,20 +74,21 @@ const FooterList = styled.ul({
     cursor: "pointer",
     transition: "opacity 0.25s ease",
     "&:hover": {
-      color:"#ff7f0f",
+      color: "#ff7f0f",
+      textDecoration:"underline",
     },
   },
 })
 
 const Logo = styled.div({
-  height:"2.5rem",
-  width:"auto",
+  height: "2.5rem",
+  width: "auto",
   display: "flex",
   alignItems: "center",
   "& img": {
-    height:"100%",
-    width:"auto",
-    objectFit:"contain",
+    height: "100%",
+    width: "auto",
+    objectFit: "contain",
   },
 })
 
@@ -97,6 +98,22 @@ const Contact = styled.div({
   gap: "0.375rem",
   fontSize: "0.875rem",
   opacity: 0.9,
+  "& div": {
+    display: "flex",
+    gap: "0.5rem",
+    alignItems: "center",
+    "& span":{
+      display:"flex",
+      alignItems:"center",
+      height: "0.938rem",
+      width: "0.938rem",
+      "& img": {
+        height: "100%",
+        width: "100%",
+    }
+    }
+  
+  }
 })
 
 /* =======================
@@ -110,17 +127,25 @@ const Footer = () => {
         <FooterList>
           <li className="col-brand">
             <Logo>
-              <Image src={WhiteBrandIcon} alt="icon"/>
+              <Image src={WhiteBrandIcon} alt="icon" />
             </Logo>
             <p>
               Modern HRMS built for Indian businesses. Clean, customizable, and
               completely compliant with all regulatory requirements.
             </p>
             <Contact>
-              <span>
-                <Image src={WhiteCallIcon} alt="icon"/>
-                +91-80-4567-8900</span>
-              <span><Image src={WhiteEmailIcon} alt="icon"/>hello@sevahr.com</span>
+              <div>
+                <span>
+                  <Image src={WhiteCallIcon} alt="call" />
+                </span>
+                +91-80-4567-8900
+              </div>
+              <div>
+                <span>
+                  <Image src={WhiteEmailIcon} alt="mail" />
+                </span>
+                hello@sevahr.com
+              </div>
             </Contact>
           </li>
           <li className="col-features">
