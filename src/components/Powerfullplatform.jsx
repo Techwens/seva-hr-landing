@@ -1,7 +1,12 @@
 "use client"
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
-
+import Power1 from "../assets/power1.svg"
+import Power2 from "../assets/power2.svg"
+import Power3 from "../assets/power3.svg"
+import Power4 from "../assets/power4.svg"
+import Power5 from "../assets/power5.svg"
+import Image from "next/image"
 
 
 
@@ -186,16 +191,8 @@ export default function Powerfullplatform() {
     {
       title: "One Smart Shift Management",
       description: "Manual shift registers causing errors",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <path
-            d="M35 0H23.3333C20.5767 0 18.3333 2.24333 18.3333 5V15C18.3333 17.7567 20.5767 20 23.3333 20H35C37.7567 20 40 17.7567 40 15V5C40 2.24333 37.7567 0 35 0Z..."
-            fill="#476FFF"
-          />
-        </svg>
-      ),
+      icon: Power1
     },
-    
   ]
 
 
@@ -210,13 +207,13 @@ export default function Powerfullplatform() {
         <SectionRow ref={sectionRef}>
           <Left className="animate">
             <ul>
-              {features.map((item, index) => (
+              {features?.map((item, index) => (
                 <li key={index}>
                   <div>
-                    <span>{item.icon}</span>
-                    <h4 className="bold">{item.title}</h4>
+                    <Image src={item?.icon}/>
+                    <h4 className="bold">{item?.title}</h4>
                   </div>
-                  <p>{item.description}</p>
+                  <p>{item?.description}</p>
                 </li>
               ))}
             </ul>
