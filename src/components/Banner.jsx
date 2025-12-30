@@ -8,14 +8,18 @@ import { Autoplay } from "swiper/modules"
 import "swiper/css"
 
 const Section = styled.section({
-  paddingBlock: "5rem",
-})
+  paddingBlock: "10rem 5rem",
+});
 
 const Wrapper = styled.div({
   textAlign: "center",
-  maxWidth: "960px",
   margin: "0 auto",
-})
+  maxWidth: "760px",
+  "& h1":{
+    fontWeight:"700",
+    marginBlockEnd:"0rem",
+  }
+});
 
 const Badge = styled.div({
   display: "inline-flex",
@@ -27,9 +31,9 @@ const Badge = styled.div({
   fontSize: "0.875rem",
   fontWeight: 600,
   marginBottom: "1.5rem",
-})
+});
 
-const Heading = styled.h1({
+const Heading = styled.div({
   fontSize: "3.25rem",
   fontWeight: 800,
   lineHeight: 1.15,
@@ -38,11 +42,9 @@ const Heading = styled.h1({
   "@media (max-width: 768px)": {
     fontSize: "2.25rem",
   },
-})
+});
 
-const StaticText = styled.span({
-  color: "#000",
-})
+
 
 const GradientTextWrap = styled.span({
   display: "inline-block",
@@ -59,14 +61,9 @@ const GradientText = styled.div({
   background: "linear-gradient(90deg, #FF6600 0%, #7B60FF 106.8%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
-})
+  marginBlockEnd:"1rem",
+});
 
-const Description = styled.p({
-  fontSize: "1.125rem",
-  color: "#555",
-  maxWidth: "760px",
-  margin: "0 auto 2.5rem",
-})
 
 const ButtonGroup = styled.div({
   display: "flex",
@@ -77,24 +74,36 @@ const ButtonGroup = styled.div({
 
 const PrimaryButton = styled.button({
   padding: "0.875rem 1.75rem",
-  borderRadius: "999px",
+  borderRadius: "0.875rem",
   border: "none",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "0.5rem",
   background: "linear-gradient(151deg, #476FFF, #4600B6)",
   color: "#fff",
   fontSize: "1rem",
   fontWeight: 700,
   cursor: "pointer",
   transition: "all .3s ease",
-
+  "& span": {
+    height: "0.875rem",
+    width: "0.875rem",
+    display: "flex",
+  },
   "&:hover": {
     transform: "translateY(-2px)",
     boxShadow: "0 12px 30px rgba(70,0,182,.35)",
   },
-})
+});
 
 const SecondaryButton = styled.button({
   padding: "0.875rem 1.75rem",
-  borderRadius: "999px",
+  borderRadius: "0.875rem",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "0.5rem",
   background: "#fff",
   border: "2px solid #6B5CFF",
   color: "#000",
@@ -102,12 +111,16 @@ const SecondaryButton = styled.button({
   fontWeight: 700,
   cursor: "pointer",
   transition: "all .3s ease",
-
+  "& span": {
+    height: "0.875rem",
+    width: "0.875rem",
+    display: "flex",
+  },
   "&:hover": {
     background: "linear-gradient(151deg, #D1FFFF, #BFB6FF)",
-    borderColor: "transparent",
+    borderColor: "rgb(161, 97, 176, 0.2)",
   },
-})
+});
 
 export default function Banner() {
   return (
@@ -120,13 +133,13 @@ export default function Banner() {
           </Badge>
 
           <Heading>
-            <StaticText>Powerful HRMS for </StaticText>
-
+            <h1>Powerful HRMS for </h1>
             <GradientTextWrap>
               <Swiper
                 direction="vertical"
                 slidesPerView={1}
                 loop
+                modules={[Autoplay]}
                 autoplay={{
                   delay: 1800,
                   disableOnInteraction: false,
@@ -146,16 +159,21 @@ export default function Banner() {
               </Swiper>
             </GradientTextWrap>
           </Heading>
-
-          <Description>
+          <p>
             Complete workforce management solution built for complex operations —
             from manufacturing floors to healthcare facilities, logistics centers
             to service industries.
-          </Description>
+          </p>
 
           <ButtonGroup>
-            <PrimaryButton>▶ Watch Demo</PrimaryButton>
-            <SecondaryButton>↗ Get Started Free</SecondaryButton>
+            <PrimaryButton>
+              <span></span>
+              Watch Demo
+            </PrimaryButton>
+            <SecondaryButton>
+              <span></span>
+              Get Started Free
+            </SecondaryButton>
           </ButtonGroup>
         </Wrapper>
       </div>

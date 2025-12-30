@@ -13,7 +13,6 @@ import React from 'react'
 const Home = () => {
   return (
     <section>
-      <div style={{marginBlockStart:'5rem'}}></div>
       <Banner/>
       <Organizations/>
       <Revoluationhr/>
