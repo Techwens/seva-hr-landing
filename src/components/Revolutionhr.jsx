@@ -6,7 +6,7 @@ import Badge1 from "../assets/badge1.svg"
 import Badge2 from "../assets/badge2.svg"
 import Badge3 from "../assets/badge3.svg"
 import Badge4 from "../assets/sparkle.svg"
-
+import SparkleBg from "../assets/sparkle.svg"
 
 
 
@@ -51,7 +51,7 @@ const Left = styled.div({
       left: '1rem',
       top: '50%',
       transform: "translateY(-50%)",
-      backgroundImage:'url(../assets/sparkle.svg)',
+      backgroundImage: `url(${SparkleBg.src})`,
       backgroundRepeat:'no-repeat',
     }
   },
