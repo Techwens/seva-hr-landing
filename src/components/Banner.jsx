@@ -124,6 +124,10 @@ const PrimaryButton = styled.button({
     height: "0.875rem",
     width: "0.875rem",
     display: "flex",
+    "& svg": {
+      height: "100%",
+      width: "100%",
+    }
   },
   "&:hover": {
     transform: "translateY(-2px)",
@@ -149,6 +153,10 @@ const SecondaryButton = styled.button({
     height: "0.875rem",
     width: "0.875rem",
     display: "flex",
+    "& svg": {
+      height: "100%",
+      width: "100%",
+    }
   },
   "&:hover": {
     background: "linear-gradient(151deg, #D1FFFF, #BFB6FF)",
@@ -219,11 +227,24 @@ export default function Banner() {
 
           <ButtonGroup>
             <PrimaryButton>
-              <span></span>
+              <span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="15" viewBox="0 0 13 15" fill="none">
+                <path d="M0 7.0286V2.46182C0 0.569748 2.0486 -0.613826 3.68528 0.333582L7.64243 2.61835L11.5996 4.90311C13.239 5.84777 13.239 8.21492 11.5996 9.15958L7.64243 11.4443L3.68528 13.7291C2.0486 14.671 0 13.4902 0 11.5981V7.0286Z" fill="white" />
+              </svg></span>
               Watch Demo
             </PrimaryButton>
             <SecondaryButton>
-              <span></span>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M10.0035 3.40804L1.41153 12L0 10.5885L8.59096 1.99651H1.01922V0H12V10.9808H10.0035V3.40804Z" fill="black" />
+                  <path d="M10.0035 3.40804L1.41153 12L0 10.5885L8.59096 1.99651H1.01922V0H12V10.9808H10.0035V3.40804Z" fill="url(#paint0_linear_3927_981)" />
+                  <defs>
+                    <linearGradient id="paint0_linear_3927_981" x1="-3.68589e-07" y1="11.5" x2="8.5" y2="3" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FF6600" />
+                      <stop offset="1" stop-color="#7B60FF" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
               Get Started Free
             </SecondaryButton>
           </ButtonGroup>
