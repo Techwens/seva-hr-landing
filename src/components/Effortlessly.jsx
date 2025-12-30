@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components';
-import EffortlesslyImg from "../assets/EffortlesslyImg.svg";
+import EffortlesslyImg from "../assets/EffortlesslyImg.png";
 import SparkleBg from "../assets/sparkle.svg"
 import Image from 'next/image';
 
