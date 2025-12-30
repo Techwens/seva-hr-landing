@@ -62,27 +62,7 @@ h1 {
   font-weight: 800;
 }
 
-.text-primary {
-  color: #004CAE;
-}
-.text-secondary {
-  color: #006794;
-}
-.text-accent {
-  color: #00365B;
-}
-.text-error {
-  color: #f44336;
-}
-.text-success {
-  color: #00D392;
-}
-.text-info {
-  color: #D3F1FF;
-}
-.text-white {
-  color: #fff;
-}
+
 
 [bgColor=primary] {
   background-color: #004CAE !important;

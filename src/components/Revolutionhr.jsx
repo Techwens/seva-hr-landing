@@ -53,6 +53,8 @@ const Left = styled.div({
       transform: "translateY(-50%)",
       backgroundImage: `url(${SparkleBg.src})`,
       backgroundRepeat:'no-repeat',
+      backgroundSize: "contain",
+      backgroundPosition:"center",
     }
   },
   "& h2": {
@@ -105,7 +107,7 @@ const Card = styled.li({
   },
   "&:hover": {
     border: "1px solid #e5e7eb",
-    backgroundColor: "$white",
+    backgroundColor: "#fff",
     boxShadow:'none',
     
   },

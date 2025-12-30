@@ -37,7 +37,8 @@ const Section = styled.section({
       transform: "translateY(-50%)",
       backgroundImage: `url(${bojroBidduyt.src})`,
       backgroundRepeat: 'no-repeat',
-      backgroundSize:'contain'
+      backgroundSize: "contain",
+      backgroundPosition:"center",
     }
   },
   "& h2": {
@@ -103,6 +104,7 @@ const Left = styled.div({
         top: '0',
         background: "linear-gradient(90deg, #FFD7BC 0%, #D9D1FF 106.8%)",
         zIndex: "0",
+        transition: "all 0.4s ease",
       },
       '&:before': {
         content: "''",
@@ -115,25 +117,35 @@ const Left = styled.div({
         zIndex: "1",
         borderRadius: "1.125rem",
       },
+      "&:hover::after":{
+        background: "linear-gradient(140.97deg, #4ECA77 3.17%, #1D2771 72.79%)",
+        transition: "all 0.4s ease",
+      },
+      "&:hover::before":{
+        background:"none",
+      },
       "& div": {
         position: "relative",
         zIndex: "3",
         display: "flex",
-        alignItems: "center",
         gap: "0.5rem",
         marginBlockEnd: "1.25rem",
         "& span": {
           height: "2.5rem",
           width: "2.5rem",
           display: "flex",
-          alignItems: "center",
-          "& svg": {
+          alignItems: "start",
+          transition: "all 0.4s ease",
+          "& img": {
             height: "100%",
             width: "100%",
+              transition: "all 0.4s ease",
           }
         },
         "& h4": {
           marginBlockEnd: "0rem",
+          transition: "all 0.4s ease",
+          transform: "translateX(0)",
         },
       },
       "& p": {
@@ -141,7 +153,21 @@ const Left = styled.div({
         position: "relative",
         zIndex: "3",
         textAlign: "start",
-      }
+        transition: "all 0.4s ease",
+        transform: "translateY(0)",
+      },
+      "&:hover p":{
+        color: "#fff",
+        transform: "translateY(-0.375rem)",
+      },
+      "&:hover h4":{
+        color: "#fff",
+        transform: "translateX(-2.8rem)",
+      },
+      "&:hover div span":{
+        opacity: 0,
+        transform: "translateX(-1.5rem)",
+      },
     }
   }
 });
@@ -350,7 +376,9 @@ export default function Powerfullplatform() {
               {features?.map((item, index) => (
                 <li key={index}>
                   <div>
-                    <Image src={item?.icon} alt="icon"/>
+                    <span>
+                      <Image src={item?.icon} alt="icon"/>
+                    </span>
                     <h4 className="bold">{item?.title}</h4>
                   </div>
                   <p>{item?.description}</p>

@@ -56,6 +56,8 @@ const Section = styled.section({
       transform: "translateY(-50%)",
       backgroundImage: `url(${SparkleBg.src})`,
       backgroundRepeat: 'no-repeat',
+      backgroundSize: "contain",
+      backgroundPosition:"center",
     }
   },
   "& h2": {
@@ -104,20 +106,38 @@ const CardList = styled.ul({
   margin: 0,
   display: "flex",
   flexDirection: "column",
-  gap: "1rem",
+  gap: "2rem",
   "& li": {
     padding: "1.25rem 1.5rem",
     borderRadius: "1.25rem",
     background: "#fff",
     border: "1px solid #D5D3FF",
-    boxShadow: '0px 2px 10px 0px #00000012',
+    boxShadow: "0px 2px 10px 0px #00000012",
     display: "flex",
     flexDirection: "column",
     gap: ".5rem",
+    transition: "background 0.4s ease",
     "& p": {
       textAlign: "start",
-    }
-  }
+      transition: "all 0.4s ease",
+      transform: "translateY(0)",
+    },
+    "&:hover": {
+      background:"linear-gradient(151.19deg, #476FFF 1.77%, #4600B6 71.94%)",
+    },
+    "&:hover h4": {
+      color: "#fff",
+      transform: "translateX(-2rem)",
+    },
+    "&:hover p": {
+      color: "#fff",
+      transform: "translateY(-0.375rem)",
+    },
+    "&:hover .HeaderRow div": {
+      opacity: 0,
+      transform: "translateX(-1.5rem)",
+    },
+  },
 });
 const HeaderRow = styled.div({
   display: "flex",
@@ -130,6 +150,7 @@ const HeaderRow = styled.div({
     alignItems: "center",
     justifyContent: "start",
     flexShrink: 0,
+    transition: "all 0.4s ease",
     "& img": {
       height: "100% !important",
       width: "100% !important",
@@ -138,6 +159,8 @@ const HeaderRow = styled.div({
   "& h4": {
     marginBlockEnd: "0rem",
     fontWeight: "700",
+    transition: "all 0.4s ease",
+    transform: "translateX(0)",
   }
 });
 
@@ -312,7 +335,7 @@ export default function Actionform() {
             <CardList>
               {securityData?.map((item, index) => (
                 <li key={index}>
-                  <HeaderRow>
+                  <HeaderRow className="HeaderRow">
                     <div>
                       <Image src={item?.icon} alt="icon" width={100} height={100} />
                     </div>

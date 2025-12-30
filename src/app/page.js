@@ -1,4 +1,5 @@
 import Actionform from '@/components/Actionform'
+import Banner from '@/components/Banner'
 import Effortlessly from '@/components/Effortlessly'
 import Features from '@/components/Features'
 import Getstarted from '@/components/Getstarted'
@@ -13,6 +14,7 @@ const Home = () => {
   return (
     <section>
       <div style={{marginBlockStart:'5rem'}}></div>
+      <Banner/>
       <Organizations/>
       <Revoluationhr/>
       <Features/>

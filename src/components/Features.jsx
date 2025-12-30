@@ -1,7 +1,6 @@
 "use client"
 import React from "react"
 import styled from "styled-components"
-// import Image from "../assets/TextureBg.png"
 import TextureBg from "../assets/TextureBg.png"
 import SparkleBg from "../assets/sparkle.svg"
 import Image from "next/image"
@@ -10,7 +9,6 @@ import email from "../assets/email.svg"
 import location from "../assets/location.svg"
 import privacy from "../assets/privacy.svg"
 import watch from "../assets/watch.svg"
-import Spotify from "../assets/image 1.svg"
 
 const Section = styled.section({
   paddingBlock: "3.5rem",
@@ -42,6 +40,8 @@ const Section = styled.section({
       transform: "translateY(-50%)",
       backgroundImage: `url(${SparkleBg.src})`,
       backgroundRepeat: 'no-repeat',
+      backgroundSize: "contain",
+      backgroundPosition:"center",
     }
   },
   "& h2": {
@@ -58,7 +58,7 @@ const Section = styled.section({
   "& p": {
     textAlign: 'center',
   }
-})
+});
 
 
 const FeatureList = styled.ul({
@@ -74,28 +74,44 @@ const FeatureList = styled.ul({
     width: "calc((100% - 6rem) / 4)",
     display: "flex",
     flexDirection: "column",
-    gap: "0.75rem",
     gap: "2rem",
-
     "@media (max-width: 991px)": {
       width: "calc((100% - 2rem) / 2)",
     },
-
     "@media (max-width: 575px)": {
       width: "100%",
     },
+    "&:hover .IconWrap": {
+      opacity: 0,
+      transform: "translateY(-1rem)",
+      transition: "all 0.75s ease",
+    },
+    "&:hover .FeatureItem": {
+      background: "linear-gradient(151.19deg, #476FFF 1.77%, #4600B6 71.94%)",
+      transition: "all 1s ease",
+      "& h4, p": {
+        transform: "translateY(-3rem)",
+        color: "#fff",
+      },
+      "& h5, span": {
+        opacity: 1,
+        transform: "translateY(0)",
+      },
+    },
   }
-})
+});
 
 const FeatureItem = styled.div({
   background: "#fff",
   borderRadius: "1rem",
   padding: "1.5rem",
   height: "100%",
+  transition: "all 1s ease",
   '& h4': {
     fontWeight: '700',
     marginBlockEnd: '0.5rem',
     maxWidth: '80%',
+    transition: "all 0.45s ease",
   },
   '& p': {
     marginBlockEnd: '0rem',
@@ -103,22 +119,63 @@ const FeatureItem = styled.div({
     maxWidth: '80%',
     textAlign: 'start',
     lineHeight: '1.7',
+    transition: "all 0.45s ease",
+  },
+  "& h5": {
+    fontWeight: 600,
+    lineHeight: 1.3,
+    marginBlock: "0.625rem",
+    borderRadius: '1.875rem',
+    backgroundColor: '#fff',
+    padding: '0.625rem 1.25rem 0.625rem 2.5rem',
+    display: 'inline-block',
+    position: 'relative',
+    opacity: 0,
+    transform: "translateY(3rem)",
+    transition: "all 0.45s ease",
+    '&:after': {
+      content: "''",
+      position: 'absolute',
+      height: '1rem',
+      width: '1rem',
+      left: '1rem',
+      top: '50%',
+      transform: "translateY(-50%)",
+      backgroundImage: `url(${SparkleBg.src})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: "contain",
+      backgroundPosition:"center",
+    }
+  },
+  "& span": {
+    height: "2rem",
+    width: "2rem",
+    display: "flex",
+    alignItems: "center",
+    opacity: 0,
+    transform: "translateY(3rem)",
+    transition: "all 0.45s ease",
+    "& svg": {
+      height: "100%",
+      width: "100%",
+    }
   }
-})
-
+});
 
 const IconWrap = styled.div({
   width: "3.625rem",
-  height: "auto",
+  height: "3.625rem",
   display: "flex",
   alignItems: "center",
   justifyContent: "start",
   marginBlockEnd: "0.938rem",
-    "& img":{
-      height:"100% !important",
-      width:"100% !important",
-    }
+  transition: "all 0.45s ease",
+  "& img": {
+    height: "100% !important",
+    width: "100% !important",
+  }
 })
+
 
 const StatItem = styled.div({
   background: "#fff",
@@ -139,11 +196,7 @@ const StatItem = styled.div({
     textAlign: 'start',
     marginBlockEnd: '0rem',
   }
-})
-
-
-
-
+});
 const CtaList = styled.div({
   "& h4": {
     fontSize: "1.875rem",
@@ -175,19 +228,47 @@ const CtaList = styled.div({
       }
     },
   }
-})
+});
 
 const CtaButton = styled.button({
+  position: "relative",
+  overflow: "hidden",
+
   padding: "1rem 1rem",
   borderRadius: "999px",
   border: "none",
-  background: "linear-gradient(151.19deg, #476FFF 1.77%, #4600B6 71.94%)",
+  cursor: "pointer",
+  maxWidth: "14.375rem",
   color: "#fff",
   fontSize: "1.125rem",
   fontWeight: 700,
-  cursor: "pointer",
-  maxWidth: "14.375rem",
-})
+  background:"linear-gradient(151.19deg, #476FFF 1.77%, #4600B6 71.94%)",
+  transition: "color 0.35s ease",
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    left:"0",
+    top:"0",
+    height:"100%",
+    width:"100%",
+    borderRadius: "inherit",
+    background: `linear-gradient(151.19deg, #D1FFFF 1.77%, #BFB6FF 71.94%)`,
+    opacity: 0,
+    transition: "opacity 0.45s ease",
+    zIndex: 1,
+  },
+  "&:hover::after": {
+    opacity: 1,
+  },
+  "&:hover": {
+    color: "#000",
+  },
+  "& > *": {
+    position: "relative",
+    zIndex: 2,
+  },
+});
+
 
 export default function Features() {
   return (
@@ -200,50 +281,74 @@ export default function Features() {
         <p>Purpose-built for shift-based, multi-location operations with transparent automation and real-time visibility</p>
         <FeatureList>
           <li>
-            <FeatureItem>
-              <IconWrap>
-                <Image src={watch} alt="icon"/>
+            <FeatureItem className="FeatureItem">
+              <IconWrap className="IconWrap">
+                <Image src={watch} alt="icon" />
               </IconWrap>
               <h4>Smart Attendance & Productivity</h4>
               <p>Automated time tracking with intelligent shift management and real-time insights</p>
+              <h5>98.4% Accuracy</h5>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path d="M5.33325 16H26.6666M26.6666 16L18.6666 8M26.6666 16L18.6666 24" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
             </FeatureItem>
           </li>
 
           <li>
-            <FeatureItem>
-              <IconWrap>
-                <Image src={calculator} alt="icon"/>
+            <FeatureItem className="FeatureItem">
+              <IconWrap className="IconWrap">
+                <Image src={calculator} alt="icon" />
               </IconWrap>
               <h4>Transparent Salary Calculation</h4>
               <p>Auto-computed payroll with audit-ready accuracy, eliminating disputes completely</p>
+              <h5>98.4% Accuracy</h5>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path d="M5.33325 16H26.6666M26.6666 16L18.6666 8M26.6666 16L18.6666 24" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
             </FeatureItem>
           </li>
 
           <li>
-            <FeatureItem>
-              <IconWrap>
-                <Image src={email} alt="icon"/>
+            <FeatureItem className="FeatureItem">
+              <IconWrap className="IconWrap">
+                <Image src={email} alt="icon" />
               </IconWrap>
               <h4>Multi-Level Payroll Engine</h4>
               <p>Scalable framework built specifically for factories with unlimited configurations</p>
+              <h5>98.4% Accuracy</h5>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path d="M5.33325 16H26.6666M26.6666 16L18.6666 8M26.6666 16L18.6666 24" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
             </FeatureItem>
           </li>
 
 
           <li>
-            <FeatureItem>
-              <IconWrap>
-                <Image src={location} alt="icon"/>
+            <FeatureItem className="FeatureItem">
+              <IconWrap className="IconWrap">
+                <Image src={location} alt="icon" />
               </IconWrap>
               <h4>Geo-Fencing & Live Tracking</h4>
               <p>Location-verified attendance with live workforce visibility for on-site accountability</p>
+              <h5>98.4% Accuracy</h5>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path d="M5.33325 16H26.6666M26.6666 16L18.6666 8M26.6666 16L18.6666 24" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
             </FeatureItem>
           </li>
 
           <li>
-            <FeatureItem>
-              <IconWrap>
-                <Image src={privacy} alt="icon"/>
+            <FeatureItem className="FeatureItem">
+              <IconWrap className="IconWrap">
+                <Image src={privacy} alt="icon" />
               </IconWrap>
               <h4>100% Compliance Automation</h4>
               <p>EPF, ESI, PT, LWF, TDS fully auto-generated with state-wise accuracy</p>
@@ -322,7 +427,9 @@ export default function Features() {
                   Instant Insights</li>
               </ol>
             </CtaList>
-            <CtaButton>Book Free Demo</CtaButton>
+            <CtaButton>
+              <span>Book Free Demo</span>
+            </CtaButton>
           </li>
         </FeatureList>
       </div>

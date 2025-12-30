@@ -29,6 +29,8 @@ const Section = styled.section({
       transform: "translateY(-50%)",
       backgroundImage: `url(${SparkleBg.src})`,
       backgroundRepeat: 'no-repeat',
+      backgroundSize: "contain",
+      backgroundPosition:"center",
     }
   },
   "& h2": {

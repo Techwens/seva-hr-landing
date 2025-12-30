@@ -20,14 +20,14 @@ const Section = styled.section({
 const SectionRow = styled.div({
   display: "flex",
   alignItems: "flex-start",
-  "@media (max-width: 991px)": {
+  "@media (max-width: 767px)": {
     flexDirection: "column",
   },
 })
 
 const Left = styled.div({
   width: "35%",
-  "@media (max-width: 991px)": {
+  "@media (max-width: 767px)": {
     width: "100%",
   },
   "& h2": {
@@ -37,27 +37,37 @@ const Left = styled.div({
       fontSize: "1rem",
     },
   },
-})
+});
+
+const BrandLogo = styled.div({
+  width: "100px",
+  height: "2.813rem",
+  "& img": {
+    width: "100% !important",
+    height: "100% !important",
+    objectFit: "contain",
+  },
+});
 
 const Right = styled.div({
   width: "65%",
   background: 'linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)',
-  position:"relative",
-  "@media (max-width: 991px)": {
+  position: "relative",
+  "@media (max-width: 767px)": {
     width: "100%",
   },
   "&::after": {
     content: '""',
     position: "absolute",
     inset: 0,
-    background:"linear-gradient(270deg,rgba(255, 255, 255, 0) 79%, rgba(255, 255, 255, 1) 100%)",
+    background: "linear-gradient(270deg,rgba(255, 255, 255, 0) 79%, rgba(255, 255, 255, 1) 100%)",
     pointerEvents: "none",
     zIndex: 2,
   },
   "& .logo-swiper .swiper-wrapper": {
     transitionTimingFunction: "linear !important",
   },
-})
+});
 
 const logos = [
   Spotify,
@@ -79,7 +89,17 @@ export default function Organizations() {
             <Swiper
               dir="rtl"
               modules={[Autoplay, FreeMode]}
-              slidesPerView="auto"
+              breakpoints={{
+                0: {
+                  slidesPerView: 2,
+                },
+                600: {
+                  slidesPerView: 4,
+                },
+                1200: {
+                  slidesPerView: 5,
+                },
+              }}
               spaceBetween={56}
               loop={true}
               freeMode={{
@@ -96,12 +116,14 @@ export default function Organizations() {
             >
               {[...logos, ...logos].map((logo, index) => (
                 <SwiperSlide key={index} style={{ width: "auto" }}>
-                  <Image
-                    src={logo}
-                    alt="organization logo"
-                    width={120}
-                    height={40}
-                  />
+                  <BrandLogo>
+                    <Image
+                      src={logo}
+                      alt="organization logo"
+                      width={100}
+                      height={100}
+                    />
+                  </BrandLogo>
                 </SwiperSlide>
               ))}
             </Swiper>
