@@ -1,12 +1,12 @@
 "use client"
 import React from "react"
+import '../scss/variable.scss';
 import styled from "styled-components"
 import Image from "next/image"
 import Spotify from "../assets/image 1.svg"
 import Airbnb from "../assets/image 2.svg"
 import Google from "../assets/image 3.svg"
 import Slack from "../assets/image 4.svg"
-
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, FreeMode } from "swiper/modules"
 

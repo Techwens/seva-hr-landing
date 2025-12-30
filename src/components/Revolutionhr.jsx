@@ -1,5 +1,6 @@
 "use client"
 import React from "react"
+import '../scss/variable.scss';
 import styled from "styled-components"
 import Image from "next/image"
 import Badge1 from "../assets/badge1.svg"
@@ -39,7 +40,7 @@ const Left = styled.div({
     color:'#004CAE',
     marginBlockEnd: "0.625rem",
     borderRadius:'1.875rem',
-    backgroundColor:'#fff',
+    backgroundColor:'$white',
     padding: '0.625rem 1.25rem 0.625rem 3.5rem',
     display:'inline-block',
     position:'relative',
