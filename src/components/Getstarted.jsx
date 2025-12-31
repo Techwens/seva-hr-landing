@@ -5,7 +5,18 @@ import TextureBg from "../assets/TextureBg.png"
 const Section = styled.section({
   paddingBlockEnd: "3.5rem",
   position:"relative",
-  overflowX:"hidden",
+  "&::after":{
+    content: '""',
+    width: '50vw',
+    height: '80vh',
+    borderRadius: '50%',
+    backgroundColor: 'rgb(255 127 15 / 12%)',
+    filter: 'blur(3.75rem)',
+    position: 'absolute',
+    top: '0',
+    left: '0',
+    zIndex:"-1",
+  },
 });
 
 const CtaWrap = styled.div({

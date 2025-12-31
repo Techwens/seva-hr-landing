@@ -303,7 +303,7 @@ export default function Features() {
               </IconWrap>
               <h4>Transparent Salary Calculation</h4>
               <p>Auto-computed payroll with audit-ready accuracy, eliminating disputes completely</p>
-              <h5>98.4% Accuracy</h5>
+              <h5>Zero Disputes</h5>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <path d="M5.33325 16H26.6666M26.6666 16L18.6666 8M26.6666 16L18.6666 24" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -319,7 +319,7 @@ export default function Features() {
               </IconWrap>
               <h4>Multi-Level Payroll Engine</h4>
               <p>Scalable framework built specifically for factories with unlimited configurations</p>
-              <h5>98.4% Accuracy</h5>
+              <h5>Unlimited Configs</h5>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <path d="M5.33325 16H26.6666M26.6666 16L18.6666 8M26.6666 16L18.6666 24" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -336,7 +336,7 @@ export default function Features() {
               </IconWrap>
               <h4>Geo-Fencing & Live Tracking</h4>
               <p>Location-verified attendance with live workforce visibility for on-site accountability</p>
-              <h5>98.4% Accuracy</h5>
+              <h5>Real-time GPS</h5>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <path d="M5.33325 16H26.6666M26.6666 16L18.6666 8M26.6666 16L18.6666 24" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -352,6 +352,12 @@ export default function Features() {
               </IconWrap>
               <h4>100% Compliance Automation</h4>
               <p>EPF, ESI, PT, LWF, TDS fully auto-generated with state-wise accuracy</p>
+              <h5>100% Audit-Ready</h5>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <path d="M5.33325 16H26.6666M26.6666 16L18.6666 8M26.6666 16L18.6666 24" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
             </FeatureItem>
           </li>
 

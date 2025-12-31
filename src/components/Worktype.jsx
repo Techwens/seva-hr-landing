@@ -98,6 +98,31 @@ const featureData = [
 
 const Section = styled.section({
   paddingBlock: "3.5rem",
+  position:"relative",
+  "&::after":{
+    content: '""',
+    width: '50vw',
+    height: '80vh',
+    borderRadius: '50%',
+    backgroundColor: 'rgb(36 166 252 / 15%)',
+    filter: 'blur(3.75rem)',
+    position: 'absolute',
+    top: '-5rem',
+    right: '0',
+    zIndex:"-1",
+  },
+  "&::before":{
+    content: '""',
+    width: '50vw',
+    height: '80vh',
+    borderRadius: '50%',
+    backgroundColor: 'rgb(123 96 255 / 17%)',
+    filter: 'blur(3.75rem)',
+    position: 'absolute',
+    top: '-5rem',
+    left: '0',
+    zIndex:"-1",
+  },
   "& .centerized": {
     display: "flex",
     justifyContent: "center",

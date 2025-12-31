@@ -8,6 +8,19 @@ import Image from 'next/image';
 
 const Section = styled.section({
   paddingBlock: "3.5rem",
+  position:"relative",
+  "&::after":{
+    content: '""',
+    width: '50vw',
+    height: '80vh',
+    borderRadius: '50%',
+    backgroundColor: 'rgb(36 166 252 / 15%)',
+    filter: 'blur(3.75rem)',
+    position: 'absolute',
+    bottom: '-1rem',
+    right: '0',
+    zIndex:"-1",
+  },
   "& h3": {
     
     fontWeight: 600,

@@ -32,6 +32,19 @@ const securityData = [
 
 const Section = styled.section({
   paddingBlock: "3.5rem",
+  position:"relative",
+  "&::after":{
+    content: '""',
+    width: '50vw',
+    height: '80vh',
+    borderRadius: '50%',
+    backgroundColor: 'rgb(123 96 255 / 17%)',
+    filter: 'blur(3.75rem)',
+    position: 'absolute',
+    bottom: '0',
+    right: '0',
+    zIndex:"-1",
+  },
   "& .centerized": {
     display: "flex",
     justifyContent: "center",
@@ -87,7 +100,7 @@ const SectionRow = styled.div({
 });
 
 const Left = styled.div({
-  width: "calc(50% - 1rem)",
+  width: "50%",
   opacity: 0,
   transform: "translateX(-3rem)",
   transition: "all 0.8s ease",
@@ -165,8 +178,9 @@ const HeaderRow = styled.div({
 });
 
 export const Right = styled.div({
-  width: "calc(50% - 1rem)",
+  width: "50%",
   opacity: 0,
+  padding:"2rem",
   transform: "translateX(3rem)",
   transition: "all 0.8s ease",
   "@media (max-width: 991px)": {
