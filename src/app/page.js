@@ -13,16 +13,24 @@ import React from 'react'
 const Home = () => {
   return (
     <section>
-      <Banner/>
-      <Organizations/>
-      <Revoluationhr/>
-      <Features/>
-      <Security/>
-      <Getstarted/>
-      <Effortlessly/>
-      <Powerfullplatform/>
-      <Worktype/>
-      <Actionform/>
+      <Banner />
+      <Organizations />
+      <Revoluationhr />
+      <div id='features-section'>
+        <Features />
+      </div>
+      <div id='customization-section'>
+        <Security />
+      </div>
+      <Getstarted />
+      <Effortlessly />
+      <div id='compliance-section'>
+        <Powerfullplatform />
+      </div>
+      <Worktype />
+      <div id='contact-section'>
+        <Actionform />
+      </div>
     </section>
   )
 }

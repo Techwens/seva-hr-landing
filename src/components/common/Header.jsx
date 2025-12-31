@@ -6,6 +6,7 @@ import CallIcon from "../../assets/callIcon.svg";
 import PlayBtnIcon from "../../assets/playButton.svg";
 import Image from 'next/image';
 // import { NavLink } from "react-router-dom";
+import { Link as ScrollLink } from 'react-scroll';
 const HeaderLayout = styled.header({
   position: "fixed", top: 0, left: 0, width: '100%', zIndex: 10, backgroundColor: '#fff', transition: 'all .3s', boxShadow: '0px 4px 4px 0px #BDD8FF33', overflow: 'hidden',
   '&.sticky': { backgroundColor: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(0.375rem)', },
@@ -128,32 +129,40 @@ export default function Header() {
           <NavStyle>
             <ul>
               <li>
-                <a to={'/'}>Features</a>
+                <ScrollLink to="features-section" smooth={true} duration={500} offset={-80}>
+                  Features
+                </ScrollLink>
               </li>
               <li>
-                <a to={'/'}>Customization</a>
+                <ScrollLink to="customization-section" smooth={true} duration={500} offset={-80}>
+                  Customization
+                </ScrollLink>
               </li>
               <li>
-                <a to={'/'}>Compliance</a>
+                <ScrollLink to="compliance-section" smooth={true} duration={500} offset={-80}>
+                  Compliance
+                </ScrollLink>
               </li>
               <li>
-                <a to={'/'}>Contact</a>
+                <ScrollLink to="contact-section" smooth={true} duration={500} offset={-80}>
+                  Contact
+                </ScrollLink>
               </li>
               <li>
-                <a to={'/'}>
+                <ScrollLink to="contact-section" smooth={true} duration={500}>
                   <span>
                     <Image src={CallIcon} alt='callicon' />
                   </span>
                   +91-80-4567-8900
-                </a>
+                </ScrollLink>
               </li>
               <li>
-                <a to={'/contact'}>
+                <ScrollLink to="">
                   <span>
                     <Image src={PlayBtnIcon} alt='callicon' />
                   </span>
                   View Demo
-                </a>
+                </ScrollLink>
               </li>
             </ul>
           </NavStyle>
