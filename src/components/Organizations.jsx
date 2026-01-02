@@ -2,7 +2,7 @@
 import React from "react"
 
 import styled from "styled-components"
-import Image from "next/image"
+
 import Spotify from "../assets/image 1.svg"
 import Airbnb from "../assets/image 2.svg"
 import Google from "../assets/image 3.svg"
@@ -101,19 +101,19 @@ export default function Organizations() {
           <Left>
             <div>
               <span>
-                <Image src={Star} alt="star-icon" />
+                <img src={Star?.src} alt="star-icon" />
               </span>
               <span>
-                <Image src={Star} alt="star-icon" />
+                <img src={Star?.src} alt="star-icon" />
               </span>
               <span>
-                <Image src={Star} alt="star-icon" />
+                <img src={Star?.src} alt="star-icon" />
               </span>
               <span>
-                <Image src={Star} alt="star-icon" />
+                <img src={Star?.src} alt="star-icon" />
               </span>
               <span>
-                <Image src={Star} alt="star-icon" />
+                <img src={Star?.src} alt="star-icon" />
               </span>
             </div>
             <h2>Trusted by 15+ organizations</h2>
@@ -150,8 +150,8 @@ export default function Organizations() {
               {[...logos, ...logos].map((logo, index) => (
                 <SwiperSlide key={index} style={{ width: "auto" }}>
                   <BrandLogo>
-                    <Image
-                      src={logo}
+                    <img
+                      src={logo?.src}
                       alt="organization logo"
                       width={100}
                       height={100}

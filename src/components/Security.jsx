@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import TextureBg from "../assets/TextureBg.png"
-import Image from "next/image"
+
 import brand from "../assets/image 4.svg"
 import packlock from "../assets/padlock-check 1.svg"
 import cirtificate from "../assets/Vector.svg"
@@ -457,7 +457,7 @@ export default function Security() {
           <Left className="animate">
             <CardListHeading>
               <div>
-                <Image src={packlock} alt="icon" width={100} height={100} />
+                <img src={packlock?.src} alt="icon" width={100} height={100} />
               </div>
               Security Features
             </CardListHeading>
@@ -466,7 +466,7 @@ export default function Security() {
                 <li key={index}>
                   <HeaderRow className="HeaderRow">
                     <div>
-                      <Image src={item?.icon} alt="icon" width={100} height={100} />
+                      <img src={item?.icon?.src} alt="icon" width={100} height={100} />
                     </div>
                     <h4>{item?.title}</h4>
                   </HeaderRow>
@@ -506,7 +506,7 @@ export default function Security() {
               </li>
             </FloatingWrap>
             <Brand>
-              <Image src={BrandIconName} alt="icon" />
+              <img src={BrandIconName?.src} alt="icon" />
             </Brand>
             <Detailslist>
               <li>

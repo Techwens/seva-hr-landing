@@ -270,7 +270,7 @@ const Effortlessly = () => {
               </CtaButton>
             </Left>
             <Right className="animate">
-              <Image src={EffortlesslyImg} alt='effort banner'/>
+              <img src={EffortlesslyImg?.src} alt='effort banner'/>
             </Right>
           </SectionRow>
         </div>

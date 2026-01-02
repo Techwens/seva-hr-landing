@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
-import Image from "next/image"
+
 import RoadMap from "../assets/roadmap.svg"
 import WebinarPlay from "../assets/webinar-play.svg"
 import cirtificate from "../assets/Vector.svg"
@@ -11,7 +11,7 @@ const securityData = [
   {
     title: "Personalised Demo",
     desc: "Custom walkthrough tailored to your industry needs \ed to your industry needs",
-    icon: WebinarPlay,
+    icon: WebinarPlay.src,
   },
   {
     title: "Implementation Roadmap",
@@ -351,7 +351,7 @@ export default function Actionform() {
                 <li key={index}>
                   <HeaderRow className="HeaderRow">
                     <div>
-                      <Image src={item?.icon} alt="icon" width={100} height={100} />
+                      <img src={item?.icon?.src} alt="icon" width={100} height={100} />
                     </div>
                     <h4>{item?.title}</h4>
                   </HeaderRow>
@@ -399,7 +399,7 @@ export default function Actionform() {
               </FormGrid>
               <PrivacyText>
                 <div>
-                  <Image src={packlock} alt="icon" width={100} height={100} />
+                  <img src={packlock?.src} alt="icon" width={100} height={100} />
                 </div>
                 Your information is secure. We respect your privacy.
               </PrivacyText>

@@ -1,7 +1,7 @@
 "use client"
 import React from "react"
 import styled from "styled-components"
-import Image from "next/image"
+
 import Badge1 from "../assets/badge1.svg"
 import Badge2 from "../assets/badge2.svg"
 import Badge3 from "../assets/badge3.svg"
@@ -202,8 +202,8 @@ export default function Revoluationhr() {
               {cardData.map((item, index) => (
                 <Card key={index}>
                   <Icon>
-                    <Image
-                      src={item.image}
+                    <img
+                      src={item.image?.src}
                       alt={item.title}
                       width={60}
                       height={60}

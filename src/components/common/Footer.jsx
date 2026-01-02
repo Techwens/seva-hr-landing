@@ -2,7 +2,7 @@
 import React from "react"
 import styled from "styled-components"
 import TextureBg from "../../assets/TextureBg.png"
-import Image from "next/image"
+
 import WhiteBrandIcon from "../../assets/white-brand-icon.svg";
 import WhiteCallIcon from "../../assets/white-call-icon.svg";
 import WhiteEmailIcon from "../../assets/white-email-icon.svg";
@@ -171,7 +171,7 @@ const Footer = () => {
         <FooterList>
           <li className="col-brand">
             <Logo>
-              <Image src={WhiteBrandIcon} alt="icon" />
+              <img src={WhiteBrandIcon?.src} alt="icon" />
             </Logo>
             <p>
               Modern HRMS built for Indian businesses. Clean, customizable, and
@@ -180,13 +180,13 @@ const Footer = () => {
             <Contact>
               <div>
                 <span>
-                  <Image src={WhiteCallIcon} alt="call" />
+                  <img src={WhiteCallIcon?.src} alt="call" />
                 </span>
                 +91-80-4567-8900
               </div>
               <div>
                 <span>
-                  <Image src={WhiteEmailIcon} alt="mail" />
+                  <img src={WhiteEmailIcon?.src} alt="mail" />
                 </span>
                 hello@sevahr.com
               </div>

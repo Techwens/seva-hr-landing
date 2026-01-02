@@ -124,7 +124,7 @@ export default function Header() {
       <HeaderLayout>
         <HeaderContainer className="container">
           <Brand>
-            <Image src={LogoImg} alt="Logo" width={60} height={60} />
+            <img src={LogoImg?.src} alt="Logo" width={60} height={60} />
           </Brand>
           <NavStyle>
             <ul>
@@ -151,7 +151,7 @@ export default function Header() {
               <li>
                 <ScrollLink to="contact-section" smooth={true} duration={500}>
                   <span>
-                    <Image src={CallIcon} alt='callicon' />
+                    <img src={CallIcon?.src} alt='callicon' />
                   </span>
                   +91-80-4567-8900
                 </ScrollLink>
@@ -159,7 +159,7 @@ export default function Header() {
               <li>
                 <ScrollLink to="">
                   <span>
-                    <Image src={PlayBtnIcon} alt='callicon' />
+                    <img src={PlayBtnIcon?.src} alt='callicon' />
                   </span>
                   View Demo
                 </ScrollLink>

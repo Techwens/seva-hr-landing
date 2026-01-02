@@ -7,7 +7,7 @@ import Power3 from "../assets/power3.svg"
 import Power4 from "../assets/power4.svg"
 import Power5 from "../assets/power5.svg"
 import Power6 from "../assets/power6.svg"
-import Image from "next/image"
+
 import bojroBidduyt from "../assets/bojro-bidduyt.svg"
 
 
@@ -377,7 +377,7 @@ export default function Powerfullplatform() {
                 <li key={index}>
                   <div>
                     <span>
-                      <Image src={item?.icon} alt="icon"/>
+                      <img src={item?.icon?.src} alt="icon"/>
                     </span>
                     <h4 className="bold">{item?.title}</h4>
                   </div>

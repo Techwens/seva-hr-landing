@@ -228,8 +228,8 @@ export default function Banner() {
                   <path d="M-2.40413e-07 5.5L4.43022 4.06104L6 6.91406e-07L7.56978 4.06104L12 5.5L7.56978 6.93896L6 11L4.43022 6.93896L-2.40413e-07 5.5Z" fill="url(#paint0_linear_3927_989)" />
                   <defs>
                     <linearGradient id="paint0_linear_3927_989" x1="3.75" y1="3.20833" x2="7.15548" y2="7.17107" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#9EECFF" />
-                      <stop offset="1" stop-color="#FFFDCE" />
+                      <stop stopColor="#9EECFF" />
+                      <stop offset="1" stopColor="#FFFDCE" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -285,8 +285,8 @@ export default function Banner() {
                   <path d="M10.0035 3.40804L1.41153 12L0 10.5885L8.59096 1.99651H1.01922V0H12V10.9808H10.0035V3.40804Z" fill="url(#paint0_linear_3927_981)" />
                   <defs>
                     <linearGradient id="paint0_linear_3927_981" x1="-3.68589e-07" y1="11.5" x2="8.5" y2="3" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#FF6600" />
-                      <stop offset="1" stop-color="#7B60FF" />
+                      <stop stopColor="#FF6600" />
+                      <stop offset="1" stopColor="#7B60FF" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -296,12 +296,11 @@ export default function Banner() {
           </ButtonGroup>
         </Wrapper>
         <BannerLeftImage>
-          <Image src={BannerLeftImg} alt='banner-left-image' />
+          <img src={BannerLeftImg?.src} alt='banner-left-image' />
         </BannerLeftImage>
         <BannerRightImage>
-          <Image src={BannerRightImg} alt='banner-right-image' />
+          <img src={BannerRightImg?.src} alt='banner-right-image' />
         </BannerRightImage>
-
       </div>
     </Section>
   )
