@@ -11,7 +11,7 @@ const securityData = [
   {
     title: "Personalised Demo",
     desc: "Custom walkthrough tailored to your industry needs \ed to your industry needs",
-    icon: WebinarPlay.src,
+    icon: WebinarPlay,
   },
   {
     title: "Implementation Roadmap",
