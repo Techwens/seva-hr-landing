@@ -19,7 +19,7 @@ const CheckIcon = () => (
 // Reusable arrow icon component
 const ArrowIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <path d="M5.33325 16H26.6666M26.6666 16L18.6666 8M26.6666 16L18.6666 24" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M5.33325 16H26.6666M26.6666 16L18.6666 8M26.6666 16L18.6666 24" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
