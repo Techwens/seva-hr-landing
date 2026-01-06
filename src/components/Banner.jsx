@@ -7,8 +7,6 @@ import { Autoplay } from "swiper/modules"
 import Image from 'next/image';
 import BannerLeftImg from "../assets/bannerLeftImg.png";
 import BannerRightImg from "../assets/bannerRightImg.png";
-
-
 import "swiper/css"
 
 const Section = styled.section({
@@ -173,18 +171,6 @@ const BannerLeftImage = styled.div({
   transform: "translateY(-50%)",
   height: "19rem",
   width: "auto",
-  animation: "leftFloat 6s ease-in-out infinite",
-  "@keyframes leftFloat": {
-    "0%": {
-      transform: "translateY(-50%) translateX(0)",
-    },
-    "50%": {
-      transform: "translateY(calc(-50% - 1.5rem))",
-    },
-    "100%": {
-      transform: "translateY(-50%) translateX(0)",
-    },
-  },
   "& img": {
     height: "100% !important",
     width: "100% !important",
@@ -206,19 +192,6 @@ const BannerRightImage = styled.div({
   transform: "translateY(-50%)",
   height: "23rem",
   width: "auto",
-  animation: "rightFloat 5s ease-in-out infinite",
-  animationDelay: "0.8s",
-  "@keyframes rightFloat": {
-    "0%": {
-      transform: "translateY(-50%) translateX(0)",
-    },
-    "50%": {
-      transform: "translateY(calc(-50% - 1.5rem))",
-    },
-    "100%": {
-      transform: "translateY(-50%) translateX(0)",
-    },
-  },
   "& img": {
     height: "100% !important",
     width: "100% !important",

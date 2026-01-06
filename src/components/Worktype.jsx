@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
-import SparkleBg from "../assets/bajrabiddyt-gradient.svg"
 
 // Reusable checkmark icon for points list
 const CheckIcon = () => (
@@ -93,8 +92,8 @@ const featureData = [
 
 const Section = styled.section({
   paddingBlock: "3.5rem",
-  position:"relative",
-  "&::after":{
+  position: "relative",
+  "&::after": {
     content: '""',
     width: '50vw',
     height: '80vh',
@@ -104,9 +103,9 @@ const Section = styled.section({
     position: 'absolute',
     top: '-5rem',
     right: '0',
-    zIndex:"-1",
+    zIndex: "-1",
   },
-  "&::before":{
+  "&::before": {
     content: '""',
     width: '50vw',
     height: '80vh',
@@ -116,36 +115,13 @@ const Section = styled.section({
     position: 'absolute',
     top: '-5rem',
     left: '0',
-    zIndex:"-1",
+    zIndex: "-1",
   },
   "& .centerized": {
     display: "flex",
     justifyContent: "center",
   },
-  "& h3": {
-    fontWeight: 600,
-    lineHeight: 1.3,
-    color: '#000',
-    marginBlockEnd: "0.625rem",
-    borderRadius: '1.875rem',
-    background: 'linear-gradient(90deg, #D6FCFF 0%, #FFF2D8 100%)',
-    padding: '0.625rem 1.25rem 0.625rem 2.8rem',
-    display: 'inline-block',
-    position: 'relative',
-    '&:after': {
-      content: "''",
-      position: 'absolute',
-      height: '1.313rem',
-      width: '1.5rem',
-      left: '1rem',
-      top: '50%',
-      transform: "translateY(-50%)",
-      backgroundImage: `url(${SparkleBg.src})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: "contain",
-      backgroundPosition: "center",
-    }
-  },
+
   "& h2": {
     textAlign: 'center',
     marginBlockEnd: '0.938rem',
@@ -157,9 +133,37 @@ const Section = styled.section({
       color: 'transparent',
     }
   },
-  "& p": {
-    textAlign: 'center',
-  }
+
+});
+const Badge = styled.h3({
+  display: "inline-flex",
+  alignItems: "center",
+  gap: "0.5rem",
+  padding: "0.625rem 1.25rem",
+  borderRadius: "3rem",
+  background: "linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)",
+  border: "1px solid rgba(71, 111, 255, 0.15)",
+  marginBlockEnd: "1.5rem",
+  boxShadow: "0 4px 15px rgba(71, 111, 255, 0.08)",
+  "& svg": {
+    width: "1.125rem",
+    height: "1.125rem",
+  },
+  "& span": {
+    fontSize: "0.875rem",
+    fontWeight: 600,
+    background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  },
+});
+const Subtitle = styled.p({
+  fontSize: "1.125rem",
+  color: "#64748B",
+  maxWidth: "38rem",
+  margin: "0 auto",
+  lineHeight: 1.7,
+  textAlign: "center",
 });
 const SectionRow = styled.div({
   borderRadius: "2.5rem",
@@ -289,10 +293,15 @@ export default function Worktype() {
       <div className="container">
         <SectionRow>
           <div className="centerized">
-            <h3>Simple Process</h3>
+            <Badge>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#476FFF">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+              <span>Simple Process</span>
+            </Badge>
           </div>
           <h2>How <span>SEVA HRMS Works</span></h2>
-          <p>Three simple steps to transform your workforce management from chaos to control</p>
+          <Subtitle>Three simple steps to transform your workforce management from chaos to control</Subtitle>
           <CardGrid role="list" aria-label="Three step process for SEVA HRMS">
             {featureData.map((item, index) => {
               const IconComponent = item.icon;

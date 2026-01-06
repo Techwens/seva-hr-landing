@@ -14,7 +14,7 @@ const CheckIcon = () => (
 );
 
 const Section = styled.section({
-  paddingBlock: "5rem",
+  paddingBlock: "6rem",
   position: "relative",
   background: "linear-gradient(135deg, #FAFBFF 0%, #F0F4FF 50%, #FFF5F0 100%)",
   overflow: "hidden",
@@ -23,19 +23,7 @@ const Section = styled.section({
   },
 });
 
-// Flowing wave shape at top
-const WaveTop = styled.div({
-  position: "absolute",
-  top: 0,
-  left: 0,
-  right: 0,
-  height: "8rem",
-  background: "#fff",
-  clipPath: "ellipse(60% 100% at 50% 0%)",
-  "@media (max-width: 767px)": {
-    height: "4rem",
-  },
-});
+
 
 // Floating decorative elements
 const FloatingShape = styled.div(({ $top, $left, $right, $size, $color, $delay }) => ({
@@ -81,33 +69,28 @@ const LeftContent = styled.div({
   },
 });
 
-const Badge = styled.span({
+const Badge = styled.h3({
   display: "inline-flex",
   alignItems: "center",
   gap: "0.5rem",
-  fontWeight: 600,
-  fontSize: "0.9rem",
-  lineHeight: 1.3,
-  color: '#1a1a1a',
-  borderRadius: '2rem',
-  background: "linear-gradient(54.19deg, #D5FEFF 17.15%, #FFD5CA 109.72%)",
-  padding: '0.625rem 1.25rem 0.625rem 2.8rem',
-  position: 'relative',
-  marginBlockEnd: "1rem",
-  '&:after': {
-    content: "''",
-    position: 'absolute',
-    height: '1.313rem',
-    width: '1.5rem',
-    left: '1rem',
-    top: '50%',
-    transform: "translateY(-50%)",
-    backgroundImage: `url(${SparkleBg.src})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: "contain",
-    backgroundPosition: "center",
-  }
-});
+  padding: "0.625rem 1.25rem",
+  borderRadius: "3rem",
+  background: "linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)",
+  border: "1px solid rgba(71, 111, 255, 0.15)",
+  marginBlockEnd: "1.5rem",
+  boxShadow: "0 4px 15px rgba(71, 111, 255, 0.08)",
+  "& svg": {
+    width: "1.125rem",
+    height: "1.125rem",
+  },
+  "& span": {
+    fontSize: "0.875rem",
+    fontWeight: 600,
+    background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  },
+})
 
 const Title = styled.h2({
   fontSize: "2.5rem",
@@ -344,7 +327,7 @@ const Effortlessly = () => {
 
   return (
     <Section ref={sectionRef} id="effortlessly">
-      <WaveTop />
+
 
       {/* Floating decorative shapes */}
       <FloatingShape $top="20%" $left="5%" $size="10rem" $color="rgba(147, 0, 173, 0.08)" $delay="0s" />
@@ -354,7 +337,12 @@ const Effortlessly = () => {
       <div className="container">
         <ContentWrapper>
           <LeftContent className="animate">
-            <Badge>Effortlessly Simple for Everyone</Badge>
+            <Badge>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#476FFF">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+              <span>Effortlessly Simple for Everyone</span>
+            </Badge>
             <Title>A User-Friendly HRMS Anyone Can Operate</Title>
             <Subtitle><span>No training required</span> — SEVA HR is built with simplicity at its core.</Subtitle>
             <Description>
@@ -395,7 +383,7 @@ const Effortlessly = () => {
               <FloatingCard $top="-1rem" $right="3rem" $delay="0s">
                 <CardIcon $bg="linear-gradient(135deg, #4F6BFF 0%, #7B60FF 100%)">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </CardIcon>
                 <CardText>
@@ -407,7 +395,7 @@ const Effortlessly = () => {
               <FloatingCard $bottom="20%" $left="-2rem" $delay="1.5s">
                 <CardIcon $bg="linear-gradient(135deg, #9300AD 0%, #00BBFF 100%)">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </CardIcon>
                 <CardText>
@@ -419,7 +407,7 @@ const Effortlessly = () => {
               <FloatingCard $bottom="-0.5rem" $right="20%" $delay="3s">
                 <CardIcon $bg="linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%)">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </CardIcon>
                 <CardText>

@@ -113,6 +113,7 @@ const IndustryTag = styled.div({
     fontSize: "0.813rem",
     fontWeight: 500,
     color: "#374151",
+    pointerEvents:"none",
   },
 })
 

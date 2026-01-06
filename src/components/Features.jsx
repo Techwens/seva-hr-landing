@@ -32,28 +32,26 @@ const Section = styled.section({
     justifyContent: "center",
   },
   "& h3": {
-    fontWeight: 600,
-    lineHeight: 1.3,
-    color: '#1a1a1a',
-    marginBlockEnd: "0.625rem",
-    borderRadius: '1.875rem',
-    background: "linear-gradient(90deg, #EEF6FF 0%, #FFF9EE 100%)",
-    padding: '0.625rem 1.25rem 0.625rem 2.8rem',
-    display: 'inline-block',
-    position: 'relative',
-    '&:after': {
-      content: "''",
-      position: 'absolute',
-      height: '1.313rem',
-      width: '1.5rem',
-      left: '1rem',
-      top: '50%',
-      transform: "translateY(-50%)",
-      backgroundImage: `url(${SparkleBg.src})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: "contain",
-      backgroundPosition:"center",
-    }
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "0.5rem",
+    padding: "0.625rem 1.25rem",
+    borderRadius: "3rem",
+    background: "linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)",
+    border: "1px solid rgba(71, 111, 255, 0.15)",
+    marginBlockEnd: "1.5rem",
+    boxShadow: "0 4px 15px rgba(71, 111, 255, 0.08)",
+    "& svg": {
+      width: "1.125rem",
+      height: "1.125rem",
+    },
+    "& span": {
+      fontSize: "0.875rem",
+      fontWeight: 600,
+      background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+    },
   },
   "& h2": {
     textAlign: 'center',
@@ -67,7 +65,10 @@ const Section = styled.section({
     }
   },
   "& p": {
-    textAlign: 'center',
+    fontSize: "1.125rem",
+    color: "#64748B",
+    lineHeight: 1.7,
+    textAlign: "center",
   }
 });
 
@@ -98,11 +99,11 @@ const FeatureList = styled.ul({
       transition: "all 0.75s ease",
     },
     "&:hover .FeatureItem": {
-      background: "linear-gradient(151.19deg, #476FFF 1.77%, #4600B6 71.94%)",
+      background: "linear-gradient(151.19deg, #ff7f0f1a 1.77%, #0036f50a 71.94% 71.94%)",
       transition: "all 1s ease",
       "& h4, p": {
         transform: "translateY(-3rem)",
-        color: "#fff",
+        color: "#000",
       },
       "& h5, span": {
         opacity: 1,
@@ -133,6 +134,12 @@ const FeatureItem = styled.div({
     lineHeight: '1.7',
     transition: "all 0.45s ease",
   },
+  '& .activity': {
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
   "& h5": {
     fontWeight: 600,
     lineHeight: 1.3,
@@ -156,7 +163,7 @@ const FeatureItem = styled.div({
       backgroundImage: `url(${SparkleBg.src})`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: "contain",
-      backgroundPosition:"center",
+      backgroundPosition: "center",
     }
   },
   "& span": {
@@ -247,49 +254,51 @@ const CtaList = styled.div({
 const CtaButton = styled.button({
   position: "relative",
   overflow: "hidden",
-  padding: "1rem 1.5rem",
-  borderRadius: "999px",
+  padding: "1rem 2rem",
+  borderRadius: "3rem",
   border: "none",
-  cursor: "pointer",
-  maxWidth: "14.375rem",
   color: "#fff",
-  fontSize: "1.125rem",
+  fontSize: "1rem",
   fontWeight: 700,
-  background:"linear-gradient(151.19deg, #476FFF 1.77%, #4600B6 71.94%)",
-  transition: "color 0.35s ease",
+  cursor: "pointer",
+  display: "inline-flex",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "0.5rem",
+  background: "linear-gradient(151.19deg, #476FFF 1.77%, #4600B6 71.94%)",
+  transition: "all 0.4s ease",
+  boxShadow: "0 4px 20px rgba(71, 111, 255, 0.3)",
   "&::after": {
     content: '""',
     position: "absolute",
-    left:"0",
-    top:"0",
-    height:"100%",
-    width:"100%",
+    inset: 0,
     borderRadius: "inherit",
-    background: `linear-gradient(151.19deg, #D1FFFF 1.77%, #BFB6FF 71.94%)`,
+    background: "linear-gradient(331.19deg, #476FFF 1.77%, #4600B6 71.94%)",
     opacity: 0,
-    transition: "opacity 0.45s ease",
-    zIndex: 1,
+    transition: "opacity 0.5s ease",
+    zIndex: 0,
+  },
+  "&:hover": {
+    transform: "translateY(-2px)",
+    boxShadow: "0 8px 30px rgba(71, 111, 255, 0.4)",
   },
   "&:hover::after": {
     opacity: 1,
   },
-  "&:hover": {
-    color: "#000",
-  },
   "& > *": {
     position: "relative",
-    zIndex: 2,
+    zIndex: 1,
   },
 });
 
 // Payroll icon SVG component (since email.svg doesn't match payroll)
 const PayrollIcon = () => (
   <svg width="58" height="58" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="#476FFF" opacity="0.2"/>
-    <path d="M12 6C10.9 6 10 6.9 10 8H8C8 5.79 9.79 4 12 4C14.21 4 16 5.79 16 8C16 9.86 14.73 11.43 13 11.9V13H11V10H12C13.1 10 14 9.1 14 8C14 6.9 13.1 6 12 6Z" fill="#476FFF"/>
-    <path d="M11 15H13V17H11V15Z" fill="#476FFF"/>
-    <rect x="4" y="4" width="16" height="16" rx="2" stroke="#476FFF" strokeWidth="1.5" fill="none"/>
-    <path d="M7 12H9M15 12H17" stroke="#476FFF" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="#476FFF" opacity="0.2" />
+    <path d="M12 6C10.9 6 10 6.9 10 8H8C8 5.79 9.79 4 12 4C14.21 4 16 5.79 16 8C16 9.86 14.73 11.43 13 11.9V13H11V10H12C13.1 10 14 9.1 14 8C14 6.9 13.1 6 12 6Z" fill="#476FFF" />
+    <path d="M11 15H13V17H11V15Z" fill="#476FFF" />
+    <rect x="4" y="4" width="16" height="16" rx="2" stroke="#476FFF" strokeWidth="1.5" fill="none" />
+    <path d="M7 12H9M15 12H17" stroke="#476FFF" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
 );
 
@@ -299,7 +308,11 @@ export default function Features() {
     <Section>
       <div className="container">
         <div className="centerized">
-          <h3>Powerful Features</h3>
+          <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#476FFF">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            </svg>
+            Powerful Features</h3>
         </div>
         <h2>Built for <span>Operational Excellence</span></h2>
         <p>Purpose-built for shift-based, multi-location operations with transparent automation and real-time visibility</p>
@@ -311,8 +324,10 @@ export default function Features() {
               </IconWrap>
               <h4>Smart Attendance & Productivity</h4>
               <p>Automated time tracking with intelligent shift management and real-time insights</p>
-              <h5>98.4% Accuracy</h5>
-              <span><ArrowIcon /></span>
+              <div className="activity">
+                <h5>98.4% Accuracy</h5>
+                {/* <span><ArrowIcon /></span> */}
+              </div>
             </FeatureItem>
           </li>
 
@@ -323,8 +338,10 @@ export default function Features() {
               </IconWrap>
               <h4>Transparent Salary Calculation</h4>
               <p>Auto-computed payroll with audit-ready accuracy, eliminating disputes completely</p>
-              <h5>Zero Disputes</h5>
-              <span><ArrowIcon /></span>
+              <div className="activity">
+                <h5>Zero Disputes</h5>
+                {/* <span><ArrowIcon /></span> */}
+              </div>
             </FeatureItem>
           </li>
 
@@ -335,8 +352,10 @@ export default function Features() {
               </IconWrap>
               <h4>Multi-Level Payroll Engine</h4>
               <p>Scalable framework built specifically for factories with unlimited configurations</p>
-              <h5>Unlimited Configs</h5>
-              <span><ArrowIcon /></span>
+              <div className="activity">
+                <h5>Unlimited Configs</h5>
+                {/* <span><ArrowIcon /></span> */}
+              </div>
             </FeatureItem>
           </li>
 
@@ -347,8 +366,10 @@ export default function Features() {
               </IconWrap>
               <h4>Geo-Fencing & Live Tracking</h4>
               <p>Location-verified attendance with live workforce visibility for on-site accountability</p>
-              <h5>Real-time GPS</h5>
-              <span><ArrowIcon /></span>
+              <div className="activity">
+                <h5>Real-time GPS</h5>
+                {/* <span><ArrowIcon /></span> */}
+              </div>
             </FeatureItem>
           </li>
 
@@ -359,8 +380,10 @@ export default function Features() {
               </IconWrap>
               <h4>100% Compliance Automation</h4>
               <p>EPF, ESI, PT, LWF, TDS fully auto-generated with state-wise accuracy</p>
-              <h5>100% Audit-Ready</h5>
-              <span><ArrowIcon /></span>
+              <div className="activity">
+                <h5>100% Audit-Ready</h5>
+                {/* <span><ArrowIcon /></span> */}
+              </div>
             </FeatureItem>
           </li>
 

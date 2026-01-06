@@ -44,8 +44,8 @@ const securityData = [
 
 const Section = styled.section({
   paddingBlock: "3.5rem",
-  position:"relative",
-  "&::after":{
+  position: "relative",
+  "&::after": {
     content: '""',
     width: '40vw',
     height: '60vh',
@@ -55,36 +55,13 @@ const Section = styled.section({
     position: 'absolute',
     bottom: '0',
     right: '0',
-    zIndex:"-1",
+    zIndex: "-1",
   },
   "& .centerized": {
     display: "flex",
     justifyContent: "center",
   },
-  "& h3": {
-    fontWeight: 600,
-    lineHeight: 1.3,
-    color: '#1a1a1a',
-    marginBlockEnd: "0.625rem",
-    borderRadius: '1.875rem',
-    background: 'linear-gradient(90deg, #EEF6FF 0%, #FFF9EE 100%)',
-    padding: '0.625rem 1.25rem 0.625rem 2.8rem',
-    display: 'inline-block',
-    position: 'relative',
-    '&:after': {
-      content: "''",
-      position: 'absolute',
-      height: '1.313rem',
-      width: '1.5rem',
-      left: '1rem',
-      top: '50%',
-      transform: "translateY(-50%)",
-      backgroundImage: `url(${SparkleBg.src})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: "contain",
-      backgroundPosition:"center",
-    }
-  },
+
   "& h2": {
     textAlign: 'center',
     marginBlockEnd: '0.938rem',
@@ -96,9 +73,37 @@ const Section = styled.section({
       color: 'transparent',
     }
   },
-  "& p": {
-    textAlign: 'center',
-  }
+
+});
+const Badge = styled.h3({
+  display: "inline-flex",
+  alignItems: "center",
+  gap: "0.5rem",
+  padding: "0.625rem 1.25rem",
+  borderRadius: "3rem",
+  background: "linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)",
+  border: "1px solid rgba(71, 111, 255, 0.15)",
+  marginBlockEnd: "1.5rem",
+  boxShadow: "0 4px 15px rgba(71, 111, 255, 0.08)",
+  "& svg": {
+    width: "1.125rem",
+    height: "1.125rem",
+  },
+  "& span": {
+    fontSize: "0.875rem",
+    fontWeight: 600,
+    background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  },
+});
+const Subtitle = styled.p({
+  fontSize: "1.125rem",
+  color: "#64748B",
+  maxWidth: "38rem",
+  margin: "0 auto",
+  lineHeight: 1.7,
+  textAlign: "center",
 });
 const SectionRow = styled.div({
   display: "flex",
@@ -148,14 +153,13 @@ const CardList = styled.ul({
       transform: "translateY(0)",
     },
     "&:hover": {
-      background:"linear-gradient(151.19deg, #476FFF 1.77%, #4600B6 71.94%)",
+      border: "1px solid #ffead8",
+      background: "linear-gradient(151.19deg, #ffffff 1.77%, #ff7f0f17 71.94%)",
     },
     "&:hover h4": {
-      color: "#fff",
       transform: "translateX(-2rem)",
     },
     "&:hover p": {
-      color: "#fff",
       transform: "translateY(-0.375rem)",
     },
     "&:hover .HeaderRow div": {
@@ -192,7 +196,7 @@ const HeaderRow = styled.div({
 export const Right = styled.div({
   width: "50%",
   opacity: 0,
-  padding:"2rem",
+  padding: "2rem",
   transform: "translateX(3rem)",
   transition: "all 0.8s ease",
   "@media (max-width: 991px)": {
@@ -451,10 +455,16 @@ export default function Actionform() {
     <Section>
       <div className="container">
         <div className="centerized">
-          <h3>Get Started Now</h3>
+
+          <Badge>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#476FFF">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            </svg>
+            <span>Get Started Now</span>
+          </Badge>
         </div>
         <h2>See <span>SEVA HRMS in Action</span></h2>
-        <p>Book your personalized demo and discover how SEVA HRMS handles your industry&apos;s unique workforce challenges</p>
+        <Subtitle>Book your personalized demo and discover how SEVA HRMS handles your industry&apos;s unique workforce challenges</Subtitle>
         <SectionRow ref={sectionRef}>
           <Left className="animate">
             <CardList role="list" aria-label="What you'll get with your demo">

@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 
 const Section = styled.section({
-  paddingBlock: "5rem 6rem",
+  paddingBlock: "5rem 8rem",
   position: "relative",
   overflow: "hidden",
   background: "linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 50%, #F0F4FF 100%)",
@@ -64,7 +64,7 @@ const HeaderSection = styled.div({
   position: "relative",
 })
 
-const Badge = styled.div({
+const Badge = styled.h3({
   display: "inline-flex",
   alignItems: "center",
   gap: "0.5rem",
@@ -505,6 +505,11 @@ const securityFeatures = [
     desc: "Encrypted storage for sensitive employee records and files",
     icon: "folder",
   },
+  {
+    title: "24/7 Monitoring",
+    desc: "Real-time protection power for all",
+    icon: "globe",
+  },
 ]
 
 const complianceItems = ["EPF Returns", "ESI Compliance", "TDS Filing", "Form 16", "PT & LWF", "Labour Laws"]
@@ -530,6 +535,12 @@ export default function Security() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
           </svg>
         )
+      case "globe":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+          </svg>
+        )
       default:
         return null
     }
@@ -540,7 +551,7 @@ export default function Security() {
       {/* Floating decorative shapes */}
       <FloatingShape $top="15%" $left="5%" $size="4rem" $delay="0s" />
       <FloatingShape $top="60%" $right="8%" $size="3rem" $color="linear-gradient(135deg, rgba(255, 102, 0, 0.1) 0%, rgba(255, 102, 0, 0.05) 100%)" $delay="1s" />
-      <FloatingShape $bottom="20%" $left="10%" $size="2.5rem" $delay="2s" />
+      <FloatingShape $bottom="5%" $left="10%" $size="2.5rem" $delay="2s" />
 
       <Container className="container">
         <HeaderSection>
@@ -584,22 +595,13 @@ export default function Security() {
                   <span>Compliant</span>
                 </CertText>
               </CertBadge>
-              <CertBadge>
-                <CertIcon>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-                  </svg>
-                </CertIcon>
-                <CertText>
-                  <p>GDPR</p>
-                  <span>Compliant</span>
-                </CertText>
-              </CertBadge>
             </CertRow>
 
             <FeatureStack>
               {securityFeatures.map((feature, index) => (
-                <FeatureCard key={index} $offset={index === 1 ? "2rem" : index === 2 ? "1rem" : "0"}>
+                <FeatureCard
+                // key={index} $offset={index === 1 ? "2rem" : index === 2 ? "1rem" : "0"}
+                >
                   <FeatureIcon>{getIcon(feature.icon)}</FeatureIcon>
                   <FeatureContent>
                     <h4>{feature.title}</h4>
@@ -683,7 +685,7 @@ export default function Security() {
           </RightContent>
         </MainGrid>
 
-        <TrustBar>
+        {/* <TrustBar>
           <TrustItem>
             <TrustIcon style={{ background: "linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%)" }}>
               <svg viewBox="0 0 24 24" fill="none" stroke="#476FFF" strokeWidth="2">
@@ -728,7 +730,7 @@ export default function Security() {
               <span>Every time</span>
             </TrustText>
           </TrustItem>
-        </TrustBar>
+        </TrustBar> */}
       </Container>
     </Section>
   )
