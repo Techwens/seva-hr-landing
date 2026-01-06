@@ -26,6 +26,7 @@ const Section = styled.section({
       WebkitTextFillColor: 'transparent',
       backgroundClip: 'text',
       color: 'transparent',
+      display:"inline-block"
     }
   },
 });
@@ -120,12 +121,11 @@ const Left = styled.div({
         borderRadius: "1.125rem",
       },
       "&:hover::after": {
-        background: "linear-gradient(140.97deg, #4eca7721 3.17%, #1d277114 72.79%)",
+        background: "linear-gradient(140.97deg, #476cfd0a 3.17%, #4600b617 72.79%)",
         transition: "all 0.4s ease",
       },
       "&:hover::before": {
-        border:"1px solid #ff7f0f5c",
-        background:"transparent",
+        display:"none",
       },
       "& div": {
         position: "relative",
@@ -367,7 +367,7 @@ export default function Powerfullplatform() {
             <span>Powerful Feature</span>
           </Badge>
         </div>
-        <h2>Everything You Need in <span>One Powerful Platform</span></h2>
+        <h2>Everything You Need in<br/><span>One Powerful Platform</span></h2>
         <Subtitle>One unified platform for HR, Attendance, Payroll, Compliance, and Analytics — built for complex shift-based operations across all industries.</Subtitle>
         <SectionRow ref={sectionRef}>
           <Left className="animate">

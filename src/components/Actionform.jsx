@@ -71,6 +71,7 @@ const Section = styled.section({
       WebkitTextFillColor: 'transparent',
       backgroundClip: 'text',
       color: 'transparent',
+      display:"inline-block",
     }
   },
 
@@ -463,7 +464,7 @@ export default function Actionform() {
             <span>Get Started Now</span>
           </Badge>
         </div>
-        <h2>See <span>SEVA HRMS in Action</span></h2>
+        <h2>See<br/><span>SEVA HRMS in Action</span></h2>
         <Subtitle>Book your personalized demo and discover how SEVA HRMS handles your industry&apos;s unique workforce challenges</Subtitle>
         <SectionRow ref={sectionRef}>
           <Left className="animate">

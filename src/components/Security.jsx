@@ -132,7 +132,7 @@ const LeftContent = styled.div({
 
 const CertRow = styled.div({
   display: "flex",
-  gap: "1rem",
+  gap: "0.5rem",
   marginBlockEnd: "2rem",
   flexWrap: "wrap",
 })
@@ -141,7 +141,7 @@ const CertBadge = styled.div({
   display: "flex",
   alignItems: "center",
   gap: "0.75rem",
-  padding: "0.875rem 1.25rem",
+  padding: "0.875rem",
   background: "#fff",
   borderRadius: "1rem",
   border: "1px solid rgba(16, 185, 129, 0.15)",
@@ -593,6 +593,28 @@ export default function Security() {
                 <CertText>
                   <p>SOC 2 Type II</p>
                   <span>Compliant</span>
+                </CertText>
+              </CertBadge>
+                  <CertBadge>
+                <CertIcon>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                </CertIcon>
+                <CertText>
+                  <p>100+ Enterprises</p>
+                  <span>Trust our platform</span>
+                </CertText>
+              </CertBadge>
+                  <CertBadge>
+                <CertIcon>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                </CertIcon>
+                <CertText>
+                  <p>100% Audit Pass</p>
+                  <span>Every time</span>
                 </CertText>
               </CertBadge>
             </CertRow>

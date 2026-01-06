@@ -51,6 +51,7 @@ const Section = styled.section({
       background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
+      display:"inline-block"
     },
   },
   "& h2": {
@@ -139,6 +140,19 @@ const FeatureItem = styled.div({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
+    "& span": {
+    height: "1.5rem",
+    width: "1.5rem",
+    display: "flex",
+    alignItems: "center",
+    opacity: 0,
+    transform: "translateY(3rem)",
+    transition: "all 0.45s ease",
+    "& svg": {
+      height: "100%",
+      width: "100%",
+    }
+  }
   },
   "& h5": {
     fontWeight: 600,
@@ -166,19 +180,6 @@ const FeatureItem = styled.div({
       backgroundPosition: "center",
     }
   },
-  "& span": {
-    height: "2rem",
-    width: "2rem",
-    display: "flex",
-    alignItems: "center",
-    opacity: 0,
-    transform: "translateY(3rem)",
-    transition: "all 0.45s ease",
-    "& svg": {
-      height: "100%",
-      width: "100%",
-    }
-  }
 });
 
 const IconWrap = styled.div({
@@ -314,7 +315,7 @@ export default function Features() {
             </svg>
             Powerful Features</h3>
         </div>
-        <h2>Built for <span>Operational Excellence</span></h2>
+        <h2>Built for<br/><span>Operational Excellence</span></h2>
         <p>Purpose-built for shift-based, multi-location operations with transparent automation and real-time visibility</p>
         <FeatureList role="list" aria-label="Key features of SevaHR">
           <li>
@@ -389,21 +390,33 @@ export default function Features() {
 
           <li>
             <StatItem>
+            <div className="activity">
               <h4>5+</h4>
+              <span><ArrowIcon /></span>
+              </div>
               <p>Core Modules</p>
             </StatItem>
             <StatItem>
+            <div className="activity">
               <h4>Cloud</h4>
+              <span><ArrowIcon /></span>
+              </div>
               <p>Based Platform</p>
             </StatItem>
           </li>
           <li>
             <StatItem>
+            <div className="activity">
               <h4>20+</h4>
+              <span><ArrowIcon /></span>
+              </div>
               <p>Smart Features</p>
             </StatItem>
             <StatItem>
+            <div className="activity">
               <h4>99.9%</h4>
+              <span><ArrowIcon /></span>
+              </div>
               <p>System Uptime</p>
             </StatItem>
           </li>

@@ -131,6 +131,7 @@ const Section = styled.section({
       WebkitTextFillColor: 'transparent',
       backgroundClip: 'text',
       color: 'transparent',
+      display:"inline-block"
     }
   },
 
@@ -300,7 +301,7 @@ export default function Worktype() {
               <span>Simple Process</span>
             </Badge>
           </div>
-          <h2>How <span>SEVA HRMS Works</span></h2>
+          <h2>How<br/><span>SEVA HRMS Works</span></h2>
           <Subtitle>Three simple steps to transform your workforce management from chaos to control</Subtitle>
           <CardGrid role="list" aria-label="Three step process for SEVA HRMS">
             {featureData.map((item, index) => {

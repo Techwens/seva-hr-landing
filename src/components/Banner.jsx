@@ -287,12 +287,12 @@ export default function Banner() {
             </SecondaryButton>
           </ButtonGroup>
         </Wrapper>
-        <BannerLeftImage>
+        {/* <BannerLeftImage>
           <Image src={BannerLeftImg} alt="HR dashboard showing employee attendance metrics" />
-        </BannerLeftImage>
-        <BannerRightImage>
+        </BannerLeftImage> */}
+        {/* <BannerRightImage>
           <Image src={BannerRightImg} alt="Payroll management interface with compliance features" />
-        </BannerRightImage>
+        </BannerRightImage> */}
 
       </div>
     </Section>

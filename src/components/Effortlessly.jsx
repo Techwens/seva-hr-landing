@@ -97,7 +97,7 @@ const Title = styled.h2({
   fontWeight: 800,
   lineHeight: 1.2,
   marginBlockEnd: "1rem",
-  background: 'linear-gradient(73.29deg, #9300AD 18.02%, #00BBFF 83.69%)',
+  background: 'linear-gradient(90deg, #FF6600 0%, #7B60FF 80.8%)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',

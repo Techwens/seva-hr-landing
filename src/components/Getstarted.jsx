@@ -5,7 +5,7 @@ import styled from "styled-components"
 const Section = styled.section({
   position: "relative",
   overflow: "hidden",
-  marginBlockStart: "-1.5rem",
+
   "& h3": {
     fontWeight: 600,
     lineHeight: 1.3,
@@ -27,6 +27,7 @@ const Section = styled.section({
 const WaveSeparator = styled.div({
   position: "relative",
   height: "6rem",
+  background: "#f2f5ff",
   "&::after": {
     content: '""',
     position: "absolute",
@@ -35,7 +36,7 @@ const WaveSeparator = styled.div({
     right: 0,
     height: "100%",
     background: "#0F172A",
-    clipPath: "ellipse(70% 100% at 50% 100%)",
+    clipPath: "ellipse(60% 110% at 50% 130%)",
   },
   "@media (max-width: 767px)": {
     height: "4rem",
@@ -196,16 +197,8 @@ const StepNumber = styled.div({
   color: "#fff",
   marginBlockEnd: "1rem",
   position: "relative",
-  boxShadow: "0 10px 30px rgba(71, 111, 255, 0.3)",
-  "&::after": {
-    content: '""',
-    position: "absolute",
-    inset: "-3px",
-    borderRadius: "inherit",
-    background: "linear-gradient(135deg, rgba(71, 111, 255, 0.5) 0%, rgba(123, 96, 255, 0.5) 100%)",
-    zIndex: -1,
-    filter: "blur(8px)",
-  },
+  boxShadow: "0 10px 20px rgba(71, 111, 255, 0.3)",
+
 });
 
 const StepTitle = styled.h4({
@@ -297,22 +290,7 @@ const TrustText = styled.p({
   },
 });
 
-// Bottom wave
-const WaveBottom = styled.div({
-  position: "relative",
-  height: "4rem",
-  background: "#F8FAFC",
-  "&::before": {
-    content: '""',
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    height: "100%",
-    background: "#0F172A",
-    clipPath: "ellipse(70% 100% at 50% 0%)",
-  },
-});
+
 const SparkleIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="url(#sparkleGrad)" />
@@ -523,7 +501,6 @@ export default function Getstarted() {
         </div>
       </MainContent>
 
-      <WaveBottom />
     </Section>
   )
 }
