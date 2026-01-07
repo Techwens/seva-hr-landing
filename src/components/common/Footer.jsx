@@ -3,9 +3,10 @@ import React from "react"
 import styled from "styled-components"
 import Image from "next/image"
 import Link from "next/link"
-import WhiteBrandIcon from "../../assets/white-brand-icon.svg";
+// import WhiteBrandIcon from "../../assets/white-brand-icon.svg";
 import WhiteCallIcon from "../../assets/white-call-icon.svg";
 import WhiteEmailIcon from "../../assets/white-email-icon.svg";
+import WhiteBrandIcon from "@/assets/svg/WhiteBrandIcon"
 
 // Social media icons
 const LinkedInIcon = () => (
@@ -110,7 +111,7 @@ const Logo = styled.div({
   width: "auto",
   display: "flex",
   alignItems: "center",
-  "& img": {
+  "& svg": {
     height: "100%",
     width: "auto",
     objectFit: "contain",
@@ -226,7 +227,8 @@ const Footer = () => {
         <FooterList>
           <li className="col-brand">
             <Logo>
-              <Image src={WhiteBrandIcon} alt="icon" />
+              {/* <Image src={WhiteBrandIcon} alt="icon" /> */}
+              <WhiteBrandIcon/>
             </Logo>
             <p>
               Modern HRMS built for Indian businesses. Clean, customizable, and
