@@ -94,8 +94,8 @@ const Title = styled.h2({
   lineHeight: 1.15,
   marginBlockEnd: "1rem",
   "& span": {
-    display: "block",
-    background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 50%, #FF6600 100%)",
+    display: "inline-block",
+    background: 'linear-gradient(90deg, #FF6600 0%, #7B60FF 80.8%)',
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     backgroundClip: "text",
@@ -476,18 +476,7 @@ const TrustIcon = styled.div({
   },
 })
 
-const TrustText = styled.div({
-  "& p": {
-    margin: 0,
-    fontSize: "1rem",
-    fontWeight: 700,
-    color: "#1a1a1a",
-  },
-  "& span": {
-    fontSize: "0.75rem",
-    color: "#64748B",
-  },
-})
+
 
 const securityFeatures = [
   {
@@ -563,7 +552,7 @@ export default function Security() {
             <span>Enterprise-Grade Security</span>
           </Badge>
           <Title>
-            Your Data. Fully Protected.
+            Your Data. Fully Protected.<br/>
             <span>Fully Encrypted. Fully Compliant.</span>
           </Title>
           <Subtitle>

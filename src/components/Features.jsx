@@ -26,33 +26,9 @@ const ArrowIcon = () => (
 const Section = styled.section({
   paddingBlock: "4rem",
   background: "#F8FAFC",
-
   "& .centerized": {
     display: "flex",
     justifyContent: "center",
-  },
-  "& h3": {
-    display: "inline-flex",
-    alignItems: "center",
-    gap: "0.5rem",
-    padding: "0.625rem 1.25rem",
-    borderRadius: "3rem",
-    background: "linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)",
-    border: "1px solid rgba(71, 111, 255, 0.15)",
-    marginBlockEnd: "1.5rem",
-    boxShadow: "0 4px 15px rgba(71, 111, 255, 0.08)",
-    "& svg": {
-      width: "1.125rem",
-      height: "1.125rem",
-    },
-    "& span": {
-      fontSize: "0.875rem",
-      fontWeight: 600,
-      background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      display:"inline-block"
-    },
   },
   "& h2": {
     textAlign: 'center',
@@ -72,6 +48,28 @@ const Section = styled.section({
     textAlign: "center",
   }
 });
+const Badge = styled.h3({
+  display: "inline-flex",
+  alignItems: "center",
+  gap: "0.5rem",
+  padding: "0.625rem 1.25rem",
+  borderRadius: "3rem",
+  background: "linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)",
+  border: "1px solid rgba(71, 111, 255, 0.15)",
+  marginBlockEnd: "1.5rem",
+  boxShadow: "0 4px 15px rgba(71, 111, 255, 0.08)",
+  "& svg": {
+    width: "1.125rem",
+    height: "1.125rem",
+  },
+  "& span": {
+    fontSize: "0.875rem",
+    fontWeight: 600,
+    background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  },
+})
 
 
 const FeatureList = styled.ul({
@@ -309,11 +307,13 @@ export default function Features() {
     <Section>
       <div className="container">
         <div className="centerized">
-          <h3>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#476FFF">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-            </svg>
-            Powerful Features</h3>
+
+                <Badge>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#476FFF">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+              <span>Powerful Features</span>
+            </Badge>
         </div>
         <h2>Built for<br/><span>Operational Excellence</span></h2>
         <p>Purpose-built for shift-based, multi-location operations with transparent automation and real-time visibility</p>

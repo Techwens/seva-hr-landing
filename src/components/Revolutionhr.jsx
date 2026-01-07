@@ -72,14 +72,11 @@ const Left = styled.div({
     fontWeight: 700,
     lineHeight: 1.2,
     marginBlock: "1rem 1.25rem",
-    color: "#fff",
-    "& span": {
-      background: "linear-gradient(90deg, #60A5FA 0%, #A78BFA 50%, #F472B6 100%)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      backgroundClip: "text",
-      color: "transparent",
-    },
+    background: 'linear-gradient(90deg, #FF6600 0%, #7B60FF 80.8%)',
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    backgroundClip: "text",
+    color: "transparent",
   },
   "& p": {
     color: "rgba(255, 255, 255, 0.7)",
@@ -221,7 +218,7 @@ export default function Revolutionhr() {
               We are Seva HR
             </h3>
             <h2>
-              <span>Revolutionize Your HR Management</span>
+              Revolutionize Your HR Management
             </h2>
             <p>
               Complete workforce management solution built for complex
