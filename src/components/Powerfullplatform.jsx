@@ -1,14 +1,14 @@
 "use client"
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
-import Power1 from "../assets/power1.svg"
-import Power2 from "../assets/power2.svg"
-import Power3 from "../assets/power3.svg"
-import Power4 from "../assets/power4.svg"
-import Power5 from "../assets/power5.svg"
-import Power6 from "../assets/power6.svg"
-import Image from "next/image"
-import bojroBidduyt from "../assets/bojro-bidduyt.svg"
+import Power1 from "../assets/svg/powerfullplatformIcon1"
+import Power2 from "../assets/svg/powerfullplatformIcon2"
+import Power3 from "../assets/svg/powerfullplatformIcon3"
+import Power4 from "../assets/svg/powerfullplatformIcon4"
+import Power5 from "../assets/svg/powerfullplatformIcon5"
+import Power6 from "../assets/svg/powerfullplatformIcon6"
+
+
 
 
 const Section = styled.section({
@@ -70,7 +70,6 @@ const SectionRow = styled.div({
     flexDirection: "column",
   },
 });
-
 const Left = styled.div({
   width: "60%",
   opacity: 0,
@@ -139,7 +138,7 @@ const Left = styled.div({
           display: "flex",
           alignItems: "start",
           transition: "all 0.4s ease",
-          "& img": {
+          "& svg": {
             height: "100%",
             width: "100%",
             transition: "all 0.4s ease",
@@ -230,7 +229,6 @@ const Buttonwrap = styled.div({
   alignItems: "center",
 
 });
-
 const CtaButton = styled.button({
   position: "relative",
   overflow: "hidden",
@@ -267,7 +265,6 @@ const CtaButton = styled.button({
     zIndex: 1,
   },
 });
-
 const GetStartButton = styled.button({
   padding: "1rem",
   borderRadius: "1.125rem",
@@ -309,8 +306,6 @@ export default function Powerfullplatform() {
           entry.target
             .querySelectorAll(".animate")
             .forEach(el => el.classList.add("in-view"));
-
-
         }
       },
       { threshold: 0.3 }
@@ -326,32 +321,32 @@ export default function Powerfullplatform() {
     {
       title: "One Smart Shift Management",
       description: "Manual shift registers causing errors",
-      icon: Power1
+      icon: <Power1 />
     },
     {
       title: "Zero Overtime Disputes",
       description: "Salary mismatches creating conflicts",
-      icon: Power2
+      icon: <Power2 />
     },
     {
       title: "Real-Time accuracy",
       description: "No idea where workers are",
-      icon: Power3
+      icon: <Power3 />
     },
     {
       title: "Multi-Branch Control",
       description: "Scattered workforce across locations",
-      icon: Power4
+      icon: <Power4 />
     },
     {
       title: "60% Less HR Work For you",
       description: "Drowning in manual paperwork",
-      icon: Power5
+      icon: <Power5 />
     },
     {
       title: "Compliance on Autopilot",
       description: "Government filing stress & penalties",
-      icon: Power6
+      icon: <Power6 />
     },
   ]
 
@@ -376,7 +371,8 @@ export default function Powerfullplatform() {
                 <li key={index}>
                   <div>
                     <span>
-                      <Image src={item?.icon} alt="icon" />
+                      {/* <Image src={item?.icon} alt="icon" /> */}
+                      {item?.icon}
                     </span>
                     <h4 className="bold">{item?.title}</h4>
                   </div>
