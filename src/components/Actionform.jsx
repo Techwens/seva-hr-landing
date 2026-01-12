@@ -2,11 +2,14 @@
 import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 import Image from "next/image"
-import RoadMap from "../assets/roadmap.svg"
-import WebinarPlay from "../assets/webinar-play.svg"
-import cirtificate from "../assets/Vector.svg"
+// import RoadMap from "../assets/roadmap.svg"
+// import WebinarPlay from "../assets/webinar-play.svg"
+// import cirtificate from "../assets/Vector.svg"
 import packlock from "../assets/padlock-check 2.svg"
-import SparkleBg from "../assets/sparkle.svg"
+// import SparkleBg from "../assets/sparkle.svg"
+import WebinarPlay from "@/assets/svg/WebinarPlay"
+import RoadMap from "@/assets/svg/RoadMap"
+import Cirtificate from "@/assets/svg/Cirtificate"
 
 const employeeRanges = [
   { value: "", label: "Select Range" },
@@ -23,22 +26,22 @@ const securityData = [
   {
     title: "Personalised Demo",
     desc: "Custom walkthrough tailored to your specific industry requirements",
-    icon: WebinarPlay,
+    icon: <WebinarPlay/>,
   },
   {
     title: "Implementation Roadmap",
     desc: "Clear timeline and step-by-step migration strategy for seamless onboarding",
-    icon: RoadMap,
+    icon: <RoadMap/>,
   },
   {
     title: "ROI Analysis",
     desc: "See exactly how much time and money you'll save with detailed projections",
-    icon: cirtificate,
+    icon: <Cirtificate/>,
   },
   {
     title: "Free Trial",
     desc: "No credit card required — start exploring with zero commitment",
-    icon: cirtificate,
+    icon: <Cirtificate/>,
   },
 ]
 
@@ -473,7 +476,8 @@ export default function Actionform() {
                 <li key={index}>
                   <HeaderRow className="HeaderRow">
                     <div>
-                      <Image src={item?.icon} alt="" aria-hidden="true" width={100} height={100} />
+                      {/* <Image src={item?.icon} alt="" aria-hidden="true" width={100} height={100} /> */}
+                      {item?.icon}
                     </div>
                     <h4>{item?.title}</h4>
                   </HeaderRow>
