@@ -12,17 +12,17 @@ export const GlobalStyle = createGlobalStyle`
   @keyframes ringWave {
     0% {
       transform: translate(-50%, -50%) scale(0.12);
-      opacity: 0;
-    }
-    15% {
       opacity: 1;
     }
+    15% {
+      opacity: 0.7;
+    }
     50% {
-      opacity: 0.6;
+      opacity: 0.4;
     }
     100% {
       transform: translate(-50%, -50%) scale(1);
-      opacity: 0;
+      opacity: 0.2;
     }
   }
 `;
@@ -56,10 +56,10 @@ const AnimatedRing = styled.div(({ $delay, $opacity }) => ({
   transform: "translate(-50%, -50%) scale(0.15)",
   border: "0.088rem solid rgba(170, 210, 255, 0.55)",
   boxShadow: `
-    0 0 6px rgba(120, 180, 255, 0.12),
-    0 0 14px rgba(140, 120, 255, 0.10),
-    0 0 26px rgba(180, 120, 255, 0.08),
-    0 0 42px rgba(120, 255, 230, 0.06)
+      0 0 8px rgba(170, 210, 255, 0.10),
+    0 0 18px rgba(160, 180, 255, 0.08),
+    0 0 36px rgba(180, 200, 255, 0.06),
+    0 0 60px rgba(200, 240, 255, 0.05)
   `,
   opacity: $opacity,
   pointerEvents: "none",

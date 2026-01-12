@@ -144,6 +144,7 @@ const Left = styled.div({
           display: "flex",
           alignItems: "start",
           transition: "all 0.4s ease",
+          flex:"0 0 2.5rem",
           "& svg": {
             height: "100%",
             width: "100%",
