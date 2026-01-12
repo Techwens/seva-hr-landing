@@ -39,9 +39,10 @@ const SectionRow = styled.div({
     background: "radial-gradient(circle, rgba(123, 96, 255, 0.12) 0%, transparent 70%)",
     pointerEvents: "none",
   },
-  "@media (max-width: 991px)": {
+  "@media (max-width: 1199px)": {
     flexDirection: "column",
     padding: "2rem",
+    gap: "1.5rem",
   },
 })
 
@@ -49,7 +50,7 @@ const Left = styled.div({
   width: "35%",
   position: "relative",
   zIndex: 1,
-  "@media (max-width: 991px)": {
+  "@media (max-width: 1199px)": {
     width: "100%",
   },
   "& h3": {
@@ -89,7 +90,7 @@ const Right = styled.div({
   width: "65%",
   position: "relative",
   zIndex: 1,
-  "@media (max-width: 991px)": {
+  "@media (max-width: 1199px)": {
     width: "100%",
   },
 })

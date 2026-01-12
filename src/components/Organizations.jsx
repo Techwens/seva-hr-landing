@@ -11,9 +11,9 @@ const ContentWrapper = styled.div({
   alignItems: "center",
   justifyContent: "space-between",
   gap: "2rem",
-  "@media (max-width: 991px)": {
+  "@media (max-width: 1199px)": {
     flexDirection: "column",
-    gap: "2.5rem",
+    gap: "1.5rem",
   },
 })
 

@@ -31,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
 
 const Section = styled.section({
   position: "relative",
-  paddingBlock: "7rem 2rem",
+  paddingBlock: "8rem 2rem",
   overflow: "hidden",
 });
 

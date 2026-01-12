@@ -3,10 +3,13 @@ import React from "react"
 import styled from "styled-components"
 
 const Section = styled.section({
-  paddingBlock: "5rem 8rem",
+  paddingBlock: "3rem 5rem",
   position: "relative",
   overflow: "hidden",
   background: "linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 50%, #F0F4FF 100%)",
+  "@media (max-width: 1199px)": {
+        paddingBlock: "3rem",
+    },
   "&::before": {
     content: '""',
     position: "absolute",
@@ -119,6 +122,9 @@ const MainGrid = styled.div({
   gridTemplateColumns: "1.1fr 0.9fr",
   gap: "4rem",
   alignItems: "start",
+  "@media (max-width: 1199px)": {
+    gap: "2rem",
+  },
   "@media (max-width: 991px)": {
     gridTemplateColumns: "1fr",
     gap: "3rem",
@@ -283,6 +289,11 @@ const ShieldSection = styled.div({
   position: "relative",
   padding: "2rem",
   marginBlockEnd: "2rem",
+  maxWidth:"31.25rem",
+  marginInline:"auto",
+  "@media (max-width: 1199px)": {
+    marginBlockEnd: "0rem",
+  },
 })
 
 const ShieldVisual = styled.div({
@@ -356,7 +367,7 @@ const FloatingStat = styled.div(({ $top, $left, $right, $bottom }) => ({
   },
 }))
 
-// Compliance section - horizontal scroll feel
+
 const ComplianceSection = styled.div({
   background: "linear-gradient(135deg, #0F172A 0%, #1E293B 100%)",
   borderRadius: "1.5rem",
@@ -552,7 +563,7 @@ export default function Security() {
             <span>Enterprise-Grade Security</span>
           </Badge>
           <Title>
-            Your Data. Fully Protected.<br/>
+            Your Data. Fully Protected.<br />
             <span>Fully Encrypted. Fully Compliant.</span>
           </Title>
           <Subtitle>

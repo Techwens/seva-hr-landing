@@ -50,10 +50,10 @@ const ContentWrapper = styled.div({
   display: "grid",
   gridTemplateColumns: "1fr 1.1fr",
   gap: "4rem",
-  alignItems: "center",
+  alignItems: "flex-start",
   position: "relative",
   zIndex: 2,
-  "@media (max-width: 991px)": {
+  "@media (max-width: 575px)": {
     gridTemplateColumns: "1fr",
     gap: "2rem",
   },

@@ -24,7 +24,7 @@ const ArrowIcon = () => (
 );
 
 const Section = styled.section({
-  paddingBlock: "4rem",
+  paddingBlock: "3rem",
   background: "#F8FAFC",
   "& .centerized": {
     display: "flex",
@@ -81,11 +81,18 @@ const FeatureList = styled.ul({
   gap: "2rem",
   width: "100%",
   marginBlockStart: "2rem",
+  "@media (max-width: 1199px)": {
+    gap: "1rem",
+  },
   '& li': {
     width: "calc((100% - 6rem) / 4)",
     display: "flex",
     flexDirection: "column",
     gap: "2rem",
+    "@media (max-width: 1199px)": {
+      gap: "1rem",
+      width: "calc((100% - 3rem) / 4)",
+    },
     "@media (max-width: 991px)": {
       width: "calc((100% - 2rem) / 2)",
     },
@@ -110,25 +117,25 @@ const FeatureList = styled.ul({
       },
     },
     '& .activity': {
-    width: "100%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    "& span": {
-      height: "1.5rem",
-      width: "1.5rem",
+      width: "100%",
       display: "flex",
-      flex:"0 0 1.5",
       alignItems: "center",
-      opacity: 1  ,
-      // transform: "translateY(3rem)",
-      // transition: "all 0.45s ease",
-      "& svg": {
-        height: "100%",
-        width: "100%",
+      justifyContent: "space-between",
+      "& span": {
+        height: "1.5rem",
+        width: "1.5rem",
+        display: "flex",
+        flex: "0 0 1.5",
+        alignItems: "center",
+        opacity: 1,
+        // transform: "translateY(3rem)",
+        // transition: "all 0.45s ease",
+        "& svg": {
+          height: "100%",
+          width: "100%",
+        }
       }
-    }
-  },
+    },
   }
 });
 
@@ -139,6 +146,9 @@ const FeatureItem = styled.div({
   height: "100%",
   boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
   transition: "all 0.5s ease",
+  "@media (max-width: 1199px)": {
+    padding: "1rem",
+  },
   '& h4': {
     fontWeight: '700',
     marginBlockEnd: '0.5rem',
@@ -328,7 +338,7 @@ export default function Features() {
           <li>
             <FeatureItem className="FeatureItem">
               <IconWrap className="IconWrap">
-                <Watch/>
+                <Watch />
               </IconWrap>
               <h4>Smart Attendance & Productivity</h4>
               <p>Automated time tracking with intelligent shift management and real-time insights</p>
@@ -343,7 +353,7 @@ export default function Features() {
             <FeatureItem className="FeatureItem">
               <IconWrap className="IconWrap">
                 {/* <Image src={calculator} alt="" aria-hidden="true" /> */}
-                <Calculator/>
+                <Calculator />
               </IconWrap>
               <h4>Transparent Salary Calculation</h4>
               <p>Auto-computed payroll with audit-ready accuracy, eliminating disputes completely</p>
@@ -372,7 +382,7 @@ export default function Features() {
             <FeatureItem className="FeatureItem">
               <IconWrap className="IconWrap">
                 {/* <Image src={location} alt="" aria-hidden="true" /> */}
-                <Location/>
+                <Location />
               </IconWrap>
               <h4>Geo-Fencing & Live Tracking</h4>
               <p>Location-verified attendance with live workforce visibility for on-site accountability</p>
@@ -387,7 +397,7 @@ export default function Features() {
             <FeatureItem className="FeatureItem">
               <IconWrap className="IconWrap">
                 {/* <Image src={privacy} alt="" aria-hidden="true" /> */}
-                <Privacy/>
+                <Privacy />
               </IconWrap>
               <h4>100% Compliance Automation</h4>
               <p>EPF, ESI, PT, LWF, TDS fully auto-generated with state-wise accuracy</p>

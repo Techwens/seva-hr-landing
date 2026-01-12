@@ -146,7 +146,7 @@ const StepsTrack = styled.div({
   justifyContent: "center",
   gap: "1rem",
   position: "relative",
-  "@media (max-width: 991px)": {
+  "@media (max-width: 575px)": {
     flexDirection: "column",
     alignItems: "center",
     gap: "2rem",
@@ -169,6 +169,9 @@ const StepCard = styled.div(({ $delay }) => ({
   transition: "all 0.4s ease",
   position: "relative",
   animation: `stepPulse 3s ease-in-out ${$delay || "0s"} infinite`,
+  "@media (max-width: 1199px)": {
+
+  },
   "@keyframes stepPulse": {
     "0%, 100%": { boxShadow: "0 0 0 0 rgba(71, 111, 255, 0)" },
     "50%": { boxShadow: "0 0 30px 5px rgba(71, 111, 255, 0.1)" },
@@ -178,7 +181,7 @@ const StepCard = styled.div(({ $delay }) => ({
     borderColor: "rgba(71, 111, 255, 0.3)",
     transform: "translateY(-0.5rem)",
   },
-  "@media (max-width: 991px)": {
+  "@media (max-width: 767px)": {
     width: "100%",
     maxWidth: "20rem",
   },
@@ -198,7 +201,11 @@ const StepNumber = styled.div({
   marginBlockEnd: "1rem",
   position: "relative",
   boxShadow: "0 10px 20px rgba(71, 111, 255, 0.3)",
+  "@media (max-width: 1199px)": {
+    width: "3.25rem",
+    height: "3.25rem",
 
+  },
 });
 
 const StepTitle = styled.h4({
@@ -305,10 +312,10 @@ const SparkleIcon = () => (
 
 const RightSection = styled.div({
   display: "flex",
-  alignItems: "center", 
-  justifyContent:"center",
+  alignItems: "center",
+  justifyContent: "center",
   gap: "1rem",
-  marginBlockStart:"2rem",
+  marginBlockStart: "2rem",
 })
 
 const IndustryLabel = styled.span({
@@ -337,9 +344,9 @@ const IndustryTag = styled.div({
     borderColor: "rgba(71, 111, 255, 0.3)",
     background: "#F8FAFC",
     transform: "translateY(-1px)",
-  "& span":{
-      color:"#000",
-  }
+    "& span": {
+      color: "#000",
+    }
   },
   "& svg": {
     width: "1.125rem",
@@ -350,7 +357,7 @@ const IndustryTag = styled.div({
     fontSize: "0.813rem",
     fontWeight: 500,
     color: "rgba(255, 255, 255, 0.6);",
-    pointerEvents:"none",
+    pointerEvents: "none",
   },
 })
 

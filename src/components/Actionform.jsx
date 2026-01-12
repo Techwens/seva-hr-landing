@@ -26,22 +26,22 @@ const securityData = [
   {
     title: "Personalised Demo",
     desc: "Custom walkthrough tailored to your specific industry requirements",
-    icon: <WebinarPlay/>,
+    icon: <WebinarPlay />,
   },
   {
     title: "Implementation Roadmap",
     desc: "Clear timeline and step-by-step migration strategy for seamless onboarding",
-    icon: <RoadMap/>,
+    icon: <RoadMap />,
   },
   {
     title: "ROI Analysis",
     desc: "See exactly how much time and money you'll save with detailed projections",
-    icon: <Cirtificate/>,
+    icon: <Cirtificate />,
   },
   {
     title: "Free Trial",
     desc: "No credit card required — start exploring with zero commitment",
-    icon: <Cirtificate/>,
+    icon: <Cirtificate />,
   },
 ]
 
@@ -74,7 +74,7 @@ const Section = styled.section({
       WebkitTextFillColor: 'transparent',
       backgroundClip: 'text',
       color: 'transparent',
-      display:"inline-block",
+      display: "inline-block",
     }
   },
 
@@ -115,7 +115,7 @@ const SectionRow = styled.div({
   justifyContent: "space-between",
   marginBlockStart: "2.625rem",
   overflow: "hidden",
-  "@media (max-width: 991px)": {
+  "@media (max-width: 767px)": {
     flexDirection: "column",
   },
 });
@@ -126,6 +126,9 @@ const Left = styled.div({
   transform: "translateX(-3rem)",
   transition: "all 0.8s ease",
   "@media (max-width: 991px)": {
+    width: "40%",
+  },
+  "@media (max-width: 575px)": {
     width: "100%",
   },
   "&.in-view": {
@@ -141,6 +144,9 @@ const CardList = styled.ul({
   display: "flex",
   flexDirection: "column",
   gap: "2rem",
+  "@media (max-width: 1199px)": {
+    gap: "0.875rem",
+  },
   "& li": {
     padding: "1.25rem 1.5rem",
     borderRadius: "1.25rem",
@@ -151,6 +157,9 @@ const CardList = styled.ul({
     flexDirection: "column",
     gap: ".5rem",
     transition: "background 0.4s ease",
+    "@media (max-width: 991px)": {
+    padding: "0.563rem 0.75rem",
+    },
     "& p": {
       textAlign: "start",
       transition: "all 0.4s ease",
@@ -200,10 +209,13 @@ const HeaderRow = styled.div({
 export const Right = styled.div({
   width: "50%",
   opacity: 0,
-  padding: "2rem",
+  paddingInlineStart: "2rem",
   transform: "translateX(3rem)",
   transition: "all 0.8s ease",
   "@media (max-width: 991px)": {
+    width: "60%",
+  },
+  "@media (max-width: 575px)": {
     width: "100%",
   },
   "&.in-view": {
@@ -467,7 +479,7 @@ export default function Actionform() {
             <span>Get Started Now</span>
           </Badge>
         </div>
-        <h2>See<br/><span>SEVA HRMS in Action</span></h2>
+        <h2>See<br /><span>SEVA HRMS in Action</span></h2>
         <Subtitle>Book your personalized demo and discover how SEVA HRMS handles your industry&apos;s unique workforce challenges</Subtitle>
         <SectionRow ref={sectionRef}>
           <Left className="animate">

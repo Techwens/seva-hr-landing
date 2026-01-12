@@ -174,6 +174,9 @@ const SectionRow = styled.div({
   boxShadow: "0px 4px 36px 0px #0000001A",
   background: "#fff",
   padding: "2rem 4rem",
+  "@media (max-width: 991px)": {
+    padding: "2rem",
+  },
 });
 
 
@@ -185,6 +188,9 @@ export const CardGrid = styled.ul({
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
   gap: "3.125rem",
+  "@media (max-width: 1199px)": {
+      gap: "1rem",
+  },
   "@media (max-width: 575px)": {
     gridTemplateColumns: "1fr",
   },

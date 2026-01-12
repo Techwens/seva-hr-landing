@@ -32,7 +32,7 @@ const Section = styled.section({
       WebkitTextFillColor: 'transparent',
       backgroundClip: 'text',
       color: 'transparent',
-      display:"inline-block"
+      display: "inline-block"
     }
   },
 });
@@ -42,7 +42,7 @@ const Subtitle = styled.p({
   maxWidth: "38rem",
   margin: "0 auto",
   lineHeight: 1.7,
-  textAlign:"center",
+  textAlign: "center",
 });
 const Badge = styled.h3({
   display: "inline-flex",
@@ -103,6 +103,9 @@ const Left = styled.div({
       borderRadius: "1.188rem",
       overflow: "hidden",
       padding: "1.875rem 1.563rem",
+      "@media (max-width: 1199px)": {
+        padding: "1.875rem 0.875rem",
+      },
       '&:after': {
         content: "''",
         position: 'absolute',
@@ -130,7 +133,7 @@ const Left = styled.div({
         transition: "all 0.4s ease",
       },
       "&:hover::before": {
-        display:"none",
+        display: "none",
       },
       "& div": {
         position: "relative",
@@ -144,7 +147,7 @@ const Left = styled.div({
           display: "flex",
           alignItems: "start",
           transition: "all 0.4s ease",
-          flex:"0 0 2.5rem",
+          flex: "0 0 2.5rem",
           "& svg": {
             height: "100%",
             width: "100%",
@@ -369,7 +372,7 @@ export default function Powerfullplatform() {
             <span>Powerful Feature</span>
           </Badge>
         </div>
-        <h2>Everything You Need in<br/><span>One Powerful Platform</span></h2>
+        <h2>Everything You Need in<br /><span>One Powerful Platform</span></h2>
         <Subtitle>One unified platform for HR, Attendance, Payroll, Compliance, and Analytics — built for complex shift-based operations across all industries.</Subtitle>
         <SectionRow ref={sectionRef}>
           <Left className="animate">
