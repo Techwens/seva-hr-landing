@@ -26,6 +26,14 @@ export const metadata = {
   description: "Simplify HR, Attendance, Payroll & Compliance with SevaHR. A powerful, user-friendly HRMS built for shift-based operations across all industries in India.",
   keywords: ["HRMS", "HR software", "payroll", "attendance management", "compliance", "Indian HR", "employee management"],
   authors: [{ name: "SevaHR" }],
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
