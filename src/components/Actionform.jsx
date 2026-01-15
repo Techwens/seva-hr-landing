@@ -48,6 +48,9 @@ const securityData = [
 const Section = styled.section({
   paddingBlock: "3.5rem",
   position: "relative",
+    "@media (max-width: 991px)": {
+  paddingBlock: "2rem",
+  },
   "&::after": {
     content: '""',
     width: '40vw',
@@ -87,7 +90,7 @@ const Badge = styled.h3({
   background: "linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)",
   border: "1px solid rgba(71, 111, 255, 0.15)",
   boxShadow: "0 4px 15px rgba(71, 111, 255, 0.08)",
-    "@media (max-width: 991px)": {
+  "@media (max-width: 991px)": {
     padding: "0.5rem 0.9rem",
   },
   "& svg": {
@@ -157,7 +160,7 @@ const CardList = styled.ul({
     gap: ".5rem",
     transition: "background 0.4s ease",
     "@media (max-width: 991px)": {
-    padding: "0.563rem 0.75rem",
+      padding: "0.563rem 0.75rem",
     },
     "& p": {
       textAlign: "start",
@@ -228,16 +231,20 @@ export const FormCard = styled.div({
   background: "#fff",
   borderRadius: "1.5rem",
   padding: "2.5rem",
-  boxShadow: "0px 10px 40px rgba(0,0,0,0.06)",
-
+  boxShadow: "-4px 4px 12px rgba(0,0,0,0.06)",
+  "@media (max-width: 991px)": {
+  padding: "1.5rem",
+  },
   "& h4": {
     fontSize: "1.75rem",
     fontWeight: 700,
     marginBottom: "0.5rem",
+    "@media (max-width: 1199px)": {
+    marginBottom: "0rem",
+  },
   },
 
   "& p": {
-    fontSize: "0.95rem",
     marginBottom: "2rem",
     textAlign: "start",
   },
@@ -248,10 +255,9 @@ export const FormCard = styled.div({
 });
 
 export const FormGrid = styled.div({
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  gap: "1rem",
-
+  display: "flex",
+  justifyContent: "space-between",
+  flexWrap:"wrap",
   "@media (max-width: 768px)": {
     gridTemplateColumns: "1fr",
   },
@@ -261,7 +267,9 @@ export const FormGroup = styled.div(({ $hasError }) => ({
   display: "flex",
   flexDirection: "column",
   gap: "0.5rem",
-
+  width: "48%",
+  position:"relative",
+  marginBlockEnd:"1.75rem",
   "& label": {
     fontSize: "0.875rem",
     fontWeight: 500,
@@ -277,6 +285,10 @@ export const FormGroup = styled.div(({ $hasError }) => ({
     outline: "none",
     background: $hasError ? "#FEF2F2" : "#fafafa",
     transition: "all .25s ease",
+      "@media (max-width: 991px)": {
+        height: "2.625rem",
+         borderRadius:"0.75rem",
+      },
     "&:focus": {
       borderColor: $hasError ? "#EF4444" : "#476FFF",
       background: "#fff",
@@ -295,6 +307,10 @@ export const FormGroup = styled.div(({ $hasError }) => ({
 }));
 
 export const ErrorText = styled.span({
+  position:"absolute",
+  width:"100%",
+  left:"0",
+  bottom:"-1.2rem",
   fontSize: "0.75rem",
   color: "#EF4444",
   marginTop: "-0.25rem",
@@ -321,12 +337,14 @@ export const SuccessMessage = styled.div({
 export const ButtonWrap = styled.div({
   display: "flex",
   alignItems: "flex-end",
+  width:"48%",
+  marginBlockEnd:"1.75rem",
   "@media (max-width: 768px)": {
     marginTop: "0.5rem",
   },
   "& button": {
     width: "100%",
-    height: "3.5rem",
+    height: "3.25rem",
     borderRadius: "1.125rem",
     border: "none",
     fontSize: "1rem",
@@ -335,6 +353,12 @@ export const ButtonWrap = styled.div({
     color: "#fff",
     background: "linear-gradient(90deg, #FF6600 0%, #7B60FF 106.8%)",
     transition: "all .3s ease",
+      "@media (max-width: 991px)": {
+      fontSize: "0.875rem",
+        height: "2.625rem",
+        borderRadius:"0.75rem",
+
+    },
     "&:hover": {
       transform: "translateY(-2px)",
       boxShadow: "0px 10px 25px rgba(127,63,255,0.35)",
@@ -350,6 +374,9 @@ export const PrivacyText = styled.div({
   display: "flex",
   alignItems: "center",
   gap: "0.5rem",
+    "@media (max-width: 991px)": {
+  marginTop: "0.5rem",
+  },
   "& div": {
     height: "1.5rem",
     width: "1.5rem",

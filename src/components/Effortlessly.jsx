@@ -14,12 +14,12 @@ const CheckIcon = () => (
 );
 
 const Section = styled.section({
-  paddingBlock: "6rem",
+  paddingBlock: "3.5rem",
   position: "relative",
   background: "linear-gradient(135deg, #FAFBFF 0%, #F0F4FF 50%, #FFF5F0 100%)",
   overflow: "hidden",
   "@media (max-width: 991px)": {
-    paddingBlock: "3rem",
+    paddingBlock: "2rem",
   },
 });
 
@@ -47,22 +47,25 @@ const FloatingShape = styled.div(({ $top, $left, $right, $size, $color, $delay }
 }));
 
 const ContentWrapper = styled.div({
-  display: "grid",
-  gridTemplateColumns: "1fr 1.1fr",
+  display: "flex",
+  flexWrap:"wrap",
   gap: "4rem",
   alignItems: "flex-start",
   position: "relative",
   zIndex: 2,
-  "@media (max-width: 575px)": {
-    gridTemplateColumns: "1fr",
-    gap: "2rem",
+  "@media (max-width: 991px)": {
+    gap: "1rem",
   },
 });
 
 const LeftContent = styled.div({
+  width:"calc(50% - 2rem)",
   opacity: 0,
   transform: "translateX(-2rem)",
   transition: "all 0.8s ease",
+  "@media (max-width: 991px)": {
+    width:"calc(60% - 1rem)",
+  },
   "&.in-view": {
     opacity: 1,
     transform: "translateX(0)",
@@ -78,7 +81,7 @@ const Badge = styled.h3({
   background: "linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)",
   border: "1px solid rgba(71, 111, 255, 0.15)",
   boxShadow: "0 4px 15px rgba(71, 111, 255, 0.08)",
-    "@media (max-width: 991px)": {
+  "@media (max-width: 991px)": {
     padding: "0.5rem 0.9rem",
   },
   "& svg": {
@@ -100,13 +103,18 @@ const Title = styled.h2({
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
+  "@media (max-width: 991px)": {
+    fontSize: "1.8rem",
+  }
 });
 
 const Subtitle = styled.h3({
   fontSize: "1.25rem",
   fontWeight: 600,
-  marginBlockEnd: "0.75rem",
   color: "#1a1a1a",
+  "@media (max-width: 991px)": {
+    fontSize: "1rem",
+  },
   "& span": {
     background: 'linear-gradient(73.29deg, #9300AD 18.02%, #00BBFF 83.69%)',
     WebkitBackgroundClip: 'text',
@@ -116,10 +124,7 @@ const Subtitle = styled.h3({
 });
 
 const Description = styled.p({
-  fontSize: "1rem",
-  lineHeight: 1.7,
   color: "#64748B",
-  marginBlockEnd: "1.5rem",
   textAlign: "start",
 });
 
@@ -130,6 +135,10 @@ const BenefitsList = styled.ul({
   display: "flex",
   flexDirection: "column",
   gap: "0.75rem",
+  "@media (max-width: 991px)": {
+    gap: "0.35rem",
+    margin: "0 0 0.75rem 0",
+  },
 });
 
 const BenefitItem = styled.li({
@@ -144,6 +153,10 @@ const BenefitItem = styled.li({
   borderRadius: "0.75rem",
   backdropFilter: "blur(0.5rem)",
   transition: "all 0.3s ease",
+  "@media (max-width: 991px)": {
+    padding: "0.5rem 0.75rem",
+    fontSize: "0.875rem",
+  },
   "&:hover": {
     background: "#fff",
     boxShadow: "0 4px 20px rgba(71, 111, 255, 0.1)",
@@ -177,6 +190,12 @@ const CtaButton = styled.button({
   background: "linear-gradient(151.19deg, #476FFF 1.77%, #4600B6 71.94%)",
   transition: "all 0.4s ease",
   boxShadow: "0 4px 20px rgba(71, 111, 255, 0.3)",
+  "@media (max-width: 991px)": {
+    padding: "0.75rem",
+    fontSize: "0.875rem",
+    borderRadius: "0.65rem",
+    fontSize: "0.875rem",
+  },
   "&::after": {
     content: '""',
     position: "absolute",
@@ -202,10 +221,14 @@ const CtaButton = styled.button({
 
 // Right side with offset image
 const RightContent = styled.div({
+  width:"calc(50% - 2rem)",
   position: "relative",
   opacity: 0,
   transform: "translateX(2rem)",
   transition: "all 0.8s ease 0.2s",
+    "@media (max-width: 991px)": {
+    width:"calc(40% - 1rem)",
+  },
   "&.in-view": {
     opacity: 1,
     transform: "translateX(0)",

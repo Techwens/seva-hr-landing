@@ -187,6 +187,12 @@ const PrimaryButton = styled.button({
   alignItems: "center",
   gap: "0.5rem",
   background: "linear-gradient(151deg, #476FFF, #4600B6)",
+  "@media (max-width: 991px)": {
+    fontSize: "0.875rem",
+    height: "2.625rem",
+    borderRadius: "0.75rem",
+
+  },
   color: "#fff",
   fontSize: "1rem",
   fontWeight: 700,
@@ -220,6 +226,12 @@ const SecondaryButton = styled.button({
   fontWeight: 700,
   cursor: "pointer",
   transition: "all .3s ease",
+  "@media (max-width: 991px)": {
+    fontSize: "0.875rem",
+    height: "2.625rem",
+    borderRadius: "0.75rem",
+
+  },
   "& span": {
     height: "0.875rem",
     width: "0.875rem",

@@ -8,8 +8,8 @@ const Section = styled.section({
   overflow: "hidden",
   background: "linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 50%, #F0F4FF 100%)",
   "@media (max-width: 1199px)": {
-      paddingBlock: "3rem",
-    },
+    paddingBlock: "3rem",
+  },
   "&::before": {
     content: '""',
     position: "absolute",
@@ -76,7 +76,7 @@ const Badge = styled.h3({
   background: "linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)",
   border: "1px solid rgba(71, 111, 255, 0.15)",
   boxShadow: "0 4px 15px rgba(71, 111, 255, 0.08)",
-    "@media (max-width: 991px)": {
+  "@media (max-width: 991px)": {
     padding: "0.5rem 0.9rem",
   },
   "& svg": {
@@ -185,6 +185,10 @@ const FeatureStack = styled.div({
   display: "flex",
   flexDirection: "column",
   gap: "1rem",
+  "@media (max-width: 991px)": {
+    gap: "0.5rem",
+
+  },
 })
 
 const FeatureCard = styled.div(({ $offset }) => ({
@@ -199,6 +203,9 @@ const FeatureCard = styled.div(({ $offset }) => ({
   marginLeft: $offset || "0",
   transition: "all 0.4s ease",
   position: "relative",
+  "@media (max-width: 991px)": {
+    padding: "0.75rem 1rem ",
+  },
   "&::before": {
     content: '""',
     position: "absolute",
@@ -233,6 +240,10 @@ const FeatureIcon = styled.div({
   alignItems: "center",
   justifyContent: "center",
   flexShrink: 0,
+  "@media (max-width: 991px)": {
+    width: "2.85rem",
+    height: "2.85rem",
+  },
   "& svg": {
     width: "1.5rem",
     height: "1.5rem",
@@ -281,8 +292,8 @@ const ShieldSection = styled.div({
   position: "relative",
   padding: "2rem",
   marginBlockEnd: "2rem",
-  maxWidth:"31.25rem",
-  marginInline:"auto",
+  maxWidth: "31.25rem",
+  marginInline: "auto",
   "@media (max-width: 1199px)": {
     marginBlockEnd: "0rem",
   },

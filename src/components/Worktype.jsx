@@ -99,6 +99,9 @@ const featureData = [
 const Section = styled.section({
   paddingBlock: "3.5rem",
   position: "relative",
+      "@media (max-width: 991px)": {
+  paddingBlock: "2rem",
+  },
   "&::after": {
     content: '""',
     width: '50vw',
@@ -174,7 +177,7 @@ const SectionRow = styled.div({
   background: "#fff",
   padding: "2rem 4rem",
   "@media (max-width: 991px)": {
-    padding: "2rem",
+    padding: "2rem 1rem",
   },
 });
 
@@ -190,6 +193,10 @@ export const CardGrid = styled.ul({
   "@media (max-width: 1199px)": {
     gap: "1rem",
   },
+    "@media (max-width: 991px)": {
+    gap: "0.5rem",
+      margin: "3.75rem 0 0 0",
+  },
   "@media (max-width: 575px)": {
     gridTemplateColumns: "1fr",
   },
@@ -203,6 +210,9 @@ export const FeatureCard = styled.li({
   border: "1px solid #E6E9FF",
   boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
   transition: "all 0.35s ease",
+  "@media (max-width: 991px)": {
+    padding: "1rem",
+  },
   "& p": {
     textAlign: "start",
     marginBlockEnd: "0.75rem",
@@ -212,6 +222,9 @@ export const FeatureCard = styled.li({
     fontSize: "1.125rem",
     marginBlockEnd: "0.5rem",
     transition: "all 0.5s ease",
+    "@media (max-width: 991px)": {
+    fontSize: "0.875rem",
+  },
   },
   "&:hover": {
     borderColor: "#f5630f",
@@ -251,6 +264,14 @@ export const Step = styled.div({
   background: "linear-gradient(169.67deg, #EEFFFF 7.71%, #EEE2FF 92.75%)",
   color: "#000",
   transition: "all 0.5s ease",
+    "@media (max-width: 991px)": {
+      width: "3.25rem",
+  height: "3.25rem",
+  fontSize: "1.5rem",
+  top: "-1rem",
+
+
+  },
 });
 
 export const IconBox = styled.div({
@@ -259,6 +280,10 @@ export const IconBox = styled.div({
   marginBlockEnd: "0.75rem",
   display: "flex",
   alignItems: "center",
+  "@media (max-width: 991px)": {
+      width: "1.75rem",
+  height: "1.75rem",
+  },
   "& svg": {
     height: "100%",
     width: "100%",

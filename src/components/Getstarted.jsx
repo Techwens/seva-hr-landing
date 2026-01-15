@@ -251,6 +251,12 @@ const PrimaryButton = styled.button({
   justifyContent: "center",
   transition: "all 0.4s ease",
   boxShadow: "0 4px 20px rgba(255, 255, 255, 0.2)",
+  "@media (max-width: 991px)": {
+    fontSize: "0.875rem",
+    height: "2.625rem",
+    borderRadius: "0.75rem",
+
+  },
   "&:hover": {
     transform: "translateY(-3px)",
     boxShadow: "0 15px 40px rgba(255, 255, 255, 0.3)",
@@ -271,6 +277,12 @@ const SecondaryButton = styled.button({
   gap: "0.75rem",
   justifyContent: "center",
   transition: "all 0.4s ease",
+  "@media (max-width: 991px)": {
+    fontSize: "0.875rem",
+    height: "2.625rem",
+    borderRadius: "0.75rem",
+
+  },
   "&:hover": {
     borderColor: "rgba(255, 255, 255, 0.6)",
     background: "rgba(255, 255, 255, 0.08)",

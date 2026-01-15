@@ -195,6 +195,7 @@ const FeatureItem = styled.div({
       opacity: 1,
       transform: "translateY(0rem)",
       background: "linear-gradient(151.19deg, #ff7f0f1a 1.77%, #0036f50a 71.94% 71.94%)",
+      fontSize:"0.875rem",
     },
     '&:after': {
       content: "''",
@@ -325,6 +326,12 @@ const CtaButton = styled.button({
   background: "linear-gradient(151.19deg, #476FFF 1.77%, #4600B6 71.94%)",
   transition: "all 0.4s ease",
   boxShadow: "0 4px 20px rgba(71, 111, 255, 0.3)",
+          "@media (max-width: 991px)": {
+      fontSize: "0.875rem",
+        height: "2.625rem",
+        borderRadius:"0.75rem",
+
+    },
   "&::after": {
     content: '""',
     position: "absolute",

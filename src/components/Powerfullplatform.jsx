@@ -10,6 +10,9 @@ import styled from "styled-components"
 
 const Section = styled.section({
   paddingBlock: "3.5rem",
+  "@media (max-width: 991px)": {
+    paddingBlock: "2rem",
+  },
   "& .centerized": {
     display: "flex",
     justifyContent: "center",
@@ -41,7 +44,7 @@ const Badge = styled.h3({
   background: "linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)",
   border: "1px solid rgba(71, 111, 255, 0.15)",
   boxShadow: "0 4px 15px rgba(71, 111, 255, 0.08)",
-    "@media (max-width: 991px)": {
+  "@media (max-width: 991px)": {
     padding: "0.5rem 0.9rem",
   },
   "& svg": {
@@ -74,6 +77,8 @@ const Left = styled.div({
   paddingInlineEnd: "1rem",
   "@media (max-width: 991px)": {
     width: "100%",
+  paddingInlineEnd: "0rem",
+
   },
   "&.in-view": {
     opacity: 1,
@@ -95,6 +100,9 @@ const Left = styled.div({
       padding: "1.875rem 1.563rem",
       "@media (max-width: 1199px)": {
         padding: "1.875rem 0.875rem",
+      },
+      "@media (max-width: 991px)": {
+        padding: "1rem 0.875rem",
       },
       '&:after': {
         content: "''",
@@ -131,6 +139,10 @@ const Left = styled.div({
         display: "flex",
         gap: "0.5rem",
         marginBlockEnd: "1.25rem",
+        "@media (max-width: 991px)": {
+          marginBlockEnd: "0.75rem",
+
+        },
         "& span": {
           height: "2.5rem",
           width: "2.5rem",
@@ -138,6 +150,12 @@ const Left = styled.div({
           alignItems: "start",
           transition: "all 0.4s ease",
           flex: "0 0 2.5rem",
+          "@media (max-width: 991px)": {
+            height: "1.8rem",
+            width: "1.8rem",
+            flex: "0 0 1.8rem",
+
+          },
           "& svg": {
             height: "100%",
             width: "100%",
@@ -191,6 +209,11 @@ export const Right = styled.div({
       alignItems: "center",
       boxShadow: "0px 4px 36px 0px #0010EF26",
       gap: "0.5rem",
+      "@media (max-width: 991px)": {
+        padding: "0.5rem 0.75rem",
+        fontSize: "0.875rem",
+        borderRadius: "0.65rem",
+      },
       "& div": {
         height: "1.188rem",
         width: "1.188rem",
@@ -227,6 +250,12 @@ const Buttonwrap = styled.div({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  paddingInline: "1.5rem",
+  "@media (max-width: 991px)": {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: "1rem",
+  },
 
 });
 const CtaButton = styled.button({
@@ -239,13 +268,21 @@ const CtaButton = styled.button({
   fontSize: "1rem",
   fontWeight: 700,
   cursor: "pointer",
-  width: "calc(100% - 3rem)",
+  width: "100%",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   gap: "0.5rem",
   background: "linear-gradient(151.19deg, #476FFF 1.77%, #4600B6 71.94%)",
   transition: "color 0.5s ease",
+  "@media (max-width: 991px)": {
+    padding: "0.75rem",
+    fontSize: "0.875rem",
+    borderRadius: "0.65rem",
+    width: "calc(50% - 0.5rem)",
+    fontSize: "0.875rem",
+  },
+
   "&::after": {
     content: '""',
     position: "absolute",
@@ -274,13 +311,21 @@ const GetStartButton = styled.button({
   fontSize: "1.125rem",
   fontWeight: 700,
   cursor: "pointer",
-  width: "calc(100% - 3rem)",
+  width: "100%",
   marginBlockStart: "1rem",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   gap: "0.5rem",
   transition: "box-shadow 0.3s ease, border-color 0.3s ease",
+  "@media (max-width: 991px)": {
+    padding: "0.75rem",
+    fontSize: "0.875rem",
+    borderRadius: "0.65rem",
+    width: "calc(50% - 0.5rem)",
+    marginBlockStart: "0rem",
+    fontSize: "0.875rem",
+  },
   "&:hover": {
     boxShadow: "0 0 0.75rem #c9ffda",
     borderColor: "#c9ffda",
@@ -371,7 +416,6 @@ export default function Powerfullplatform() {
                 <li key={index}>
                   <div>
                     <span>
-                      {/* <Image src={item?.icon} alt="icon" /> */}
                       {item?.icon}
                     </span>
                     <h4 className="bold">{item?.title}</h4>
