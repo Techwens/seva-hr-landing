@@ -68,6 +68,14 @@ export const metadata = {
     "employee management",
   ],
   authors: [{ name: "SevaHR" }],
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
