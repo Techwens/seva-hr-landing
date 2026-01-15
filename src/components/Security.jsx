@@ -120,6 +120,9 @@ const MainGrid = styled.div({
   "@media (max-width: 991px)": {
     gridTemplateColumns: "1fr",
     gap: "3rem",
+    '@media (max-width: 991px)': {
+      gap: "1rem",
+    },
   },
 })
 
@@ -133,6 +136,9 @@ const CertRow = styled.div({
   gap: "0.5rem",
   marginBlockEnd: "2rem",
   flexWrap: "wrap",
+  '@media (max-width: 991px)': {
+    marginBlockEnd: "0.5rem",
+  },
 })
 
 const CertBadge = styled.div({
@@ -145,6 +151,10 @@ const CertBadge = styled.div({
   border: "1px solid rgba(16, 185, 129, 0.15)",
   boxShadow: "0 4px 20px rgba(16, 185, 129, 0.08)",
   transition: "all 0.3s ease",
+  '@media (max-width: 991px)': {
+    padding: "0.5rem",
+    borderRadius: "0.75rem",
+  },
   "&:hover": {
     transform: "translateY(-3px)",
     boxShadow: "0 8px 30px rgba(16, 185, 129, 0.15)",
@@ -159,6 +169,10 @@ const CertIcon = styled.div({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  '@media (max-width: 991px)': {
+    width: "2rem",
+    height: "2rem",
+  },
   "& svg": {
     width: "1.125rem",
     height: "1.125rem",
@@ -241,8 +255,9 @@ const FeatureIcon = styled.div({
   justifyContent: "center",
   flexShrink: 0,
   "@media (max-width: 991px)": {
-    width: "2.85rem",
-    height: "2.85rem",
+    width: "2.5rem",
+    height: "2.5rem",
+    borderRadius: "0.75rem",
   },
   "& svg": {
     width: "1.5rem",
@@ -258,6 +273,10 @@ const FeatureContent = styled.div({
     fontWeight: 700,
     color: "#1a1a1a",
     marginBlockEnd: "0.25rem",
+    '@media (max-width: 991px)': {
+      fontSize: "0.875rem",
+      marginBlockEnd: "0rem",
+    },
   },
   "& p": {
     fontSize: "0.875rem",
