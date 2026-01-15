@@ -11,9 +11,9 @@ const ContentWrapper = styled.div({
   alignItems: "center",
   justifyContent: "space-between",
   gap: "2rem",
-  "@media (max-width: 991px)": {
+  "@media (max-width: 1199px)": {
     flexDirection: "column",
-    gap: "2.5rem",
+    gap: "1.5rem",
   },
 })
 
@@ -21,7 +21,7 @@ const LeftSection = styled.div({
   display: "flex",
   alignItems: "center",
   gap: "2.5rem",
-  "@media (max-width: 767px)": {
+  "@media (max-width: 575px)": {
     flexDirection: "column",
     alignItems: "flex-start",
     gap: "1.5rem",
@@ -30,7 +30,7 @@ const LeftSection = styled.div({
 
 const StatItem = styled.div({
   textAlign: "center",
-  "@media (max-width: 767px)": {
+  "@media (max-width: 575px)": {
     textAlign: "left",
     display: "flex",
     alignItems: "center",
@@ -88,6 +88,10 @@ const IndustryTags = styled.div({
   display: "flex",
   flexWrap: "wrap",
   gap: "0.625rem",
+  "@media (max-width: 991px)": {
+    gap: "0.5rem",
+  },
+
 })
 
 const IndustryTag = styled.div({
@@ -99,6 +103,11 @@ const IndustryTag = styled.div({
   borderRadius: "2rem",
   border: "1px solid #E2E8F0",
   transition: "all 0.2s ease",
+  "@media (max-width: 991px)": {
+    padding: "0.3rem 0.5rem",
+    gap: "0.25rem",
+
+  },
   "&:hover": {
     borderColor: "rgba(71, 111, 255, 0.3)",
     background: "#F8FAFC",
@@ -113,6 +122,7 @@ const IndustryTag = styled.div({
     fontSize: "0.813rem",
     fontWeight: 500,
     color: "#374151",
+    pointerEvents:"none",
   },
 })
 

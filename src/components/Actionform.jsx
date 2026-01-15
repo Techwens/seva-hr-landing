@@ -2,11 +2,14 @@
 import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 import Image from "next/image"
-import RoadMap from "../assets/roadmap.svg"
-import WebinarPlay from "../assets/webinar-play.svg"
-import cirtificate from "../assets/Vector.svg"
+// import RoadMap from "../assets/roadmap.svg"
+// import WebinarPlay from "../assets/webinar-play.svg"
+// import cirtificate from "../assets/Vector.svg"
 import packlock from "../assets/padlock-check 2.svg"
-import SparkleBg from "../assets/sparkle.svg"
+// import SparkleBg from "../assets/sparkle.svg"
+import WebinarPlay from "@/assets/svg/WebinarPlay"
+import RoadMap from "@/assets/svg/RoadMap"
+import Cirtificate from "@/assets/svg/Cirtificate"
 
 const employeeRanges = [
   { value: "", label: "Select Range" },
@@ -23,29 +26,32 @@ const securityData = [
   {
     title: "Personalised Demo",
     desc: "Custom walkthrough tailored to your specific industry requirements",
-    icon: WebinarPlay,
+    icon: <WebinarPlay />,
   },
   {
     title: "Implementation Roadmap",
     desc: "Clear timeline and step-by-step migration strategy for seamless onboarding",
-    icon: RoadMap,
+    icon: <RoadMap />,
   },
   {
     title: "ROI Analysis",
     desc: "See exactly how much time and money you'll save with detailed projections",
-    icon: cirtificate,
+    icon: <Cirtificate />,
   },
   {
     title: "Free Trial",
     desc: "No credit card required — start exploring with zero commitment",
-    icon: cirtificate,
+    icon: <Cirtificate />,
   },
 ]
 
 const Section = styled.section({
   paddingBlock: "3.5rem",
-  position:"relative",
-  "&::after":{
+  position: "relative",
+    "@media (max-width: 991px)": {
+  paddingBlock: "2rem",
+  },
+  "&::after": {
     content: '""',
     width: '40vw',
     height: '60vh',
@@ -55,50 +61,55 @@ const Section = styled.section({
     position: 'absolute',
     bottom: '0',
     right: '0',
-    zIndex:"-1",
+    zIndex: "-1",
   },
   "& .centerized": {
     display: "flex",
     justifyContent: "center",
   },
-  "& h3": {
-    fontWeight: 600,
-    lineHeight: 1.3,
-    color: '#1a1a1a',
-    marginBlockEnd: "0.625rem",
-    borderRadius: '1.875rem',
-    background: 'linear-gradient(90deg, #EEF6FF 0%, #FFF9EE 100%)',
-    padding: '0.625rem 1.25rem 0.625rem 2.8rem',
-    display: 'inline-block',
-    position: 'relative',
-    '&:after': {
-      content: "''",
-      position: 'absolute',
-      height: '1.313rem',
-      width: '1.5rem',
-      left: '1rem',
-      top: '50%',
-      transform: "translateY(-50%)",
-      backgroundImage: `url(${SparkleBg.src})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: "contain",
-      backgroundPosition:"center",
-    }
-  },
+
   "& h2": {
     textAlign: 'center',
-    marginBlockEnd: '0.938rem',
     '& span': {
       background: 'linear-gradient(90deg, #FF6600 0%, #7B60FF 80.8%)',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       backgroundClip: 'text',
       color: 'transparent',
+      display: "inline-block",
     }
   },
-  "& p": {
-    textAlign: 'center',
-  }
+
+});
+const Badge = styled.h3({
+  display: "inline-flex",
+  alignItems: "center",
+  gap: "0.5rem",
+  padding: "0.625rem 1.25rem",
+  borderRadius: "3rem",
+  background: "linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)",
+  border: "1px solid rgba(71, 111, 255, 0.15)",
+  boxShadow: "0 4px 15px rgba(71, 111, 255, 0.08)",
+  "@media (max-width: 991px)": {
+    padding: "0.35rem 0.7rem",
+  },
+  "& svg": {
+    width: "1.125rem",
+    height: "1.125rem",
+  },
+  "& span": {
+    fontSize: "0.875rem",
+    fontWeight: 600,
+    background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  },
+});
+const Subtitle = styled.p({
+  color: "#64748B",
+  maxWidth: "38rem",
+  margin: "0 auto",
+  textAlign: "center",
 });
 const SectionRow = styled.div({
   display: "flex",
@@ -106,7 +117,7 @@ const SectionRow = styled.div({
   justifyContent: "space-between",
   marginBlockStart: "2.625rem",
   overflow: "hidden",
-  "@media (max-width: 991px)": {
+  "@media (max-width: 767px)": {
     flexDirection: "column",
   },
 });
@@ -117,6 +128,9 @@ const Left = styled.div({
   transform: "translateX(-3rem)",
   transition: "all 0.8s ease",
   "@media (max-width: 991px)": {
+    width: "40%",
+  },
+  "@media (max-width: 575px)": {
     width: "100%",
   },
   "&.in-view": {
@@ -132,6 +146,9 @@ const CardList = styled.ul({
   display: "flex",
   flexDirection: "column",
   gap: "2rem",
+  "@media (max-width: 1199px)": {
+    gap: "0.875rem",
+  },
   "& li": {
     padding: "1.25rem 1.5rem",
     borderRadius: "1.25rem",
@@ -142,20 +159,22 @@ const CardList = styled.ul({
     flexDirection: "column",
     gap: ".5rem",
     transition: "background 0.4s ease",
+    "@media (max-width: 991px)": {
+      padding: "0.563rem 0.75rem",
+    },
     "& p": {
       textAlign: "start",
       transition: "all 0.4s ease",
       transform: "translateY(0)",
     },
     "&:hover": {
-      background:"linear-gradient(151.19deg, #476FFF 1.77%, #4600B6 71.94%)",
+      border: "1px solid #ffead8",
+      background: "linear-gradient(151.19deg, #ffffff 1.77%, #ff7f0f17 71.94%)",
     },
     "&:hover h4": {
-      color: "#fff",
       transform: "translateX(-2rem)",
     },
     "&:hover p": {
-      color: "#fff",
       transform: "translateY(-0.375rem)",
     },
     "&:hover .HeaderRow div": {
@@ -176,9 +195,9 @@ const HeaderRow = styled.div({
     justifyContent: "start",
     flexShrink: 0,
     transition: "all 0.4s ease",
-    "& img": {
-      height: "100% !important",
-      width: "100% !important",
+    "& svg": {
+      height: "100%",
+      width: "100%",
     }
   },
   "& h4": {
@@ -192,10 +211,13 @@ const HeaderRow = styled.div({
 export const Right = styled.div({
   width: "50%",
   opacity: 0,
-  padding:"2rem",
+  paddingInlineStart: "2rem",
   transform: "translateX(3rem)",
   transition: "all 0.8s ease",
   "@media (max-width: 991px)": {
+    width: "60%",
+  },
+  "@media (max-width: 575px)": {
     width: "100%",
   },
   "&.in-view": {
@@ -209,16 +231,20 @@ export const FormCard = styled.div({
   background: "#fff",
   borderRadius: "1.5rem",
   padding: "2.5rem",
-  boxShadow: "0px 10px 40px rgba(0,0,0,0.06)",
-
+  boxShadow: "-4px 4px 12px rgba(0,0,0,0.06)",
+  "@media (max-width: 991px)": {
+  padding: "1.5rem",
+  },
   "& h4": {
     fontSize: "1.75rem",
     fontWeight: 700,
     marginBottom: "0.5rem",
+    "@media (max-width: 1199px)": {
+    marginBottom: "0rem",
+  },
   },
 
   "& p": {
-    fontSize: "0.95rem",
     marginBottom: "2rem",
     textAlign: "start",
   },
@@ -229,10 +255,9 @@ export const FormCard = styled.div({
 });
 
 export const FormGrid = styled.div({
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  gap: "1rem",
-
+  display: "flex",
+  justifyContent: "space-between",
+  flexWrap:"wrap",
   "@media (max-width: 768px)": {
     gridTemplateColumns: "1fr",
   },
@@ -242,7 +267,9 @@ export const FormGroup = styled.div(({ $hasError }) => ({
   display: "flex",
   flexDirection: "column",
   gap: "0.5rem",
-
+  width: "48%",
+  position:"relative",
+  marginBlockEnd:"1.75rem",
   "& label": {
     fontSize: "0.875rem",
     fontWeight: 500,
@@ -258,6 +285,10 @@ export const FormGroup = styled.div(({ $hasError }) => ({
     outline: "none",
     background: $hasError ? "#FEF2F2" : "#fafafa",
     transition: "all .25s ease",
+      "@media (max-width: 991px)": {
+        height: "2.625rem",
+         borderRadius:"0.75rem",
+      },
     "&:focus": {
       borderColor: $hasError ? "#EF4444" : "#476FFF",
       background: "#fff",
@@ -276,6 +307,10 @@ export const FormGroup = styled.div(({ $hasError }) => ({
 }));
 
 export const ErrorText = styled.span({
+  position:"absolute",
+  width:"100%",
+  left:"0",
+  bottom:"-1.2rem",
   fontSize: "0.75rem",
   color: "#EF4444",
   marginTop: "-0.25rem",
@@ -302,12 +337,14 @@ export const SuccessMessage = styled.div({
 export const ButtonWrap = styled.div({
   display: "flex",
   alignItems: "flex-end",
+  width:"48%",
+  marginBlockEnd:"1.75rem",
   "@media (max-width: 768px)": {
     marginTop: "0.5rem",
   },
   "& button": {
     width: "100%",
-    height: "3.5rem",
+    height: "3.25rem",
     borderRadius: "1.125rem",
     border: "none",
     fontSize: "1rem",
@@ -316,6 +353,12 @@ export const ButtonWrap = styled.div({
     color: "#fff",
     background: "linear-gradient(90deg, #FF6600 0%, #7B60FF 106.8%)",
     transition: "all .3s ease",
+      "@media (max-width: 991px)": {
+      fontSize: "0.875rem",
+        height: "2.625rem",
+        borderRadius:"0.75rem",
+
+    },
     "&:hover": {
       transform: "translateY(-2px)",
       boxShadow: "0px 10px 25px rgba(127,63,255,0.35)",
@@ -331,6 +374,9 @@ export const PrivacyText = styled.div({
   display: "flex",
   alignItems: "center",
   gap: "0.5rem",
+    "@media (max-width: 991px)": {
+  marginTop: "0.5rem",
+  },
   "& div": {
     height: "1.5rem",
     width: "1.5rem",
@@ -451,10 +497,16 @@ export default function Actionform() {
     <Section>
       <div className="container">
         <div className="centerized">
-          <h3>Get Started Now</h3>
+
+          <Badge>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#476FFF">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            </svg>
+            <span>Get Started Now</span>
+          </Badge>
         </div>
-        <h2>See <span>SEVA HRMS in Action</span></h2>
-        <p>Book your personalized demo and discover how SEVA HRMS handles your industry&apos;s unique workforce challenges</p>
+        <h2>See<br /><span>SEVA HRMS in Action</span></h2>
+        <Subtitle>Book your personalized demo and discover how SEVA HRMS handles your industry&apos;s unique workforce challenges</Subtitle>
         <SectionRow ref={sectionRef}>
           <Left className="animate">
             <CardList role="list" aria-label="What you'll get with your demo">
@@ -462,7 +514,8 @@ export default function Actionform() {
                 <li key={index}>
                   <HeaderRow className="HeaderRow">
                     <div>
-                      <Image src={item?.icon} alt="" aria-hidden="true" width={100} height={100} />
+                      {/* <Image src={item?.icon} alt="" aria-hidden="true" width={100} height={100} /> */}
+                      {item?.icon}
                     </div>
                     <h4>{item?.title}</h4>
                   </HeaderRow>

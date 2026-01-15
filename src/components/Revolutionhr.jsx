@@ -39,9 +39,10 @@ const SectionRow = styled.div({
     background: "radial-gradient(circle, rgba(123, 96, 255, 0.12) 0%, transparent 70%)",
     pointerEvents: "none",
   },
-  "@media (max-width: 991px)": {
+  "@media (max-width: 1199px)": {
     flexDirection: "column",
     padding: "2rem",
+    gap: "0.5rem",
   },
 })
 
@@ -49,14 +50,11 @@ const Left = styled.div({
   width: "35%",
   position: "relative",
   zIndex: 1,
-  "@media (max-width: 991px)": {
+  "@media (max-width: 1199px)": {
     width: "100%",
   },
   "& h3": {
-    fontWeight: 600,
-    lineHeight: 1.3,
     color: "#fff",
-    marginBlockEnd: "0.625rem",
     borderRadius: "1.875rem",
     background: "rgba(255, 255, 255, 0.1)",
     backdropFilter: "blur(10px)",
@@ -66,25 +64,23 @@ const Left = styled.div({
     gap: "0.5rem",
     border: "1px solid rgba(255, 255, 255, 0.1)",
     fontSize: "0.875rem",
+    "@media (max-width: 991px)": {
+      padding: "0.35rem 0.7rem",
+    },
   },
   "& h2": {
     fontSize: "2.25rem",
-    fontWeight: 700,
-    lineHeight: 1.2,
-    marginBlock: "1rem 1.25rem",
-    color: "#fff",
-    "& span": {
-      background: "linear-gradient(90deg, #60A5FA 0%, #A78BFA 50%, #F472B6 100%)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      backgroundClip: "text",
-      color: "transparent",
-    },
+    background: 'linear-gradient(90deg, #FF6600 0%, #7B60FF 80.8%)',
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    backgroundClip: "text",
+    color: "transparent",
+    "@media (max-width: 991px)": {
+    fontSize: "2rem",
+  },
   },
   "& p": {
-    color: "rgba(255, 255, 255, 0.7)",
-    lineHeight: 1.7,
-    fontSize: "1rem",
+    color: "#fff",
   },
 })
 
@@ -92,7 +88,7 @@ const Right = styled.div({
   width: "65%",
   position: "relative",
   zIndex: 1,
-  "@media (max-width: 991px)": {
+  "@media (max-width: 1199px)": {
     width: "100%",
   },
 })
@@ -123,6 +119,10 @@ const Card = styled.li({
   background: "rgba(255, 255, 255, 0.05)",
   backdropFilter: "blur(10px)",
   border: "1px solid rgba(255, 255, 255, 0.08)",
+  '@media (max-width: 991px)': {
+  padding: "0.75rem 1rem",
+
+  },
 
   "&:hover": {
     background: "rgba(255, 255, 255, 0.1)",
@@ -143,7 +143,7 @@ const Card = styled.li({
   "& span": {
     fontSize: "0.875rem",
     fontWeight: "500",
-    color: "rgba(255, 255, 255, 0.6)",
+    color: "#fff",
   },
 })
 
@@ -221,7 +221,7 @@ export default function Revolutionhr() {
               We are Seva HR
             </h3>
             <h2>
-              <span>Revolutionize Your HR Management</span>
+              Revolutionize Your HR Management
             </h2>
             <p>
               Complete workforce management solution built for complex

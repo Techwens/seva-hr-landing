@@ -5,13 +5,29 @@ import styled from "styled-components"
 const Section = styled.section({
   position: "relative",
   overflow: "hidden",
+
+  "& h3": {
+    fontWeight: 600,
+    lineHeight: 1.3,
+    color: "#fff",
+    marginBlockEnd: "0.625rem",
+    borderRadius: "1.875rem",
+    background: "rgba(255, 255, 255, 0.1)",
+    backdropFilter: "blur(10px)",
+    padding: "0.625rem 1.25rem",
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "0.5rem",
+    border: "1px solid rgba(255, 255, 255, 0.1)",
+    fontSize: "0.875rem",
+  },
 });
 
 // Curved wave separator at top
 const WaveSeparator = styled.div({
   position: "relative",
   height: "6rem",
-  background: "linear-gradient(180deg, #F8FAFC 0%, #0F172A 100%)",
+  background: "#f2f5ff",
   "&::after": {
     content: '""',
     position: "absolute",
@@ -20,7 +36,7 @@ const WaveSeparator = styled.div({
     right: 0,
     height: "100%",
     background: "#0F172A",
-    clipPath: "ellipse(70% 100% at 50% 100%)",
+    clipPath: "ellipse(60% 110% at 50% 130%)",
   },
   "@media (max-width: 767px)": {
     height: "4rem",
@@ -29,7 +45,7 @@ const WaveSeparator = styled.div({
 
 const MainContent = styled.div({
   background: "linear-gradient(180deg, #0F172A 0%, #1E293B 50%, #0F172A 100%)",
-  paddingBlock: "4rem 5rem",
+  paddingBlockEnd: "5rem",
   position: "relative",
   "@media (max-width: 767px)": {
     paddingBlock: "3rem",
@@ -85,24 +101,9 @@ const HeaderSection = styled.div({
   },
 });
 
-const Badge = styled.span({
-  display: "inline-flex",
-  alignItems: "center",
-  gap: "0.5rem",
-  padding: "0.5rem 1rem",
-  borderRadius: "2rem",
-  background: "rgba(71, 111, 255, 0.15)",
-  border: "1px solid rgba(71, 111, 255, 0.3)",
-  color: "#93AAFD",
-  fontSize: "0.875rem",
-  fontWeight: 600,
-  marginBlockEnd: "1rem",
-});
+
 
 const Title = styled.h2({
-  fontSize: "2.75rem",
-  fontWeight: 800,
-  lineHeight: 1.2,
   color: "#fff",
   marginBlockEnd: "1rem",
   "& span": {
@@ -111,17 +112,12 @@ const Title = styled.h2({
     WebkitTextFillColor: "transparent",
     backgroundClip: "text",
   },
-  "@media (max-width: 767px)": {
-    fontSize: "2rem",
-  },
 });
 
 const Subtitle = styled.p({
-  fontSize: "1.125rem",
-  color: "rgba(255, 255, 255, 0.7)",
+  color: "#fff",
   maxWidth: "40rem",
   margin: "0 auto",
-  lineHeight: 1.6,
 });
 
 // Horizontal steps with connecting line
@@ -142,26 +138,15 @@ const StepsTrack = styled.div({
   justifyContent: "center",
   gap: "1rem",
   position: "relative",
-  "@media (max-width: 991px)": {
+  "@media (max-width: 575px)": {
     flexDirection: "column",
     alignItems: "center",
     gap: "2rem",
   },
 });
 
-// Connecting line between steps
-const ConnectingLine = styled.div({
-  position: "absolute",
-  top: "2rem",
-  left: "50%",
-  transform: "translateX(-50%)",
-  width: "60%",
-  height: "2px",
-  background: "linear-gradient(90deg, transparent 0%, rgba(71, 111, 255, 0.3) 20%, rgba(123, 96, 255, 0.5) 50%, rgba(71, 111, 255, 0.3) 80%, transparent 100%)",
-  "@media (max-width: 991px)": {
-    display: "none",
-  },
-});
+
+
 
 const StepCard = styled.div(({ $delay }) => ({
   display: "flex",
@@ -176,6 +161,9 @@ const StepCard = styled.div(({ $delay }) => ({
   transition: "all 0.4s ease",
   position: "relative",
   animation: `stepPulse 3s ease-in-out ${$delay || "0s"} infinite`,
+  "@media (max-width: 1199px)": {
+
+  },
   "@keyframes stepPulse": {
     "0%, 100%": { boxShadow: "0 0 0 0 rgba(71, 111, 255, 0)" },
     "50%": { boxShadow: "0 0 30px 5px rgba(71, 111, 255, 0.1)" },
@@ -185,7 +173,7 @@ const StepCard = styled.div(({ $delay }) => ({
     borderColor: "rgba(71, 111, 255, 0.3)",
     transform: "translateY(-0.5rem)",
   },
-  "@media (max-width: 991px)": {
+  "@media (max-width: 767px)": {
     width: "100%",
     maxWidth: "20rem",
   },
@@ -204,15 +192,11 @@ const StepNumber = styled.div({
   color: "#fff",
   marginBlockEnd: "1rem",
   position: "relative",
-  boxShadow: "0 10px 30px rgba(71, 111, 255, 0.3)",
-  "&::after": {
-    content: '""',
-    position: "absolute",
-    inset: "-3px",
-    borderRadius: "inherit",
-    background: "linear-gradient(135deg, rgba(71, 111, 255, 0.5) 0%, rgba(123, 96, 255, 0.5) 100%)",
-    zIndex: -1,
-    filter: "blur(8px)",
+  boxShadow: "0 10px 20px rgba(71, 111, 255, 0.3)",
+  "@media (max-width: 1199px)": {
+    width: "3.25rem",
+    height: "3.25rem",
+
   },
 });
 
@@ -225,7 +209,7 @@ const StepTitle = styled.h4({
 
 const StepDescription = styled.p({
   fontSize: "0.875rem",
-  color: "rgba(255, 255, 255, 0.6)",
+  color: "#fff",
   marginBlockEnd: 0,
   lineHeight: 1.5,
 });
@@ -267,6 +251,12 @@ const PrimaryButton = styled.button({
   justifyContent: "center",
   transition: "all 0.4s ease",
   boxShadow: "0 4px 20px rgba(255, 255, 255, 0.2)",
+  "@media (max-width: 991px)": {
+    fontSize: "0.875rem",
+    height: "2.625rem",
+    borderRadius: "0.75rem",
+
+  },
   "&:hover": {
     transform: "translateY(-3px)",
     boxShadow: "0 15px 40px rgba(255, 255, 255, 0.3)",
@@ -287,6 +277,12 @@ const SecondaryButton = styled.button({
   gap: "0.75rem",
   justifyContent: "center",
   transition: "all 0.4s ease",
+  "@media (max-width: 991px)": {
+    fontSize: "0.875rem",
+    height: "2.625rem",
+    borderRadius: "0.75rem",
+
+  },
   "&:hover": {
     borderColor: "rgba(255, 255, 255, 0.6)",
     background: "rgba(255, 255, 255, 0.08)",
@@ -296,7 +292,7 @@ const SecondaryButton = styled.button({
 
 const TrustText = styled.p({
   fontSize: "0.875rem",
-  color: "rgba(255, 255, 255, 0.5)",
+  color: "#fff",
   display: "flex",
   alignItems: "center",
   gap: "0.5rem",
@@ -305,26 +301,115 @@ const TrustText = styled.p({
   },
 });
 
-// Bottom wave
-const WaveBottom = styled.div({
-  position: "relative",
-  height: "4rem",
-  background: "#F8FAFC",
-  "&::before": {
-    content: '""',
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    height: "100%",
-    background: "#0F172A",
-    clipPath: "ellipse(70% 100% at 50% 0%)",
+
+const SparkleIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="url(#sparkleGrad)" />
+    <defs>
+      <linearGradient id="sparkleGrad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#60A5FA" />
+        <stop offset="1" stopColor="#A78BFA" />
+      </linearGradient>
+    </defs>
+  </svg>
+)
+
+const RightSection = styled.div({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "1rem",
+  marginBlockStart: "2rem",
+})
+
+const IndustryLabel = styled.span({
+  fontSize: "0.875rem",
+  color: "#fff",
+  fontWeight: 500,
+  whiteSpace: "nowrap",
+})
+
+const IndustryTags = styled.div({
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "0.625rem",
+})
+
+const IndustryTag = styled.div({
+  display: "flex",
+  alignItems: "center",
+  gap: "0.5rem",
+  padding: "0.5rem 1rem",
+  borderRadius: "2rem",
+  background: "rgba(255, 255, 255, 0.03)",
+  border: "1px solid rgba(255, 255, 255, 0.08)",
+  transition: "all 0.2s ease",
+  "&:hover": {
+    borderColor: "rgba(71, 111, 255, 0.3)",
+    background: "#F8FAFC",
+    transform: "translateY(-1px)",
+    "& span": {
+      color: "#000",
+    }
   },
-});
+  "& svg": {
+    width: "1.125rem",
+    height: "1.125rem",
+    color: "#476FFF",
+  },
+  "& span": {
+    fontSize: "0.813rem",
+    fontWeight: 500,
+    color: "#fff",
+    pointerEvents: "none",
+  },
+})
+
+const industries = [
+  {
+    name: "Manufacturing",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Healthcare",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Logistics",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+      </svg>
+    ),
+  },
+  {
+    name: "Retail",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Hospitality",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    ),
+  },
+]
 
 export default function Getstarted() {
   const sectionRef = useRef(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -363,7 +448,11 @@ export default function Getstarted() {
         <div className="container">
           <ContentWrapper>
             <HeaderSection className="animate">
-              <Badge>Get Started Today</Badge>
+
+              <h3>
+                <SparkleIcon />
+                Get Started Today
+              </h3>
               <Title>Ready to <span>Transform</span> Your HR?</Title>
               <Subtitle>
                 Join hundreds of businesses simplifying their workforce management with SEVA HR.
@@ -373,7 +462,7 @@ export default function Getstarted() {
 
             <StepsSection className="animate">
               <StepsTrack>
-                <ConnectingLine />
+
                 {steps.map((step, index) => (
                   <StepCard key={index} $delay={`${index * 0.5}s`}>
                     <StepNumber>{step.number}</StepNumber>
@@ -389,29 +478,40 @@ export default function Getstarted() {
                 <PrimaryButton type="button" aria-label="Get started with SevaHR for free">
                   Get Started Free
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                    <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </PrimaryButton>
                 <SecondaryButton type="button" aria-label="Book a demo of SevaHR">
                   Book a Demo
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" />
                   </svg>
                 </SecondaryButton>
               </ButtonGroup>
 
               <TrustText>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm-1.5-5.5l7-7-1.414-1.414L10.5 13.672l-2.586-2.586L6.5 12.5l4 4z"/>
+                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm-1.5-5.5l7-7-1.414-1.414L10.5 13.672l-2.586-2.586L6.5 12.5l4 4z" />
                 </svg>
                 No credit card required • Free 14-day trial • Cancel anytime
               </TrustText>
             </CtaSection>
+
+            <RightSection>
+              <IndustryLabel>Built for:</IndustryLabel>
+              <IndustryTags>
+                {industries.map((industry, index) => (
+                  <IndustryTag key={index}>
+                    {industry.icon}
+                    <span>{industry.name}</span>
+                  </IndustryTag>
+                ))}
+              </IndustryTags>
+            </RightSection>
           </ContentWrapper>
         </div>
       </MainContent>
 
-      <WaveBottom />
     </Section>
   )
 }
