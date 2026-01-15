@@ -27,8 +27,8 @@ const featureData = [
           x2="100%"
           y2="0%"
         >
-          <stop offset="0%" stop-color="#FF6A00" />
-          <stop offset="100%" stop-color="#7C3AED" />
+          <stop offset="0%" stopColor="#FF6A00" />
+          <stop offset="100%" stopColor="#7C3AED" />
         </linearGradient>
       </defs>
 
@@ -51,8 +51,8 @@ const featureData = [
     svg: <svg width="43" height="41" viewBox="0 0 43 41" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#FF6600" />
-          <stop offset="106.8%" stop-color="#7B60FF" />
+          <stop offset="0%" stopColor="#FF6600" />
+          <stop offset="106.8%" stopColor="#7B60FF" />
         </linearGradient>
       </defs>
 
@@ -80,8 +80,8 @@ const featureData = [
     svg: <svg width="41" height="41" viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#FF6600" />
-          <stop offset="106.8%" stop-color="#7B60FF" />
+          <stop offset="0%" stopColor="#FF6600" />
+          <stop offset="106.8%" stopColor="#7B60FF" />
         </linearGradient>
       </defs>
       <path d="M39.4095 15.2588C37.2893 13.1405 33.8401 13.1405 31.7217 15.2588L23.002 23.9782C21.3892 25.5908 20.5009 27.7348 20.5009 30.0171V32.4583C20.5009 33.403 21.2662 34.1667 22.2093 34.1667H24.6506C26.9313 34.1667 29.0753 33.2766 30.6915 31.664L39.4112 22.9446C41.5296 20.8263 41.5296 17.3755 39.4112 15.2571L39.4095 15.2588ZM36.9938 20.5308L28.2741 29.2501C27.3054 30.217 26.0173 30.7517 24.6489 30.7517H23.916V30.0188C23.916 28.6693 24.4626 27.3504 25.4159 26.3955L34.1356 17.6761C34.9232 16.8886 36.2045 16.8886 36.9904 17.6761C37.7779 18.4637 37.7779 19.7449 36.9904 20.5325L36.9938 20.5308Z" fill="url(#iconGradient)" />
@@ -352,9 +352,9 @@ export default function Worktype() {
                             d="M14 24.5L21 31L34 17"
                             fill="none"
                             stroke="#FFFFFF"
-                            stroke-width="4"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="4"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
                         </svg>
                       </div>
