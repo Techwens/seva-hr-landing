@@ -36,7 +36,8 @@ const InstagramIcon = () => (
 const FooterWrapper = styled.footer({
   background: "#0F172A",
   padding: "3rem 0 0",
-  color: "#fff",
+
+  color: "#d6d6d6",
 });
 
 const FooterList = styled.ul({
@@ -46,50 +47,53 @@ const FooterList = styled.ul({
   display: "flex",
   justifyContent: "space-between",
   gap: "2rem",
-
+  flexWrap: "wrap",
   "@media (max-width: 991px)": {
-    flexDirection: "column",
+    gap: "1rem",
   },
-
   "& > li": {
     display: "flex",
     flexDirection: "column",
     gap: "0.75rem",
+    "@media (max-width: 575px)": {
+      gap: "0rem",
+    },
   },
 
   "& .col-brand": {
     width: "30%",
-  },
-  "& .col-features": {
-    width: "23.33%",
-  },
-  "& .col-compliance": {
-    width: "23.33%",
-  },
-  "& .col-support": {
-    width: "23.33%",
-  },
-
-  "@media (max-width: 991px)": {
-    "& .col-brand, & .col-features, & .col-compliance, & .col-support": {
+    "@media (max-width: 575px)": {
       width: "100%",
     },
   },
-
+  "& .col-features": {
+    width: "20%",
+    "@media (max-width: 575px)": {
+      width: "28%",
+    },
+  },
+  "& .col-compliance": {
+    width: "20%",
+    "@media (max-width: 575px)": {
+      width: "28%",
+    },
+  },
+  "& .col-support": {
+    width: "20%",
+    "@media (max-width: 575px)": {
+      width: "28%",
+    },
+  },
   "& h4": {
     fontWeight: 600,
     marginBottom: "1.5rem",
+    color: "#fff",
     "@media (max-width: 991px)": {
       marginBottom: "0.5rem",
-
     },
   },
 
-  "& p": {
-    fontSize: "0.875rem",
-    lineHeight: 1.6,
-    opacity: 0.9,
-  },
+
 
   "& ul": {
     listStyle: "none",
@@ -106,7 +110,6 @@ const FooterList = styled.ul({
   "& ul li": {
     cursor: "pointer",
     transition: "color 0.25s ease",
-    color: "rgba(255,255,255,0.75)",
     "&:hover": {
       color: "#fff",
     },
@@ -118,6 +121,10 @@ const Logo = styled.div({
   width: "auto",
   display: "flex",
   alignItems: "center",
+  marginBlockEnd: "0.5rem",
+  "@media (max-width: 991px)": {
+    height: "1.5rem",
+  },
   "& svg": {
     height: "100%",
     width: "auto",
@@ -135,7 +142,7 @@ const Contact = styled.div({
     display: "flex",
     gap: "0.5rem",
     alignItems: "center",
-    color: "rgba(255,255,255,0.9)",
+    color: "#d6d6d6",
     textDecoration: "none",
     transition: "color 0.2s ease",
     "&:hover": {
@@ -190,7 +197,18 @@ const Copyright = styled.div({
   borderTop: "1px solid rgba(255,255,255,0.1)",
   fontWeight: 500,
   fontSize: "0.875rem",
-  color: "rgba(255,255,255,0.6)",
+  color: "#d6d6d6",
+  "@media (max-width: 991px)": {
+    flexDirection: "column",
+    textAlign: "center",
+    gap: "0rem",
+  },
+  "@media (max-width: 575px)": {
+    marginBlockStart: "1rem",
+    fontSize: "0.625rem",
+  padding: "0.75rem 0",
+
+  },
   "& span": {
     display: "flex",
     gap: "0.5rem",
@@ -211,17 +229,13 @@ const Copyright = styled.div({
     "& a": {
       textDecoration: "none",
       transition: "color .2s ease",
-      color: "rgba(255,255,255,0.6)",
+      color: "#d6d6d6",
     },
     "& a:hover": {
       color: "#fff",
     },
   },
-  "@media (max-width: 991px)": {
-    flexDirection: "column",
-    textAlign: "center",
-    gap: "0rem",
-  },
+
 });
 
 
@@ -234,7 +248,6 @@ const Footer = () => {
         <FooterList>
           <li className="col-brand">
             <Logo>
-              {/* <Image src={WhiteBrandIcon} alt="icon" /> */}
               <WhiteBrandIcon />
             </Logo>
             <p>

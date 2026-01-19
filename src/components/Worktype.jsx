@@ -99,8 +99,11 @@ const featureData = [
 const Section = styled.section({
   paddingBlock: "3.5rem",
   position: "relative",
-      "@media (max-width: 991px)": {
-  paddingBlock: "2rem",
+  "@media (max-width: 991px)": {
+    paddingBlock: "2rem",
+  },
+  "@media (max-width: 575px)": {
+    paddingBlock: "0rem 1.5rem",
   },
   "&::after": {
     content: '""',
@@ -153,9 +156,17 @@ const Badge = styled.h3({
   "@media (max-width: 991px)": {
     padding: "0.35rem 0.7rem",
   },
+  "@media (max-width: 575px)": {
+    padding: "0.2rem 0.5rem;",
+    gap: "0.2rem",
+  },
   "& svg": {
     width: "1.125rem",
     height: "1.125rem",
+    "@media (max-width: 575px)": {
+      width: "0.875rem",
+      height: "0.875rem",
+    },
   },
   "& span": {
     fontSize: "0.875rem",
@@ -163,6 +174,9 @@ const Badge = styled.h3({
     background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
+    "@media (max-width: 575px)": {
+      fontSize: "0.688rem"
+    },
   },
 });
 const Subtitle = styled.p({
@@ -179,6 +193,10 @@ const SectionRow = styled.div({
   "@media (max-width: 991px)": {
     padding: "2rem 1rem",
   },
+  "@media (max-width: 575px)": {
+    padding: "1rem 0.75rem",
+    borderRadius: "1rem",
+  },
 });
 
 
@@ -193,12 +211,14 @@ export const CardGrid = styled.ul({
   "@media (max-width: 1199px)": {
     gap: "1rem",
   },
-    "@media (max-width: 991px)": {
+  "@media (max-width: 991px)": {
     gap: "0.5rem",
-      margin: "3.75rem 0 0 0",
+    margin: "3.75rem 0 0 0",
   },
   "@media (max-width: 575px)": {
     gridTemplateColumns: "1fr",
+      margin: "1rem 0 0 0",
+       gap: "2rem",
   },
 });
 
@@ -223,8 +243,8 @@ export const FeatureCard = styled.li({
     marginBlockEnd: "0.5rem",
     transition: "all 0.5s ease",
     "@media (max-width: 991px)": {
-    fontSize: "0.875rem",
-  },
+      fontSize: "0.875rem",
+    },
   },
   "&:hover": {
     borderColor: "#f5630f",
@@ -264,11 +284,11 @@ export const Step = styled.div({
   background: "linear-gradient(169.67deg, #EEFFFF 7.71%, #EEE2FF 92.75%)",
   color: "#000",
   transition: "all 0.5s ease",
-    "@media (max-width: 991px)": {
-      width: "3.25rem",
-  height: "3.25rem",
-  fontSize: "1.5rem",
-  top: "-1rem",
+  "@media (max-width: 991px)": {
+    width: "3.25rem",
+    height: "3.25rem",
+    fontSize: "1.5rem",
+    top: "-1rem",
 
 
   },
@@ -281,8 +301,8 @@ export const IconBox = styled.div({
   display: "flex",
   alignItems: "center",
   "@media (max-width: 991px)": {
-      width: "1.75rem",
-  height: "1.75rem",
+    width: "1.75rem",
+    height: "1.75rem",
   },
   "& svg": {
     height: "100%",
@@ -308,7 +328,7 @@ export const Points = styled.ol({
     "& div": {
       height: '0.75rem',
       width: '0.75rem',
-      flex:"0 0 0.75rem",
+      flex: "0 0 0.75rem",
       "& svg": {
         height: '100%',
         width: '100%',

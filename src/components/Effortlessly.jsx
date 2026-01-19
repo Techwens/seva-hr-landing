@@ -21,6 +21,9 @@ const Section = styled.section({
   "@media (max-width: 991px)": {
     paddingBlock: "2rem",
   },
+  "@media (max-width: 575px)": {
+    paddingBlock: "1.5rem",
+  },
 });
 
 
@@ -48,7 +51,7 @@ const FloatingShape = styled.div(({ $top, $left, $right, $size, $color, $delay }
 
 const ContentWrapper = styled.div({
   display: "flex",
-  flexWrap:"wrap",
+  flexWrap: "wrap",
   gap: "4rem",
   alignItems: "flex-start",
   position: "relative",
@@ -56,15 +59,21 @@ const ContentWrapper = styled.div({
   "@media (max-width: 991px)": {
     gap: "1rem",
   },
+  "@media (max-width: 575px)": {
+    flexDirection: "column",
+  },
 });
 
 const LeftContent = styled.div({
-  width:"calc(50% - 2rem)",
+  width: "calc(50% - 2rem)",
   opacity: 0,
   transform: "translateX(-2rem)",
   transition: "all 0.8s ease",
   "@media (max-width: 991px)": {
-    width:"calc(60% - 1rem)",
+    width: "calc(60% - 1rem)",
+  },
+  "@media (max-width: 575px)": {
+    width: "100%",
   },
   "&.in-view": {
     opacity: 1,
@@ -84,9 +93,17 @@ const Badge = styled.h3({
   "@media (max-width: 991px)": {
     padding: "0.35rem 0.7rem",
   },
+  "@media (max-width: 575px)": {
+    padding: "0.2rem 0.5rem;",
+    gap: "0.2rem",
+  },
   "& svg": {
     width: "1.125rem",
     height: "1.125rem",
+    "@media (max-width: 575px)": {
+      width: "0.875rem",
+      height: "0.875rem",
+    },
   },
   "& span": {
     fontSize: "0.875rem",
@@ -94,18 +111,19 @@ const Badge = styled.h3({
     background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
+    "@media (max-width: 575px)": {
+      fontSize: "0.688rem"
+    },
   },
 })
 
 const Title = styled.h2({
-  marginBlockEnd: "1rem",
+
   background: 'linear-gradient(90deg, #FF6600 0%, #7B60FF 80.8%)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
-  "@media (max-width: 991px)": {
-    fontSize: "1.8rem",
-  }
+
 });
 
 const Subtitle = styled.h3({
@@ -157,6 +175,10 @@ const BenefitItem = styled.li({
     padding: "0.5rem 0.75rem",
     fontSize: "0.875rem",
   },
+  "@media (max-width: 575px)": {
+    fontSize: "0.813rem",
+    gap: "0.5rem",
+  },
   "&:hover": {
     background: "#fff",
     boxShadow: "0 4px 20px rgba(71, 111, 255, 0.1)",
@@ -165,6 +187,10 @@ const BenefitItem = styled.li({
   "& > div": {
     height: '1rem',
     width: '1rem',
+    "@media (max-width: 991px)": {
+      height: '0.875rem',
+      width: '0.875rem',
+    },
     flexShrink: 0,
     "& svg": {
       height: '100%',
@@ -177,7 +203,7 @@ const CtaButton = styled.button({
   position: "relative",
   overflow: "hidden",
   padding: "1rem 2rem",
-  borderRadius: "3rem",
+  borderRadius: "1.125rem;",
   border: "none",
   color: "#fff",
   fontSize: "1rem",
@@ -191,10 +217,14 @@ const CtaButton = styled.button({
   transition: "all 0.4s ease",
   boxShadow: "0 4px 20px rgba(71, 111, 255, 0.3)",
   "@media (max-width: 991px)": {
-    padding: "0.75rem",
+    height: "2.625rem",
     fontSize: "0.875rem",
-    borderRadius: "0.65rem",
+    borderRadius: "0.75rem",
     fontSize: "0.875rem",
+  },
+  "@media (max-width: 575px)": {
+    height: "2.3rem",
+    fontSize: "0.75rem",
   },
   "&::after": {
     content: '""',
@@ -221,13 +251,17 @@ const CtaButton = styled.button({
 
 // Right side with offset image
 const RightContent = styled.div({
-  width:"calc(50% - 2rem)",
+  width: "calc(50% - 2rem)",
   position: "relative",
   opacity: 0,
   transform: "translateX(2rem)",
   transition: "all 0.8s ease 0.2s",
-    "@media (max-width: 991px)": {
-    width:"calc(40% - 1rem)",
+  "@media (max-width: 991px)": {
+    width: "calc(40% - 1rem)",
+  },
+  "@media (max-width: 575px)": {
+    width: "100%",
+    paddingInline: "4rem",
   },
   "&.in-view": {
     opacity: 1,

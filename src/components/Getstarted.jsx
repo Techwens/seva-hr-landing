@@ -20,6 +20,11 @@ const Section = styled.section({
     gap: "0.5rem",
     border: "1px solid rgba(255, 255, 255, 0.1)",
     fontSize: "0.875rem",
+    "@media (max-width: 575px)": {
+      gap: "0.2rem",
+      padding: "0.2rem 0.5rem",
+      fontSize: "0.688rem",
+    },
   },
 });
 
@@ -41,6 +46,9 @@ const WaveSeparator = styled.div({
   "@media (max-width: 767px)": {
     height: "4rem",
   },
+  "@media (max-width: 575px)": {
+    height: "2rem",
+  },
 });
 
 const MainContent = styled.div({
@@ -49,6 +57,9 @@ const MainContent = styled.div({
   position: "relative",
   "@media (max-width: 767px)": {
     paddingBlock: "3rem",
+  },
+  "@media (max-width: 575px)": {
+    paddingBlock: "1rem 1.5rem",
   },
 });
 
@@ -95,6 +106,9 @@ const HeaderSection = styled.div({
   opacity: 0,
   transform: "translateY(1rem)",
   transition: "all 0.8s ease",
+  "@media (max-width: 575px)": {
+    marginBlockEnd: "1rem",
+  },
   "&.in-view": {
     opacity: 1,
     transform: "translateY(0)",
@@ -105,7 +119,6 @@ const HeaderSection = styled.div({
 
 const Title = styled.h2({
   color: "#fff",
-  marginBlockEnd: "1rem",
   "& span": {
     background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 50%, #FF6B6B 100%)",
     WebkitBackgroundClip: "text",
@@ -126,6 +139,9 @@ const StepsSection = styled.div({
   opacity: 0,
   transform: "translateY(1rem)",
   transition: "all 0.8s ease 0.2s",
+  "@media (max-width: 575px)": {
+    marginBlockEnd: "1rem",
+  },
   "&.in-view": {
     opacity: 1,
     transform: "translateY(0)",
@@ -141,7 +157,7 @@ const StepsTrack = styled.div({
   "@media (max-width: 575px)": {
     flexDirection: "column",
     alignItems: "center",
-    gap: "2rem",
+    gap: "0.5rem",
   },
 });
 
@@ -161,9 +177,7 @@ const StepCard = styled.div(({ $delay }) => ({
   transition: "all 0.4s ease",
   position: "relative",
   animation: `stepPulse 3s ease-in-out ${$delay || "0s"} infinite`,
-  "@media (max-width: 1199px)": {
 
-  },
   "@keyframes stepPulse": {
     "0%, 100%": { boxShadow: "0 0 0 0 rgba(71, 111, 255, 0)" },
     "50%": { boxShadow: "0 0 30px 5px rgba(71, 111, 255, 0.1)" },
@@ -176,6 +190,11 @@ const StepCard = styled.div(({ $delay }) => ({
   "@media (max-width: 767px)": {
     width: "100%",
     maxWidth: "20rem",
+  },
+  "@media (max-width: 575px)": {
+    padding: "0.75rem",
+    maxWidth: "15rem",
+    borderRadius: "0.75rem",
   },
 }));
 
@@ -196,7 +215,13 @@ const StepNumber = styled.div({
   "@media (max-width: 1199px)": {
     width: "3.25rem",
     height: "3.25rem",
-
+  },
+  "@media (max-width: 575px)": {
+    width: "2.25rem",
+    height: "2.25rem",
+    borderRadius: "0.688rem",
+    fontSize: "0.938rem",
+    marginBlockEnd: "0.25rem",
   },
 });
 
@@ -205,6 +230,9 @@ const StepTitle = styled.h4({
   fontWeight: 700,
   color: "#fff",
   marginBlockEnd: "0.5rem",
+  "@media (max-width: 575px)": {
+    marginBlockEnd: "0.15rem",
+  },
 });
 
 const StepDescription = styled.p({
@@ -212,6 +240,9 @@ const StepDescription = styled.p({
   color: "#fff",
   marginBlockEnd: 0,
   lineHeight: 1.5,
+  "@media (max-width: 575px)": {
+    fontSize: "0.813rem",
+  }
 });
 
 // CTA Buttons section
@@ -223,6 +254,9 @@ const CtaSection = styled.div({
   opacity: 0,
   transform: "translateY(1rem)",
   transition: "all 0.8s ease 0.4s",
+    "@media (max-width: 575px)": {
+    gap: "0.5rem",
+  },
   "&.in-view": {
     opacity: 1,
     transform: "translateY(0)",
@@ -234,6 +268,9 @@ const ButtonGroup = styled.div({
   gap: "1rem",
   flexWrap: "wrap",
   justifyContent: "center",
+  "@media (max-width: 575px)": {
+    gap: "0.5rem",
+  }
 });
 
 const PrimaryButton = styled.button({
@@ -255,7 +292,12 @@ const PrimaryButton = styled.button({
     fontSize: "0.875rem",
     height: "2.625rem",
     borderRadius: "0.75rem",
-
+  },
+  "@media (max-width: 575px)": {
+    fontSize: "0.75rem",
+    height: "2.3rem",
+    borderRadius: "0.75rem",
+    paddingInline: "0.65rem",
   },
   "&:hover": {
     transform: "translateY(-3px)",
@@ -281,7 +323,12 @@ const SecondaryButton = styled.button({
     fontSize: "0.875rem",
     height: "2.625rem",
     borderRadius: "0.75rem",
-
+  },
+  "@media (max-width: 575px)": {
+    fontSize: "0.75rem",
+    height: "2.3rem",
+    borderRadius: "0.75rem",
+    paddingInline: "0.65rem",
   },
   "&:hover": {
     borderColor: "rgba(255, 255, 255, 0.6)",
@@ -296,8 +343,17 @@ const TrustText = styled.p({
   display: "flex",
   alignItems: "center",
   gap: "0.5rem",
+  marginBlockEnd:"0rem",
+  "@media (max-width: 575px)": {
+    fontSize: "0.688rem",
+    gap: "0.25rem",
+  },
   "& svg": {
     color: "#22C55E",
+      "@media (max-width: 575px)": {
+    height: "0.5rem",
+    width : "0.5rem",
+  },
   },
 });
 
@@ -320,6 +376,11 @@ const RightSection = styled.div({
   justifyContent: "center",
   gap: "1rem",
   marginBlockStart: "2rem",
+    "@media (max-width: 575px)": {
+    flexDirection: "column",
+    gap: "0.5rem",
+   
+  },
 })
 
 const IndustryLabel = styled.span({
@@ -333,6 +394,10 @@ const IndustryTags = styled.div({
   display: "flex",
   flexWrap: "wrap",
   gap: "0.625rem",
+    "@media (max-width: 575px)": {
+    gap: "0.25rem",
+     justifyContent:"center",
+  },
 })
 
 const IndustryTag = styled.div({
@@ -344,6 +409,14 @@ const IndustryTag = styled.div({
   background: "rgba(255, 255, 255, 0.03)",
   border: "1px solid rgba(255, 255, 255, 0.08)",
   transition: "all 0.2s ease",
+  "@media (max-width: 991px)": {
+    padding: "0.3rem 0.5rem",
+    gap: "0.25rem",
+  },
+  "@media (max-width: 575px)": {
+    padding: "0.2rem 0.4rem",
+    gap: "0.2rem",
+  },
   "&:hover": {
     borderColor: "rgba(71, 111, 255, 0.3)",
     background: "#F8FAFC",
@@ -356,12 +429,19 @@ const IndustryTag = styled.div({
     width: "1.125rem",
     height: "1.125rem",
     color: "#476FFF",
+        "@media (max-width: 575px)": {
+      width: "0.813rem",
+      height: "0.813rem",
+    },
   },
   "& span": {
     fontSize: "0.813rem",
     fontWeight: 500,
     color: "#fff",
     pointerEvents: "none",
+        "@media (max-width: 575px)": {
+      fontSize: "0.688rem",
+    },
   },
 })
 

@@ -10,6 +10,9 @@ const Section = styled.section({
   "@media (max-width: 1199px)": {
     paddingBlock: "3rem",
   },
+  "@media (max-width: 575px)": {
+    paddingBlock: "1.5rem",
+  },
   "&::before": {
     content: '""',
     position: "absolute",
@@ -65,6 +68,9 @@ const HeaderSection = styled.div({
   textAlign: "center",
   marginBlockEnd: "4rem",
   position: "relative",
+  "@media (max-width: 575px)": {
+    marginBlockEnd: "1.25rem",
+  },
 })
 
 const Badge = styled.h3({
@@ -79,9 +85,17 @@ const Badge = styled.h3({
   "@media (max-width: 991px)": {
     padding: "0.35rem 0.7rem",
   },
+  "@media (max-width: 575px)": {
+    padding: "0.2rem 0.5rem;",
+    gap: "0.2rem",
+  },
   "& svg": {
     width: "1.125rem",
     height: "1.125rem",
+    "@media (max-width: 575px)": {
+      width: "0.875rem",
+      height: "0.875rem",
+    },
   },
   "& span": {
     fontSize: "0.875rem",
@@ -89,6 +103,9 @@ const Badge = styled.h3({
     background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
+    "@media (max-width: 575px)": {
+      fontSize: "0.688rem"
+    },
   },
 })
 
@@ -139,6 +156,9 @@ const CertRow = styled.div({
   '@media (max-width: 991px)': {
     marginBlockEnd: "0.5rem",
   },
+  '@media (max-width: 575px)': {
+    gap: "0.25rem",
+  },
 })
 
 const CertBadge = styled.div({
@@ -154,6 +174,10 @@ const CertBadge = styled.div({
   '@media (max-width: 991px)': {
     padding: "0.25rem 0.75rem",
     borderRadius: "0.75rem",
+  },
+  '@media (max-width: 575px)': {
+    padding: "0.2rem 0.5rem",
+    borderRadius: "0.688rem",
   },
   "&:hover": {
     transform: "translateY(-3px)",
@@ -173,12 +197,20 @@ const CertIcon = styled.div({
     width: "2rem",
     height: "2rem",
     borderRadius: "0.5rem",
-
+  },
+  '@media (max-width: 575px)': {
+    width: "1.25rem",
+    height: "1.25rem",
+    borderRadius: "0.325remrem",
   },
   "& svg": {
     width: "1.125rem",
     height: "1.125rem",
     color: "#fff",
+    '@media (max-width: 575px)': {
+      width: "0.813rem",
+      height: "0.813rem",
+    },
   },
 })
 
@@ -221,7 +253,11 @@ const FeatureCard = styled.div(({ $offset }) => ({
   position: "relative",
   "@media (max-width: 991px)": {
     padding: "0.75rem 1rem ",
-    borderRadius:"0.75rem",
+    borderRadius: "0.75rem",
+  },
+  "@media (max-width: 575px)": {
+    padding: "0.75rem",
+    gap: "0.75rem",
   },
   "&::before": {
     content: '""',
@@ -264,6 +300,12 @@ const FeatureIcon = styled.div({
     padding: "0.65rem",
     borderRadius: "0.5rem",
   },
+  "@media (max-width: 575px)": {
+    width: "2rem",
+    height: "2rem",
+    padding: "0.5rem",
+    borderRadius: "0.5rem",
+  },
   "& svg": {
     width: "100%",
     height: "100%",
@@ -300,10 +342,18 @@ const FeatureCheck = styled.div({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  "@media (max-width: 575px)": {
+    width: "1.25rem",
+    height: "1.25rem",
+  },
   "& svg": {
     width: "1rem",
     height: "1rem",
     color: "#10B981",
+    "@media (max-width: 575px)": {
+      width: "0.875rem",
+      height: "0.875rem",
+    },
   },
 })
 
@@ -354,6 +404,10 @@ const ShieldCore = styled.div({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  "@media (max-width: 575px)": {
+    width: "3.5rem",
+    height: "4.5rem",
+  },
   "& svg": {
     width: "100%",
     height: "100%",
@@ -374,6 +428,10 @@ const FloatingStat = styled.div(({ $top, $left, $right, $bottom }) => ({
   boxShadow: "0 8px 30px rgba(0, 0, 0, 0.08)",
   border: "1px solid rgba(71, 111, 255, 0.1)",
   animation: "floatStat 4s ease-in-out infinite",
+  "@media (max-width: 575px)": {
+    padding: "0.5rem",
+    borderRadius: "0.75rem",
+  },
   "@keyframes floatStat": {
     "0%, 100%": { transform: "translateY(0)" },
     "50%": { transform: "translateY(-0.5rem)" },
@@ -384,14 +442,15 @@ const FloatingStat = styled.div(({ $top, $left, $right, $bottom }) => ({
     background: "linear-gradient(135deg, #476FFF 0%, #7B60FF 100%)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
+    "@media (max-width: 575px)": {
+      fontSize: "1.25rem",
+      lineHeight: "1.2"
+    },
   },
   "& .label": {
     fontSize: "0.75rem",
     color: "#64748B",
     fontWeight: 500,
-  },
-  "@media (max-width: 575px)": {
-    display: "none",
   },
 }))
 
@@ -402,6 +461,10 @@ const ComplianceSection = styled.div({
   padding: "2rem",
   position: "relative",
   overflow: "hidden",
+  "@media (max-width: 575px)": {
+    padding: "1rem",
+    borderRadius: "0.75rem",
+  },
   "&::before": {
     content: '""',
     position: "absolute",
@@ -426,6 +489,9 @@ const ComplianceHeader = styled.div({
     fontWeight: 700,
     color: "#fff",
     margin: 0,
+    "@media (max-width: 575px)": {
+      fontSize: "1rem",
+    },
   },
 })
 
@@ -439,6 +505,11 @@ const AutoBadge = styled.span({
   color: "#10B981",
   fontSize: "0.75rem",
   fontWeight: 600,
+  "@media (max-width: 575px)": {
+    padding: "0.2rem 0.5rem",
+    gap: "0.2rem",
+    fontSize: "0.688rem",
+  },
   "& svg": {
     width: "0.75rem",
     height: "0.75rem",
@@ -451,6 +522,9 @@ const ComplianceTags = styled.div({
   gap: "0.625rem",
   position: "relative",
   zIndex: 1,
+  "@media (max-width: 575px)": {
+  gap: "0.25rem",
+  },
 })
 
 const Tag = styled.span({
@@ -465,6 +539,12 @@ const Tag = styled.span({
   alignItems: "center",
   gap: "0.5rem",
   transition: "all 0.2s ease",
+    "@media (max-width: 575px)": {
+   padding: "0.2rem 0.5rem",
+  borderRadius: "0.5rem",
+  fontSize: "0.688rem",
+  gap: "0.25rem",
+  },
   "&:hover": {
     background: "rgba(255, 255, 255, 0.12)",
     borderColor: "rgba(255, 255, 255, 0.2)",
@@ -477,24 +557,6 @@ const Tag = styled.span({
   },
 })
 
-// Bottom trust bar - full width
-const TrustBar = styled.div({
-  marginTop: "4rem",
-  padding: "1.5rem 2rem",
-  background: "#fff",
-  borderRadius: "1.25rem",
-  border: "1px solid rgba(71, 111, 255, 0.1)",
-  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.04)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  gap: "2rem",
-  flexWrap: "wrap",
-  "@media (max-width: 768px)": {
-    justifyContent: "center",
-    textAlign: "center",
-  },
-})
 
 
 
@@ -633,7 +695,7 @@ export default function Security() {
             <FeatureStack>
               {securityFeatures.map((feature, index) => (
                 <FeatureCard
-                key={index}
+                  key={index}
                 >
                   <FeatureIcon>{getIcon(feature.icon)}</FeatureIcon>
                   <FeatureContent>

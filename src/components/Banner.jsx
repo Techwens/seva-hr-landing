@@ -33,6 +33,9 @@ const Section = styled.section({
   position: "relative",
   paddingBlock: "8rem 2rem",
   overflow: "hidden",
+  "@media (max-width: 575px)": {
+    paddingBlock: "6rem 2rem",
+  },
 });
 
 
@@ -98,9 +101,18 @@ const Badge = styled.div({
   gap: "0.625rem",
   fontWeight: 600,
   marginBottom: "2.5rem",
+  fontSize: "0.688rem",
+  "@media (max-width: 575px)": {
+    marginBottom: "1rem",
+    gap: "0.5rem",
+  },
   "& .icon": {
     height: "1.5rem",
     width: "1.5rem",
+    "@media (max-width: 575px)": {
+      height: "1rem",
+      width: "1rem",
+    },
     "& svg": {
       height: "100%",
       width: "100%",
@@ -116,11 +128,19 @@ const Badge = styled.div({
     alignItems: "center",
     justifyContent: "center",
     gap: "0.313rem",
+    "@media (max-width: 575px)": {
+      padding: "0.1rem 0.3rem",
+      fontSize: "0.688rem",
+    },
     "& span": {
       height: "1rem",
       width: "1rem",
       display: "flex",
       alignItems: "center",
+      "@media (max-width: 575px)": {
+        height: "0.6rem",
+        width: "0.6rem",
+      },
       "& svg": {
         height: "100%",
         width: "100%",
@@ -132,9 +152,6 @@ const Badge = styled.div({
 const Heading = styled.h1({
   lineHeight: 1.15,
   marginBlockEnd: "0.5rem",
-  "@media (max-width: 768px)": {
-    fontSize: "2.25rem",
-  },
 });
 const Subtitle = styled.p({
   color: "#64748B",
@@ -176,6 +193,11 @@ const ButtonGroup = styled.div({
   gap: "1.25rem",
   flexWrap: "wrap",
   marginTop: "2.5rem",
+  "@media (max-width: 575px)": {
+    gap: "0.5rem",
+    marginTop: "1.5rem",
+  },
+
 });
 
 const PrimaryButton = styled.button({
@@ -191,7 +213,11 @@ const PrimaryButton = styled.button({
     fontSize: "0.875rem",
     height: "2.625rem",
     borderRadius: "0.75rem",
-
+  },
+  "@media (max-width: 575px)": {
+    fontSize: "0.75rem",
+    height: "2.3rem",
+    paddingInline:"0.65rem"
   },
   color: "#fff",
   fontSize: "1rem",
@@ -202,6 +228,10 @@ const PrimaryButton = styled.button({
     height: "0.875rem",
     width: "0.875rem",
     display: "flex",
+    "@media (max-width: 575px)": {
+    height: "0.5rem",
+    width: "0.5rem",
+    },
     "& svg": {
       height: "100%",
       width: "100%",
@@ -230,12 +260,20 @@ const SecondaryButton = styled.button({
     fontSize: "0.875rem",
     height: "2.625rem",
     borderRadius: "0.75rem",
-
+  },
+    "@media (max-width: 575px)": {
+    fontSize: "0.75rem",
+    height: "2.3rem",
+    paddingInline:"0.65rem"
   },
   "& span": {
     height: "0.875rem",
     width: "0.875rem",
     display: "flex",
+    "@media (max-width: 575px)": {
+    height: "0.5rem",
+    width: "0.5rem",
+    },
     "& svg": {
       height: "100%",
       width: "100%",
