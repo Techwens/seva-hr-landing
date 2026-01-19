@@ -47,9 +47,17 @@ const Badge = styled.h3({
   "@media (max-width: 991px)": {
     padding: "0.35rem 0.7rem",
   },
+  "@media (max-width: 575px)": {
+    padding: "0.2rem 0.5rem;",
+    gap: "0.2rem",
+  },
   "& svg": {
     width: "1.125rem",
     height: "1.125rem",
+    "@media (max-width: 575px)": {
+      width: "0.875rem",
+      height: "0.875rem",
+    },
   },
   "& span": {
     fontSize: "0.875rem",
@@ -57,8 +65,11 @@ const Badge = styled.h3({
     background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
+    "@media (max-width: 575px)": {
+      fontSize: "0.688rem"
+    },
   },
-})
+});
 const SectionRow = styled.div({
   display: "flex",
   alignItems: "flex-start",
@@ -68,6 +79,9 @@ const SectionRow = styled.div({
   "@media (max-width: 991px)": {
     flexDirection: "column",
   },
+  "@media (max-width: 575px)": {
+    marginBlockStart: "1rem",
+  },
 });
 const Left = styled.div({
   width: "60%",
@@ -75,10 +89,11 @@ const Left = styled.div({
   transform: "translateX(-3rem)",
   transition: "all 0.8s ease",
   paddingInlineEnd: "1rem",
+  "@media (max-width: 1199px)": {
+    paddingInlineEnd: "0rem",
+  },
   "@media (max-width: 991px)": {
     width: "100%",
-    paddingInlineEnd: "0rem",
-
   },
   "&.in-view": {
     opacity: 1,
@@ -91,6 +106,9 @@ const Left = styled.div({
     display: "flex",
     flexWrap: "wrap",
     gap: "1rem",
+    "@media (max-width: 575px)": {
+      gap: "0.5rem",
+    },
     "& li": {
       width: "calc((100% - 2rem) / 3)",
       padding: "0.063rem",
@@ -99,10 +117,12 @@ const Left = styled.div({
       overflow: "hidden",
       padding: "1.875rem 1.563rem",
       "@media (max-width: 1199px)": {
-        padding: "1.875rem 0.875rem",
-      },
-      "@media (max-width: 991px)": {
         padding: "1rem 0.875rem",
+      },
+      "@media (max-width: 575px)": {
+        width: "calc((100% - 0.5rem) / 2)",
+        borderRadius: "0.75rem",
+        padding: "0.875rem 0.75rem",
       },
       '&:after': {
         content: "''",
@@ -125,6 +145,9 @@ const Left = styled.div({
         background: "#fff",
         zIndex: "1",
         borderRadius: "1.125rem",
+        "@media (max-width: 575px)": {
+          borderRadius: "0.685rem",
+        },
       },
       "&:hover::after": {
         background: "linear-gradient(140.97deg, #476cfd0a 3.17%, #4600b617 72.79%)",
@@ -150,11 +173,15 @@ const Left = styled.div({
           alignItems: "start",
           transition: "all 0.4s ease",
           flex: "0 0 2.5rem",
-          "@media (max-width: 991px)": {
+          "@media (max-width: 1199px)": {
             height: "1.8rem",
             width: "1.8rem",
             flex: "0 0 1.8rem",
-
+          },
+          "@media (max-width: 575px)": {
+            height: "1.25rem",
+            width: "1.25rem",
+            flex: "0 0 1.25rem",
           },
           "& svg": {
             height: "100%",
@@ -166,6 +193,9 @@ const Left = styled.div({
           marginBlockEnd: "0rem",
           transition: "all 0.4s ease",
           transform: "translateX(0)",
+          "@media (max-width: 575px)": {
+            fontSize: "0.875rem",
+          },
         },
       },
       "& p": {
@@ -203,6 +233,10 @@ export const Right = styled.div({
     "@media (max-width: 991px)": {
       gap: "0.5rem",
     },
+    "@media (max-width: 575px)": {
+      gap: "0.25rem",
+      padding: "1rem",
+    },
     "& li": {
       width: "calc((100% - 1rem) / 2)",
       padding: "1rem",
@@ -212,14 +246,21 @@ export const Right = styled.div({
       alignItems: "center",
       boxShadow: "0px 4px 36px 0px #0010EF26",
       gap: "0.5rem",
-      "@media (max-width: 991px)": {
+      "@media (max-width: 1199px)": {
         padding: "0.5rem 0.75rem",
         fontSize: "0.875rem",
         borderRadius: "0.65rem",
       },
+      "@media (max-width: 575px)": {
+        width: "100%",
+      },
       "& div": {
         height: "1.188rem",
         width: "1.188rem",
+        "@media (max-width: 575px)": {
+          height: "0.875rem",
+          width: "0.875rem",
+        },
         "& svg": {
           height: "100%",
           width: "100%",
@@ -259,7 +300,10 @@ const Buttonwrap = styled.div({
     flexWrap: "wrap",
     gap: "1rem",
   },
-
+  "@media (max-width: 575px)": {
+    flexDirection: "column",
+    gap: "0.5rem",
+  },
 });
 const CtaButton = styled.button({
   position: "relative",
@@ -281,11 +325,14 @@ const CtaButton = styled.button({
   "@media (max-width: 991px)": {
     padding: "0.75rem",
     fontSize: "0.875rem",
-    borderRadius: "0.65rem",
+    borderRadius: "0.75rem",
     width: "calc(50% - 0.5rem)",
-    fontSize: "0.875rem",
   },
-
+  "@media (max-width: 575px)": {
+    height: "2.3rem",
+    fontSize: "0.813rem",
+    width: "100%",
+  },
   "&::after": {
     content: '""',
     position: "absolute",
@@ -324,10 +371,15 @@ const GetStartButton = styled.button({
   "@media (max-width: 991px)": {
     padding: "0.75rem",
     fontSize: "0.875rem",
-    borderRadius: "0.65rem",
+    borderRadius: "0.75rem",
     width: "calc(50% - 0.5rem)",
     marginBlockStart: "0rem",
-    fontSize: "0.875rem",
+  },
+    "@media (max-width: 575px)": {
+    height: "2.3rem",
+    fontSize: "0.813rem",
+
+    width: "100%",
   },
   "&:hover": {
     boxShadow: "0 0 0.75rem #c9ffda",

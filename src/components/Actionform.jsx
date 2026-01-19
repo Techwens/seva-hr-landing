@@ -48,8 +48,11 @@ const securityData = [
 const Section = styled.section({
   paddingBlock: "3.5rem",
   position: "relative",
-    "@media (max-width: 991px)": {
-  paddingBlock: "2rem",
+  "@media (max-width: 991px)": {
+    paddingBlock: "2rem",
+  },
+  "@media (max-width: 575px)": {
+    paddingBlock: "1.5rem",
   },
   "&::after": {
     content: '""',
@@ -93,9 +96,17 @@ const Badge = styled.h3({
   "@media (max-width: 991px)": {
     padding: "0.35rem 0.7rem",
   },
+  "@media (max-width: 575px)": {
+    padding: "0.2rem 0.5rem;",
+    gap: "0.2rem",
+  },
   "& svg": {
     width: "1.125rem",
     height: "1.125rem",
+    "@media (max-width: 575px)": {
+      width: "0.875rem",
+      height: "0.875rem",
+    },
   },
   "& span": {
     fontSize: "0.875rem",
@@ -103,6 +114,9 @@ const Badge = styled.h3({
     background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
+    "@media (max-width: 575px)": {
+      fontSize: "0.688rem"
+    },
   },
 });
 const Subtitle = styled.p({
@@ -117,7 +131,8 @@ const SectionRow = styled.div({
   justifyContent: "space-between",
   marginBlockStart: "2.625rem",
   overflow: "hidden",
-  "@media (max-width: 767px)": {
+  "@media (max-width: 575px)": {
+    marginBlockStart: "1rem",
     flexDirection: "column",
   },
 });
@@ -149,6 +164,12 @@ const CardList = styled.ul({
   "@media (max-width: 1199px)": {
     gap: "0.875rem",
   },
+  "@media (max-width: 767px)": {
+    gap: "0.5rem",
+  },
+  "@media (max-width: 575px)": {
+    marginBlockEnd: "1rem",
+  },
   "& li": {
     padding: "1.25rem 1.5rem",
     borderRadius: "1.25rem",
@@ -161,6 +182,10 @@ const CardList = styled.ul({
     transition: "background 0.4s ease",
     "@media (max-width: 991px)": {
       padding: "0.563rem 0.75rem",
+    },
+    "@media (max-width: 575px)": {
+      gap: "0rem",
+      borderRadius: "0.75rem",
     },
     "& p": {
       textAlign: "start",
@@ -219,6 +244,8 @@ export const Right = styled.div({
   },
   "@media (max-width: 575px)": {
     width: "100%",
+    paddingInlineStart: "0rem",
+
   },
   "&.in-view": {
     opacity: 1,
@@ -233,31 +260,43 @@ export const FormCard = styled.div({
   padding: "2.5rem",
   boxShadow: "-4px 4px 12px rgba(0,0,0,0.06)",
   "@media (max-width: 991px)": {
-  padding: "1.5rem",
+    padding: "1.5rem",
   },
+  "@media (max-width: 768px)": {
+    padding: "1.75rem",
+    border: "1px solid #D5D3FF",
+    borderRadius: "1.25rem",
+    padding: "1rem 0.75rem",
+  },
+    "@media (max-width: 575px)": {
+ 
+    borderRadius: "0.75rem",
+  },
+
   "& h4": {
     fontSize: "1.75rem",
     fontWeight: 700,
     marginBottom: "0.5rem",
     "@media (max-width: 1199px)": {
-    marginBottom: "0rem",
+      marginBottom: "0rem",
+    },
+    "@media (max-width: 767px)": {
+      fontSize: "1.25rem",
+    },
   },
-  },
-
   "& p": {
     marginBottom: "2rem",
     textAlign: "start",
-  },
-
-  "@media (max-width: 768px)": {
-    padding: "1.75rem",
+    "@media (max-width: 767px)": {
+      marginBottom: "1rem",
+    },
   },
 });
 
 export const FormGrid = styled.div({
   display: "flex",
   justifyContent: "space-between",
-  flexWrap:"wrap",
+  flexWrap: "wrap",
   "@media (max-width: 768px)": {
     gridTemplateColumns: "1fr",
   },
@@ -268,12 +307,20 @@ export const FormGroup = styled.div(({ $hasError }) => ({
   flexDirection: "column",
   gap: "0.5rem",
   width: "48%",
-  position:"relative",
-  marginBlockEnd:"1.75rem",
+  position: "relative",
+  marginBlockEnd: "1.75rem",
+  "@media (max-width: 767px)": {
+    width: "100%",
+    marginBlockEnd: "1rem",
+    gap: "0.25",
+  },
   "& label": {
     fontSize: "0.875rem",
     fontWeight: 500,
     color: "#111",
+    "@media (max-width: 575px)": {
+      fontSize: "0.813rem",
+    },
   },
 
   "& input, & select": {
@@ -285,10 +332,13 @@ export const FormGroup = styled.div(({ $hasError }) => ({
     outline: "none",
     background: $hasError ? "#FEF2F2" : "#fafafa",
     transition: "all .25s ease",
-      "@media (max-width: 991px)": {
-        height: "2.625rem",
-         borderRadius:"0.75rem",
-      },
+    "@media (max-width: 991px)": {
+      height: "2.625rem",
+      borderRadius: "0.75rem",
+    },
+    "@media (max-width: 575px)": {
+      fontSize: "0.813rem",
+    },
     "&:focus": {
       borderColor: $hasError ? "#EF4444" : "#476FFF",
       background: "#fff",
@@ -307,13 +357,18 @@ export const FormGroup = styled.div(({ $hasError }) => ({
 }));
 
 export const ErrorText = styled.span({
-  position:"absolute",
-  width:"100%",
-  left:"0",
-  bottom:"-1.2rem",
+  position: "absolute",
+  width: "100%",
+  left: "0",
+  bottom: "-1.1rem",
   fontSize: "0.75rem",
   color: "#EF4444",
   marginTop: "-0.25rem",
+  "@media (max-width: 575px)": {
+    bottom: "-0.9rem",
+    fontSize: "0.688rem",
+  },
+
 });
 
 export const SuccessMessage = styled.div({
@@ -337,10 +392,14 @@ export const SuccessMessage = styled.div({
 export const ButtonWrap = styled.div({
   display: "flex",
   alignItems: "flex-end",
-  width:"48%",
-  marginBlockEnd:"1.75rem",
+  width: "48%",
+  marginBlockEnd: "1.75rem",
   "@media (max-width: 768px)": {
     marginTop: "0.5rem",
+  },
+  "@media (max-width: 767px)": {
+    marginBlock: "0rem",
+    width: "100%",
   },
   "& button": {
     width: "100%",
@@ -353,11 +412,15 @@ export const ButtonWrap = styled.div({
     color: "#fff",
     background: "linear-gradient(90deg, #FF6600 0%, #7B60FF 106.8%)",
     transition: "all .3s ease",
-      "@media (max-width: 991px)": {
+    "@media (max-width: 991px)": {
       fontSize: "0.875rem",
-        height: "2.625rem",
-        borderRadius:"0.75rem",
-
+      height: "2.625rem",
+      borderRadius: "0.75rem",
+    },
+    "@media (max-width: 767px)": {
+      height: "2.3rem",
+      fontSize: "0.75rem",
+      borderRadius: "0.75rem"
     },
     "&:hover": {
       transform: "translateY(-2px)",
@@ -374,12 +437,20 @@ export const PrivacyText = styled.div({
   display: "flex",
   alignItems: "center",
   gap: "0.5rem",
-    "@media (max-width: 991px)": {
-  marginTop: "0.5rem",
+  "@media (max-width: 991px)": {
+    marginTop: "0.5rem",
+  },
+  "@media (max-width: 575px)": {
+    gap: "0.25rem",
+    fontSize: "0.688rem",
   },
   "& div": {
     height: "1.5rem",
     width: "1.5rem",
+    "@media (max-width: 575px)": {
+      height: "1rem",
+      width: "1rem",
+    },
     "& img": {
       height: "100% !important",
       width: "100%  !important",

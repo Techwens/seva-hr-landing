@@ -8,6 +8,9 @@ import Badge3 from "../assets/badge3.svg"
 
 const Section = styled.section({
   paddingBlockEnd: "3.5rem",
+    "@media (max-width: 575px)": {
+    paddingBlockEnd: "1.5rem",
+  },
 })
 
 const SectionRow = styled.div({
@@ -44,6 +47,10 @@ const SectionRow = styled.div({
     padding: "2rem",
     gap: "0.5rem",
   },
+  "@media (max-width: 575px)": {
+    padding: "1rem 0.75rem",
+    borderRadius: "1rem",
+  },
 })
 
 const Left = styled.div({
@@ -67,6 +74,11 @@ const Left = styled.div({
     "@media (max-width: 991px)": {
       padding: "0.35rem 0.7rem",
     },
+    "@media (max-width: 575px)": {
+      padding: "0.2rem 0.5rem",
+      fontSize: "0.688rem",
+      gap: "0.2rem",
+    },
   },
   "& h2": {
     fontSize: "2.25rem",
@@ -76,8 +88,11 @@ const Left = styled.div({
     backgroundClip: "text",
     color: "transparent",
     "@media (max-width: 991px)": {
-    fontSize: "2rem",
-  },
+      fontSize: "2rem",
+    },
+    "@media (max-width: 575px)": {
+      fontSize: "1.5rem",
+    },
   },
   "& p": {
     color: "#fff",
@@ -103,8 +118,8 @@ const CardList = styled.ul({
   "@media (max-width: 767px)": {
     gridTemplateColumns: "repeat(2, 1fr)",
   },
-  "@media (max-width: 480px)": {
-    gridTemplateColumns: "1fr",
+    "@media (max-width: 575px)": {
+      gap: "0.5rem",
   },
 })
 
@@ -120,10 +135,13 @@ const Card = styled.li({
   backdropFilter: "blur(10px)",
   border: "1px solid rgba(255, 255, 255, 0.08)",
   '@media (max-width: 991px)': {
-  padding: "0.75rem 1rem",
-
+    padding: "0.75rem 1rem",
   },
-
+  "@media (max-width: 575px)": {
+    padding: "0.2rem 0.5rem",
+    borderRadius: "0.688rem",
+    gap: "0.5rem",
+  },
   "&:hover": {
     background: "rgba(255, 255, 255, 0.1)",
     border: "1px solid rgba(255, 255, 255, 0.15)",
@@ -138,12 +156,19 @@ const Card = styled.li({
     "@media (max-width: 1199px)": {
       fontSize: "1rem",
     },
+    "@media (max-width: 575px)": {
+      fontSize: "0.875rem",
+      marginBlockEnd:"0rem",
+    },
   },
 
   "& span": {
     fontSize: "0.875rem",
     fontWeight: "500",
     color: "#fff",
+    "@media (max-width: 575px)": {
+      fontSize: "0.75rem",
+    },
   },
 })
 
@@ -157,11 +182,20 @@ const Icon = styled.div({
   background: "linear-gradient(135deg, rgba(71, 111, 255, 0.3) 0%, rgba(123, 96, 255, 0.3) 100%)",
   border: "1px solid rgba(255, 255, 255, 0.1)",
   flexShrink: 0,
-
+  "@media (max-width: 575px)": {
+    height: "1.25rem",
+    width: "1.25rem",
+    borderRadius: "0.325rem",
+  },
   "& img": {
     height: "1.25rem",
     width: "1.25rem",
     filter: "brightness(0) invert(1)",
+    "@media (max-width: 575px)": {
+      height: "0.75rem",
+      width: "0.75rem",
+      borderRadius: "0.325rem",
+    },
   },
 })
 

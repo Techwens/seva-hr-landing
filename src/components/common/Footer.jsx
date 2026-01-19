@@ -47,43 +47,49 @@ const FooterList = styled.ul({
   display: "flex",
   justifyContent: "space-between",
   gap: "2rem",
-
+  flexWrap: "wrap",
   "@media (max-width: 991px)": {
-    flexDirection: "column",
+    gap: "1rem",
   },
-
   "& > li": {
     display: "flex",
     flexDirection: "column",
     gap: "0.75rem",
+    "@media (max-width: 575px)": {
+      gap: "0rem",
+    },
   },
 
   "& .col-brand": {
     width: "30%",
-  },
-  "& .col-features": {
-    width: "23.33%",
-  },
-  "& .col-compliance": {
-    width: "23.33%",
-  },
-  "& .col-support": {
-    width: "23.33%",
-  },
-
-  "@media (max-width: 991px)": {
-    "& .col-brand, & .col-features, & .col-compliance, & .col-support": {
+    "@media (max-width: 575px)": {
       width: "100%",
     },
   },
-
+  "& .col-features": {
+    width: "20%",
+    "@media (max-width: 575px)": {
+      width: "28%",
+    },
+  },
+  "& .col-compliance": {
+    width: "20%",
+    "@media (max-width: 575px)": {
+      width: "28%",
+    },
+  },
+  "& .col-support": {
+    width: "20%",
+    "@media (max-width: 575px)": {
+      width: "28%",
+    },
+  },
   "& h4": {
     fontWeight: 600,
     marginBottom: "1.5rem",
     color: "#fff",
     "@media (max-width: 991px)": {
       marginBottom: "0.5rem",
-
     },
   },
 
@@ -192,6 +198,17 @@ const Copyright = styled.div({
   fontWeight: 500,
   fontSize: "0.875rem",
   color: "#d6d6d6",
+  "@media (max-width: 991px)": {
+    flexDirection: "column",
+    textAlign: "center",
+    gap: "0rem",
+  },
+  "@media (max-width: 575px)": {
+    marginBlockStart: "1rem",
+    fontSize: "0.625rem",
+  padding: "0.75rem 0",
+
+  },
   "& span": {
     display: "flex",
     gap: "0.5rem",
@@ -218,11 +235,7 @@ const Copyright = styled.div({
       color: "#fff",
     },
   },
-  "@media (max-width: 991px)": {
-    flexDirection: "column",
-    textAlign: "center",
-    gap: "0rem",
-  },
+
 });
 
 

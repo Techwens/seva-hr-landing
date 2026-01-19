@@ -26,6 +26,9 @@ const ArrowIcon = () => (
 const Section = styled.section({
   paddingBlock: "3rem",
   background: "#F8FAFC",
+  "@media (max-width: 575px)": {
+    paddingBlock: "1.5rem",
+  },
   "& .centerized": {
     display: "flex",
     justifyContent: "center",
@@ -57,9 +60,17 @@ const Badge = styled.h3({
   "@media (max-width: 991px)": {
     padding: "0.35rem 0.7rem",
   },
+  "@media (max-width: 575px)": {
+    padding: "0.2rem 0.5rem;",
+    gap: "0.2rem",
+  },
   "& svg": {
     width: "1.125rem",
     height: "1.125rem",
+    "@media (max-width: 575px)": {
+      width: "0.875rem",
+      height: "0.875rem",
+    },
   },
   "& span": {
     fontSize: "0.875rem",
@@ -67,8 +78,11 @@ const Badge = styled.h3({
     background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
+    "@media (max-width: 575px)": {
+      fontSize: "0.688rem"
+    },
   },
-})
+});
 
 
 const FeatureList = styled.ul({
@@ -83,11 +97,20 @@ const FeatureList = styled.ul({
   "@media (max-width: 1199px)": {
     gap: "1rem",
   },
+  "@media (max-width: 575px)": {
+    marginBlockStart: "1rem",
+    gap: "0.5rem",
+  },
   '& li': {
     width: "calc((100% - 6rem) / 4)",
     display: "flex",
     flexDirection: "column",
     gap: "2rem",
+    '&.statitem': {
+      "@media (max-width: 575px)": {
+        flexDirection: "row",
+      }
+    },
     "@media (max-width: 1199px)": {
       gap: "1rem",
       width: "calc((100% - 3rem) / 4)",
@@ -97,6 +120,7 @@ const FeatureList = styled.ul({
     },
     "@media (max-width: 575px)": {
       width: "100%",
+      gap: "0.5rem",
     },
     "&:hover .IconWrap": {
       opacity: 0,
@@ -133,6 +157,7 @@ const FeatureList = styled.ul({
         }
       }
     },
+
   }
 });
 
@@ -146,11 +171,17 @@ const FeatureItem = styled.div({
   "@media (max-width: 1199px)": {
     padding: "1rem",
   },
+  "@media (max-width: 575px)": {
+    padding: "1rem 0.75rem",
+  },
   '& h4': {
     fontWeight: '700',
     marginBlockEnd: '0.5rem',
     maxWidth: '80%',
     transition: "all 0.45s ease",
+    "@media (max-width: 575px)": {
+      maxWidth: '100%',
+    },
   },
   '& p': {
     marginBlockEnd: '0rem',
@@ -159,6 +190,10 @@ const FeatureItem = styled.div({
     textAlign: 'start',
     lineHeight: '1.7',
     transition: "all 0.45s ease",
+    "@media (max-width: 575px)": {
+      maxWidth: '100%',
+      fontSize: "0.813rem",
+    },
   },
   '& .activity': {
     width: "100%",
@@ -179,10 +214,15 @@ const FeatureItem = styled.div({
       }
     }
   },
+  '& .statitem': {
+    "@media (max-width: 575px)": {
+      flexDirection: "row",
+    }
+  },
   "& h5": {
     fontWeight: 600,
     lineHeight: 1.3,
-    marginBlock: "0.625rem",
+    marginBlock: "0.625rem 0rem",
     borderRadius: '1.875rem',
     backgroundColor: '#fff',
     padding: '0.625rem 1.25rem 0.625rem 2.5rem',
@@ -195,7 +235,11 @@ const FeatureItem = styled.div({
       opacity: 1,
       transform: "translateY(0rem)",
       background: "linear-gradient(151.19deg, #ff7f0f1a 1.77%, #0036f50a 71.94% 71.94%)",
-      fontSize:"0.875rem",
+      fontSize: "0.875rem",
+    },
+    "@media (max-width: 575px)": {
+      padding: '0.25rem 0.25rem 0.25rem 1.7rem',
+      fontSize: "0.688rem",
     },
     '&:after': {
       content: "''",
@@ -209,6 +253,12 @@ const FeatureItem = styled.div({
       backgroundRepeat: 'no-repeat',
       backgroundSize: "contain",
       backgroundPosition: "center",
+      "@media (max-width: 575px)": {
+        left: '0.5rem',
+        height: '0.875rem',
+        width: '0.875rem',
+
+      },
     }
   },
 });
@@ -224,6 +274,11 @@ const IconWrap = styled.div({
   "@media (max-width: 991px)": {
     width: "2.5rem",
     height: "2.5rem",
+  },
+  "@media (max-width: 575px)": {
+    width: "2rem",
+    height: "2rem",
+    marginBlockEnd: "0.25rem",
   },
   "& svg": {
     height: "100% !important",
@@ -242,6 +297,10 @@ const StatItem = styled.div({
   "@media (max-width: 1199px)": {
     padding: "1rem",
   },
+  "@media (max-width: 575px)": {
+    padding: "1rem 0.75rem",
+    width: "50%",
+  },
   '& h4': {
     marginBlockEnd: '0rem',
     fontSize: '2.5rem',
@@ -254,6 +313,9 @@ const StatItem = styled.div({
     "@media (max-width: 991px)": {
       fontSize: '1.5rem',
     },
+    "@media (max-width: 575px)": {
+      fontSize: '1rem',
+    },
   },
   '& p': {
     textAlign: 'start',
@@ -261,6 +323,9 @@ const StatItem = styled.div({
     color: '#64748B',
     "@media (max-width: 1199px)": {
       fontSize: "0.875rem",
+    },
+    "@media (max-width: 575px)": {
+      fontSize: "0.813rem",
     },
   }
 });
@@ -272,10 +337,18 @@ const CtaList = styled.div({
     "@media (max-width: 1199px)": {
       fontSize: "1.5rem",
     },
+    "@media (max-width: 575px)": {
+      fontSize: "1rem",
+      marginBlockEnd: "0rem",
+
+    },
   },
   "& p": {
     textAlign: "start",
     "@media (max-width: 1199px)": {
+      fontSize: "0.875rem",
+    },
+    "@media (max-width: 575px)": {
       fontSize: "0.875rem",
     },
   },
@@ -297,9 +370,16 @@ const CtaList = styled.div({
       "@media (max-width: 991px)": {
         fontSize: "0.875rem",
       },
+      "@media (max-width: 575px)": {
+        fontSize: "0.813rem",
+      },
       "& div": {
         height: '0.875rem',
         width: '0.875rem',
+        "@media (max-width: 575px)": {
+          height: '0.625rem',
+          width: '0.625rem',
+        },
         "& svg": {
           height: '100%',
           width: '100%',
@@ -313,7 +393,7 @@ const CtaButton = styled.button({
   position: "relative",
   overflow: "hidden",
   padding: "1rem 2rem",
-  borderRadius: "3rem",
+  borderRadius: "1.125rem;",
   border: "none",
   color: "#fff",
   fontSize: "1rem",
@@ -326,12 +406,15 @@ const CtaButton = styled.button({
   background: "linear-gradient(151.19deg, #476FFF 1.77%, #4600B6 71.94%)",
   transition: "all 0.4s ease",
   boxShadow: "0 4px 20px rgba(71, 111, 255, 0.3)",
-          "@media (max-width: 991px)": {
-      fontSize: "0.875rem",
-        height: "2.625rem",
-        borderRadius:"0.75rem",
-
-    },
+  "@media (max-width: 991px)": {
+    fontSize: "0.875rem",
+    height: "2.625rem",
+    borderRadius: "0.75rem",
+  },
+  "@media (max-width: 575px)": {
+    fontSize: "0.75rem",
+    height: "2.3rem",
+  },
   "&::after": {
     content: '""',
     position: "absolute",
@@ -443,7 +526,7 @@ export default function Features() {
             </FeatureItem>
           </li>
 
-          <li>
+          <li className="statitem">
             <StatItem>
               <div className="activity">
                 <h4>5+</h4>
@@ -459,7 +542,7 @@ export default function Features() {
               <p>Based Platform</p>
             </StatItem>
           </li>
-          <li>
+          <li className="statitem">
             <StatItem>
               <div className="activity">
                 <h4>20+</h4>
