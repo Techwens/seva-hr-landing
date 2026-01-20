@@ -289,7 +289,7 @@ const OrgCreateSuccess = ({ orgCreateResponse, organizationTypes, industries, cu
             </CardContent>
           </Card>
 
-         <Alert variant="destructive">
+          <Alert variant="destructive">
             <Info className="h-5 w-5 text-blue-600" />
             <AlertTitle>Important Information</AlertTitle>
             <AlertDescription className="space-y-3 mt-3 text-blue-800">
@@ -799,7 +799,7 @@ const CompanyOnboardingNew = () => {
           />
 
           {submitError && (
-            <Alert variant="destructive">
+            <Alert variant="destructive" style={{ marginBlockEnd: "24px" }}>
               <AlertCircle className="h-5 w-5 text-red-600" />
               <AlertTitle className="text-red-900 font-semibold">Submission Error</AlertTitle>
               <AlertDescription className="text-red-800">{submitError}</AlertDescription>
@@ -812,7 +812,7 @@ const CompanyOnboardingNew = () => {
               <Card>
                 <CardHeader style={{ background: "#eff2ff" }}>
                   <CardTitle>
-                    <Home/>
+                    <Home />
                     Organization Details
                   </CardTitle>
                 </CardHeader>
@@ -1177,7 +1177,7 @@ const CompanyOnboardingNew = () => {
 
               {/* Administrator Account */}
               <Card>
-                <CardHeader style={{ background: "#ffffef" }}>
+                <CardHeader style={{ background: "fffdef" }}>
                   <CardTitle>
                     <User />
                     Administrator Account
