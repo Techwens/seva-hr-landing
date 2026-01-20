@@ -1,63 +1,64 @@
-import * as React from "react"
-import { cva } from "class-variance-authority";
+"use client";
 
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import styled from "styled-components";
 
-const alertVariants = cva(
-  "relative w-full rounded-lg border px-4 py-3 text-sm grid has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] grid-cols-[0_1fr] has-[>svg]:gap-x-3 gap-y-0.5 items-start [&>svg]:size-4 [&>svg]:translate-y-0.5 [&>svg]:text-current",
-  {
-    variants: {
-      variant: {
-        default: "bg-card text-card-foreground",
-        destructive:
-          "text-destructive bg-card [&>svg]:text-current *:data-[slot=alert-description]:text-destructive/90",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-)
+// Styled Alert container
+const StyledAlert = styled.div((props) => ({
+  position: "relative",
+  width: "100%",
+  borderRadius: "8px",
+  padding: "12px 16px",
+  display: "grid",
+  gridTemplateColumns: "0 1fr",
+  gap: "2px",
+  alignItems: "start",
+  fontSize: "14px",
+  boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
 
-function Alert({
-  className,
-  variant,
-  ...props
-}) {
+  // Variant handling
+  backgroundColor: props.variant === "destructive" ? "#fef2f2" : "#f8fafc",
+  color: props.variant === "destructive" ? "#991b1b" : "#1e293b",
+  borderLeft: `4px solid ${props.variant === "destructive" ? "#dc2626" : "#3b82f6"}`,
+}));
+
+// Title
+const StyledAlertTitle = styled.div({
+  gridColumnStart: 2,
+  fontWeight: 500,
+  minHeight: "16px",
+  lineHeight: 1.2,
+  overflow: "hidden",
+  whiteSpace: "nowrap",
+  textOverflow: "ellipsis",
+});
+
+// Description
+const StyledAlertDescription = styled.div({
+  gridColumnStart: 2,
+  display: "grid",
+  justifyItems: "start",
+  gap: "4px",
+  fontSize: "14px",
+  color: "#475569",
+  lineHeight: 1.5,
+});
+
+// Components
+function Alert({ variant = "default", children, ...props }) {
   return (
-    <div
-      data-slot="alert"
-      role="alert"
-      className={cn(alertVariants({ variant }), className)}
-      {...props} />
+    <StyledAlert variant={variant} role="alert" {...props}>
+      {children}
+    </StyledAlert>
   );
 }
 
-function AlertTitle({
-  className,
-  ...props
-}) {
-  return (
-    <div
-      data-slot="alert-title"
-      className={cn("col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight", className)}
-      {...props} />
-  );
+function AlertTitle({ children, ...props }) {
+  return <StyledAlertTitle {...props}>{children}</StyledAlertTitle>;
 }
 
-function AlertDescription({
-  className,
-  ...props
-}) {
-  return (
-    <div
-      data-slot="alert-description"
-      className={cn(
-        "text-muted-foreground col-start-2 grid justify-items-start gap-1 text-sm [&_p]:leading-relaxed",
-        className
-      )}
-      {...props} />
-  );
+function AlertDescription({ children, ...props }) {
+  return <StyledAlertDescription {...props}>{children}</StyledAlertDescription>;
 }
 
-export { Alert, AlertTitle, AlertDescription }
+export { Alert, AlertTitle, AlertDescription };

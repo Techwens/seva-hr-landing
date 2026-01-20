@@ -1,93 +1,104 @@
-import * as React from "react"
+"use client";
 
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import styled from "styled-components";
 
-function Card({
-  className,
-  ...props
-}) {
-  return (
-    (<div
-      data-slot="card"
-      className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
-        className
-      )}
-      {...props} />)
-  );
+// ---------- Card Container ----------
+const StyledCard = styled.div({
+  display: "flex",
+  flexDirection: "column",
+  gap: "24px",
+  borderRadius: "16px",
+  border: "1px solid #e5e7eb", 
+  backgroundColor: "#ffffff",
+  color: "#111827", 
+  paddingBottom: "24px",
+  marginBottom: "24px",
+  boxShadow: "0 1px 2px rgba(0,0,0,0.05)",
+  overflow:"hidden"
+});
+
+// ---------- Card Header ----------
+const StyledCardHeader = styled.div({
+  display: "grid",
+  gridAutoRows: "min-content",
+  gap: "6px",
+  padding: "0 24px",
+  alignItems: "start",
+  borderBottom: "1px solid #e5e7eb",
+  paddingBlock:"1rem",
+});
+
+// ---------- Card Title ----------
+const StyledCardTitle = styled.div({
+  fontWeight: 600,
+  lineHeight: 1,
+  display: "flex",
+  alignItems: "center",
+  gap: "8px",
+  color: "#111827",
+});
+
+// ---------- Card Description ----------
+const StyledCardDescription = styled.div({
+  fontSize: "14px",
+  color: "#6b7280", 
+});
+
+// ---------- Card Action ----------
+const StyledCardAction = styled.div({
+  gridColumnStart: 2,
+  gridRowStart: 1,
+  gridRowEnd: 3,
+  justifySelf: "end",
+  alignSelf: "start",
+});
+
+// ---------- Card Content ----------
+const StyledCardContent = styled.div({
+  padding: "0 24px",
+  paddingTop: "24px",
+  display: "flex",
+  flexDirection: "column",
+  gap: "16px",
+});
+
+// ---------- Card Footer ----------
+const StyledCardFooter = styled.div({
+  display: "flex",
+  alignItems: "center",
+  padding: "24px",
+  borderTop: "1px solid #e5e7eb",
+  paddingTop: "24px",
+});
+
+// ---------- Components ----------
+function Card({ children, ...props }) {
+  return <StyledCard {...props}>{children}</StyledCard>;
 }
 
-function CardHeader({
-  className,
-  ...props
-}) {
-  return (
-    (<div
-      data-slot="card-header"
-      className={cn(
-        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
-        className
-      )}
-      {...props} />)
-  );
+function CardHeader({ children, ...props }) {
+  return <StyledCardHeader {...props}>{children}</StyledCardHeader>;
 }
 
-function CardTitle({
-  className,
-  ...props
-}) {
-  return (
-    (<div
-      data-slot="card-title"
-      className={cn("leading-none font-semibold", className)}
-      {...props} />)
-  );
+function CardTitle({ children, ...props }) {
+  return <StyledCardTitle {...props}>{children}</StyledCardTitle>;
 }
 
-function CardDescription({
-  className,
-  ...props
-}) {
-  return (
-    (<div
-      data-slot="card-description"
-      className={cn("text-muted-foreground text-sm", className)}
-      {...props} />)
-  );
+function CardDescription({ children, ...props }) {
+  return <StyledCardDescription {...props}>{children}</StyledCardDescription>;
 }
 
-function CardAction({
-  className,
-  ...props
-}) {
-  return (
-    (<div
-      data-slot="card-action"
-      className={cn(
-        "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
-        className
-      )}
-      {...props} />)
-  );
+function CardAction({ children, ...props }) {
+  return <StyledCardAction {...props}>{children}</StyledCardAction>;
 }
 
-function CardContent({
-  className,
-  ...props
-}) {
-  return (<div data-slot="card-content" className={cn("px-6", className)} {...props} />);
+function CardContent({ children, ...props }) {
+  return <StyledCardContent {...props}>{children}</StyledCardContent>;
 }
 
-function CardFooter({
-  className,
-  ...props
-}) {
-  return (
-    (<div
-      data-slot="card-footer"
-      className={cn("flex items-center px-6 [.border-t]:pt-6", className)}
-      {...props} />)
-  );
+function CardFooter({ children, ...props }) {
+  return <StyledCardFooter {...props}>{children}</StyledCardFooter>;
 }
 
 export {
@@ -98,4 +109,4 @@ export {
   CardAction,
   CardDescription,
   CardContent,
-}
+};
