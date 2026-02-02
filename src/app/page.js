@@ -8,7 +8,7 @@ import Powerfullplatform from '@/components/Powerfullplatform'
 import Revolutionhr from '@/components/Revolutionhr'
 import Security from '@/components/Security'
 import Worktype from '@/components/Worktype'
-
+// hello world
 const Home = () => {
   return (
     <main>
