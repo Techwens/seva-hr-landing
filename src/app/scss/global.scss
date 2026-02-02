@@ -1,0 +1,62 @@
+:root {
+  --font-source-sans: var(--font-source-sans);
+  --font-inter: var(--font-inter);
+}
+
+body {
+  font-family: var(--font-source-sans), sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;font-size: 1.125rem;
+  background-color: #fff;
+}
+*{box-sizing: border-box;}
+
+
+strong, b, .bold {font-weight: 700;}
+.extra-bold {font-weight: 900;}
+em, i, .italic {font-style: italic;}
+.bold-italic {font-weight: 700;font-style: italic;}
+.light {font-weight: 300;}
+.thin {font-weight: 200;}
+.thin-italic {font-weight: 200;font-style: italic;}
+.text{
+  &-white{color: #fff;}
+}
+.text-sm { font-size: 0.813rem !important; }
+
+
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,p{margin-block-start: 0;font-weight: 500;}
+h1,.h1{font-size:3.625rem;line-height:1.15; font-weight:700;}
+h2,.h2{font-size: 2.938rem;font-weight: 700;line-height: 1.15;margin-block-end: 0.938rem;}
+h3,.h3{font-size: 1rem;margin-block-end: 0.938rem;}
+h4,.h4{font-size: 1.063rem;}
+h5,.h5{font-size: 1rem;margin-block-end: 1.5rem;}
+h6,.h6{font-size: 0.813rem;}
+p{font-size: 1.125rem;font-weight: 400;line-height:1.6;}
+.container{max-width: 90rem;padding-inline: 3.125rem;margin-inline: auto;}
+
+@media (max-width: 991px) {
+h1,.h1{font-size:2.75rem;}
+h2,.h2{font-size: 2rem;margin-block-end: 0.65rem;}
+h3,.h3{font-size: 1rem;margin-block-end: 0.65rem;}
+h4,.h4{font-size: 0.938rem;}
+body, p{font-size: 0.875rem;}
+}
+
+@media (max-width: 575px) {
+h1,.h1{font-size:1.8rem;}
+h2,.h2{font-size: 1.5rem;margin-block-end: 0.65rem;}
+h3,.h3{font-size: 1rem;margin-block-end: 0.65rem;}
+h4,.h4{font-size: 0.938rem;}
+body, p{font-size: 0.813rem;}
+.container{padding-inline: 1rem;}
+
+}
+
+
+
+
+
+
