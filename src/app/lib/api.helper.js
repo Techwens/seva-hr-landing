@@ -1,4 +1,4 @@
-
+'use client'
 export const getApiUrl = () => {
   // Avoid accessing `window` during server-side rendering/build
   if (typeof window === 'undefined') {
