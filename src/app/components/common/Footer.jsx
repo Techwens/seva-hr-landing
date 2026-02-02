@@ -257,13 +257,13 @@ const Footer = () => {
             <Contact>
               <a href="tel:+918045678900" aria-label="Call SevaHR at +91-80-4567-8900">
                 <span>
-                  <Image src={WhiteCallIcon} alt="" aria-hidden="true" />
+                  <Image src={WhiteCallIcon} alt="" aria-hidden="true" width={15} height={15} />
                 </span>
                 +91-80-4567-8900
               </a>
               <a href="mailto:hello@sevahr.com" aria-label="Email SevaHR at hello@sevahr.com">
                 <span>
-                  <Image src={WhiteEmailIcon} alt="" aria-hidden="true" />
+                  <Image src={WhiteEmailIcon} alt="" aria-hidden="true" width={15} height={15} />
                 </span>
                 hello@sevahr.com
               </a>
