@@ -1,0 +1,165 @@
+/* src/scss/global.scss */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+:root {
+  --font-source-sans: var(--font-source-sans);
+  --font-inter: var(--font-inter);
+}
+
+body {
+  font-family: var(--font-source-sans), sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Bold & Extra Bold */
+strong, b, .bold {
+  font-weight: 700;
+}
+
+/* Extra Bold */
+.extra-bold {
+  font-weight: 900;
+}
+
+/* Italic */
+em, i, .italic {
+  font-style: italic;
+}
+
+/* Bold Italic */
+.bold-italic {
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Light weights */
+.light {
+  font-weight: 300;
+}
+
+.thin {
+  font-weight: 200;
+}
+
+.thin-italic {
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+
+
+[bgColor=primary] {
+  background-color: #004CAE !important;
+}
+
+[bgColor=secondary] {
+  background-color: #006794 !important;
+}
+
+[bgColor=accent] {
+  background-color: #00365B !important;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p {
+  margin-block-start: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+h1, .h1 {
+  font-size: 4.063rem;
+  line-height: 1.25;
+  font-weight: 300;
+}
+
+h2, .h2 {
+  font-size: 2.938rem;
+  font-weight: 700;
+}
+
+h3, .h3 {
+  font-size: 2rem;
+}
+
+h4, .h4 {
+  font-size: 1.063rem;
+}
+
+h5, .h5 {
+  font-size: 1.375rem;
+  margin-block-end: 1.5rem;
+}
+
+h6, .h6 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+h1 span, .h1 span {
+  color: #00D392;
+}
+
+.container {
+  max-width: 90rem;
+  padding-inline: 3.125rem;
+  margin-inline: auto;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper.infoSlider {
+  overflow: visible;
+}
+.swiper.infoSlider .swiper-pagination {
+  position: static;
+  margin-block-start: 0.25rem;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  transform: scale(1.25);
+  transition: all 0.3s;
+  background-color: #006794;
+}
+
+.lightScroll ::-webkit-scrollbar {
+  height: 0.125rem;
+  width: 0.125rem;
+  border-radius: 0.125rem;
+  opacity: 0;
+}
+.lightScroll ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.125rem;
+}
+.lightScroll ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 0.125rem;
+}
+.lightScroll ::-webkit-scrollbar-corner {
+  background: transparent;
+}
+.lightScroll :hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.6);
+}/*# sourceMappingURL=global.css.map */
