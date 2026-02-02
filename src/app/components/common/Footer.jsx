@@ -1,5 +1,5 @@
 "use client"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Image from "next/image"
 import Link from "next/link"
@@ -242,6 +242,14 @@ const Copyright = styled.div({
 
 
 const Footer = () => {
+  const [mounted, setMounted] = useState(false);
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setMounted(true);
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <FooterWrapper>
       <div className="container">
@@ -257,13 +265,13 @@ const Footer = () => {
             <Contact>
               <a href="tel:+918045678900" aria-label="Call SevaHR at +91-80-4567-8900">
                 <span>
-                  <Image src={WhiteCallIcon} alt="" aria-hidden="true" />
+                  <Image src={WhiteCallIcon} alt="" aria-hidden="true" width={15} height={15} />
                 </span>
                 +91-80-4567-8900
               </a>
               <a href="mailto:hello@sevahr.com" aria-label="Email SevaHR at hello@sevahr.com">
                 <span>
-                  <Image src={WhiteEmailIcon} alt="" aria-hidden="true" />
+                  <Image src={WhiteEmailIcon} alt="" aria-hidden="true" width={15} height={15} />
                 </span>
                 hello@sevahr.com
               </a>
@@ -312,7 +320,7 @@ const Footer = () => {
           </li>
         </FooterList>
         <Copyright>
-          <span>© {new Date().getFullYear()} SevaHR. All rights reserved.</span>
+          <span>© {mounted ? year : new Date().getFullYear()} SevaHR. All rights reserved.</span>
           <span>
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="19" viewBox="0 0 12 19" fill="none" aria-hidden="true">
