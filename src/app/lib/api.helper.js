@@ -1,5 +1,9 @@
 'use client'
 export const getApiUrl = () => {
+  if (typeof window === 'undefined') {
+    return "http://localhost:8899";
+  }
+  
   const hostname = window.location.hostname;
 
   if (hostname === "localhost" || hostname === "127.0.0.1") {
@@ -11,12 +15,20 @@ export const getApiUrl = () => {
   }
   return "http://localhost:8899";
 };
-const API_BASE_URL = getApiUrl();
+
 export const commonExtendedApi = "/v1";
-export const BaseURL = API_BASE_URL + commonExtendedApi;
+
+// Lazy evaluate BaseURL to avoid accessing window at module load time
+let cachedBaseURL = null;
+const getBaseUrl = () => {
+  if (cachedBaseURL === null) {
+    cachedBaseURL = getApiUrl() + commonExtendedApi;
+  }
+  return cachedBaseURL;
+};
 
 export const apiHelper = async (endpoint, options = {}) => {
-  const url = `${BaseURL}${endpoint}`;
+  const url = `${getBaseUrl()}${endpoint}`;
 
   const config = {
     headers: {

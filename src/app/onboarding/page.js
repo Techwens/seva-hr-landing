@@ -430,14 +430,14 @@ const CompanyOnboardingNew = () => {
 
   // Get current domain on client side only
   useEffect(() => {
-    const domain = typeof window !== 'undefined' 
-      ? window.location.hostname
-          .replace(/^www\./, "")
-          .split(".")
-          .slice(-2)
-          .join(".")
-      : '';
-    setCurrentDomain(domain);
+    if (typeof window !== 'undefined') {
+      const domain = window.location.hostname
+        .replace(/^www\./, "")
+        .split(".")
+        .slice(-2)
+        .join(".");
+      setCurrentDomain(domain);
+    }
   }, []);
 
   useEffect(() => {
