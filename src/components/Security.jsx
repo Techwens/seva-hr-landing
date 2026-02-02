@@ -3,10 +3,16 @@ import React from "react"
 import styled from "styled-components"
 
 const Section = styled.section({
-  paddingBlock: "5rem 6rem",
+  paddingBlock: "3rem 5rem",
   position: "relative",
   overflow: "hidden",
   background: "linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 50%, #F0F4FF 100%)",
+  "@media (max-width: 1199px)": {
+    paddingBlock: "3rem",
+  },
+  "@media (max-width: 575px)": {
+    paddingBlock: "1.5rem",
+  },
   "&::before": {
     content: '""',
     position: "absolute",
@@ -62,9 +68,12 @@ const HeaderSection = styled.div({
   textAlign: "center",
   marginBlockEnd: "4rem",
   position: "relative",
+  "@media (max-width: 575px)": {
+    marginBlockEnd: "1.25rem",
+  },
 })
 
-const Badge = styled.div({
+const Badge = styled.h3({
   display: "inline-flex",
   alignItems: "center",
   gap: "0.5rem",
@@ -72,11 +81,21 @@ const Badge = styled.div({
   borderRadius: "3rem",
   background: "linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)",
   border: "1px solid rgba(71, 111, 255, 0.15)",
-  marginBlockEnd: "1.5rem",
   boxShadow: "0 4px 15px rgba(71, 111, 255, 0.08)",
+  "@media (max-width: 991px)": {
+    padding: "0.35rem 0.7rem",
+  },
+  "@media (max-width: 575px)": {
+    padding: "0.2rem 0.5rem;",
+    gap: "0.2rem",
+  },
   "& svg": {
     width: "1.125rem",
     height: "1.125rem",
+    "@media (max-width: 575px)": {
+      width: "0.875rem",
+      height: "0.875rem",
+    },
   },
   "& span": {
     fontSize: "0.875rem",
@@ -84,33 +103,26 @@ const Badge = styled.div({
     background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
+    "@media (max-width: 575px)": {
+      fontSize: "0.688rem"
+    },
   },
 })
 
 const Title = styled.h2({
-  fontSize: "2.75rem",
-  fontWeight: 800,
-  color: "#1a1a1a",
-  lineHeight: 1.15,
-  marginBlockEnd: "1rem",
   "& span": {
-    display: "block",
-    background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 50%, #FF6600 100%)",
+    display: "inline-block",
+    background: 'linear-gradient(90deg, #FF6600 0%, #7B60FF 80.8%)',
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     backgroundClip: "text",
   },
-  "@media (max-width: 768px)": {
-    fontSize: "2rem",
-  },
 })
 
 const Subtitle = styled.p({
-  fontSize: "1.125rem",
   color: "#64748B",
   maxWidth: "38rem",
   margin: "0 auto",
-  lineHeight: 1.7,
 })
 
 // Main content with asymmetric layout
@@ -119,9 +131,15 @@ const MainGrid = styled.div({
   gridTemplateColumns: "1.1fr 0.9fr",
   gap: "4rem",
   alignItems: "start",
+  "@media (max-width: 1199px)": {
+    gap: "2rem",
+  },
   "@media (max-width: 991px)": {
     gridTemplateColumns: "1fr",
     gap: "3rem",
+    '@media (max-width: 991px)': {
+      gap: "1rem",
+    },
   },
 })
 
@@ -132,21 +150,35 @@ const LeftContent = styled.div({
 
 const CertRow = styled.div({
   display: "flex",
-  gap: "1rem",
+  gap: "0.5rem",
   marginBlockEnd: "2rem",
   flexWrap: "wrap",
+  '@media (max-width: 991px)': {
+    marginBlockEnd: "0.5rem",
+  },
+  '@media (max-width: 575px)': {
+    gap: "0.25rem",
+  },
 })
 
 const CertBadge = styled.div({
   display: "flex",
   alignItems: "center",
   gap: "0.75rem",
-  padding: "0.875rem 1.25rem",
+  padding: "0.875rem",
   background: "#fff",
   borderRadius: "1rem",
   border: "1px solid rgba(16, 185, 129, 0.15)",
   boxShadow: "0 4px 20px rgba(16, 185, 129, 0.08)",
   transition: "all 0.3s ease",
+  '@media (max-width: 991px)': {
+    padding: "0.25rem 0.75rem",
+    borderRadius: "0.75rem",
+  },
+  '@media (max-width: 575px)': {
+    padding: "0.2rem 0.5rem",
+    borderRadius: "0.688rem",
+  },
   "&:hover": {
     transform: "translateY(-3px)",
     boxShadow: "0 8px 30px rgba(16, 185, 129, 0.15)",
@@ -161,10 +193,24 @@ const CertIcon = styled.div({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  '@media (max-width: 991px)': {
+    width: "2rem",
+    height: "2rem",
+    borderRadius: "0.5rem",
+  },
+  '@media (max-width: 575px)': {
+    width: "1.25rem",
+    height: "1.25rem",
+    borderRadius: "0.325remrem",
+  },
   "& svg": {
     width: "1.125rem",
     height: "1.125rem",
     color: "#fff",
+    '@media (max-width: 575px)': {
+      width: "0.813rem",
+      height: "0.813rem",
+    },
   },
 })
 
@@ -187,6 +233,10 @@ const FeatureStack = styled.div({
   display: "flex",
   flexDirection: "column",
   gap: "1rem",
+  "@media (max-width: 991px)": {
+    gap: "0.5rem",
+
+  },
 })
 
 const FeatureCard = styled.div(({ $offset }) => ({
@@ -201,6 +251,14 @@ const FeatureCard = styled.div(({ $offset }) => ({
   marginLeft: $offset || "0",
   transition: "all 0.4s ease",
   position: "relative",
+  "@media (max-width: 991px)": {
+    padding: "0.75rem 1rem ",
+    borderRadius: "0.75rem",
+  },
+  "@media (max-width: 575px)": {
+    padding: "0.75rem",
+    gap: "0.75rem",
+  },
   "&::before": {
     content: '""',
     position: "absolute",
@@ -229,16 +287,30 @@ const FeatureCard = styled.div(({ $offset }) => ({
 const FeatureIcon = styled.div({
   width: "3.25rem",
   height: "3.25rem",
+  padding: "0.75rem",
   borderRadius: "1rem",
   background: "linear-gradient(135deg, #476FFF 0%, #7B60FF 100%)",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   flexShrink: 0,
+  "@media (max-width: 991px)": {
+    width: "2.5rem",
+    height: "2.5rem",
+    padding: "0.65rem",
+    borderRadius: "0.5rem",
+  },
+  "@media (max-width: 575px)": {
+    width: "2rem",
+    height: "2rem",
+    padding: "0.5rem",
+    borderRadius: "0.5rem",
+  },
   "& svg": {
-    width: "1.5rem",
-    height: "1.5rem",
+    width: "100%",
+    height: "100%",
     color: "#fff",
+
   },
 })
 
@@ -249,6 +321,10 @@ const FeatureContent = styled.div({
     fontWeight: 700,
     color: "#1a1a1a",
     marginBlockEnd: "0.25rem",
+    '@media (max-width: 991px)': {
+      fontSize: "0.875rem",
+      marginBlockEnd: "0rem",
+    },
   },
   "& p": {
     fontSize: "0.875rem",
@@ -266,10 +342,18 @@ const FeatureCheck = styled.div({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  "@media (max-width: 575px)": {
+    width: "1.25rem",
+    height: "1.25rem",
+  },
   "& svg": {
     width: "1rem",
     height: "1rem",
     color: "#10B981",
+    "@media (max-width: 575px)": {
+      width: "0.875rem",
+      height: "0.875rem",
+    },
   },
 })
 
@@ -283,6 +367,11 @@ const ShieldSection = styled.div({
   position: "relative",
   padding: "2rem",
   marginBlockEnd: "2rem",
+  maxWidth: "31.25rem",
+  marginInline: "auto",
+  "@media (max-width: 1199px)": {
+    marginBlockEnd: "0rem",
+  },
 })
 
 const ShieldVisual = styled.div({
@@ -315,6 +404,10 @@ const ShieldCore = styled.div({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  "@media (max-width: 575px)": {
+    width: "3.5rem",
+    height: "4.5rem",
+  },
   "& svg": {
     width: "100%",
     height: "100%",
@@ -335,6 +428,10 @@ const FloatingStat = styled.div(({ $top, $left, $right, $bottom }) => ({
   boxShadow: "0 8px 30px rgba(0, 0, 0, 0.08)",
   border: "1px solid rgba(71, 111, 255, 0.1)",
   animation: "floatStat 4s ease-in-out infinite",
+  "@media (max-width: 575px)": {
+    padding: "0.5rem",
+    borderRadius: "0.75rem",
+  },
   "@keyframes floatStat": {
     "0%, 100%": { transform: "translateY(0)" },
     "50%": { transform: "translateY(-0.5rem)" },
@@ -345,24 +442,29 @@ const FloatingStat = styled.div(({ $top, $left, $right, $bottom }) => ({
     background: "linear-gradient(135deg, #476FFF 0%, #7B60FF 100%)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
+    "@media (max-width: 575px)": {
+      fontSize: "1.25rem",
+      lineHeight: "1.2"
+    },
   },
   "& .label": {
     fontSize: "0.75rem",
     color: "#64748B",
     fontWeight: 500,
   },
-  "@media (max-width: 575px)": {
-    display: "none",
-  },
 }))
 
-// Compliance section - horizontal scroll feel
+
 const ComplianceSection = styled.div({
   background: "linear-gradient(135deg, #0F172A 0%, #1E293B 100%)",
   borderRadius: "1.5rem",
   padding: "2rem",
   position: "relative",
   overflow: "hidden",
+  "@media (max-width: 575px)": {
+    padding: "1rem",
+    borderRadius: "0.75rem",
+  },
   "&::before": {
     content: '""',
     position: "absolute",
@@ -387,6 +489,9 @@ const ComplianceHeader = styled.div({
     fontWeight: 700,
     color: "#fff",
     margin: 0,
+    "@media (max-width: 575px)": {
+      fontSize: "1rem",
+    },
   },
 })
 
@@ -400,6 +505,11 @@ const AutoBadge = styled.span({
   color: "#10B981",
   fontSize: "0.75rem",
   fontWeight: 600,
+  "@media (max-width: 575px)": {
+    padding: "0.2rem 0.5rem",
+    gap: "0.2rem",
+    fontSize: "0.688rem",
+  },
   "& svg": {
     width: "0.75rem",
     height: "0.75rem",
@@ -412,6 +522,9 @@ const ComplianceTags = styled.div({
   gap: "0.625rem",
   position: "relative",
   zIndex: 1,
+  "@media (max-width: 575px)": {
+  gap: "0.25rem",
+  },
 })
 
 const Tag = styled.span({
@@ -426,6 +539,12 @@ const Tag = styled.span({
   alignItems: "center",
   gap: "0.5rem",
   transition: "all 0.2s ease",
+    "@media (max-width: 575px)": {
+   padding: "0.2rem 0.5rem",
+  borderRadius: "0.5rem",
+  fontSize: "0.688rem",
+  gap: "0.25rem",
+  },
   "&:hover": {
     background: "rgba(255, 255, 255, 0.12)",
     borderColor: "rgba(255, 255, 255, 0.2)",
@@ -438,56 +557,9 @@ const Tag = styled.span({
   },
 })
 
-// Bottom trust bar - full width
-const TrustBar = styled.div({
-  marginTop: "4rem",
-  padding: "1.5rem 2rem",
-  background: "#fff",
-  borderRadius: "1.25rem",
-  border: "1px solid rgba(71, 111, 255, 0.1)",
-  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.04)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  gap: "2rem",
-  flexWrap: "wrap",
-  "@media (max-width: 768px)": {
-    justifyContent: "center",
-    textAlign: "center",
-  },
-})
 
-const TrustItem = styled.div({
-  display: "flex",
-  alignItems: "center",
-  gap: "0.75rem",
-})
 
-const TrustIcon = styled.div({
-  width: "2.5rem",
-  height: "2.5rem",
-  borderRadius: "0.75rem",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  "& svg": {
-    width: "1.25rem",
-    height: "1.25rem",
-  },
-})
 
-const TrustText = styled.div({
-  "& p": {
-    margin: 0,
-    fontSize: "1rem",
-    fontWeight: 700,
-    color: "#1a1a1a",
-  },
-  "& span": {
-    fontSize: "0.75rem",
-    color: "#64748B",
-  },
-})
 
 const securityFeatures = [
   {
@@ -504,6 +576,11 @@ const securityFeatures = [
     title: "Secure Document Vault",
     desc: "Encrypted storage for sensitive employee records and files",
     icon: "folder",
+  },
+  {
+    title: "24/7 Monitoring",
+    desc: "Real-time protection power for all",
+    icon: "globe",
   },
 ]
 
@@ -530,6 +607,13 @@ export default function Security() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
           </svg>
         )
+      case "globe":
+        return (
+
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        )
       default:
         return null
     }
@@ -540,7 +624,7 @@ export default function Security() {
       {/* Floating decorative shapes */}
       <FloatingShape $top="15%" $left="5%" $size="4rem" $delay="0s" />
       <FloatingShape $top="60%" $right="8%" $size="3rem" $color="linear-gradient(135deg, rgba(255, 102, 0, 0.1) 0%, rgba(255, 102, 0, 0.05) 100%)" $delay="1s" />
-      <FloatingShape $bottom="20%" $left="10%" $size="2.5rem" $delay="2s" />
+      <FloatingShape $bottom="5%" $left="10%" $size="2.5rem" $delay="2s" />
 
       <Container className="container">
         <HeaderSection>
@@ -551,7 +635,7 @@ export default function Security() {
             <span>Enterprise-Grade Security</span>
           </Badge>
           <Title>
-            Your Data. Fully Protected.
+            Your Data. Fully Protected.<br />
             <span>Fully Encrypted. Fully Compliant.</span>
           </Title>
           <Subtitle>
@@ -586,20 +670,33 @@ export default function Security() {
               </CertBadge>
               <CertBadge>
                 <CertIcon>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" />
+                  </svg>
+                </CertIcon>
+                <CertText>
+                  <p>100+ Enterprises</p>
+                  <span>Trust our platform</span>
+                </CertText>
+              </CertBadge>
+              <CertBadge>
+                <CertIcon>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
                   </svg>
                 </CertIcon>
                 <CertText>
-                  <p>GDPR</p>
-                  <span>Compliant</span>
+                  <p>100% Audit Pass</p>
+                  <span>Every time</span>
                 </CertText>
               </CertBadge>
             </CertRow>
 
             <FeatureStack>
               {securityFeatures.map((feature, index) => (
-                <FeatureCard key={index} $offset={index === 1 ? "2rem" : index === 2 ? "1rem" : "0"}>
+                <FeatureCard
+                  key={index}
+                >
                   <FeatureIcon>{getIcon(feature.icon)}</FeatureIcon>
                   <FeatureContent>
                     <h4>{feature.title}</h4>
@@ -683,7 +780,7 @@ export default function Security() {
           </RightContent>
         </MainGrid>
 
-        <TrustBar>
+        {/* <TrustBar>
           <TrustItem>
             <TrustIcon style={{ background: "linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%)" }}>
               <svg viewBox="0 0 24 24" fill="none" stroke="#476FFF" strokeWidth="2">
@@ -728,7 +825,7 @@ export default function Security() {
               <span>Every time</span>
             </TrustText>
           </TrustItem>
-        </TrustBar>
+        </TrustBar> */}
       </Container>
     </Section>
   )

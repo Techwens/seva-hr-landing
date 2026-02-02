@@ -36,6 +36,9 @@ const Brand = styled.div({
   height: '3rem',
   position: 'relative',
   zIndex: 101,
+  "@media (max-width: 575px)": {
+    height: '2.25rem',
+  },
   '& img': {
     height: '100%',
     width: 'auto',
@@ -49,14 +52,18 @@ const NavStyle = styled.nav(({ $isOpen }) => ({
     position: 'fixed',
     top: 0,
     right: 0,
-    width: '100%',
+    width: '50%',
     height: '100vh',
     backgroundColor: '#fff',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: "start",
     transform: $isOpen ? 'translateX(0)' : 'translateX(100%)',
     transition: 'transform 0.3s ease-in-out',
     zIndex: 99,
+    paddingBlockStart: "8rem",
+  },
+  '@media (max-width: 575px)': {
+    width: '73%',
   },
   '& ul': {
     display: 'flex',
@@ -86,6 +93,9 @@ const NavStyle = styled.nav(({ $isOpen }) => ({
       "@media (max-width: 991px)": {
         marginTop: '1rem',
       },
+      "@media (max-width: 575px)": {
+        marginBlockStart: "0rem",
+      },
       "&:hover": {
         boxShadow: '0 4px 16px rgba(71, 111, 255, 0.3)',
       },
@@ -95,6 +105,9 @@ const NavStyle = styled.nav(({ $isOpen }) => ({
         borderRadius: '0.5rem',
         color: "#476FFF",
         fontWeight: '600',
+        "@media (max-width: 991px)": {
+          fontWeight: "600",
+        },
         '&:hover': {
           backgroundColor: '#fff',
         },
@@ -102,8 +115,11 @@ const NavStyle = styled.nav(({ $isOpen }) => ({
     },
     '& li:nth-last-child(2)': {
       '& a': {
-        color: '#374151',
+        color: '#000',
         fontWeight: '500',
+        "@media (max-width: 991px)": {
+          fontWeight: "600",
+        },
       },
     },
     '& a': {
@@ -118,6 +134,13 @@ const NavStyle = styled.nav(({ $isOpen }) => ({
       fontSize: '0.9375rem',
       borderRadius: '0.5rem',
       transition: 'background-color 0.2s ease',
+      "@media (max-width: 991px)": {
+        padding: '0.2rem 1rem',
+        fontWeight: "600",
+      },
+      "@media (max-width: 575px)": {
+        fontSize: "0.831rem",
+      },
       '&:hover': {
         backgroundColor: 'rgba(71, 111, 255, 0.06)',
       },
@@ -158,20 +181,21 @@ const HamburgerButton = styled.button(({ $isOpen }) => ({
   '& span': {
     display: 'block',
     width: '100%',
-    height: '2px',
-    backgroundColor: '#1a1a1a',
+    height: '3px',
+    background: "#FF7F0F",
+    background: "linear-gradient(270deg, rgba(255, 127, 15, 1) 0%, rgba(29, 58, 95, 1) 100%)",
     borderRadius: '2px',
     transition: 'all 0.3s ease',
     transformOrigin: 'center',
   },
   '& span:nth-child(1)': {
-    transform: $isOpen ? 'rotate(45deg) translate(0.35rem, 0.35rem)' : 'rotate(0)',
+    transform: $isOpen ? 'rotate(45deg) translate(0.5rem, 0.35rem)' : 'rotate(0)',
   },
   '& span:nth-child(2)': {
     opacity: $isOpen ? 0 : 1,
   },
   '& span:nth-child(3)': {
-    transform: $isOpen ? 'rotate(-45deg) translate(0.35rem, -0.35rem)' : 'rotate(0)',
+    transform: $isOpen ? 'rotate(-45deg) translate(0.375rem, -0.35rem)' : 'rotate(0)',
   },
 }));
 

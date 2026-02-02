@@ -21,11 +21,61 @@ const inter = Inter({
   display: "swap",
 });
 
+// export const metadata = {
+//   title: "SevaHR - Modern HRMS Platform for Indian Businesses",
+//   description: "Simplify HR, Attendance, Payroll & Compliance with SevaHR. A powerful, user-friendly HRMS built for shift-based operations across all industries in India.",
+//   keywords: ["HRMS", "HR software", "payroll", "attendance management", "compliance", "Indian HR", "employee management"],
+//   authors: [{ name: "SevaHR" }],
+//   icons: {
+//     icon: [
+//       { url: "/favicon.svg", type: "image/svg+xml" },
+//       { url: "/favicon.svg", sizes: "any" },
+//     ],
+//     shortcut: "/favicon.svg",
+//     apple: "/favicon.svg",
+//   },
+//   openGraph: {
+//     title: "SevaHR - Modern HRMS Platform for Indian Businesses",
+//     description: "Simplify HR, Attendance, Payroll & Compliance with SevaHR. Built for shift-based operations across all industries.",
+//     type: "website",
+//     locale: "en_IN",
+//     siteName: "SevaHR",
+//   },
+//   twitter: {
+//     card: "summary_large_image",
+//     title: "SevaHR - Modern HRMS Platform",
+//     description: "Simplify HR, Attendance, Payroll & Compliance with SevaHR.",
+//   },
+// };
+
+
 export const metadata = {
   title: "SevaHR - Modern HRMS Platform for Indian Businesses",
-  description: "Simplify HR, Attendance, Payroll & Compliance with SevaHR. A powerful, user-friendly HRMS built for shift-based operations across all industries in India.",
-  keywords: ["HRMS", "HR software", "payroll", "attendance management", "compliance", "Indian HR", "employee management"],
+  description:
+    "Simplify HR, Attendance, Payroll & Compliance with SevaHR. A powerful, user-friendly HRMS built for shift-based operations across all industries in India.",
+  robots: {
+    index: false,
+    follow: false,
+  },
+
+  keywords: [
+    "HRMS",
+    "HR software",
+    "payroll",
+    "attendance management",
+    "compliance",
+    "Indian HR",
+    "employee management",
+  ],
   authors: [{ name: "SevaHR" }],
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -44,9 +94,11 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "SevaHR - Modern HRMS Platform",
-    description: "Simplify HR, Attendance, Payroll & Compliance with SevaHR.",
+    description:
+      "Simplify HR, Attendance, Payroll & Compliance with SevaHR.",
   },
 };
+
 
 export default function RootLayout({ children }) {
   return (

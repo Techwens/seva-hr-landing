@@ -8,6 +8,9 @@ import Badge3 from "../assets/badge3.svg"
 
 const Section = styled.section({
   paddingBlockEnd: "3.5rem",
+    "@media (max-width: 575px)": {
+    paddingBlockEnd: "1.5rem",
+  },
 })
 
 const SectionRow = styled.div({
@@ -39,9 +42,14 @@ const SectionRow = styled.div({
     background: "radial-gradient(circle, rgba(123, 96, 255, 0.12) 0%, transparent 70%)",
     pointerEvents: "none",
   },
-  "@media (max-width: 991px)": {
+  "@media (max-width: 1199px)": {
     flexDirection: "column",
     padding: "2rem",
+    gap: "0.5rem",
+  },
+  "@media (max-width: 575px)": {
+    padding: "1rem 0.75rem",
+    borderRadius: "1rem",
   },
 })
 
@@ -49,14 +57,11 @@ const Left = styled.div({
   width: "35%",
   position: "relative",
   zIndex: 1,
-  "@media (max-width: 991px)": {
+  "@media (max-width: 1199px)": {
     width: "100%",
   },
   "& h3": {
-    fontWeight: 600,
-    lineHeight: 1.3,
     color: "#fff",
-    marginBlockEnd: "0.625rem",
     borderRadius: "1.875rem",
     background: "rgba(255, 255, 255, 0.1)",
     backdropFilter: "blur(10px)",
@@ -66,25 +71,31 @@ const Left = styled.div({
     gap: "0.5rem",
     border: "1px solid rgba(255, 255, 255, 0.1)",
     fontSize: "0.875rem",
+    "@media (max-width: 991px)": {
+      padding: "0.35rem 0.7rem",
+    },
+    "@media (max-width: 575px)": {
+      padding: "0.2rem 0.5rem",
+      fontSize: "0.688rem",
+      gap: "0.2rem",
+    },
   },
   "& h2": {
     fontSize: "2.25rem",
-    fontWeight: 700,
-    lineHeight: 1.2,
-    marginBlock: "1rem 1.25rem",
-    color: "#fff",
-    "& span": {
-      background: "linear-gradient(90deg, #60A5FA 0%, #A78BFA 50%, #F472B6 100%)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      backgroundClip: "text",
-      color: "transparent",
+    background: 'linear-gradient(90deg, #FF6600 0%, #7B60FF 80.8%)',
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    backgroundClip: "text",
+    color: "transparent",
+    "@media (max-width: 991px)": {
+      fontSize: "2rem",
+    },
+    "@media (max-width: 575px)": {
+      fontSize: "1.5rem",
     },
   },
   "& p": {
-    color: "rgba(255, 255, 255, 0.7)",
-    lineHeight: 1.7,
-    fontSize: "1rem",
+    color: "#fff",
   },
 })
 
@@ -92,7 +103,7 @@ const Right = styled.div({
   width: "65%",
   position: "relative",
   zIndex: 1,
-  "@media (max-width: 991px)": {
+  "@media (max-width: 1199px)": {
     width: "100%",
   },
 })
@@ -107,8 +118,8 @@ const CardList = styled.ul({
   "@media (max-width: 767px)": {
     gridTemplateColumns: "repeat(2, 1fr)",
   },
-  "@media (max-width: 480px)": {
-    gridTemplateColumns: "1fr",
+    "@media (max-width: 575px)": {
+      gap: "0.5rem",
   },
 })
 
@@ -123,7 +134,14 @@ const Card = styled.li({
   background: "rgba(255, 255, 255, 0.05)",
   backdropFilter: "blur(10px)",
   border: "1px solid rgba(255, 255, 255, 0.08)",
-
+  '@media (max-width: 991px)': {
+    padding: "0.75rem 1rem",
+  },
+  "@media (max-width: 575px)": {
+    padding: "0.2rem 0.5rem",
+    borderRadius: "0.688rem",
+    gap: "0.5rem",
+  },
   "&:hover": {
     background: "rgba(255, 255, 255, 0.1)",
     border: "1px solid rgba(255, 255, 255, 0.15)",
@@ -138,12 +156,19 @@ const Card = styled.li({
     "@media (max-width: 1199px)": {
       fontSize: "1rem",
     },
+    "@media (max-width: 575px)": {
+      fontSize: "0.875rem",
+      marginBlockEnd:"0rem",
+    },
   },
 
   "& span": {
     fontSize: "0.875rem",
     fontWeight: "500",
-    color: "rgba(255, 255, 255, 0.6)",
+    color: "#fff",
+    "@media (max-width: 575px)": {
+      fontSize: "0.75rem",
+    },
   },
 })
 
@@ -157,11 +182,20 @@ const Icon = styled.div({
   background: "linear-gradient(135deg, rgba(71, 111, 255, 0.3) 0%, rgba(123, 96, 255, 0.3) 100%)",
   border: "1px solid rgba(255, 255, 255, 0.1)",
   flexShrink: 0,
-
+  "@media (max-width: 575px)": {
+    height: "1.25rem",
+    width: "1.25rem",
+    borderRadius: "0.325rem",
+  },
   "& img": {
     height: "1.25rem",
     width: "1.25rem",
     filter: "brightness(0) invert(1)",
+    "@media (max-width: 575px)": {
+      height: "0.75rem",
+      width: "0.75rem",
+      borderRadius: "0.325rem",
+    },
   },
 })
 
@@ -221,7 +255,7 @@ export default function Revolutionhr() {
               We are Seva HR
             </h3>
             <h2>
-              <span>Revolutionize Your HR Management</span>
+              Revolutionize Your HR Management
             </h2>
             <p>
               Complete workforce management solution built for complex

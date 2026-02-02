@@ -4,6 +4,9 @@ import styled from "styled-components"
 
 const Section = styled.section({
   paddingBlock: "3rem",
+  "@media (max-width: 575px)": {
+    paddingBlock: "1.5rem",
+  },
 })
 
 const ContentWrapper = styled.div({
@@ -11,9 +14,10 @@ const ContentWrapper = styled.div({
   alignItems: "center",
   justifyContent: "space-between",
   gap: "2rem",
-  "@media (max-width: 991px)": {
+  "@media (max-width: 1199px)": {
     flexDirection: "column",
-    gap: "2.5rem",
+    gap: "1.5rem",
+    
   },
 })
 
@@ -21,16 +25,16 @@ const LeftSection = styled.div({
   display: "flex",
   alignItems: "center",
   gap: "2.5rem",
-  "@media (max-width: 767px)": {
+  "@media (max-width: 575px)": {
     flexDirection: "column",
     alignItems: "flex-start",
-    gap: "1.5rem",
+    gap: "0.5rem",
   },
 })
 
 const StatItem = styled.div({
   textAlign: "center",
-  "@media (max-width: 767px)": {
+  "@media (max-width: 575px)": {
     textAlign: "left",
     display: "flex",
     alignItems: "center",
@@ -48,6 +52,9 @@ const StatValue = styled.div({
   lineHeight: 1.1,
   "@media (max-width: 767px)": {
     fontSize: "1.75rem",
+  },
+  "@media (max-width: 575px)": {
+    fontSize: "1.25rem",
   },
 })
 
@@ -75,6 +82,11 @@ const RightSection = styled.div({
   display: "flex",
   alignItems: "center",
   gap: "1rem",
+  "@media (max-width: 575px)": {
+    flexDirection: "column",
+    gap: "0.5rem",
+   
+  },
 })
 
 const IndustryLabel = styled.span({
@@ -88,6 +100,13 @@ const IndustryTags = styled.div({
   display: "flex",
   flexWrap: "wrap",
   gap: "0.625rem",
+  "@media (max-width: 991px)": {
+    gap: "0.5rem",
+  },
+  "@media (max-width: 575px)": {
+    gap: "0.25rem",
+     justifyContent:"center",
+  },
 })
 
 const IndustryTag = styled.div({
@@ -99,6 +118,14 @@ const IndustryTag = styled.div({
   borderRadius: "2rem",
   border: "1px solid #E2E8F0",
   transition: "all 0.2s ease",
+  "@media (max-width: 991px)": {
+    padding: "0.3rem 0.5rem",
+    gap: "0.25rem",
+  },
+  "@media (max-width: 575px)": {
+    padding: "0.2rem 0.4rem",
+    gap: "0.2rem",
+  },
   "&:hover": {
     borderColor: "rgba(71, 111, 255, 0.3)",
     background: "#F8FAFC",
@@ -108,11 +135,19 @@ const IndustryTag = styled.div({
     width: "1.125rem",
     height: "1.125rem",
     color: "#476FFF",
+    "@media (max-width: 575px)": {
+      width: "0.813rem",
+      height: "0.813rem",
+    },
   },
   "& span": {
     fontSize: "0.813rem",
     fontWeight: 500,
     color: "#374151",
+    pointerEvents: "none",
+    "@media (max-width: 575px)": {
+      fontSize: "0.688rem",
+    },
   },
 })
 

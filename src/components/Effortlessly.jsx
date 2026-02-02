@@ -14,28 +14,19 @@ const CheckIcon = () => (
 );
 
 const Section = styled.section({
-  paddingBlock: "5rem",
+  paddingBlock: "3.5rem",
   position: "relative",
   background: "linear-gradient(135deg, #FAFBFF 0%, #F0F4FF 50%, #FFF5F0 100%)",
   overflow: "hidden",
   "@media (max-width: 991px)": {
-    paddingBlock: "3rem",
+    paddingBlock: "2rem",
+  },
+  "@media (max-width: 575px)": {
+    paddingBlock: "1.5rem",
   },
 });
 
-// Flowing wave shape at top
-const WaveTop = styled.div({
-  position: "absolute",
-  top: 0,
-  left: 0,
-  right: 0,
-  height: "8rem",
-  background: "#fff",
-  clipPath: "ellipse(60% 100% at 50% 0%)",
-  "@media (max-width: 767px)": {
-    height: "4rem",
-  },
-});
+
 
 // Floating decorative elements
 const FloatingShape = styled.div(({ $top, $left, $right, $size, $color, $delay }) => ({
@@ -59,75 +50,89 @@ const FloatingShape = styled.div(({ $top, $left, $right, $size, $color, $delay }
 }));
 
 const ContentWrapper = styled.div({
-  display: "grid",
-  gridTemplateColumns: "1fr 1.1fr",
+  display: "flex",
+  flexWrap: "wrap",
   gap: "4rem",
-  alignItems: "center",
+  alignItems: "flex-start",
   position: "relative",
   zIndex: 2,
   "@media (max-width: 991px)": {
-    gridTemplateColumns: "1fr",
-    gap: "2rem",
+    gap: "1rem",
+  },
+  "@media (max-width: 575px)": {
+    flexDirection: "column",
   },
 });
 
 const LeftContent = styled.div({
+  width: "calc(50% - 2rem)",
   opacity: 0,
   transform: "translateX(-2rem)",
   transition: "all 0.8s ease",
+  "@media (max-width: 991px)": {
+    width: "calc(60% - 1rem)",
+  },
+  "@media (max-width: 575px)": {
+    width: "100%",
+  },
   "&.in-view": {
     opacity: 1,
     transform: "translateX(0)",
   },
 });
 
-const Badge = styled.span({
+const Badge = styled.h3({
   display: "inline-flex",
   alignItems: "center",
   gap: "0.5rem",
-  fontWeight: 600,
-  fontSize: "0.9rem",
-  lineHeight: 1.3,
-  color: '#1a1a1a',
-  borderRadius: '2rem',
-  background: "linear-gradient(54.19deg, #D5FEFF 17.15%, #FFD5CA 109.72%)",
-  padding: '0.625rem 1.25rem 0.625rem 2.8rem',
-  position: 'relative',
-  marginBlockEnd: "1rem",
-  '&:after': {
-    content: "''",
-    position: 'absolute',
-    height: '1.313rem',
-    width: '1.5rem',
-    left: '1rem',
-    top: '50%',
-    transform: "translateY(-50%)",
-    backgroundImage: `url(${SparkleBg.src})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: "contain",
-    backgroundPosition: "center",
-  }
-});
+  padding: "0.625rem 1.25rem",
+  borderRadius: "3rem",
+  background: "linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)",
+  border: "1px solid rgba(71, 111, 255, 0.15)",
+  boxShadow: "0 4px 15px rgba(71, 111, 255, 0.08)",
+  "@media (max-width: 991px)": {
+    padding: "0.35rem 0.7rem",
+  },
+  "@media (max-width: 575px)": {
+    padding: "0.2rem 0.5rem;",
+    gap: "0.2rem",
+  },
+  "& svg": {
+    width: "1.125rem",
+    height: "1.125rem",
+    "@media (max-width: 575px)": {
+      width: "0.875rem",
+      height: "0.875rem",
+    },
+  },
+  "& span": {
+    fontSize: "0.875rem",
+    fontWeight: 600,
+    background: "linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    "@media (max-width: 575px)": {
+      fontSize: "0.688rem"
+    },
+  },
+})
 
 const Title = styled.h2({
-  fontSize: "2.5rem",
-  fontWeight: 800,
-  lineHeight: 1.2,
-  marginBlockEnd: "1rem",
-  background: 'linear-gradient(73.29deg, #9300AD 18.02%, #00BBFF 83.69%)',
+
+  background: 'linear-gradient(90deg, #FF6600 0%, #7B60FF 80.8%)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
-  "@media (max-width: 767px)": {
-    fontSize: "1.75rem",
-  },
+
 });
 
 const Subtitle = styled.h3({
   fontSize: "1.25rem",
   fontWeight: 600,
-  marginBlockEnd: "0.75rem",
   color: "#1a1a1a",
+  "@media (max-width: 991px)": {
+    fontSize: "1rem",
+  },
   "& span": {
     background: 'linear-gradient(73.29deg, #9300AD 18.02%, #00BBFF 83.69%)',
     WebkitBackgroundClip: 'text',
@@ -137,10 +142,7 @@ const Subtitle = styled.h3({
 });
 
 const Description = styled.p({
-  fontSize: "1rem",
-  lineHeight: 1.7,
   color: "#64748B",
-  marginBlockEnd: "1.5rem",
   textAlign: "start",
 });
 
@@ -151,6 +153,10 @@ const BenefitsList = styled.ul({
   display: "flex",
   flexDirection: "column",
   gap: "0.75rem",
+  "@media (max-width: 991px)": {
+    gap: "0.35rem",
+    margin: "0 0 0.75rem 0",
+  },
 });
 
 const BenefitItem = styled.li({
@@ -165,6 +171,14 @@ const BenefitItem = styled.li({
   borderRadius: "0.75rem",
   backdropFilter: "blur(0.5rem)",
   transition: "all 0.3s ease",
+  "@media (max-width: 991px)": {
+    padding: "0.5rem 0.75rem",
+    fontSize: "0.875rem",
+  },
+  "@media (max-width: 575px)": {
+    fontSize: "0.813rem",
+    gap: "0.5rem",
+  },
   "&:hover": {
     background: "#fff",
     boxShadow: "0 4px 20px rgba(71, 111, 255, 0.1)",
@@ -173,6 +187,10 @@ const BenefitItem = styled.li({
   "& > div": {
     height: '1rem',
     width: '1rem',
+    "@media (max-width: 991px)": {
+      height: '0.875rem',
+      width: '0.875rem',
+    },
     flexShrink: 0,
     "& svg": {
       height: '100%',
@@ -185,7 +203,7 @@ const CtaButton = styled.button({
   position: "relative",
   overflow: "hidden",
   padding: "1rem 2rem",
-  borderRadius: "3rem",
+  borderRadius: "1.125rem;",
   border: "none",
   color: "#fff",
   fontSize: "1rem",
@@ -198,6 +216,16 @@ const CtaButton = styled.button({
   background: "linear-gradient(151.19deg, #476FFF 1.77%, #4600B6 71.94%)",
   transition: "all 0.4s ease",
   boxShadow: "0 4px 20px rgba(71, 111, 255, 0.3)",
+  "@media (max-width: 991px)": {
+    height: "2.625rem",
+    fontSize: "0.875rem",
+    borderRadius: "0.75rem",
+    fontSize: "0.875rem",
+  },
+  "@media (max-width: 575px)": {
+    height: "2.3rem",
+    fontSize: "0.75rem",
+  },
   "&::after": {
     content: '""',
     position: "absolute",
@@ -223,10 +251,18 @@ const CtaButton = styled.button({
 
 // Right side with offset image
 const RightContent = styled.div({
+  width: "calc(50% - 2rem)",
   position: "relative",
   opacity: 0,
   transform: "translateX(2rem)",
   transition: "all 0.8s ease 0.2s",
+  "@media (max-width: 991px)": {
+    width: "calc(40% - 1rem)",
+  },
+  "@media (max-width: 575px)": {
+    width: "100%",
+    paddingInline: "4rem",
+  },
   "&.in-view": {
     opacity: 1,
     transform: "translateX(0)",
@@ -344,7 +380,7 @@ const Effortlessly = () => {
 
   return (
     <Section ref={sectionRef} id="effortlessly">
-      <WaveTop />
+
 
       {/* Floating decorative shapes */}
       <FloatingShape $top="20%" $left="5%" $size="10rem" $color="rgba(147, 0, 173, 0.08)" $delay="0s" />
@@ -354,7 +390,12 @@ const Effortlessly = () => {
       <div className="container">
         <ContentWrapper>
           <LeftContent className="animate">
-            <Badge>Effortlessly Simple for Everyone</Badge>
+            <Badge>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#476FFF">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+              <span>Effortlessly Simple for Everyone</span>
+            </Badge>
             <Title>A User-Friendly HRMS Anyone Can Operate</Title>
             <Subtitle><span>No training required</span> — SEVA HR is built with simplicity at its core.</Subtitle>
             <Description>
@@ -395,7 +436,7 @@ const Effortlessly = () => {
               <FloatingCard $top="-1rem" $right="3rem" $delay="0s">
                 <CardIcon $bg="linear-gradient(135deg, #4F6BFF 0%, #7B60FF 100%)">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </CardIcon>
                 <CardText>
@@ -407,7 +448,7 @@ const Effortlessly = () => {
               <FloatingCard $bottom="20%" $left="-2rem" $delay="1.5s">
                 <CardIcon $bg="linear-gradient(135deg, #9300AD 0%, #00BBFF 100%)">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </CardIcon>
                 <CardText>
@@ -419,7 +460,7 @@ const Effortlessly = () => {
               <FloatingCard $bottom="-0.5rem" $right="20%" $delay="3s">
                 <CardIcon $bg="linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%)">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </CardIcon>
                 <CardText>
