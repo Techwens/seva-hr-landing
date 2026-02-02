@@ -1,0 +1,44 @@
+name: Deploy Stage Frontend
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.12.0"
+
+      - name: Install dependencies
+        run: npm install --f
+
+      - name: Build project
+        run: NODE_OPTIONS="--max-old-space-size=8192" npm run build:prod
+
+      - name: Deploy to S3
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --follow-symlinks --delete
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ORG_AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.ORG_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.ORG_REGION }}
+          AWS_S3_BUCKET: "sevahr-landing"
+          SOURCE_DIR: "./build"
+
+      - name: Invalidate CloudFront cache
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ORG_AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.ORG_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.ORG_REGION }}
+          CLOUDFRONT_DISTRIBUTION_ID: "EGFJQIQH1Y3S0"
+        run: |
+          aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"

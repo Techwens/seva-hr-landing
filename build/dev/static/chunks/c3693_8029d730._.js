@@ -1,0 +1,10018 @@
+(globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
+"[project]/seva-hr-landing/node_modules/next/dist/compiled/react/cjs/react-jsx-dev-runtime.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+/**
+ * @license React
+ * react-jsx-dev-runtime.development.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+"production" !== ("TURBOPACK compile-time value", "development") && function() {
+    function getComponentNameFromType(type) {
+        if (null == type) return null;
+        if ("function" === typeof type) return type.$$typeof === REACT_CLIENT_REFERENCE ? null : type.displayName || type.name || null;
+        if ("string" === typeof type) return type;
+        switch(type){
+            case REACT_FRAGMENT_TYPE:
+                return "Fragment";
+            case REACT_PROFILER_TYPE:
+                return "Profiler";
+            case REACT_STRICT_MODE_TYPE:
+                return "StrictMode";
+            case REACT_SUSPENSE_TYPE:
+                return "Suspense";
+            case REACT_SUSPENSE_LIST_TYPE:
+                return "SuspenseList";
+            case REACT_ACTIVITY_TYPE:
+                return "Activity";
+            case REACT_VIEW_TRANSITION_TYPE:
+                return "ViewTransition";
+        }
+        if ("object" === typeof type) switch("number" === typeof type.tag && console.error("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), type.$$typeof){
+            case REACT_PORTAL_TYPE:
+                return "Portal";
+            case REACT_CONTEXT_TYPE:
+                return type.displayName || "Context";
+            case REACT_CONSUMER_TYPE:
+                return (type._context.displayName || "Context") + ".Consumer";
+            case REACT_FORWARD_REF_TYPE:
+                var innerType = type.render;
+                type = type.displayName;
+                type || (type = innerType.displayName || innerType.name || "", type = "" !== type ? "ForwardRef(" + type + ")" : "ForwardRef");
+                return type;
+            case REACT_MEMO_TYPE:
+                return innerType = type.displayName || null, null !== innerType ? innerType : getComponentNameFromType(type.type) || "Memo";
+            case REACT_LAZY_TYPE:
+                innerType = type._payload;
+                type = type._init;
+                try {
+                    return getComponentNameFromType(type(innerType));
+                } catch (x) {}
+        }
+        return null;
+    }
+    function testStringCoercion(value) {
+        return "" + value;
+    }
+    function checkKeyStringCoercion(value) {
+        try {
+            testStringCoercion(value);
+            var JSCompiler_inline_result = !1;
+        } catch (e) {
+            JSCompiler_inline_result = !0;
+        }
+        if (JSCompiler_inline_result) {
+            JSCompiler_inline_result = console;
+            var JSCompiler_temp_const = JSCompiler_inline_result.error;
+            var JSCompiler_inline_result$jscomp$0 = "function" === typeof Symbol && Symbol.toStringTag && value[Symbol.toStringTag] || value.constructor.name || "Object";
+            JSCompiler_temp_const.call(JSCompiler_inline_result, "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.", JSCompiler_inline_result$jscomp$0);
+            return testStringCoercion(value);
+        }
+    }
+    function getTaskName(type) {
+        if (type === REACT_FRAGMENT_TYPE) return "<>";
+        if ("object" === typeof type && null !== type && type.$$typeof === REACT_LAZY_TYPE) return "<...>";
+        try {
+            var name = getComponentNameFromType(type);
+            return name ? "<" + name + ">" : "<...>";
+        } catch (x) {
+            return "<...>";
+        }
+    }
+    function getOwner() {
+        var dispatcher = ReactSharedInternals.A;
+        return null === dispatcher ? null : dispatcher.getOwner();
+    }
+    function UnknownOwner() {
+        return Error("react-stack-top-frame");
+    }
+    function hasValidKey(config) {
+        if (hasOwnProperty.call(config, "key")) {
+            var getter = Object.getOwnPropertyDescriptor(config, "key").get;
+            if (getter && getter.isReactWarning) return !1;
+        }
+        return void 0 !== config.key;
+    }
+    function defineKeyPropWarningGetter(props, displayName) {
+        function warnAboutAccessingKey() {
+            specialPropKeyWarningShown || (specialPropKeyWarningShown = !0, console.error("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)", displayName));
+        }
+        warnAboutAccessingKey.isReactWarning = !0;
+        Object.defineProperty(props, "key", {
+            get: warnAboutAccessingKey,
+            configurable: !0
+        });
+    }
+    function elementRefGetterWithDeprecationWarning() {
+        var componentName = getComponentNameFromType(this.type);
+        didWarnAboutElementRef[componentName] || (didWarnAboutElementRef[componentName] = !0, console.error("Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."));
+        componentName = this.props.ref;
+        return void 0 !== componentName ? componentName : null;
+    }
+    function ReactElement(type, key, props, owner, debugStack, debugTask) {
+        var refProp = props.ref;
+        type = {
+            $$typeof: REACT_ELEMENT_TYPE,
+            type: type,
+            key: key,
+            props: props,
+            _owner: owner
+        };
+        null !== (void 0 !== refProp ? refProp : null) ? Object.defineProperty(type, "ref", {
+            enumerable: !1,
+            get: elementRefGetterWithDeprecationWarning
+        }) : Object.defineProperty(type, "ref", {
+            enumerable: !1,
+            value: null
+        });
+        type._store = {};
+        Object.defineProperty(type._store, "validated", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: 0
+        });
+        Object.defineProperty(type, "_debugInfo", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: null
+        });
+        Object.defineProperty(type, "_debugStack", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: debugStack
+        });
+        Object.defineProperty(type, "_debugTask", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: debugTask
+        });
+        Object.freeze && (Object.freeze(type.props), Object.freeze(type));
+        return type;
+    }
+    function jsxDEVImpl(type, config, maybeKey, isStaticChildren, debugStack, debugTask) {
+        var children = config.children;
+        if (void 0 !== children) if (isStaticChildren) if (isArrayImpl(children)) {
+            for(isStaticChildren = 0; isStaticChildren < children.length; isStaticChildren++)validateChildKeys(children[isStaticChildren]);
+            Object.freeze && Object.freeze(children);
+        } else console.error("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
+        else validateChildKeys(children);
+        if (hasOwnProperty.call(config, "key")) {
+            children = getComponentNameFromType(type);
+            var keys = Object.keys(config).filter(function(k) {
+                return "key" !== k;
+            });
+            isStaticChildren = 0 < keys.length ? "{key: someKey, " + keys.join(": ..., ") + ": ...}" : "{key: someKey}";
+            didWarnAboutKeySpread[children + isStaticChildren] || (keys = 0 < keys.length ? "{" + keys.join(": ..., ") + ": ...}" : "{}", console.error('A props object containing a "key" prop is being spread into JSX:\n  let props = %s;\n  <%s {...props} />\nReact keys must be passed directly to JSX without using spread:\n  let props = %s;\n  <%s key={someKey} {...props} />', isStaticChildren, children, keys, children), didWarnAboutKeySpread[children + isStaticChildren] = !0);
+        }
+        children = null;
+        void 0 !== maybeKey && (checkKeyStringCoercion(maybeKey), children = "" + maybeKey);
+        hasValidKey(config) && (checkKeyStringCoercion(config.key), children = "" + config.key);
+        if ("key" in config) {
+            maybeKey = {};
+            for(var propName in config)"key" !== propName && (maybeKey[propName] = config[propName]);
+        } else maybeKey = config;
+        children && defineKeyPropWarningGetter(maybeKey, "function" === typeof type ? type.displayName || type.name || "Unknown" : type);
+        return ReactElement(type, children, maybeKey, getOwner(), debugStack, debugTask);
+    }
+    function validateChildKeys(node) {
+        isValidElement(node) ? node._store && (node._store.validated = 1) : "object" === typeof node && null !== node && node.$$typeof === REACT_LAZY_TYPE && ("fulfilled" === node._payload.status ? isValidElement(node._payload.value) && node._payload.value._store && (node._payload.value._store.validated = 1) : node._store && (node._store.validated = 1));
+    }
+    function isValidElement(object) {
+        return "object" === typeof object && null !== object && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+    var React = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_ACTIVITY_TYPE = Symbol.for("react.activity"), REACT_VIEW_TRANSITION_TYPE = Symbol.for("react.view_transition"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, hasOwnProperty = Object.prototype.hasOwnProperty, isArrayImpl = Array.isArray, createTask = console.createTask ? console.createTask : function() {
+        return null;
+    };
+    React = {
+        react_stack_bottom_frame: function(callStackForError) {
+            return callStackForError();
+        }
+    };
+    var specialPropKeyWarningShown;
+    var didWarnAboutElementRef = {};
+    var unknownOwnerDebugStack = React.react_stack_bottom_frame.bind(React, UnknownOwner)();
+    var unknownOwnerDebugTask = createTask(getTaskName(UnknownOwner));
+    var didWarnAboutKeySpread = {};
+    exports.Fragment = REACT_FRAGMENT_TYPE;
+    exports.jsxDEV = function(type, config, maybeKey, isStaticChildren) {
+        var trackActualOwner = 1e4 > ReactSharedInternals.recentlyCreatedOwnerStacks++;
+        if (trackActualOwner) {
+            var previousStackTraceLimit = Error.stackTraceLimit;
+            Error.stackTraceLimit = 10;
+            var debugStackDEV = Error("react-stack-top-frame");
+            Error.stackTraceLimit = previousStackTraceLimit;
+        } else debugStackDEV = unknownOwnerDebugStack;
+        return jsxDEVImpl(type, config, maybeKey, isStaticChildren, debugStackDEV, trackActualOwner ? createTask(getTaskName(type)) : unknownOwnerDebugTask);
+    };
+}();
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+'use strict';
+if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+;
+else {
+    module.exports = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/cjs/react-jsx-dev-runtime.development.js [app-client] (ecmascript)");
+}
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/compiled/react/cjs/react-compiler-runtime.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+/**
+ * @license React
+ * react-compiler-runtime.development.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+"production" !== ("TURBOPACK compile-time value", "development") && function() {
+    var ReactSharedInternals = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)").__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+    exports.c = function(size) {
+        var dispatcher = ReactSharedInternals.H;
+        null === dispatcher && console.error("Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\n1. You might have mismatching versions of React and the renderer (such as React DOM)\n2. You might be breaking the Rules of Hooks\n3. You might have more than one copy of React in the same app\nSee https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.");
+        return dispatcher.useMemoCache(size);
+    };
+}();
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/compiled/react/compiler-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ 'use strict';
+if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+;
+else {
+    module.exports = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/cjs/react-compiler-runtime.development.js [app-client] (ecmascript)");
+}
+}),
+"[project]/seva-hr-landing/node_modules/styled-components/node_modules/tslib/tslib.es6.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "__addDisposableResource",
+    ()=>__addDisposableResource,
+    "__assign",
+    ()=>__assign,
+    "__asyncDelegator",
+    ()=>__asyncDelegator,
+    "__asyncGenerator",
+    ()=>__asyncGenerator,
+    "__asyncValues",
+    ()=>__asyncValues,
+    "__await",
+    ()=>__await,
+    "__awaiter",
+    ()=>__awaiter,
+    "__classPrivateFieldGet",
+    ()=>__classPrivateFieldGet,
+    "__classPrivateFieldIn",
+    ()=>__classPrivateFieldIn,
+    "__classPrivateFieldSet",
+    ()=>__classPrivateFieldSet,
+    "__createBinding",
+    ()=>__createBinding,
+    "__decorate",
+    ()=>__decorate,
+    "__disposeResources",
+    ()=>__disposeResources,
+    "__esDecorate",
+    ()=>__esDecorate,
+    "__exportStar",
+    ()=>__exportStar,
+    "__extends",
+    ()=>__extends,
+    "__generator",
+    ()=>__generator,
+    "__importDefault",
+    ()=>__importDefault,
+    "__importStar",
+    ()=>__importStar,
+    "__makeTemplateObject",
+    ()=>__makeTemplateObject,
+    "__metadata",
+    ()=>__metadata,
+    "__param",
+    ()=>__param,
+    "__propKey",
+    ()=>__propKey,
+    "__read",
+    ()=>__read,
+    "__rest",
+    ()=>__rest,
+    "__runInitializers",
+    ()=>__runInitializers,
+    "__setFunctionName",
+    ()=>__setFunctionName,
+    "__spread",
+    ()=>__spread,
+    "__spreadArray",
+    ()=>__spreadArray,
+    "__spreadArrays",
+    ()=>__spreadArrays,
+    "__values",
+    ()=>__values,
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */ /* global Reflect, Promise, SuppressedError, Symbol */ var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf || ({
+        __proto__: []
+    }) instanceof Array && function(d, b) {
+        d.__proto__ = b;
+    } || function(d, b) {
+        for(var p in b)if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+    };
+    return extendStatics(d, b);
+};
+function __extends(d, b) {
+    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+    extendStatics(d, b);
+    function __() {
+        this.constructor = d;
+    }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for(var s, i = 1, n = arguments.length; i < n; i++){
+            s = arguments[i];
+            for(var p in s)if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+function __rest(s, e) {
+    var t = {};
+    for(var p in s)if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function") for(var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++){
+        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+    }
+    return t;
+}
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+function __param(paramIndex, decorator) {
+    return function(target, key) {
+        decorator(target, key, paramIndex);
+    };
+}
+function __esDecorate(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
+    function accept(f) {
+        if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected");
+        return f;
+    }
+    var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
+    var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
+    var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
+    var _, done = false;
+    for(var i = decorators.length - 1; i >= 0; i--){
+        var context = {};
+        for(var p in contextIn)context[p] = p === "access" ? {} : contextIn[p];
+        for(var p in contextIn.access)context.access[p] = contextIn.access[p];
+        context.addInitializer = function(f) {
+            if (done) throw new TypeError("Cannot add initializers after decoration has completed");
+            extraInitializers.push(accept(f || null));
+        };
+        var result = (0, decorators[i])(kind === "accessor" ? {
+            get: descriptor.get,
+            set: descriptor.set
+        } : descriptor[key], context);
+        if (kind === "accessor") {
+            if (result === void 0) continue;
+            if (result === null || typeof result !== "object") throw new TypeError("Object expected");
+            if (_ = accept(result.get)) descriptor.get = _;
+            if (_ = accept(result.set)) descriptor.set = _;
+            if (_ = accept(result.init)) initializers.unshift(_);
+        } else if (_ = accept(result)) {
+            if (kind === "field") initializers.unshift(_);
+            else descriptor[key] = _;
+        }
+    }
+    if (target) Object.defineProperty(target, contextIn.name, descriptor);
+    done = true;
+}
+;
+function __runInitializers(thisArg, initializers, value) {
+    var useValue = arguments.length > 2;
+    for(var i = 0; i < initializers.length; i++){
+        value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
+    }
+    return useValue ? value : void 0;
+}
+;
+function __propKey(x) {
+    return typeof x === "symbol" ? x : "".concat(x);
+}
+;
+function __setFunctionName(f, name, prefix) {
+    if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
+    return Object.defineProperty(f, "name", {
+        configurable: true,
+        value: prefix ? "".concat(prefix, " ", name) : name
+    });
+}
+;
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) {
+        return value instanceof P ? value : new P(function(resolve) {
+            resolve(value);
+        });
+    }
+    return new (P || (P = Promise))(function(resolve, reject) {
+        function fulfilled(value) {
+            try {
+                step(generator.next(value));
+            } catch (e) {
+                reject(e);
+            }
+        }
+        function rejected(value) {
+            try {
+                step(generator["throw"](value));
+            } catch (e) {
+                reject(e);
+            }
+        }
+        function step(result) {
+            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+        }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+function __generator(thisArg, body) {
+    var _ = {
+        label: 0,
+        sent: function() {
+            if (t[0] & 1) throw t[1];
+            return t[1];
+        },
+        trys: [],
+        ops: []
+    }, f, y, t, g;
+    return g = {
+        next: verb(0),
+        "throw": verb(1),
+        "return": verb(2)
+    }, typeof Symbol === "function" && (g[Symbol.iterator] = function() {
+        return this;
+    }), g;
+    //TURBOPACK unreachable
+    ;
+    function verb(n) {
+        return function(v) {
+            return step([
+                n,
+                v
+            ]);
+        };
+    }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while(g && (g = 0, op[0] && (_ = 0)), _)try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [
+                op[0] & 2,
+                t.value
+            ];
+            switch(op[0]){
+                case 0:
+                case 1:
+                    t = op;
+                    break;
+                case 4:
+                    _.label++;
+                    return {
+                        value: op[1],
+                        done: false
+                    };
+                case 5:
+                    _.label++;
+                    y = op[1];
+                    op = [
+                        0
+                    ];
+                    continue;
+                case 7:
+                    op = _.ops.pop();
+                    _.trys.pop();
+                    continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                        _ = 0;
+                        continue;
+                    }
+                    if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+                        _.label = op[1];
+                        break;
+                    }
+                    if (op[0] === 6 && _.label < t[1]) {
+                        _.label = t[1];
+                        t = op;
+                        break;
+                    }
+                    if (t && _.label < t[2]) {
+                        _.label = t[2];
+                        _.ops.push(op);
+                        break;
+                    }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop();
+                    continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) {
+            op = [
+                6,
+                e
+            ];
+            y = 0;
+        } finally{
+            f = t = 0;
+        }
+        if (op[0] & 5) throw op[1];
+        return {
+            value: op[0] ? op[1] : void 0,
+            done: true
+        };
+    }
+}
+var __createBinding = Object.create ? function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+        desc = {
+            enumerable: true,
+            get: function() {
+                return m[k];
+            }
+        };
+    }
+    Object.defineProperty(o, k2, desc);
+} : function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+};
+function __exportStar(m, o) {
+    for(var p in m)if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
+}
+function __values(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function() {
+            if (o && i >= o.length) o = void 0;
+            return {
+                value: o && o[i++],
+                done: !o
+            };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while((n === void 0 || n-- > 0) && !(r = i.next()).done)ar.push(r.value);
+    } catch (error) {
+        e = {
+            error: error
+        };
+    } finally{
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        } finally{
+            if (e) throw e.error;
+        }
+    }
+    return ar;
+}
+function __spread() {
+    for(var ar = [], i = 0; i < arguments.length; i++)ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+function __spreadArrays() {
+    for(var s = 0, i = 0, il = arguments.length; i < il; i++)s += arguments[i].length;
+    for(var r = Array(s), k = 0, i = 0; i < il; i++)for(var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)r[k] = a[j];
+    return r;
+}
+function __spreadArray(to, from, pack) {
+    if (pack || arguments.length === 2) for(var i = 0, l = from.length, ar; i < l; i++){
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+}
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
+        return this;
+    }, i;
+    //TURBOPACK unreachable
+    ;
+    function verb(n) {
+        if (g[n]) i[n] = function(v) {
+            return new Promise(function(a, b) {
+                q.push([
+                    n,
+                    v,
+                    a,
+                    b
+                ]) > 1 || resume(n, v);
+            });
+        };
+    }
+    function resume(n, v) {
+        try {
+            step(g[n](v));
+        } catch (e) {
+            settle(q[0][3], e);
+        }
+    }
+    function step(r) {
+        r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
+    }
+    function fulfill(value) {
+        resume("next", value);
+    }
+    function reject(value) {
+        resume("throw", value);
+    }
+    function settle(f, v) {
+        if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]);
+    }
+}
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function(e) {
+        throw e;
+    }), verb("return"), i[Symbol.iterator] = function() {
+        return this;
+    }, i;
+    //TURBOPACK unreachable
+    ;
+    function verb(n, f) {
+        i[n] = o[n] ? function(v) {
+            return (p = !p) ? {
+                value: __await(o[n](v)),
+                done: false
+            } : f ? f(v) : v;
+        } : f;
+    }
+}
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
+        return this;
+    }, i);
+    //TURBOPACK unreachable
+    ;
+    function verb(n) {
+        i[n] = o[n] && function(v) {
+            return new Promise(function(resolve, reject) {
+                v = o[n](v), settle(resolve, reject, v.done, v.value);
+            });
+        };
+    }
+    function settle(resolve, reject, d, v) {
+        Promise.resolve(v).then(function(v) {
+            resolve({
+                value: v,
+                done: d
+            });
+        }, reject);
+    }
+}
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) {
+        Object.defineProperty(cooked, "raw", {
+            value: raw
+        });
+    } else {
+        cooked.raw = raw;
+    }
+    return cooked;
+}
+;
+var __setModuleDefault = Object.create ? function(o, v) {
+    Object.defineProperty(o, "default", {
+        enumerable: true,
+        value: v
+    });
+} : function(o, v) {
+    o["default"] = v;
+};
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) {
+        for(var k in mod)if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    }
+    __setModuleDefault(result, mod);
+    return result;
+}
+function __importDefault(mod) {
+    return mod && mod.__esModule ? mod : {
+        default: mod
+    };
+}
+function __classPrivateFieldGet(receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+}
+function __classPrivateFieldSet(receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value), value;
+}
+function __classPrivateFieldIn(state, receiver) {
+    if (receiver === null || typeof receiver !== "object" && typeof receiver !== "function") throw new TypeError("Cannot use 'in' operator on non-object");
+    return typeof state === "function" ? receiver === state : state.has(receiver);
+}
+function __addDisposableResource(env, value, async) {
+    if (value !== null && value !== void 0) {
+        if (typeof value !== "object" && typeof value !== "function") throw new TypeError("Object expected.");
+        var dispose;
+        if (async) {
+            if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
+            dispose = value[Symbol.asyncDispose];
+        }
+        if (dispose === void 0) {
+            if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
+            dispose = value[Symbol.dispose];
+        }
+        if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
+        env.stack.push({
+            value: value,
+            dispose: dispose,
+            async: async
+        });
+    } else if (async) {
+        env.stack.push({
+            async: true
+        });
+    }
+    return value;
+}
+var _SuppressedError = typeof SuppressedError === "function" ? SuppressedError : function(error, suppressed, message) {
+    var e = new Error(message);
+    return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+};
+function __disposeResources(env) {
+    function fail(e) {
+        env.error = env.hasError ? new _SuppressedError(e, env.error, "An error was suppressed during disposal.") : e;
+        env.hasError = true;
+    }
+    function next() {
+        while(env.stack.length){
+            var rec = env.stack.pop();
+            try {
+                var result = rec.dispose && rec.dispose.call(rec.value);
+                if (rec.async) return Promise.resolve(result).then(next, function(e) {
+                    fail(e);
+                    return next();
+                });
+            } catch (e) {
+                fail(e);
+            }
+        }
+        if (env.hasError) throw env.error;
+    }
+    return next();
+}
+const __TURBOPACK__default__export__ = {
+    __extends,
+    __assign,
+    __rest,
+    __decorate,
+    __param,
+    __metadata,
+    __awaiter,
+    __generator,
+    __createBinding,
+    __exportStar,
+    __values,
+    __read,
+    __spread,
+    __spreadArrays,
+    __spreadArray,
+    __await,
+    __asyncGenerator,
+    __asyncDelegator,
+    __asyncValues,
+    __makeTemplateObject,
+    __importStar,
+    __importDefault,
+    __classPrivateFieldGet,
+    __classPrivateFieldSet,
+    __classPrivateFieldIn,
+    __addDisposableResource,
+    __disposeResources
+};
+}),
+"[project]/seva-hr-landing/node_modules/@emotion/memoize/dist/emotion-memoize.esm.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>memoize
+]);
+function memoize(fn) {
+    var cache = Object.create(null);
+    return function(arg) {
+        if (cache[arg] === undefined) cache[arg] = fn(arg);
+        return cache[arg];
+    };
+}
+;
+}),
+"[project]/seva-hr-landing/node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.esm.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>isPropValid
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f40$emotion$2f$memoize$2f$dist$2f$emotion$2d$memoize$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/@emotion/memoize/dist/emotion-memoize.esm.js [app-client] (ecmascript)");
+;
+var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|abbr|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|disableRemotePlayback|download|draggable|encType|enterKeyHint|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|translate|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|incremental|fallback|inert|itemProp|itemScope|itemType|itemID|itemRef|on|option|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/; // https://esbench.com/bench/5bfee68a4cd7e6009ef61d23
+var isPropValid = /* #__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f40$emotion$2f$memoize$2f$dist$2f$emotion$2d$memoize$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(function(prop) {
+    return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111 && prop.charCodeAt(1) === 110 && prop.charCodeAt(2) < 91;
+});
+;
+}),
+"[project]/seva-hr-landing/node_modules/shallowequal/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+//
+module.exports = function shallowEqual(objA, objB, compare, compareContext) {
+    var ret = compare ? compare.call(compareContext, objA, objB) : void 0;
+    if (ret !== void 0) {
+        return !!ret;
+    }
+    if (objA === objB) {
+        return true;
+    }
+    if (typeof objA !== "object" || !objA || typeof objB !== "object" || !objB) {
+        return false;
+    }
+    var keysA = Object.keys(objA);
+    var keysB = Object.keys(objB);
+    if (keysA.length !== keysB.length) {
+        return false;
+    }
+    var bHasOwnProperty = Object.prototype.hasOwnProperty.bind(objB);
+    // Test for A's keys different from B.
+    for(var idx = 0; idx < keysA.length; idx++){
+        var key = keysA[idx];
+        if (!bHasOwnProperty(key)) {
+            return false;
+        }
+        var valueA = objA[key];
+        var valueB = objB[key];
+        ret = compare ? compare.call(compareContext, valueA, valueB, key) : void 0;
+        if (ret === false || ret === void 0 && valueA !== valueB) {
+            return false;
+        }
+    }
+    return true;
+};
+}),
+"[project]/seva-hr-landing/node_modules/stylis/src/Enum.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "CHARSET",
+    ()=>CHARSET,
+    "COMMENT",
+    ()=>COMMENT,
+    "COUNTER_STYLE",
+    ()=>COUNTER_STYLE,
+    "DECLARATION",
+    ()=>DECLARATION,
+    "DOCUMENT",
+    ()=>DOCUMENT,
+    "FONT_FACE",
+    ()=>FONT_FACE,
+    "FONT_FEATURE_VALUES",
+    ()=>FONT_FEATURE_VALUES,
+    "IMPORT",
+    ()=>IMPORT,
+    "KEYFRAMES",
+    ()=>KEYFRAMES,
+    "LAYER",
+    ()=>LAYER,
+    "MEDIA",
+    ()=>MEDIA,
+    "MOZ",
+    ()=>MOZ,
+    "MS",
+    ()=>MS,
+    "NAMESPACE",
+    ()=>NAMESPACE,
+    "PAGE",
+    ()=>PAGE,
+    "RULESET",
+    ()=>RULESET,
+    "SCOPE",
+    ()=>SCOPE,
+    "SUPPORTS",
+    ()=>SUPPORTS,
+    "VIEWPORT",
+    ()=>VIEWPORT,
+    "WEBKIT",
+    ()=>WEBKIT
+]);
+var MS = '-ms-';
+var MOZ = '-moz-';
+var WEBKIT = '-webkit-';
+var COMMENT = 'comm';
+var RULESET = 'rule';
+var DECLARATION = 'decl';
+var PAGE = '@page';
+var MEDIA = '@media';
+var IMPORT = '@import';
+var CHARSET = '@charset';
+var VIEWPORT = '@viewport';
+var SUPPORTS = '@supports';
+var DOCUMENT = '@document';
+var NAMESPACE = '@namespace';
+var KEYFRAMES = '@keyframes';
+var FONT_FACE = '@font-face';
+var COUNTER_STYLE = '@counter-style';
+var FONT_FEATURE_VALUES = '@font-feature-values';
+var LAYER = '@layer';
+var SCOPE = '@scope';
+}),
+"[project]/seva-hr-landing/node_modules/stylis/src/Utility.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @param {number}
+ * @return {number}
+ */ __turbopack_context__.s([
+    "abs",
+    ()=>abs,
+    "append",
+    ()=>append,
+    "assign",
+    ()=>assign,
+    "charat",
+    ()=>charat,
+    "combine",
+    ()=>combine,
+    "filter",
+    ()=>filter,
+    "from",
+    ()=>from,
+    "hash",
+    ()=>hash,
+    "indexof",
+    ()=>indexof,
+    "match",
+    ()=>match,
+    "replace",
+    ()=>replace,
+    "sizeof",
+    ()=>sizeof,
+    "strlen",
+    ()=>strlen,
+    "substr",
+    ()=>substr,
+    "trim",
+    ()=>trim
+]);
+var abs = Math.abs;
+var from = String.fromCharCode;
+var assign = Object.assign;
+function hash(value, length) {
+    return charat(value, 0) ^ 45 ? (((length << 2 ^ charat(value, 0)) << 2 ^ charat(value, 1)) << 2 ^ charat(value, 2)) << 2 ^ charat(value, 3) : 0;
+}
+function trim(value) {
+    return value.trim();
+}
+function match(value, pattern) {
+    return (value = pattern.exec(value)) ? value[0] : value;
+}
+function replace(value, pattern, replacement) {
+    return value.replace(pattern, replacement);
+}
+function indexof(value, search, position) {
+    return value.indexOf(search, position);
+}
+function charat(value, index) {
+    return value.charCodeAt(index) | 0;
+}
+function substr(value, begin, end) {
+    return value.slice(begin, end);
+}
+function strlen(value) {
+    return value.length;
+}
+function sizeof(value) {
+    return value.length;
+}
+function append(value, array) {
+    return array.push(value), value;
+}
+function combine(array, callback) {
+    return array.map(callback).join('');
+}
+function filter(array, pattern) {
+    return array.filter(function(value) {
+        return !match(value, pattern);
+    });
+}
+}),
+"[project]/seva-hr-landing/node_modules/stylis/src/Tokenizer.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "alloc",
+    ()=>alloc,
+    "caret",
+    ()=>caret,
+    "char",
+    ()=>char,
+    "character",
+    ()=>character,
+    "characters",
+    ()=>characters,
+    "column",
+    ()=>column,
+    "commenter",
+    ()=>commenter,
+    "copy",
+    ()=>copy,
+    "dealloc",
+    ()=>dealloc,
+    "delimit",
+    ()=>delimit,
+    "delimiter",
+    ()=>delimiter,
+    "escaping",
+    ()=>escaping,
+    "identifier",
+    ()=>identifier,
+    "length",
+    ()=>length,
+    "lift",
+    ()=>lift,
+    "line",
+    ()=>line,
+    "next",
+    ()=>next,
+    "node",
+    ()=>node,
+    "peek",
+    ()=>peek,
+    "position",
+    ()=>position,
+    "prev",
+    ()=>prev,
+    "slice",
+    ()=>slice,
+    "token",
+    ()=>token,
+    "tokenize",
+    ()=>tokenize,
+    "tokenizer",
+    ()=>tokenizer,
+    "whitespace",
+    ()=>whitespace
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Utility.js [app-client] (ecmascript)");
+;
+var line = 1;
+var column = 1;
+var length = 0;
+var position = 0;
+var character = 0;
+var characters = '';
+function node(value, root, parent, type, props, children, length, siblings) {
+    return {
+        value: value,
+        root: root,
+        parent: parent,
+        type: type,
+        props: props,
+        children: children,
+        line: line,
+        column: column,
+        length: length,
+        return: '',
+        siblings: siblings
+    };
+}
+function copy(root, props) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["assign"])(node('', null, null, '', null, null, 0, root.siblings), root, {
+        length: -root.length
+    }, props);
+}
+function lift(root) {
+    while(root.root)root = copy(root.root, {
+        children: [
+            root
+        ]
+    });
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["append"])(root, root.siblings);
+}
+function char() {
+    return character;
+}
+function prev() {
+    character = position > 0 ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["charat"])(characters, --position) : 0;
+    if (column--, character === 10) column = 1, line--;
+    return character;
+}
+function next() {
+    character = position < length ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["charat"])(characters, position++) : 0;
+    if (column++, character === 10) column = 1, line++;
+    return character;
+}
+function peek() {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["charat"])(characters, position);
+}
+function caret() {
+    return position;
+}
+function slice(begin, end) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["substr"])(characters, begin, end);
+}
+function token(type) {
+    switch(type){
+        // \0 \t \n \r \s whitespace token
+        case 0:
+        case 9:
+        case 10:
+        case 13:
+        case 32:
+            return 5;
+        // ! + , / > @ ~ isolate token
+        case 33:
+        case 43:
+        case 44:
+        case 47:
+        case 62:
+        case 64:
+        case 126:
+        // ; { } breakpoint token
+        case 59:
+        case 123:
+        case 125:
+            return 4;
+        // : accompanied token
+        case 58:
+            return 3;
+        // " ' ( [ opening delimit token
+        case 34:
+        case 39:
+        case 40:
+        case 91:
+            return 2;
+        // ) ] closing delimit token
+        case 41:
+        case 93:
+            return 1;
+    }
+    return 0;
+}
+function alloc(value) {
+    return line = column = 1, length = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["strlen"])(characters = value), position = 0, [];
+}
+function dealloc(value) {
+    return characters = '', value;
+}
+function delimit(type) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["trim"])(slice(position - 1, delimiter(type === 91 ? type + 2 : type === 40 ? type + 1 : type)));
+}
+function tokenize(value) {
+    return dealloc(tokenizer(alloc(value)));
+}
+function whitespace(type) {
+    while(character = peek())if (character < 33) next();
+    else break;
+    return token(type) > 2 || token(character) > 3 ? '' : ' ';
+}
+function tokenizer(children) {
+    while(next())switch(token(character)){
+        case 0:
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["append"])(identifier(position - 1), children);
+            break;
+        case 2:
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["append"])(delimit(character), children);
+            break;
+        default:
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["append"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["from"])(character), children);
+    }
+    return children;
+}
+function escaping(index, count) {
+    while(--count && next())// not 0-9 A-F a-f
+    if (character < 48 || character > 102 || character > 57 && character < 65 || character > 70 && character < 97) break;
+    return slice(index, caret() + (count < 6 && peek() == 32 && next() == 32));
+}
+function delimiter(type) {
+    while(next())switch(character){
+        // ] ) " '
+        case type:
+            return position;
+        // " '
+        case 34:
+        case 39:
+            if (type !== 34 && type !== 39) delimiter(character);
+            break;
+        // (
+        case 40:
+            if (type === 41) delimiter(type);
+            break;
+        // \
+        case 92:
+            next();
+            break;
+    }
+    return position;
+}
+function commenter(type, index) {
+    while(next())// //
+    if (type + character === 47 + 10) break;
+    else if (type + character === 42 + 42 && peek() === 47) break;
+    return '/*' + slice(index, position - 1) + '*' + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["from"])(type === 47 ? type : next());
+}
+function identifier(index) {
+    while(!token(peek()))next();
+    return slice(index, position);
+}
+}),
+"[project]/seva-hr-landing/node_modules/stylis/src/Serializer.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "serialize",
+    ()=>serialize,
+    "stringify",
+    ()=>stringify
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Enum.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Utility.js [app-client] (ecmascript)");
+;
+;
+function serialize(children, callback) {
+    var output = '';
+    for(var i = 0; i < children.length; i++)output += callback(children[i], i, children, callback) || '';
+    return output;
+}
+function stringify(element, index, children, callback) {
+    switch(element.type){
+        case __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["LAYER"]:
+            if (element.children.length) break;
+        case __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IMPORT"]:
+        case __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DECLARATION"]:
+            return element.return = element.return || element.value;
+        case __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["COMMENT"]:
+            return '';
+        case __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["KEYFRAMES"]:
+            return element.return = element.value + '{' + serialize(element.children, callback) + '}';
+        case __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RULESET"]:
+            if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["strlen"])(element.value = element.props.join(','))) return '';
+    }
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["strlen"])(children = serialize(element.children, callback)) ? element.return = element.value + '{' + children + '}' : '';
+}
+}),
+"[project]/seva-hr-landing/node_modules/stylis/src/Prefixer.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "prefix",
+    ()=>prefix
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Enum.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Utility.js [app-client] (ecmascript)");
+;
+;
+function prefix(value, length, children) {
+    switch((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["hash"])(value, length)){
+        // color-adjust
+        case 5103:
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + 'print-' + value + value;
+        // animation, animation-(delay|direction|duration|fill-mode|iteration-count|name|play-state|timing-function)
+        case 5737:
+        case 4201:
+        case 3177:
+        case 3433:
+        case 1641:
+        case 4457:
+        case 2921:
+        // text-decoration, filter, clip-path, backface-visibility, column, box-decoration-break
+        case 5572:
+        case 6356:
+        case 5844:
+        case 3191:
+        case 6645:
+        case 3005:
+        // mask, mask-image, mask-(mode|clip|size), mask-(repeat|origin), mask-position, mask-composite,
+        case 6391:
+        case 5879:
+        case 5623:
+        case 6135:
+        case 4599:
+        case 4855:
+        // background-clip, columns, column-(count|fill|gap|rule|rule-color|rule-style|rule-width|span|width)
+        case 4215:
+        case 6389:
+        case 5109:
+        case 5365:
+        case 5621:
+        case 3829:
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + value + value;
+        // tab-size
+        case 4789:
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MOZ"] + value + value;
+        // appearance, user-select, transform, hyphens, text-size-adjust
+        case 5349:
+        case 4246:
+        case 4810:
+        case 6968:
+        case 2756:
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + value + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MOZ"] + value + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + value + value;
+        // writing-mode
+        case 5936:
+            switch((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["charat"])(value, length + 11)){
+                // vertical-l(r)
+                case 114:
+                    return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + value + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /[svh]\w+-[tblr]{2}/, 'tb') + value;
+                // vertical-r(l)
+                case 108:
+                    return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + value + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /[svh]\w+-[tblr]{2}/, 'tb-rl') + value;
+                // horizontal(-)tb
+                case 45:
+                    return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + value + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /[svh]\w+-[tblr]{2}/, 'lr') + value;
+            }
+        // flex, flex-direction, scroll-snap-type, writing-mode
+        case 6828:
+        case 4268:
+        case 2903:
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + value + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + value + value;
+        // order
+        case 6165:
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + value + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + 'flex-' + value + value;
+        // align-items
+        case 5187:
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + value + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /(\w+).+(:[^]+)/, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + 'box-$1$2' + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + 'flex-$1$2') + value;
+        // align-self
+        case 5443:
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + value + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + 'flex-item-' + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /flex-|-self/g, '') + (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["match"])(value, /flex-|baseline/) ? __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + 'grid-row-' + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /flex-|-self/g, '') : '') + value;
+        // align-content
+        case 4675:
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + value + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + 'flex-line-pack' + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /align-content|flex-|-self/g, '') + value;
+        // flex-shrink
+        case 5548:
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + value + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, 'shrink', 'negative') + value;
+        // flex-basis
+        case 5292:
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + value + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, 'basis', 'preferred-size') + value;
+        // flex-grow
+        case 6060:
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + 'box-' + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, '-grow', '') + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + value + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, 'grow', 'positive') + value;
+        // transition
+        case 4554:
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /([^-])(transform)/g, '$1' + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + '$2') + value;
+        // cursor
+        case 6187:
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /(zoom-|grab)/, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + '$1'), /(image-set)/, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + '$1'), value, '') + value;
+        // background, background-image
+        case 5495:
+        case 3959:
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /(image-set\([^]*)/, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + '$1' + '$`$1');
+        // justify-content
+        case 4968:
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /(.+:)(flex-)?(.*)/, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + 'box-pack:$3' + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + 'flex-pack:$3'), /s.+-b[^;]+/, 'justify') + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + value + value;
+        // justify-self
+        case 4200:
+            if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["match"])(value, /flex-|baseline/)) return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + 'grid-column-align' + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["substr"])(value, length) + value;
+            break;
+        // grid-template-(columns|rows)
+        case 2592:
+        case 3360:
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, 'template-', '') + value;
+        // grid-(row|column)-start
+        case 4384:
+        case 3616:
+            if (children && children.some(function(element, index) {
+                return length = index, (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["match"])(element.props, /grid-\w+-end/);
+            })) {
+                return ~(0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["indexof"])(value + (children = children[length].value), 'span', 0) ? value : __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, '-start', '') + value + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + 'grid-row-span:' + (~(0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["indexof"])(children, 'span', 0) ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["match"])(children, /\d+/) : +(0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["match"])(children, /\d+/) - +(0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["match"])(value, /\d+/)) + ';';
+            }
+            return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, '-start', '') + value;
+        // grid-(row|column)-end
+        case 4896:
+        case 4128:
+            return children && children.some(function(element) {
+                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["match"])(element.props, /grid-\w+-start/);
+            }) ? value : __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, '-end', '-span'), 'span ', '') + value;
+        // (margin|padding)-inline-(start|end)
+        case 4095:
+        case 3583:
+        case 4068:
+        case 2532:
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /(.+)-inline(.+)/, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + '$1$2') + value;
+        // (min|max)?(width|height|inline-size|block-size)
+        case 8116:
+        case 7059:
+        case 5753:
+        case 5535:
+        case 5445:
+        case 5701:
+        case 4933:
+        case 4677:
+        case 5533:
+        case 5789:
+        case 5021:
+        case 4765:
+            // stretch, max-content, min-content, fill-available
+            if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["strlen"])(value) - 1 - length > 6) switch((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["charat"])(value, length + 1)){
+                // (m)ax-content, (m)in-content
+                case 109:
+                    // -
+                    if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["charat"])(value, length + 4) !== 45) break;
+                // (f)ill-available, (f)it-content
+                case 102:
+                    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /(.+:)(.+)-([^]+)/, '$1' + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + '$2-$3' + '$1' + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MOZ"] + ((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["charat"])(value, length + 3) == 108 ? '$3' : '$2-$3')) + value;
+                // (s)tretch
+                case 115:
+                    return ~(0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["indexof"])(value, 'stretch', 0) ? prefix((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, 'stretch', 'fill-available'), length, children) + value : value;
+            }
+            break;
+        // grid-(column|row)
+        case 5152:
+        case 5920:
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /(.+?):(\d+)(\s*\/\s*(span)?\s*(\d+))?(.*)/, function(_, a, b, c, d, e, f) {
+                return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + a + ':' + b + f + (c ? __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + a + '-span:' + (d ? e : +e - +b) + f : '') + value;
+            });
+        // position: sticky
+        case 4949:
+            // stick(y)?
+            if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["charat"])(value, length + 6) === 121) return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, ':', ':' + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"]) + value;
+            break;
+        // display: (flex|inline-flex|grid|inline-grid)
+        case 6444:
+            switch((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["charat"])(value, (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["charat"])(value, 14) === 45 ? 18 : 11)){
+                // (inline-)?fle(x)
+                case 120:
+                    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /(.+:)([^;\s!]+)(;|(\s+)?!.+)?/, '$1' + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + ((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["charat"])(value, 14) === 45 ? 'inline-' : '') + 'box$3' + '$1' + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + '$2$3' + '$1' + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + '$2box$3') + value;
+                // (inline-)?gri(d)
+                case 100:
+                    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, ':', ':' + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"]) + value;
+            }
+            break;
+        // scroll-margin, scroll-margin-(top|right|bottom|left)
+        case 5719:
+        case 2647:
+        case 2135:
+        case 3927:
+        case 2391:
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, 'scroll-', 'scroll-snap-') + value;
+    }
+    return value;
+}
+}),
+"[project]/seva-hr-landing/node_modules/stylis/src/Middleware.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "middleware",
+    ()=>middleware,
+    "namespace",
+    ()=>namespace,
+    "prefixer",
+    ()=>prefixer,
+    "rulesheet",
+    ()=>rulesheet
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Enum.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Utility.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Tokenizer.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Serializer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Serializer.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Prefixer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Prefixer.js [app-client] (ecmascript)");
+;
+;
+;
+;
+;
+function middleware(collection) {
+    var length = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["sizeof"])(collection);
+    return function(element, index, children, callback) {
+        var output = '';
+        for(var i = 0; i < length; i++)output += collection[i](element, index, children, callback) || '';
+        return output;
+    };
+}
+function rulesheet(callback) {
+    return function(element) {
+        if (!element.root) {
+            if (element = element.return) callback(element);
+        }
+    };
+}
+function prefixer(element, index, children, callback) {
+    if (element.length > -1) {
+        if (!element.return) switch(element.type){
+            case __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DECLARATION"]:
+                element.return = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Prefixer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["prefix"])(element.value, element.length, children);
+                return;
+            case __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["KEYFRAMES"]:
+                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Serializer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serialize"])([
+                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["copy"])(element, {
+                        value: (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(element.value, '@', '@' + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"])
+                    })
+                ], callback);
+            case __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RULESET"]:
+                if (element.length) return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["combine"])(children = element.props, function(value) {
+                    switch((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["match"])(value, callback = /(::plac\w+|:read-\w+)/)){
+                        // :read-(only|write)
+                        case ':read-only':
+                        case ':read-write':
+                            (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["lift"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["copy"])(element, {
+                                props: [
+                                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /:(read-\w+)/, ':' + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MOZ"] + '$1')
+                                ]
+                            }));
+                            (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["lift"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["copy"])(element, {
+                                props: [
+                                    value
+                                ]
+                            }));
+                            (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["assign"])(element, {
+                                props: (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["filter"])(children, callback)
+                            });
+                            break;
+                        // :placeholder
+                        case '::placeholder':
+                            (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["lift"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["copy"])(element, {
+                                props: [
+                                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /:(plac\w+)/, ':' + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WEBKIT"] + 'input-$1')
+                                ]
+                            }));
+                            (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["lift"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["copy"])(element, {
+                                props: [
+                                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /:(plac\w+)/, ':' + __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MOZ"] + '$1')
+                                ]
+                            }));
+                            (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["lift"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["copy"])(element, {
+                                props: [
+                                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(value, /:(plac\w+)/, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MS"] + 'input-$1')
+                                ]
+                            }));
+                            (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["lift"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["copy"])(element, {
+                                props: [
+                                    value
+                                ]
+                            }));
+                            (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["assign"])(element, {
+                                props: (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["filter"])(children, callback)
+                            });
+                            break;
+                    }
+                    return '';
+                });
+        }
+    }
+}
+function namespace(element) {
+    switch(element.type){
+        case __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RULESET"]:
+            element.props = element.props.map(function(value) {
+                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["combine"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["tokenize"])(value), function(value, index, children) {
+                    switch((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["charat"])(value, 0)){
+                        // \f
+                        case 12:
+                            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["substr"])(value, 1, (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["strlen"])(value));
+                        // \0 ( + > ~
+                        case 0:
+                        case 40:
+                        case 43:
+                        case 62:
+                        case 126:
+                            return value;
+                        // :
+                        case 58:
+                            if (children[++index] === 'global') children[index] = '', children[++index] = '\f' + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["substr"])(children[index], index = 1, -1);
+                        // \s
+                        case 32:
+                            return index === 1 ? '' : value;
+                        default:
+                            switch(index){
+                                case 0:
+                                    element = value;
+                                    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["sizeof"])(children) > 1 ? '' : value;
+                                case index = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["sizeof"])(children) - 1:
+                                case 2:
+                                    return index === 2 ? value + element + element : value + element;
+                                default:
+                                    return value;
+                            }
+                    }
+                });
+            });
+    }
+}
+}),
+"[project]/seva-hr-landing/node_modules/stylis/src/Parser.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "comment",
+    ()=>comment,
+    "compile",
+    ()=>compile,
+    "declaration",
+    ()=>declaration,
+    "parse",
+    ()=>parse,
+    "ruleset",
+    ()=>ruleset
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Enum.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Utility.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Tokenizer.js [app-client] (ecmascript)");
+;
+;
+;
+function compile(value) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["dealloc"])(parse('', null, null, null, [
+        ''
+    ], value = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["alloc"])(value), 0, [
+        0
+    ], value));
+}
+function parse(value, root, parent, rule, rules, rulesets, pseudo, points, declarations) {
+    var index = 0;
+    var offset = 0;
+    var length = pseudo;
+    var atrule = 0;
+    var property = 0;
+    var previous = 0;
+    var variable = 1;
+    var scanning = 1;
+    var ampersand = 1;
+    var character = 0;
+    var type = '';
+    var props = rules;
+    var children = rulesets;
+    var reference = rule;
+    var characters = type;
+    while(scanning)switch(previous = character, character = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["next"])()){
+        // (
+        case 40:
+            if (previous != 108 && (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["charat"])(characters, length - 1) == 58) {
+                if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["indexof"])(characters += (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["delimit"])(character), '&', '&\f'), '&\f', (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["abs"])(index ? points[index - 1] : 0)) != -1) ampersand = -1;
+                break;
+            }
+        // " ' [
+        case 34:
+        case 39:
+        case 91:
+            characters += (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["delimit"])(character);
+            break;
+        // \t \n \r \s
+        case 9:
+        case 10:
+        case 13:
+        case 32:
+            characters += (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["whitespace"])(previous);
+            break;
+        // \
+        case 92:
+            characters += (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["escaping"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["caret"])() - 1, 7);
+            continue;
+        // /
+        case 47:
+            switch((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["peek"])()){
+                case 42:
+                case 47:
+                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["append"])(comment((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["commenter"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["next"])(), (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["caret"])()), root, parent, declarations), declarations);
+                    break;
+                default:
+                    characters += '/';
+            }
+            break;
+        // {
+        case 123 * variable:
+            points[index++] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["strlen"])(characters) * ampersand;
+        // } ; \0
+        case 125 * variable:
+        case 59:
+        case 0:
+            switch(character){
+                // \0 }
+                case 0:
+                case 125:
+                    scanning = 0;
+                // ;
+                case 59 + offset:
+                    if (ampersand == -1) characters = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(characters, /\f/g, '');
+                    if (property > 0 && (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["strlen"])(characters) - length) (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["append"])(property > 32 ? declaration(characters + ';', rule, parent, length - 1, declarations) : declaration((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(characters, ' ', '') + ';', rule, parent, length - 2, declarations), declarations);
+                    break;
+                // @ ;
+                case 59:
+                    characters += ';';
+                // { rule/at-rule
+                default:
+                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["append"])(reference = ruleset(characters, root, parent, index, offset, rules, points, type, props = [], children = [], length, rulesets), rulesets);
+                    if (character === 123) if (offset === 0) parse(characters, root, reference, reference, props, rulesets, length, points, children);
+                    else switch(atrule === 99 && (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["charat"])(characters, 3) === 110 ? 100 : atrule){
+                        // d l m s
+                        case 100:
+                        case 108:
+                        case 109:
+                        case 115:
+                            parse(value, reference, reference, rule && (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["append"])(ruleset(value, reference, reference, 0, 0, rules, points, type, rules, props = [], length, children), children), rules, children, length, points, rule ? props : children);
+                            break;
+                        default:
+                            parse(characters, reference, reference, reference, [
+                                ''
+                            ], children, 0, points, children);
+                    }
+            }
+            index = offset = property = 0, variable = ampersand = 1, type = characters = '', length = pseudo;
+            break;
+        // :
+        case 58:
+            length = 1 + (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["strlen"])(characters), property = previous;
+        default:
+            if (variable < 1) {
+                if (character == 123) --variable;
+                else if (character == 125 && variable++ == 0 && (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["prev"])() == 125) continue;
+            }
+            switch(characters += (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["from"])(character), character * variable){
+                // &
+                case 38:
+                    ampersand = offset > 0 ? 1 : (characters += '\f', -1);
+                    break;
+                // ,
+                case 44:
+                    points[index++] = ((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["strlen"])(characters) - 1) * ampersand, ampersand = 1;
+                    break;
+                // @
+                case 64:
+                    // -
+                    if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["peek"])() === 45) characters += (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["delimit"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["next"])());
+                    atrule = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["peek"])(), offset = length = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["strlen"])(type = characters += (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["identifier"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["caret"])())), character++;
+                    break;
+                // -
+                case 45:
+                    if (previous === 45 && (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["strlen"])(characters) == 2) variable = 0;
+            }
+    }
+    return rulesets;
+}
+function ruleset(value, root, parent, index, offset, rules, points, type, props, children, length, siblings) {
+    var post = offset - 1;
+    var rule = offset === 0 ? rules : [
+        ''
+    ];
+    var size = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["sizeof"])(rule);
+    for(var i = 0, j = 0, k = 0; i < index; ++i)for(var x = 0, y = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["substr"])(value, post + 1, post = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["abs"])(j = points[i])), z = value; x < size; ++x)if (z = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["trim"])(j > 0 ? rule[x] + ' ' + y : (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["replace"])(y, /&\f/g, rule[x]))) props[k++] = z;
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["node"])(value, root, parent, offset === 0 ? __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RULESET"] : type, props, children, length, siblings);
+}
+function comment(value, root, parent, siblings) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["node"])(value, root, parent, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["COMMENT"], (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["from"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["char"])()), (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["substr"])(value, 2, -2), 0, siblings);
+}
+function declaration(value, root, parent, length, siblings) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Tokenizer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["node"])(value, root, parent, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DECLARATION"], (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["substr"])(value, 0, length), (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Utility$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["substr"])(value, length + 1, -1), length, siblings);
+}
+}),
+"[project]/seva-hr-landing/node_modules/@emotion/unitless/dist/emotion-unitless.esm.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>unitlessKeys
+]);
+var unitlessKeys = {
+    animationIterationCount: 1,
+    aspectRatio: 1,
+    borderImageOutset: 1,
+    borderImageSlice: 1,
+    borderImageWidth: 1,
+    boxFlex: 1,
+    boxFlexGroup: 1,
+    boxOrdinalGroup: 1,
+    columnCount: 1,
+    columns: 1,
+    flex: 1,
+    flexGrow: 1,
+    flexPositive: 1,
+    flexShrink: 1,
+    flexNegative: 1,
+    flexOrder: 1,
+    gridRow: 1,
+    gridRowEnd: 1,
+    gridRowSpan: 1,
+    gridRowStart: 1,
+    gridColumn: 1,
+    gridColumnEnd: 1,
+    gridColumnSpan: 1,
+    gridColumnStart: 1,
+    msGridRow: 1,
+    msGridRowSpan: 1,
+    msGridColumn: 1,
+    msGridColumnSpan: 1,
+    fontWeight: 1,
+    lineHeight: 1,
+    opacity: 1,
+    order: 1,
+    orphans: 1,
+    tabSize: 1,
+    widows: 1,
+    zIndex: 1,
+    zoom: 1,
+    WebkitLineClamp: 1,
+    // SVG-related properties
+    fillOpacity: 1,
+    floodOpacity: 1,
+    stopOpacity: 1,
+    strokeDasharray: 1,
+    strokeDashoffset: 1,
+    strokeMiterlimit: 1,
+    strokeOpacity: 1,
+    strokeWidth: 1
+};
+;
+}),
+"[project]/seva-hr-landing/node_modules/styled-components/dist/styled-components.browser.esm.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ServerStyleSheet",
+    ()=>vt,
+    "StyleSheetConsumer",
+    ()=>Be,
+    "StyleSheetContext",
+    ()=>$e,
+    "StyleSheetManager",
+    ()=>Ye,
+    "ThemeConsumer",
+    ()=>tt,
+    "ThemeContext",
+    ()=>et,
+    "ThemeProvider",
+    ()=>ot,
+    "__PRIVATE__",
+    ()=>gt,
+    "createGlobalStyle",
+    ()=>ft,
+    "css",
+    ()=>lt,
+    "default",
+    ()=>dt,
+    "isStyledComponent",
+    ()=>se,
+    "keyframes",
+    ()=>mt,
+    "styled",
+    ()=>dt,
+    "useTheme",
+    ()=>nt,
+    "version",
+    ()=>v,
+    "withTheme",
+    ()=>yt
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/styled-components/node_modules/tslib/tslib.es6.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f40$emotion$2f$is$2d$prop$2d$valid$2f$dist$2f$emotion$2d$is$2d$prop$2d$valid$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.esm.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$shallowequal$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/shallowequal/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Enum.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Middleware$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Middleware.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Serializer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Serializer.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Parser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/stylis/src/Parser.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f40$emotion$2f$unitless$2f$dist$2f$emotion$2d$unitless$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/seva-hr-landing/node_modules/@emotion/unitless/dist/emotion-unitless.esm.js [app-client] (ecmascript)");
+;
+;
+;
+;
+;
+;
+var f = "undefined" != typeof __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] && void 0 !== __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env && (__TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.REACT_APP_SC_ATTR || __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.SC_ATTR) || "data-styled", m = "active", y = "data-styled-version", v = "6.1.19", g = "/*!sc*/\n", S = "undefined" != typeof window && "undefined" != typeof document, w = Boolean("boolean" == typeof SC_DISABLE_SPEEDY ? SC_DISABLE_SPEEDY : "undefined" != typeof __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] && void 0 !== __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env && void 0 !== __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.REACT_APP_SC_DISABLE_SPEEDY && "" !== __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.REACT_APP_SC_DISABLE_SPEEDY ? "false" !== __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.REACT_APP_SC_DISABLE_SPEEDY && __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.REACT_APP_SC_DISABLE_SPEEDY : "undefined" != typeof __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] && void 0 !== __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env && void 0 !== __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.SC_DISABLE_SPEEDY && "" !== __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.SC_DISABLE_SPEEDY ? "false" !== __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.SC_DISABLE_SPEEDY && __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.SC_DISABLE_SPEEDY : "production" !== ("TURBOPACK compile-time value", "development")), b = {}, E = /invalid hook call/i, N = new Set, P = function(t, n) {
+    if ("TURBOPACK compile-time truthy", 1) {
+        var o = n ? ' with the id of "'.concat(n, '"') : "", s = "The component ".concat(t).concat(o, " has been created dynamically.\n") + "You may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.\nSee https://styled-components.com/docs/basics#define-styled-components-outside-of-the-render-method for more info.\n", i = console.error;
+        try {
+            var a = !0;
+            console.error = function(t) {
+                for(var n = [], o = 1; o < arguments.length; o++)n[o - 1] = arguments[o];
+                E.test(t) ? (a = !1, N.delete(s)) : i.apply(void 0, (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__spreadArray"])([
+                    t
+                ], n, !1));
+            }, (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(), a && !N.has(s) && (console.warn(s), N.add(s));
+        } catch (e) {
+            E.test(e.message) && N.delete(s);
+        } finally{
+            console.error = i;
+        }
+    }
+}, _ = Object.freeze([]), C = Object.freeze({});
+function I(e, t, n) {
+    return void 0 === n && (n = C), e.theme !== n.theme && e.theme || t || n.theme;
+}
+var A = new Set([
+    "a",
+    "abbr",
+    "address",
+    "area",
+    "article",
+    "aside",
+    "audio",
+    "b",
+    "base",
+    "bdi",
+    "bdo",
+    "big",
+    "blockquote",
+    "body",
+    "br",
+    "button",
+    "canvas",
+    "caption",
+    "cite",
+    "code",
+    "col",
+    "colgroup",
+    "data",
+    "datalist",
+    "dd",
+    "del",
+    "details",
+    "dfn",
+    "dialog",
+    "div",
+    "dl",
+    "dt",
+    "em",
+    "embed",
+    "fieldset",
+    "figcaption",
+    "figure",
+    "footer",
+    "form",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "header",
+    "hgroup",
+    "hr",
+    "html",
+    "i",
+    "iframe",
+    "img",
+    "input",
+    "ins",
+    "kbd",
+    "keygen",
+    "label",
+    "legend",
+    "li",
+    "link",
+    "main",
+    "map",
+    "mark",
+    "menu",
+    "menuitem",
+    "meta",
+    "meter",
+    "nav",
+    "noscript",
+    "object",
+    "ol",
+    "optgroup",
+    "option",
+    "output",
+    "p",
+    "param",
+    "picture",
+    "pre",
+    "progress",
+    "q",
+    "rp",
+    "rt",
+    "ruby",
+    "s",
+    "samp",
+    "script",
+    "section",
+    "select",
+    "small",
+    "source",
+    "span",
+    "strong",
+    "style",
+    "sub",
+    "summary",
+    "sup",
+    "table",
+    "tbody",
+    "td",
+    "textarea",
+    "tfoot",
+    "th",
+    "thead",
+    "time",
+    "tr",
+    "track",
+    "u",
+    "ul",
+    "use",
+    "var",
+    "video",
+    "wbr",
+    "circle",
+    "clipPath",
+    "defs",
+    "ellipse",
+    "foreignObject",
+    "g",
+    "image",
+    "line",
+    "linearGradient",
+    "marker",
+    "mask",
+    "path",
+    "pattern",
+    "polygon",
+    "polyline",
+    "radialGradient",
+    "rect",
+    "stop",
+    "svg",
+    "text",
+    "tspan"
+]), O = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g, D = /(^-|-$)/g;
+function R(e) {
+    return e.replace(O, "-").replace(D, "");
+}
+var T = /(a)(d)/gi, k = 52, j = function(e) {
+    return String.fromCharCode(e + (e > 25 ? 39 : 97));
+};
+function x(e) {
+    var t, n = "";
+    for(t = Math.abs(e); t > k; t = t / k | 0)n = j(t % k) + n;
+    return (j(t % k) + n).replace(T, "$1-$2");
+}
+var V, F = 5381, M = function(e, t) {
+    for(var n = t.length; n;)e = 33 * e ^ t.charCodeAt(--n);
+    return e;
+}, z = function(e) {
+    return M(F, e);
+};
+function $(e) {
+    return x(z(e) >>> 0);
+}
+function B(e) {
+    return "production" !== ("TURBOPACK compile-time value", "development") && "string" == typeof e && e || e.displayName || e.name || "Component";
+}
+function L(e) {
+    return "string" == typeof e && ("production" === ("TURBOPACK compile-time value", "development") || e.charAt(0) === e.charAt(0).toLowerCase());
+}
+var G = "function" == typeof Symbol && Symbol.for, Y = G ? Symbol.for("react.memo") : 60115, W = G ? Symbol.for("react.forward_ref") : 60112, q = {
+    childContextTypes: !0,
+    contextType: !0,
+    contextTypes: !0,
+    defaultProps: !0,
+    displayName: !0,
+    getDefaultProps: !0,
+    getDerivedStateFromError: !0,
+    getDerivedStateFromProps: !0,
+    mixins: !0,
+    propTypes: !0,
+    type: !0
+}, H = {
+    name: !0,
+    length: !0,
+    prototype: !0,
+    caller: !0,
+    callee: !0,
+    arguments: !0,
+    arity: !0
+}, U = {
+    $$typeof: !0,
+    compare: !0,
+    defaultProps: !0,
+    displayName: !0,
+    propTypes: !0,
+    type: !0
+}, J = ((V = {})[W] = {
+    $$typeof: !0,
+    render: !0,
+    defaultProps: !0,
+    displayName: !0,
+    propTypes: !0
+}, V[Y] = U, V);
+function X(e) {
+    return ("type" in (t = e) && t.type.$$typeof) === Y ? U : "$$typeof" in e ? J[e.$$typeof] : q;
+    //TURBOPACK unreachable
+    ;
+    var t;
+}
+var Z = Object.defineProperty, K = Object.getOwnPropertyNames, Q = Object.getOwnPropertySymbols, ee = Object.getOwnPropertyDescriptor, te = Object.getPrototypeOf, ne = Object.prototype;
+function oe(e, t, n) {
+    if ("string" != typeof t) {
+        if (ne) {
+            var o = te(t);
+            o && o !== ne && oe(e, o, n);
+        }
+        var r = K(t);
+        Q && (r = r.concat(Q(t)));
+        for(var s = X(e), i = X(t), a = 0; a < r.length; ++a){
+            var c = r[a];
+            if (!(c in H || n && n[c] || i && c in i || s && c in s)) {
+                var l = ee(t, c);
+                try {
+                    Z(e, c, l);
+                } catch (e) {}
+            }
+        }
+    }
+    return e;
+}
+function re(e) {
+    return "function" == typeof e;
+}
+function se(e) {
+    return "object" == typeof e && "styledComponentId" in e;
+}
+function ie(e, t) {
+    return e && t ? "".concat(e, " ").concat(t) : e || t || "";
+}
+function ae(e, t) {
+    if (0 === e.length) return "";
+    for(var n = e[0], o = 1; o < e.length; o++)n += t ? t + e[o] : e[o];
+    return n;
+}
+function ce(e) {
+    return null !== e && "object" == typeof e && e.constructor.name === Object.name && !("props" in e && e.$$typeof);
+}
+function le(e, t, n) {
+    if (void 0 === n && (n = !1), !n && !ce(e) && !Array.isArray(e)) return t;
+    if (Array.isArray(t)) for(var o = 0; o < t.length; o++)e[o] = le(e[o], t[o]);
+    else if (ce(t)) for(var o in t)e[o] = le(e[o], t[o]);
+    return e;
+}
+function ue(e, t) {
+    Object.defineProperty(e, "toString", {
+        value: t
+    });
+}
+var pe = ("TURBOPACK compile-time truthy", 1) ? {
+    1: "Cannot create styled-component for component: %s.\n\n",
+    2: "Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",
+    3: "Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",
+    4: "The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",
+    5: "The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",
+    6: "Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",
+    7: 'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',
+    8: 'ThemeProvider: Please make your "theme" prop an object.\n\n',
+    9: "Missing document `<head>`\n\n",
+    10: "Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",
+    11: "_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",
+    12: "It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",
+    13: "%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",
+    14: 'ThemeProvider: "theme" prop is required.\n\n',
+    15: "A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",
+    16: "Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",
+    17: "CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n",
+    18: "ThemeProvider: Please make sure your useTheme hook is within a `<ThemeProvider>`"
+} : "TURBOPACK unreachable";
+function de() {
+    for(var e = [], t = 0; t < arguments.length; t++)e[t] = arguments[t];
+    for(var n = e[0], o = [], r = 1, s = e.length; r < s; r += 1)o.push(e[r]);
+    return o.forEach(function(e) {
+        n = n.replace(/%[a-z]/, e);
+    }), n;
+}
+function he(t) {
+    for(var n = [], o = 1; o < arguments.length; o++)n[o - 1] = arguments[o];
+    return ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : new Error(de.apply(void 0, (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__spreadArray"])([
+        pe[t]
+    ], n, !1)).trim());
+}
+var fe = function() {
+    function e(e) {
+        this.groupSizes = new Uint32Array(512), this.length = 512, this.tag = e;
+    }
+    return e.prototype.indexOfGroup = function(e) {
+        for(var t = 0, n = 0; n < e; n++)t += this.groupSizes[n];
+        return t;
+    }, e.prototype.insertRules = function(e, t) {
+        if (e >= this.groupSizes.length) {
+            for(var n = this.groupSizes, o = n.length, r = o; e >= r;)if ((r <<= 1) < 0) throw he(16, "".concat(e));
+            this.groupSizes = new Uint32Array(r), this.groupSizes.set(n), this.length = r;
+            for(var s = o; s < r; s++)this.groupSizes[s] = 0;
+        }
+        for(var i = this.indexOfGroup(e + 1), a = (s = 0, t.length); s < a; s++)this.tag.insertRule(i, t[s]) && (this.groupSizes[e]++, i++);
+    }, e.prototype.clearGroup = function(e) {
+        if (e < this.length) {
+            var t = this.groupSizes[e], n = this.indexOfGroup(e), o = n + t;
+            this.groupSizes[e] = 0;
+            for(var r = n; r < o; r++)this.tag.deleteRule(n);
+        }
+    }, e.prototype.getGroup = function(e) {
+        var t = "";
+        if (e >= this.length || 0 === this.groupSizes[e]) return t;
+        for(var n = this.groupSizes[e], o = this.indexOfGroup(e), r = o + n, s = o; s < r; s++)t += "".concat(this.tag.getRule(s)).concat(g);
+        return t;
+    }, e;
+}(), me = 1 << 30, ye = new Map, ve = new Map, ge = 1, Se = function(e) {
+    if (ye.has(e)) return ye.get(e);
+    for(; ve.has(ge);)ge++;
+    var t = ge++;
+    if ("production" !== ("TURBOPACK compile-time value", "development") && ((0 | t) < 0 || t > me)) throw he(16, "".concat(t));
+    return ye.set(e, t), ve.set(t, e), t;
+}, we = function(e, t) {
+    ge = t + 1, ye.set(e, t), ve.set(t, e);
+}, be = "style[".concat(f, "][").concat(y, '="').concat(v, '"]'), Ee = new RegExp("^".concat(f, '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)')), Ne = function(e, t, n) {
+    for(var o, r = n.split(","), s = 0, i = r.length; s < i; s++)(o = r[s]) && e.registerName(t, o);
+}, Pe = function(e, t) {
+    for(var n, o = (null !== (n = t.textContent) && void 0 !== n ? n : "").split(g), r = [], s = 0, i = o.length; s < i; s++){
+        var a = o[s].trim();
+        if (a) {
+            var c = a.match(Ee);
+            if (c) {
+                var l = 0 | parseInt(c[1], 10), u = c[2];
+                0 !== l && (we(u, l), Ne(e, u, c[3]), e.getTag().insertRules(l, r)), r.length = 0;
+            } else r.push(a);
+        }
+    }
+}, _e = function(e) {
+    for(var t = document.querySelectorAll(be), n = 0, o = t.length; n < o; n++){
+        var r = t[n];
+        r && r.getAttribute(f) !== m && (Pe(e, r), r.parentNode && r.parentNode.removeChild(r));
+    }
+};
+function Ce() {
+    return "undefined" != typeof __webpack_nonce__ ? __webpack_nonce__ : null;
+}
+var Ie = function(e) {
+    var t = document.head, n = e || t, o = document.createElement("style"), r = function(e) {
+        var t = Array.from(e.querySelectorAll("style[".concat(f, "]")));
+        return t[t.length - 1];
+    }(n), s = void 0 !== r ? r.nextSibling : null;
+    o.setAttribute(f, m), o.setAttribute(y, v);
+    var i = Ce();
+    return i && o.setAttribute("nonce", i), n.insertBefore(o, s), o;
+}, Ae = function() {
+    function e(e) {
+        this.element = Ie(e), this.element.appendChild(document.createTextNode("")), this.sheet = function(e) {
+            if (e.sheet) return e.sheet;
+            for(var t = document.styleSheets, n = 0, o = t.length; n < o; n++){
+                var r = t[n];
+                if (r.ownerNode === e) return r;
+            }
+            throw he(17);
+        }(this.element), this.length = 0;
+    }
+    return e.prototype.insertRule = function(e, t) {
+        try {
+            return this.sheet.insertRule(t, e), this.length++, !0;
+        } catch (e) {
+            return !1;
+        }
+    }, e.prototype.deleteRule = function(e) {
+        this.sheet.deleteRule(e), this.length--;
+    }, e.prototype.getRule = function(e) {
+        var t = this.sheet.cssRules[e];
+        return t && t.cssText ? t.cssText : "";
+    }, e;
+}(), Oe = function() {
+    function e(e) {
+        this.element = Ie(e), this.nodes = this.element.childNodes, this.length = 0;
+    }
+    return e.prototype.insertRule = function(e, t) {
+        if (e <= this.length && e >= 0) {
+            var n = document.createTextNode(t);
+            return this.element.insertBefore(n, this.nodes[e] || null), this.length++, !0;
+        }
+        return !1;
+    }, e.prototype.deleteRule = function(e) {
+        this.element.removeChild(this.nodes[e]), this.length--;
+    }, e.prototype.getRule = function(e) {
+        return e < this.length ? this.nodes[e].textContent : "";
+    }, e;
+}(), De = function() {
+    function e(e) {
+        this.rules = [], this.length = 0;
+    }
+    return e.prototype.insertRule = function(e, t) {
+        return e <= this.length && (this.rules.splice(e, 0, t), this.length++, !0);
+    }, e.prototype.deleteRule = function(e) {
+        this.rules.splice(e, 1), this.length--;
+    }, e.prototype.getRule = function(e) {
+        return e < this.length ? this.rules[e] : "";
+    }, e;
+}(), Re = S, Te = {
+    isServer: !S,
+    useCSSOMInjection: !w
+}, ke = function() {
+    function e(e, n, o) {
+        void 0 === e && (e = C), void 0 === n && (n = {});
+        var r = this;
+        this.options = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])({}, Te), e), this.gs = n, this.names = new Map(o), this.server = !!e.isServer, !this.server && S && Re && (Re = !1, _e(this)), ue(this, function() {
+            return function(e) {
+                for(var t = e.getTag(), n = t.length, o = "", r = function(n) {
+                    var r = function(e) {
+                        return ve.get(e);
+                    }(n);
+                    if (void 0 === r) return "continue";
+                    var s = e.names.get(r), i = t.getGroup(n);
+                    if (void 0 === s || !s.size || 0 === i.length) return "continue";
+                    var a = "".concat(f, ".g").concat(n, '[id="').concat(r, '"]'), c = "";
+                    void 0 !== s && s.forEach(function(e) {
+                        e.length > 0 && (c += "".concat(e, ","));
+                    }), o += "".concat(i).concat(a, '{content:"').concat(c, '"}').concat(g);
+                }, s = 0; s < n; s++)r(s);
+                return o;
+            }(r);
+        });
+    }
+    return e.registerId = function(e) {
+        return Se(e);
+    }, e.prototype.rehydrate = function() {
+        !this.server && S && _e(this);
+    }, e.prototype.reconstructWithOptions = function(n, o) {
+        return void 0 === o && (o = !0), new e((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])({}, this.options), n), this.gs, o && this.names || void 0);
+    }, e.prototype.allocateGSInstance = function(e) {
+        return this.gs[e] = (this.gs[e] || 0) + 1;
+    }, e.prototype.getTag = function() {
+        return this.tag || (this.tag = (e = function(e) {
+            var t = e.useCSSOMInjection, n = e.target;
+            return e.isServer ? new De(n) : t ? new Ae(n) : new Oe(n);
+        }(this.options), new fe(e)));
+        //TURBOPACK unreachable
+        ;
+        var e;
+    }, e.prototype.hasNameForId = function(e, t) {
+        return this.names.has(e) && this.names.get(e).has(t);
+    }, e.prototype.registerName = function(e, t) {
+        if (Se(e), this.names.has(e)) this.names.get(e).add(t);
+        else {
+            var n = new Set;
+            n.add(t), this.names.set(e, n);
+        }
+    }, e.prototype.insertRules = function(e, t, n) {
+        this.registerName(e, t), this.getTag().insertRules(Se(e), n);
+    }, e.prototype.clearNames = function(e) {
+        this.names.has(e) && this.names.get(e).clear();
+    }, e.prototype.clearRules = function(e) {
+        this.getTag().clearGroup(Se(e)), this.clearNames(e);
+    }, e.prototype.clearTag = function() {
+        this.tag = void 0;
+    }, e;
+}(), je = /&/g, xe = /^\s*\/\/.*$/gm;
+function Ve(e, t) {
+    return e.map(function(e) {
+        return "rule" === e.type && (e.value = "".concat(t, " ").concat(e.value), e.value = e.value.replaceAll(",", ",".concat(t, " ")), e.props = e.props.map(function(e) {
+            return "".concat(t, " ").concat(e);
+        })), Array.isArray(e.children) && "@keyframes" !== e.type && (e.children = Ve(e.children, t)), e;
+    });
+}
+function Fe(e) {
+    var t, n, o, r = void 0 === e ? C : e, s = r.options, i = void 0 === s ? C : s, a = r.plugins, c = void 0 === a ? _ : a, l = function(e, o, r) {
+        return r.startsWith(n) && r.endsWith(n) && r.replaceAll(n, "").length > 0 ? ".".concat(t) : e;
+    }, u = c.slice();
+    u.push(function(e) {
+        e.type === __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Enum$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RULESET"] && e.value.includes("&") && (e.props[0] = e.props[0].replace(je, n).replace(o, l));
+    }), i.prefix && u.push(__TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Middleware$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["prefixer"]), u.push(__TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Serializer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["stringify"]);
+    var p = function(e, r, s, a) {
+        void 0 === r && (r = ""), void 0 === s && (s = ""), void 0 === a && (a = "&"), t = a, n = r, o = new RegExp("\\".concat(n, "\\b"), "g");
+        var c = e.replace(xe, ""), l = __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Parser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["compile"](s || r ? "".concat(s, " ").concat(r, " { ").concat(c, " }") : c);
+        i.namespace && (l = Ve(l, i.namespace));
+        var p = [];
+        return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Serializer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serialize"](l, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Middleware$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["middleware"](u.concat(__TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$stylis$2f$src$2f$Middleware$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["rulesheet"](function(e) {
+            return p.push(e);
+        })))), p;
+    };
+    return p.hash = c.length ? c.reduce(function(e, t) {
+        return t.name || he(15), M(e, t.name);
+    }, F).toString() : "", p;
+}
+var Me = new ke, ze = Fe(), $e = __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].createContext({
+    shouldForwardProp: void 0,
+    styleSheet: Me,
+    stylis: ze
+}), Be = $e.Consumer, Le = __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].createContext(void 0);
+function Ge() {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])($e);
+}
+function Ye(e) {
+    var t = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(e.stylisPlugins), n = t[0], r = t[1], c = Ge().styleSheet, l = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])(function() {
+        var t = c;
+        return e.sheet ? t = e.sheet : e.target && (t = t.reconstructWithOptions({
+            target: e.target
+        }, !1)), e.disableCSSOMInjection && (t = t.reconstructWithOptions({
+            useCSSOMInjection: !1
+        })), t;
+    }, [
+        e.disableCSSOMInjection,
+        e.sheet,
+        e.target,
+        c
+    ]), u = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])(function() {
+        return Fe({
+            options: {
+                namespace: e.namespace,
+                prefix: e.enableVendorPrefixes
+            },
+            plugins: n
+        });
+    }, [
+        e.enableVendorPrefixes,
+        e.namespace,
+        n
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])(function() {
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$shallowequal$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(n, e.stylisPlugins) || r(e.stylisPlugins);
+    }, [
+        e.stylisPlugins
+    ]);
+    var d = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])(function() {
+        return {
+            shouldForwardProp: e.shouldForwardProp,
+            styleSheet: l,
+            stylis: u
+        };
+    }, [
+        e.shouldForwardProp,
+        l,
+        u
+    ]);
+    return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].createElement($e.Provider, {
+        value: d
+    }, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].createElement(Le.Provider, {
+        value: u
+    }, e.children));
+}
+var We = function() {
+    function e(e, t) {
+        var n = this;
+        this.inject = function(e, t) {
+            void 0 === t && (t = ze);
+            var o = n.name + t.hash;
+            e.hasNameForId(n.id, o) || e.insertRules(n.id, o, t(n.rules, o, "@keyframes"));
+        }, this.name = e, this.id = "sc-keyframes-".concat(e), this.rules = t, ue(this, function() {
+            throw he(12, String(n.name));
+        });
+    }
+    return e.prototype.getName = function(e) {
+        return void 0 === e && (e = ze), this.name + e.hash;
+    }, e;
+}(), qe = function(e) {
+    return e >= "A" && e <= "Z";
+};
+function He(e) {
+    for(var t = "", n = 0; n < e.length; n++){
+        var o = e[n];
+        if (1 === n && "-" === o && "-" === e[0]) return e;
+        qe(o) ? t += "-" + o.toLowerCase() : t += o;
+    }
+    return t.startsWith("ms-") ? "-" + t : t;
+}
+var Ue = function(e) {
+    return null == e || !1 === e || "" === e;
+}, Je = function(t) {
+    var n, o, r = [];
+    for(var s in t){
+        var i = t[s];
+        t.hasOwnProperty(s) && !Ue(i) && (Array.isArray(i) && i.isCss || re(i) ? r.push("".concat(He(s), ":"), i, ";") : ce(i) ? r.push.apply(r, (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__spreadArray"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__spreadArray"])([
+            "".concat(s, " {")
+        ], Je(i), !1), [
+            "}"
+        ], !1)) : r.push("".concat(He(s), ": ").concat((n = s, null == (o = i) || "boolean" == typeof o || "" === o ? "" : "number" != typeof o || 0 === o || n in __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f40$emotion$2f$unitless$2f$dist$2f$emotion$2d$unitless$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] || n.startsWith("--") ? String(o).trim() : "".concat(o, "px")), ";")));
+    }
+    return r;
+};
+function Xe(e, t, n, o) {
+    if (Ue(e)) return [];
+    if (se(e)) return [
+        ".".concat(e.styledComponentId)
+    ];
+    if (re(e)) {
+        if (!re(s = e) || s.prototype && s.prototype.isReactComponent || !t) return [
+            e
+        ];
+        var r = e(t);
+        return "production" === ("TURBOPACK compile-time value", "development") || "object" != typeof r || Array.isArray(r) || r instanceof We || ce(r) || null === r || console.error("".concat(B(e), " is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.")), Xe(r, t, n, o);
+    }
+    var s;
+    return e instanceof We ? n ? (e.inject(n, o), [
+        e.getName(o)
+    ]) : [
+        e
+    ] : ce(e) ? Je(e) : Array.isArray(e) ? Array.prototype.concat.apply(_, e.map(function(e) {
+        return Xe(e, t, n, o);
+    })) : [
+        e.toString()
+    ];
+}
+function Ze(e) {
+    for(var t = 0; t < e.length; t += 1){
+        var n = e[t];
+        if (re(n) && !se(n)) return !1;
+    }
+    return !0;
+}
+var Ke = z(v), Qe = function() {
+    function e(e, t, n) {
+        this.rules = e, this.staticRulesId = "", this.isStatic = "production" === ("TURBOPACK compile-time value", "development") && (void 0 === n || n.isStatic) && Ze(e), this.componentId = t, this.baseHash = M(Ke, t), this.baseStyle = n, ke.registerId(t);
+    }
+    return e.prototype.generateAndInjectStyles = function(e, t, n) {
+        var o = this.baseStyle ? this.baseStyle.generateAndInjectStyles(e, t, n) : "";
+        if (this.isStatic && !n.hash) if (this.staticRulesId && t.hasNameForId(this.componentId, this.staticRulesId)) o = ie(o, this.staticRulesId);
+        else {
+            var r = ae(Xe(this.rules, e, t, n)), s = x(M(this.baseHash, r) >>> 0);
+            if (!t.hasNameForId(this.componentId, s)) {
+                var i = n(r, ".".concat(s), void 0, this.componentId);
+                t.insertRules(this.componentId, s, i);
+            }
+            o = ie(o, s), this.staticRulesId = s;
+        }
+        else {
+            for(var a = M(this.baseHash, n.hash), c = "", l = 0; l < this.rules.length; l++){
+                var u = this.rules[l];
+                if ("string" == typeof u) c += u, "production" !== ("TURBOPACK compile-time value", "development") && (a = M(a, u));
+                else if (u) {
+                    var p = ae(Xe(u, e, t, n));
+                    a = M(a, p + l), c += p;
+                }
+            }
+            if (c) {
+                var d = x(a >>> 0);
+                t.hasNameForId(this.componentId, d) || t.insertRules(this.componentId, d, n(c, ".".concat(d), void 0, this.componentId)), o = ie(o, d);
+            }
+        }
+        return o;
+    }, e;
+}(), et = __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].createContext(void 0), tt = et.Consumer;
+function nt() {
+    var e = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(et);
+    if (!e) throw he(18);
+    return e;
+}
+function ot(e) {
+    var n = __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useContext(et), r = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])(function() {
+        return function(e, n) {
+            if (!e) throw he(14);
+            if (re(e)) {
+                var o = e(n);
+                if ("production" !== ("TURBOPACK compile-time value", "development") && (null === o || Array.isArray(o) || "object" != typeof o)) throw he(7);
+                return o;
+            }
+            if (Array.isArray(e) || "object" != typeof e) throw he(8);
+            return n ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])({}, n), e) : e;
+        }(e.theme, n);
+    }, [
+        e.theme,
+        n
+    ]);
+    return e.children ? __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].createElement(et.Provider, {
+        value: r
+    }, e.children) : null;
+}
+var rt = {}, st = new Set;
+function it(e, r, s) {
+    var i = se(e), a = e, c = !L(e), p = r.attrs, d = void 0 === p ? _ : p, h = r.componentId, f = void 0 === h ? function(e, t) {
+        var n = "string" != typeof e ? "sc" : R(e);
+        rt[n] = (rt[n] || 0) + 1;
+        var o = "".concat(n, "-").concat($(v + n + rt[n]));
+        return t ? "".concat(t, "-").concat(o) : o;
+    }(r.displayName, r.parentComponentId) : h, m = r.displayName, y = void 0 === m ? function(e) {
+        return L(e) ? "styled.".concat(e) : "Styled(".concat(B(e), ")");
+    }(e) : m, g = r.displayName && r.componentId ? "".concat(R(r.displayName), "-").concat(r.componentId) : r.componentId || f, S = i && a.attrs ? a.attrs.concat(d).filter(Boolean) : d, w = r.shouldForwardProp;
+    if (i && a.shouldForwardProp) {
+        var b = a.shouldForwardProp;
+        if (r.shouldForwardProp) {
+            var E = r.shouldForwardProp;
+            w = function(e, t) {
+                return b(e, t) && E(e, t);
+            };
+        } else w = b;
+    }
+    var N = new Qe(s, g, i ? a.componentStyle : void 0);
+    function O(e, r) {
+        return function(e, r, s) {
+            var i = e.attrs, a = e.componentStyle, c = e.defaultProps, p = e.foldedComponentIds, d = e.styledComponentId, h = e.target, f = __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useContext(et), m = Ge(), y = e.shouldForwardProp || m.shouldForwardProp;
+            "production" !== ("TURBOPACK compile-time value", "development") && (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDebugValue"])(d);
+            var v = I(r, f, c) || C, g = function(e, n, o) {
+                for(var r, s = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])({}, n), {
+                    className: void 0,
+                    theme: o
+                }), i = 0; i < e.length; i += 1){
+                    var a = re(r = e[i]) ? r(s) : r;
+                    for(var c in a)s[c] = "className" === c ? ie(s[c], a[c]) : "style" === c ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])({}, s[c]), a[c]) : a[c];
+                }
+                return n.className && (s.className = ie(s.className, n.className)), s;
+            }(i, r, v), S = g.as || h, w = {};
+            for(var b in g)void 0 === g[b] || "$" === b[0] || "as" === b || "theme" === b && g.theme === v || ("forwardedAs" === b ? w.as = g.forwardedAs : y && !y(b, S) || (w[b] = g[b], y || "development" !== ("TURBOPACK compile-time value", "development") || (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f40$emotion$2f$is$2d$prop$2d$valid$2f$dist$2f$emotion$2d$is$2d$prop$2d$valid$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(b) || st.has(b) || !A.has(S) || (st.add(b), console.warn('styled-components: it looks like an unknown prop "'.concat(b, '" is being sent through to the DOM, which will likely trigger a React console error. If you would like automatic filtering of unknown props, you can opt-into that behavior via `<StyleSheetManager shouldForwardProp={...}>` (connect an API like `@emotion/is-prop-valid`) or consider using transient props (`$` prefix for automatic filtering.)')))));
+            var E = function(e, t) {
+                var n = Ge(), o = e.generateAndInjectStyles(t, n.styleSheet, n.stylis);
+                return "production" !== ("TURBOPACK compile-time value", "development") && (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDebugValue"])(o), o;
+            }(a, g);
+            "production" !== ("TURBOPACK compile-time value", "development") && e.warnTooManyClasses && e.warnTooManyClasses(E);
+            var N = ie(p, d);
+            return E && (N += " " + E), g.className && (N += " " + g.className), w[L(S) && !A.has(S) ? "class" : "className"] = N, s && (w.ref = s), (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(S, w);
+        }(D, e, r);
+    }
+    O.displayName = y;
+    var D = __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].forwardRef(O);
+    return D.attrs = S, D.componentStyle = N, D.displayName = y, D.shouldForwardProp = w, D.foldedComponentIds = i ? ie(a.foldedComponentIds, a.styledComponentId) : "", D.styledComponentId = g, D.target = i ? a.target : e, Object.defineProperty(D, "defaultProps", {
+        get: function() {
+            return this._foldedDefaultProps;
+        },
+        set: function(e) {
+            this._foldedDefaultProps = i ? function(e) {
+                for(var t = [], n = 1; n < arguments.length; n++)t[n - 1] = arguments[n];
+                for(var o = 0, r = t; o < r.length; o++)le(e, r[o], !0);
+                return e;
+            }({}, a.defaultProps, e) : e;
+        }
+    }), "production" !== ("TURBOPACK compile-time value", "development") && (P(y, g), D.warnTooManyClasses = function(e, t) {
+        var n = {}, o = !1;
+        return function(r) {
+            if (!o && (n[r] = !0, Object.keys(n).length >= 200)) {
+                var s = t ? ' with the id of "'.concat(t, '"') : "";
+                console.warn("Over ".concat(200, " classes were generated for component ").concat(e).concat(s, ".\n") + "Consider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"), o = !0, n = {};
+            }
+        };
+    }(y, g)), ue(D, function() {
+        return ".".concat(D.styledComponentId);
+    }), c && oe(D, e, {
+        attrs: !0,
+        componentStyle: !0,
+        displayName: !0,
+        foldedComponentIds: !0,
+        shouldForwardProp: !0,
+        styledComponentId: !0,
+        target: !0
+    }), D;
+}
+function at(e, t) {
+    for(var n = [
+        e[0]
+    ], o = 0, r = t.length; o < r; o += 1)n.push(t[o], e[o + 1]);
+    return n;
+}
+var ct = function(e) {
+    return Object.assign(e, {
+        isCss: !0
+    });
+};
+function lt(t) {
+    for(var n = [], o = 1; o < arguments.length; o++)n[o - 1] = arguments[o];
+    if (re(t) || ce(t)) return ct(Xe(at(_, (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__spreadArray"])([
+        t
+    ], n, !0))));
+    var r = t;
+    return 0 === n.length && 1 === r.length && "string" == typeof r[0] ? Xe(r) : ct(Xe(at(r, n)));
+}
+function ut(n, o, r) {
+    if (void 0 === r && (r = C), !o) throw he(1, o);
+    var s = function(t) {
+        for(var s = [], i = 1; i < arguments.length; i++)s[i - 1] = arguments[i];
+        return n(o, r, lt.apply(void 0, (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__spreadArray"])([
+            t
+        ], s, !1)));
+    };
+    return s.attrs = function(e) {
+        return ut(n, o, (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])({}, r), {
+            attrs: Array.prototype.concat(r.attrs, e).filter(Boolean)
+        }));
+    }, s.withConfig = function(e) {
+        return ut(n, o, (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])({}, r), e));
+    }, s;
+}
+var pt = function(e) {
+    return ut(it, e);
+}, dt = pt;
+A.forEach(function(e) {
+    dt[e] = pt(e);
+});
+var ht = function() {
+    function e(e, t) {
+        this.rules = e, this.componentId = t, this.isStatic = Ze(e), ke.registerId(this.componentId + 1);
+    }
+    return e.prototype.createStyles = function(e, t, n, o) {
+        var r = o(ae(Xe(this.rules, t, n, o)), ""), s = this.componentId + e;
+        n.insertRules(s, s, r);
+    }, e.prototype.removeStyles = function(e, t) {
+        t.clearRules(this.componentId + e);
+    }, e.prototype.renderStyles = function(e, t, n, o) {
+        e > 2 && ke.registerId(this.componentId + e), this.removeStyles(e, n), this.createStyles(e, t, n, o);
+    }, e;
+}();
+function ft(n) {
+    for(var r = [], s = 1; s < arguments.length; s++)r[s - 1] = arguments[s];
+    var i = lt.apply(void 0, (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__spreadArray"])([
+        n
+    ], r, !1)), a = "sc-global-".concat($(JSON.stringify(i))), c = new ht(i, a);
+    "production" !== ("TURBOPACK compile-time value", "development") && P(a);
+    var l = function(e) {
+        var t = Ge(), n = __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useContext(et), r = __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useRef(t.styleSheet.allocateGSInstance(a)).current;
+        return "production" !== ("TURBOPACK compile-time value", "development") && __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].Children.count(e.children) && console.warn("The global style component ".concat(a, " was given child JSX. createGlobalStyle does not render children.")), "production" !== ("TURBOPACK compile-time value", "development") && i.some(function(e) {
+            return "string" == typeof e && -1 !== e.indexOf("@import");
+        }) && console.warn("Please do not use @import CSS syntax in createGlobalStyle at this time, as the CSSOM APIs we use in production do not handle it well. Instead, we recommend using a library such as react-helmet to inject a typical <link> meta tag to the stylesheet, or simply embedding it manually in your index.html <head> section for a simpler app."), t.styleSheet.server && u(r, e, t.styleSheet, n, t.stylis), __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useLayoutEffect({
+            "ft.l.useLayoutEffect": function() {
+                if (!t.styleSheet.server) return u(r, e, t.styleSheet, n, t.stylis), ({
+                    "ft.l.useLayoutEffect": function() {
+                        return c.removeStyles(r, t.styleSheet);
+                    }
+                })["ft.l.useLayoutEffect"];
+            }
+        }["ft.l.useLayoutEffect"], [
+            r,
+            e,
+            t.styleSheet,
+            n,
+            t.stylis
+        ]), null;
+    };
+    function u(e, n, o, r, s) {
+        if (c.isStatic) c.renderStyles(e, b, o, s);
+        else {
+            var i = (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])({}, n), {
+                theme: I(n, r, l.defaultProps)
+            });
+            c.renderStyles(e, i, o, s);
+        }
+    }
+    return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].memo(l);
+}
+function mt(t) {
+    for(var n = [], o = 1; o < arguments.length; o++)n[o - 1] = arguments[o];
+    "production" !== ("TURBOPACK compile-time value", "development") && "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");
+    var r = ae(lt.apply(void 0, (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__spreadArray"])([
+        t
+    ], n, !1))), s = $(r);
+    return new We(s, r);
+}
+function yt(e) {
+    var n = __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].forwardRef(function(n, r) {
+        var s = I(n, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useContext(et), e.defaultProps);
+        return "production" !== ("TURBOPACK compile-time value", "development") && void 0 === s && console.warn('[withTheme] You are not using a ThemeProvider nor passing a theme prop or a theme in defaultProps in component class "'.concat(B(e), '"')), __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].createElement(e, (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])({}, n, {
+            theme: s,
+            ref: r
+        }));
+    });
+    return n.displayName = "WithTheme(".concat(B(e), ")"), oe(n, e);
+}
+var vt = function() {
+    function e() {
+        var e = this;
+        this._emitSheetCSS = function() {
+            var t = e.instance.toString();
+            if (!t) return "";
+            var n = Ce(), o = ae([
+                n && 'nonce="'.concat(n, '"'),
+                "".concat(f, '="true"'),
+                "".concat(y, '="').concat(v, '"')
+            ].filter(Boolean), " ");
+            return "<style ".concat(o, ">").concat(t, "</style>");
+        }, this.getStyleTags = function() {
+            if (e.sealed) throw he(2);
+            return e._emitSheetCSS();
+        }, this.getStyleElement = function() {
+            var n;
+            if (e.sealed) throw he(2);
+            var r = e.instance.toString();
+            if (!r) return [];
+            var s = ((n = {})[f] = "", n[y] = v, n.dangerouslySetInnerHTML = {
+                __html: r
+            }, n), i = Ce();
+            return i && (s.nonce = i), [
+                __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].createElement("style", (0, __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$styled$2d$components$2f$node_modules$2f$tslib$2f$tslib$2e$es6$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["__assign"])({}, s, {
+                    key: "sc-0-0"
+                }))
+            ];
+        }, this.seal = function() {
+            e.sealed = !0;
+        }, this.instance = new ke({
+            isServer: !0
+        }), this.sealed = !1;
+    }
+    return e.prototype.collectStyles = function(e) {
+        if (this.sealed) throw he(2);
+        return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].createElement(Ye, {
+            sheet: this.instance
+        }, e);
+    }, e.prototype.interleaveWithNodeStream = function(e) {
+        throw he(3);
+    }, e;
+}(), gt = {
+    StyleSheet: ke,
+    mainSheet: Me
+};
+"production" !== ("TURBOPACK compile-time value", "development") && "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native");
+var St = "__sc-".concat(f, "__");
+"production" !== ("TURBOPACK compile-time value", "development") && "test" !== ("TURBOPACK compile-time value", "development") && "undefined" != typeof window && (window[St] || (window[St] = 0), 1 === window[St] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window[St] += 1);
+;
+ //# sourceMappingURL=styled-components.browser.esm.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/image-blur-svg.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/**
+ * A shared function, used on both client and server, to generate a SVG blur placeholder.
+ */ Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "getImageBlurSvg", {
+    enumerable: true,
+    get: function() {
+        return getImageBlurSvg;
+    }
+});
+function getImageBlurSvg({ widthInt, heightInt, blurWidth, blurHeight, blurDataURL, objectFit }) {
+    const std = 20;
+    const svgWidth = blurWidth ? blurWidth * 40 : widthInt;
+    const svgHeight = blurHeight ? blurHeight * 40 : heightInt;
+    const viewBox = svgWidth && svgHeight ? `viewBox='0 0 ${svgWidth} ${svgHeight}'` : '';
+    const preserveAspectRatio = viewBox ? 'none' : objectFit === 'contain' ? 'xMidYMid' : objectFit === 'cover' ? 'xMidYMid slice' : 'none';
+    return `%3Csvg xmlns='http://www.w3.org/2000/svg' ${viewBox}%3E%3Cfilter id='b' color-interpolation-filters='sRGB'%3E%3CfeGaussianBlur stdDeviation='${std}'/%3E%3CfeColorMatrix values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 100 -1' result='s'/%3E%3CfeFlood x='0' y='0' width='100%25' height='100%25'/%3E%3CfeComposite operator='out' in='s'/%3E%3CfeComposite in2='SourceGraphic'/%3E%3CfeGaussianBlur stdDeviation='${std}'/%3E%3C/filter%3E%3Cimage width='100%25' height='100%25' x='0' y='0' preserveAspectRatio='${preserveAspectRatio}' style='filter: url(%23b);' href='${blurDataURL}'/%3E%3C/svg%3E`;
+} //# sourceMappingURL=image-blur-svg.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/image-config.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    VALID_LOADERS: null,
+    imageConfigDefault: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    VALID_LOADERS: function() {
+        return VALID_LOADERS;
+    },
+    imageConfigDefault: function() {
+        return imageConfigDefault;
+    }
+});
+const VALID_LOADERS = [
+    'default',
+    'imgix',
+    'cloudinary',
+    'akamai',
+    'custom'
+];
+const imageConfigDefault = {
+    deviceSizes: [
+        640,
+        750,
+        828,
+        1080,
+        1200,
+        1920,
+        2048,
+        3840
+    ],
+    imageSizes: [
+        32,
+        48,
+        64,
+        96,
+        128,
+        256,
+        384
+    ],
+    path: '/_next/image',
+    loader: 'default',
+    loaderFile: '',
+    /**
+   * @deprecated Use `remotePatterns` instead to protect your application from malicious users.
+   */ domains: [],
+    disableStaticImages: false,
+    minimumCacheTTL: 14400,
+    formats: [
+        'image/webp'
+    ],
+    maximumRedirects: 3,
+    dangerouslyAllowLocalIP: false,
+    dangerouslyAllowSVG: false,
+    contentSecurityPolicy: `script-src 'none'; frame-src 'none'; sandbox;`,
+    contentDispositionType: 'attachment',
+    localPatterns: undefined,
+    remotePatterns: [],
+    qualities: [
+        75
+    ],
+    unoptimized: false
+}; //# sourceMappingURL=image-config.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/get-img-props.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "getImgProps", {
+    enumerable: true,
+    get: function() {
+        return getImgProps;
+    }
+});
+const _warnonce = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript)");
+const _deploymentid = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/deployment-id.js [app-client] (ecmascript)");
+const _imageblursvg = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/image-blur-svg.js [app-client] (ecmascript)");
+const _imageconfig = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/image-config.js [app-client] (ecmascript)");
+const VALID_LOADING_VALUES = [
+    'lazy',
+    'eager',
+    undefined
+];
+// Object-fit values that are not valid background-size values
+const INVALID_BACKGROUND_SIZE_VALUES = [
+    '-moz-initial',
+    'fill',
+    'none',
+    'scale-down',
+    undefined
+];
+function isStaticRequire(src) {
+    return src.default !== undefined;
+}
+function isStaticImageData(src) {
+    return src.src !== undefined;
+}
+function isStaticImport(src) {
+    return !!src && typeof src === 'object' && (isStaticRequire(src) || isStaticImageData(src));
+}
+const allImgs = new Map();
+let perfObserver;
+function getInt(x) {
+    if (typeof x === 'undefined') {
+        return x;
+    }
+    if (typeof x === 'number') {
+        return Number.isFinite(x) ? x : NaN;
+    }
+    if (typeof x === 'string' && /^[0-9]+$/.test(x)) {
+        return parseInt(x, 10);
+    }
+    return NaN;
+}
+function getWidths({ deviceSizes, allSizes }, width, sizes) {
+    if (sizes) {
+        // Find all the "vw" percent sizes used in the sizes prop
+        const viewportWidthRe = /(^|\s)(1?\d?\d)vw/g;
+        const percentSizes = [];
+        for(let match; match = viewportWidthRe.exec(sizes); match){
+            percentSizes.push(parseInt(match[2]));
+        }
+        if (percentSizes.length) {
+            const smallestRatio = Math.min(...percentSizes) * 0.01;
+            return {
+                widths: allSizes.filter((s)=>s >= deviceSizes[0] * smallestRatio),
+                kind: 'w'
+            };
+        }
+        return {
+            widths: allSizes,
+            kind: 'w'
+        };
+    }
+    if (typeof width !== 'number') {
+        return {
+            widths: deviceSizes,
+            kind: 'w'
+        };
+    }
+    const widths = [
+        ...new Set(// > are actually 3x in the green color, but only 1.5x in the red and
+        // > blue colors. Showing a 3x resolution image in the app vs a 2x
+        // > resolution image will be visually the same, though the 3x image
+        // > takes significantly more data. Even true 3x resolution screens are
+        // > wasteful as the human eye cannot see that level of detail without
+        // > something like a magnifying glass.
+        // https://blog.twitter.com/engineering/en_us/topics/infrastructure/2019/capping-image-fidelity-on-ultra-high-resolution-devices.html
+        [
+            width,
+            width * 2 /*, width * 3*/ 
+        ].map((w)=>allSizes.find((p)=>p >= w) || allSizes[allSizes.length - 1]))
+    ];
+    return {
+        widths,
+        kind: 'x'
+    };
+}
+function generateImgAttrs({ config, src, unoptimized, width, quality, sizes, loader }) {
+    if (unoptimized) {
+        const deploymentId = (0, _deploymentid.getDeploymentId)();
+        if (src.startsWith('/') && !src.startsWith('//') && deploymentId) {
+            const sep = src.includes('?') ? '&' : '?';
+            src = `${src}${sep}dpl=${deploymentId}`;
+        }
+        return {
+            src,
+            srcSet: undefined,
+            sizes: undefined
+        };
+    }
+    const { widths, kind } = getWidths(config, width, sizes);
+    const last = widths.length - 1;
+    return {
+        sizes: !sizes && kind === 'w' ? '100vw' : sizes,
+        srcSet: widths.map((w, i)=>`${loader({
+                config,
+                src,
+                quality,
+                width: w
+            })} ${kind === 'w' ? w : i + 1}${kind}`).join(', '),
+        // It's intended to keep `src` the last attribute because React updates
+        // attributes in order. If we keep `src` the first one, Safari will
+        // immediately start to fetch `src`, before `sizes` and `srcSet` are even
+        // updated by React. That causes multiple unnecessary requests if `srcSet`
+        // and `sizes` are defined.
+        // This bug cannot be reproduced in Chrome or Firefox.
+        src: loader({
+            config,
+            src,
+            quality,
+            width: widths[last]
+        })
+    };
+}
+function getImgProps({ src, sizes, unoptimized = false, priority = false, preload = false, loading, className, quality, width, height, fill = false, style, overrideSrc, onLoad, onLoadingComplete, placeholder = 'empty', blurDataURL, fetchPriority, decoding = 'async', layout, objectFit, objectPosition, lazyBoundary, lazyRoot, ...rest }, _state) {
+    const { imgConf, showAltText, blurComplete, defaultLoader } = _state;
+    let config;
+    let c = imgConf || _imageconfig.imageConfigDefault;
+    if ('allSizes' in c) {
+        config = c;
+    } else {
+        const allSizes = [
+            ...c.deviceSizes,
+            ...c.imageSizes
+        ].sort((a, b)=>a - b);
+        const deviceSizes = c.deviceSizes.sort((a, b)=>a - b);
+        const qualities = c.qualities?.sort((a, b)=>a - b);
+        config = {
+            ...c,
+            allSizes,
+            deviceSizes,
+            qualities
+        };
+    }
+    if (typeof defaultLoader === 'undefined') {
+        throw Object.defineProperty(new Error('images.loaderFile detected but the file is missing default export.\nRead more: https://nextjs.org/docs/messages/invalid-images-config'), "__NEXT_ERROR_CODE", {
+            value: "E163",
+            enumerable: false,
+            configurable: true
+        });
+    }
+    let loader = rest.loader || defaultLoader;
+    // Remove property so it's not spread on <img> element
+    delete rest.loader;
+    delete rest.srcSet;
+    // This special value indicates that the user
+    // didn't define a "loader" prop or "loader" config.
+    const isDefaultLoader = '__next_img_default' in loader;
+    if (isDefaultLoader) {
+        if (config.loader === 'custom') {
+            throw Object.defineProperty(new Error(`Image with src "${src}" is missing "loader" prop.` + `\nRead more: https://nextjs.org/docs/messages/next-image-missing-loader`), "__NEXT_ERROR_CODE", {
+                value: "E252",
+                enumerable: false,
+                configurable: true
+            });
+        }
+    } else {
+        // The user defined a "loader" prop or config.
+        // Since the config object is internal only, we
+        // must not pass it to the user-defined "loader".
+        const customImageLoader = loader;
+        loader = (obj)=>{
+            const { config: _, ...opts } = obj;
+            return customImageLoader(opts);
+        };
+    }
+    if (layout) {
+        if (layout === 'fill') {
+            fill = true;
+        }
+        const layoutToStyle = {
+            intrinsic: {
+                maxWidth: '100%',
+                height: 'auto'
+            },
+            responsive: {
+                width: '100%',
+                height: 'auto'
+            }
+        };
+        const layoutToSizes = {
+            responsive: '100vw',
+            fill: '100vw'
+        };
+        const layoutStyle = layoutToStyle[layout];
+        if (layoutStyle) {
+            style = {
+                ...style,
+                ...layoutStyle
+            };
+        }
+        const layoutSizes = layoutToSizes[layout];
+        if (layoutSizes && !sizes) {
+            sizes = layoutSizes;
+        }
+    }
+    let staticSrc = '';
+    let widthInt = getInt(width);
+    let heightInt = getInt(height);
+    let blurWidth;
+    let blurHeight;
+    if (isStaticImport(src)) {
+        const staticImageData = isStaticRequire(src) ? src.default : src;
+        if (!staticImageData.src) {
+            throw Object.defineProperty(new Error(`An object should only be passed to the image component src parameter if it comes from a static image import. It must include src. Received ${JSON.stringify(staticImageData)}`), "__NEXT_ERROR_CODE", {
+                value: "E460",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        if (!staticImageData.height || !staticImageData.width) {
+            throw Object.defineProperty(new Error(`An object should only be passed to the image component src parameter if it comes from a static image import. It must include height and width. Received ${JSON.stringify(staticImageData)}`), "__NEXT_ERROR_CODE", {
+                value: "E48",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        blurWidth = staticImageData.blurWidth;
+        blurHeight = staticImageData.blurHeight;
+        blurDataURL = blurDataURL || staticImageData.blurDataURL;
+        staticSrc = staticImageData.src;
+        if (!fill) {
+            if (!widthInt && !heightInt) {
+                widthInt = staticImageData.width;
+                heightInt = staticImageData.height;
+            } else if (widthInt && !heightInt) {
+                const ratio = widthInt / staticImageData.width;
+                heightInt = Math.round(staticImageData.height * ratio);
+            } else if (!widthInt && heightInt) {
+                const ratio = heightInt / staticImageData.height;
+                widthInt = Math.round(staticImageData.width * ratio);
+            }
+        }
+    }
+    src = typeof src === 'string' ? src : staticSrc;
+    let isLazy = !priority && !preload && (loading === 'lazy' || typeof loading === 'undefined');
+    if (!src || src.startsWith('data:') || src.startsWith('blob:')) {
+        // https://developer.mozilla.org/docs/Web/HTTP/Basics_of_HTTP/Data_URIs
+        unoptimized = true;
+        isLazy = false;
+    }
+    if (config.unoptimized) {
+        unoptimized = true;
+    }
+    if (isDefaultLoader && !config.dangerouslyAllowSVG && src.split('?', 1)[0].endsWith('.svg')) {
+        // Special case to make svg serve as-is to avoid proxying
+        // through the built-in Image Optimization API.
+        unoptimized = true;
+    }
+    const qualityInt = getInt(quality);
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (config.output === 'export' && isDefaultLoader && !unoptimized) {
+            throw Object.defineProperty(new Error(`Image Optimization using the default loader is not compatible with \`{ output: 'export' }\`.
+  Possible solutions:
+    - Remove \`{ output: 'export' }\` and run "next start" to run server mode including the Image Optimization API.
+    - Configure \`{ images: { unoptimized: true } }\` in \`next.config.js\` to disable the Image Optimization API.
+  Read more: https://nextjs.org/docs/messages/export-image-api`), "__NEXT_ERROR_CODE", {
+                value: "E500",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        if (!src) {
+            // React doesn't show the stack trace and there's
+            // no `src` to help identify which image, so we
+            // instead console.error(ref) during mount.
+            unoptimized = true;
+        } else {
+            if (fill) {
+                if (width) {
+                    throw Object.defineProperty(new Error(`Image with src "${src}" has both "width" and "fill" properties. Only one should be used.`), "__NEXT_ERROR_CODE", {
+                        value: "E96",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+                if (height) {
+                    throw Object.defineProperty(new Error(`Image with src "${src}" has both "height" and "fill" properties. Only one should be used.`), "__NEXT_ERROR_CODE", {
+                        value: "E115",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+                if (style?.position && style.position !== 'absolute') {
+                    throw Object.defineProperty(new Error(`Image with src "${src}" has both "fill" and "style.position" properties. Images with "fill" always use position absolute - it cannot be modified.`), "__NEXT_ERROR_CODE", {
+                        value: "E216",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+                if (style?.width && style.width !== '100%') {
+                    throw Object.defineProperty(new Error(`Image with src "${src}" has both "fill" and "style.width" properties. Images with "fill" always use width 100% - it cannot be modified.`), "__NEXT_ERROR_CODE", {
+                        value: "E73",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+                if (style?.height && style.height !== '100%') {
+                    throw Object.defineProperty(new Error(`Image with src "${src}" has both "fill" and "style.height" properties. Images with "fill" always use height 100% - it cannot be modified.`), "__NEXT_ERROR_CODE", {
+                        value: "E404",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+            } else {
+                if (typeof widthInt === 'undefined') {
+                    throw Object.defineProperty(new Error(`Image with src "${src}" is missing required "width" property.`), "__NEXT_ERROR_CODE", {
+                        value: "E451",
+                        enumerable: false,
+                        configurable: true
+                    });
+                } else if (isNaN(widthInt)) {
+                    throw Object.defineProperty(new Error(`Image with src "${src}" has invalid "width" property. Expected a numeric value in pixels but received "${width}".`), "__NEXT_ERROR_CODE", {
+                        value: "E66",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+                if (typeof heightInt === 'undefined') {
+                    throw Object.defineProperty(new Error(`Image with src "${src}" is missing required "height" property.`), "__NEXT_ERROR_CODE", {
+                        value: "E397",
+                        enumerable: false,
+                        configurable: true
+                    });
+                } else if (isNaN(heightInt)) {
+                    throw Object.defineProperty(new Error(`Image with src "${src}" has invalid "height" property. Expected a numeric value in pixels but received "${height}".`), "__NEXT_ERROR_CODE", {
+                        value: "E444",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+                // eslint-disable-next-line no-control-regex
+                if (/^[\x00-\x20]/.test(src)) {
+                    throw Object.defineProperty(new Error(`Image with src "${src}" cannot start with a space or control character. Use src.trimStart() to remove it or encodeURIComponent(src) to keep it.`), "__NEXT_ERROR_CODE", {
+                        value: "E176",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+                // eslint-disable-next-line no-control-regex
+                if (/[\x00-\x20]$/.test(src)) {
+                    throw Object.defineProperty(new Error(`Image with src "${src}" cannot end with a space or control character. Use src.trimEnd() to remove it or encodeURIComponent(src) to keep it.`), "__NEXT_ERROR_CODE", {
+                        value: "E21",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+            }
+        }
+        if (!VALID_LOADING_VALUES.includes(loading)) {
+            throw Object.defineProperty(new Error(`Image with src "${src}" has invalid "loading" property. Provided "${loading}" should be one of ${VALID_LOADING_VALUES.map(String).join(',')}.`), "__NEXT_ERROR_CODE", {
+                value: "E357",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        if (priority && loading === 'lazy') {
+            throw Object.defineProperty(new Error(`Image with src "${src}" has both "priority" and "loading='lazy'" properties. Only one should be used.`), "__NEXT_ERROR_CODE", {
+                value: "E218",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        if (preload && loading === 'lazy') {
+            throw Object.defineProperty(new Error(`Image with src "${src}" has both "preload" and "loading='lazy'" properties. Only one should be used.`), "__NEXT_ERROR_CODE", {
+                value: "E803",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        if (preload && priority) {
+            throw Object.defineProperty(new Error(`Image with src "${src}" has both "preload" and "priority" properties. Only "preload" should be used.`), "__NEXT_ERROR_CODE", {
+                value: "E802",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        if (placeholder !== 'empty' && placeholder !== 'blur' && !placeholder.startsWith('data:image/')) {
+            throw Object.defineProperty(new Error(`Image with src "${src}" has invalid "placeholder" property "${placeholder}".`), "__NEXT_ERROR_CODE", {
+                value: "E431",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        if (placeholder !== 'empty') {
+            if (widthInt && heightInt && widthInt * heightInt < 1600) {
+                (0, _warnonce.warnOnce)(`Image with src "${src}" is smaller than 40x40. Consider removing the "placeholder" property to improve performance.`);
+            }
+        }
+        if (qualityInt && config.qualities && !config.qualities.includes(qualityInt)) {
+            (0, _warnonce.warnOnce)(`Image with src "${src}" is using quality "${qualityInt}" which is not configured in images.qualities [${config.qualities.join(', ')}]. Please update your config to [${[
+                ...config.qualities,
+                qualityInt
+            ].sort().join(', ')}].` + `\nRead more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities`);
+        }
+        if (placeholder === 'blur' && !blurDataURL) {
+            const VALID_BLUR_EXT = [
+                'jpeg',
+                'png',
+                'webp',
+                'avif'
+            ] // should match next-image-loader
+            ;
+            throw Object.defineProperty(new Error(`Image with src "${src}" has "placeholder='blur'" property but is missing the "blurDataURL" property.
+        Possible solutions:
+          - Add a "blurDataURL" property, the contents should be a small Data URL to represent the image
+          - Change the "src" property to a static import with one of the supported file types: ${VALID_BLUR_EXT.join(',')} (animated images not supported)
+          - Remove the "placeholder" property, effectively no blur effect
+        Read more: https://nextjs.org/docs/messages/placeholder-blur-data-url`), "__NEXT_ERROR_CODE", {
+                value: "E371",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        if ('ref' in rest) {
+            (0, _warnonce.warnOnce)(`Image with src "${src}" is using unsupported "ref" property. Consider using the "onLoad" property instead.`);
+        }
+        if (!unoptimized && !isDefaultLoader) {
+            const urlStr = loader({
+                config,
+                src,
+                width: widthInt || 400,
+                quality: qualityInt || 75
+            });
+            let url;
+            try {
+                url = new URL(urlStr);
+            } catch (err) {}
+            if (urlStr === src || url && url.pathname === src && !url.search) {
+                (0, _warnonce.warnOnce)(`Image with src "${src}" has a "loader" property that does not implement width. Please implement it or use the "unoptimized" property instead.` + `\nRead more: https://nextjs.org/docs/messages/next-image-missing-loader-width`);
+            }
+        }
+        if (onLoadingComplete) {
+            (0, _warnonce.warnOnce)(`Image with src "${src}" is using deprecated "onLoadingComplete" property. Please use the "onLoad" property instead.`);
+        }
+        for (const [legacyKey, legacyValue] of Object.entries({
+            layout,
+            objectFit,
+            objectPosition,
+            lazyBoundary,
+            lazyRoot
+        })){
+            if (legacyValue) {
+                (0, _warnonce.warnOnce)(`Image with src "${src}" has legacy prop "${legacyKey}". Did you forget to run the codemod?` + `\nRead more: https://nextjs.org/docs/messages/next-image-upgrade-to-13`);
+            }
+        }
+        if (typeof window !== 'undefined' && !perfObserver && window.PerformanceObserver) {
+            perfObserver = new PerformanceObserver((entryList)=>{
+                for (const entry of entryList.getEntries()){
+                    // @ts-ignore - missing "LargestContentfulPaint" class with "element" prop
+                    const imgSrc = entry?.element?.src || '';
+                    const lcpImage = allImgs.get(imgSrc);
+                    if (lcpImage && lcpImage.loading === 'lazy' && lcpImage.placeholder === 'empty' && !lcpImage.src.startsWith('data:') && !lcpImage.src.startsWith('blob:')) {
+                        // https://web.dev/lcp/#measure-lcp-in-javascript
+                        (0, _warnonce.warnOnce)(`Image with src "${lcpImage.src}" was detected as the Largest Contentful Paint (LCP). Please add the \`loading="eager"\` property if this image is above the fold.` + `\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading`);
+                    }
+                }
+            });
+            try {
+                perfObserver.observe({
+                    type: 'largest-contentful-paint',
+                    buffered: true
+                });
+            } catch (err) {
+                // Log error but don't crash the app
+                console.error(err);
+            }
+        }
+    }
+    const imgStyle = Object.assign(fill ? {
+        position: 'absolute',
+        height: '100%',
+        width: '100%',
+        left: 0,
+        top: 0,
+        right: 0,
+        bottom: 0,
+        objectFit,
+        objectPosition
+    } : {}, showAltText ? {} : {
+        color: 'transparent'
+    }, style);
+    const backgroundImage = !blurComplete && placeholder !== 'empty' ? placeholder === 'blur' ? `url("data:image/svg+xml;charset=utf-8,${(0, _imageblursvg.getImageBlurSvg)({
+        widthInt,
+        heightInt,
+        blurWidth,
+        blurHeight,
+        blurDataURL: blurDataURL || '',
+        objectFit: imgStyle.objectFit
+    })}")` : `url("${placeholder}")` // assume `data:image/`
+     : null;
+    const backgroundSize = !INVALID_BACKGROUND_SIZE_VALUES.includes(imgStyle.objectFit) ? imgStyle.objectFit : imgStyle.objectFit === 'fill' ? '100% 100%' // the background-size equivalent of `fill`
+     : 'cover';
+    let placeholderStyle = backgroundImage ? {
+        backgroundSize,
+        backgroundPosition: imgStyle.objectPosition || '50% 50%',
+        backgroundRepeat: 'no-repeat',
+        backgroundImage
+    } : {};
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (placeholderStyle.backgroundImage && placeholder === 'blur' && blurDataURL?.startsWith('/')) {
+            // During `next dev`, we don't want to generate blur placeholders with webpack
+            // because it can delay starting the dev server. Instead, `next-image-loader.js`
+            // will inline a special url to lazily generate the blur placeholder at request time.
+            placeholderStyle.backgroundImage = `url("${blurDataURL}")`;
+        }
+    }
+    const imgAttributes = generateImgAttrs({
+        config,
+        src,
+        unoptimized,
+        width: widthInt,
+        quality: qualityInt,
+        sizes,
+        loader
+    });
+    const loadingFinal = isLazy ? 'lazy' : loading;
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (typeof window !== 'undefined') {
+            let fullUrl;
+            try {
+                fullUrl = new URL(imgAttributes.src);
+            } catch (e) {
+                fullUrl = new URL(imgAttributes.src, window.location.href);
+            }
+            allImgs.set(fullUrl.href, {
+                src,
+                loading: loadingFinal,
+                placeholder
+            });
+        }
+    }
+    const props = {
+        ...rest,
+        loading: loadingFinal,
+        fetchPriority,
+        width: widthInt,
+        height: heightInt,
+        decoding,
+        className,
+        style: {
+            ...imgStyle,
+            ...placeholderStyle
+        },
+        sizes: imgAttributes.sizes,
+        srcSet: imgAttributes.srcSet,
+        src: overrideSrc || imgAttributes.src
+    };
+    const meta = {
+        unoptimized,
+        preload: preload || priority,
+        placeholder,
+        fill
+    };
+    return {
+        props,
+        meta
+    };
+} //# sourceMappingURL=get-img-props.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/side-effect.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "default", {
+    enumerable: true,
+    get: function() {
+        return SideEffect;
+    }
+});
+const _react = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+const isServer = typeof window === 'undefined';
+const useClientOnlyLayoutEffect = isServer ? ()=>{} : _react.useLayoutEffect;
+const useClientOnlyEffect = isServer ? ()=>{} : _react.useEffect;
+function SideEffect(props) {
+    const { headManager, reduceComponentsToState } = props;
+    function emitChange() {
+        if (headManager && headManager.mountedInstances) {
+            const headElements = _react.Children.toArray(Array.from(headManager.mountedInstances).filter(Boolean));
+            headManager.updateHead(reduceComponentsToState(headElements));
+        }
+    }
+    if (isServer) {
+        headManager?.mountedInstances?.add(props.children);
+        emitChange();
+    }
+    useClientOnlyLayoutEffect({
+        "SideEffect.useClientOnlyLayoutEffect": ()=>{
+            headManager?.mountedInstances?.add(props.children);
+            return ({
+                "SideEffect.useClientOnlyLayoutEffect": ()=>{
+                    headManager?.mountedInstances?.delete(props.children);
+                }
+            })["SideEffect.useClientOnlyLayoutEffect"];
+        }
+    }["SideEffect.useClientOnlyLayoutEffect"]);
+    // We need to call `updateHead` method whenever the `SideEffect` is trigger in all
+    // life-cycles: mount, update, unmount. However, if there are multiple `SideEffect`s
+    // being rendered, we only trigger the method from the last one.
+    // This is ensured by keeping the last unflushed `updateHead` in the `_pendingUpdate`
+    // singleton in the layout effect pass, and actually trigger it in the effect pass.
+    useClientOnlyLayoutEffect({
+        "SideEffect.useClientOnlyLayoutEffect": ()=>{
+            if (headManager) {
+                headManager._pendingUpdate = emitChange;
+            }
+            return ({
+                "SideEffect.useClientOnlyLayoutEffect": ()=>{
+                    if (headManager) {
+                        headManager._pendingUpdate = emitChange;
+                    }
+                }
+            })["SideEffect.useClientOnlyLayoutEffect"];
+        }
+    }["SideEffect.useClientOnlyLayoutEffect"]);
+    useClientOnlyEffect({
+        "SideEffect.useClientOnlyEffect": ()=>{
+            if (headManager && headManager._pendingUpdate) {
+                headManager._pendingUpdate();
+                headManager._pendingUpdate = null;
+            }
+            return ({
+                "SideEffect.useClientOnlyEffect": ()=>{
+                    if (headManager && headManager._pendingUpdate) {
+                        headManager._pendingUpdate();
+                        headManager._pendingUpdate = null;
+                    }
+                }
+            })["SideEffect.useClientOnlyEffect"];
+        }
+    }["SideEffect.useClientOnlyEffect"]);
+    return null;
+} //# sourceMappingURL=side-effect.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/head.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+'use client';
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    default: null,
+    defaultHead: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    default: function() {
+        return _default;
+    },
+    defaultHead: function() {
+        return defaultHead;
+    }
+});
+const _interop_require_default = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
+const _interop_require_wildcard = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-client] (ecmascript)");
+const _jsxruntime = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _sideeffect = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/side-effect.js [app-client] (ecmascript)"));
+const _headmanagercontextsharedruntime = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js [app-client] (ecmascript)");
+const _warnonce = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript)");
+function defaultHead() {
+    const head = [
+        /*#__PURE__*/ (0, _jsxruntime.jsx)("meta", {
+            charSet: "utf-8"
+        }, "charset"),
+        /*#__PURE__*/ (0, _jsxruntime.jsx)("meta", {
+            name: "viewport",
+            content: "width=device-width"
+        }, "viewport")
+    ];
+    return head;
+}
+function onlyReactElement(list, child) {
+    // React children can be "string" or "number" in this case we ignore them for backwards compat
+    if (typeof child === 'string' || typeof child === 'number') {
+        return list;
+    }
+    // Adds support for React.Fragment
+    if (child.type === _react.default.Fragment) {
+        return list.concat(_react.default.Children.toArray(child.props.children).reduce((fragmentList, fragmentChild)=>{
+            if (typeof fragmentChild === 'string' || typeof fragmentChild === 'number') {
+                return fragmentList;
+            }
+            return fragmentList.concat(fragmentChild);
+        }, []));
+    }
+    return list.concat(child);
+}
+const METATYPES = [
+    'name',
+    'httpEquiv',
+    'charSet',
+    'itemProp'
+];
+/*
+ returns a function for filtering head child elements
+ which shouldn't be duplicated, like <title/>
+ Also adds support for deduplicated `key` properties
+*/ function unique() {
+    const keys = new Set();
+    const tags = new Set();
+    const metaTypes = new Set();
+    const metaCategories = {};
+    return (h)=>{
+        let isUnique = true;
+        let hasKey = false;
+        if (h.key && typeof h.key !== 'number' && h.key.indexOf('$') > 0) {
+            hasKey = true;
+            const key = h.key.slice(h.key.indexOf('$') + 1);
+            if (keys.has(key)) {
+                isUnique = false;
+            } else {
+                keys.add(key);
+            }
+        }
+        // eslint-disable-next-line default-case
+        switch(h.type){
+            case 'title':
+            case 'base':
+                if (tags.has(h.type)) {
+                    isUnique = false;
+                } else {
+                    tags.add(h.type);
+                }
+                break;
+            case 'meta':
+                for(let i = 0, len = METATYPES.length; i < len; i++){
+                    const metatype = METATYPES[i];
+                    if (!h.props.hasOwnProperty(metatype)) continue;
+                    if (metatype === 'charSet') {
+                        if (metaTypes.has(metatype)) {
+                            isUnique = false;
+                        } else {
+                            metaTypes.add(metatype);
+                        }
+                    } else {
+                        const category = h.props[metatype];
+                        const categories = metaCategories[metatype] || new Set();
+                        if ((metatype !== 'name' || !hasKey) && categories.has(category)) {
+                            isUnique = false;
+                        } else {
+                            categories.add(category);
+                            metaCategories[metatype] = categories;
+                        }
+                    }
+                }
+                break;
+        }
+        return isUnique;
+    };
+}
+/**
+ *
+ * @param headChildrenElements List of children of <Head>
+ */ function reduceComponents(headChildrenElements) {
+    return headChildrenElements.reduce(onlyReactElement, []).reverse().concat(defaultHead().reverse()).filter(unique()).reverse().map((c, i)=>{
+        const key = c.key || i;
+        if ("TURBOPACK compile-time truthy", 1) {
+            // omit JSON-LD structured data snippets from the warning
+            if (c.type === 'script' && c.props['type'] !== 'application/ld+json') {
+                const srcMessage = c.props['src'] ? `<script> tag with src="${c.props['src']}"` : `inline <script>`;
+                (0, _warnonce.warnOnce)(`Do not add <script> tags using next/head (see ${srcMessage}). Use next/script instead. \nSee more info here: https://nextjs.org/docs/messages/no-script-tags-in-head-component`);
+            } else if (c.type === 'link' && c.props['rel'] === 'stylesheet') {
+                (0, _warnonce.warnOnce)(`Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="${c.props['href']}"). Use Document instead. \nSee more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component`);
+            }
+        }
+        return /*#__PURE__*/ _react.default.cloneElement(c, {
+            key
+        });
+    });
+}
+/**
+ * This component injects elements to `<head>` of your page.
+ * To avoid duplicated `tags` in `<head>` you can use the `key` property, which will make sure every tag is only rendered once.
+ */ function Head({ children }) {
+    const headManager = (0, _react.useContext)(_headmanagercontextsharedruntime.HeadManagerContext);
+    return /*#__PURE__*/ (0, _jsxruntime.jsx)(_sideeffect.default, {
+        reduceComponentsToState: reduceComponents,
+        headManager: headManager,
+        children: children
+    });
+}
+const _default = Head;
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=head.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/image-config-context.shared-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "ImageConfigContext", {
+    enumerable: true,
+    get: function() {
+        return ImageConfigContext;
+    }
+});
+const _interop_require_default = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _imageconfig = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/image-config.js [app-client] (ecmascript)");
+const ImageConfigContext = _react.default.createContext(_imageconfig.imageConfigDefault);
+if ("TURBOPACK compile-time truthy", 1) {
+    ImageConfigContext.displayName = 'ImageConfigContext';
+} //# sourceMappingURL=image-config-context.shared-runtime.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/router-context.shared-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "RouterContext", {
+    enumerable: true,
+    get: function() {
+        return RouterContext;
+    }
+});
+const _interop_require_default = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const RouterContext = _react.default.createContext(null);
+if ("TURBOPACK compile-time truthy", 1) {
+    RouterContext.displayName = 'RouterContext';
+} //# sourceMappingURL=router-context.shared-runtime.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/find-closest-quality.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "findClosestQuality", {
+    enumerable: true,
+    get: function() {
+        return findClosestQuality;
+    }
+});
+function findClosestQuality(quality, config) {
+    const q = quality || 75;
+    if (!config?.qualities?.length) {
+        return q;
+    }
+    return config.qualities.reduce((prev, cur)=>Math.abs(cur - q) < Math.abs(prev - q) ? cur : prev, 0);
+} //# sourceMappingURL=find-closest-quality.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/compiled/picomatch/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+(()=>{
+    "use strict";
+    var t = {
+        170: (t, e, u)=>{
+            const n = u(510);
+            const isWindows = ()=>{
+                if (typeof navigator !== "undefined" && navigator.platform) {
+                    const t = navigator.platform.toLowerCase();
+                    return t === "win32" || t === "windows";
+                }
+                if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].platform) {
+                    return __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].platform === "win32";
+                }
+                return false;
+            };
+            function picomatch(t, e, u = false) {
+                if (e && (e.windows === null || e.windows === undefined)) {
+                    e = {
+                        ...e,
+                        windows: isWindows()
+                    };
+                }
+                return n(t, e, u);
+            }
+            Object.assign(picomatch, n);
+            t.exports = picomatch;
+        },
+        154: (t)=>{
+            const e = "\\\\/";
+            const u = `[^${e}]`;
+            const n = "\\.";
+            const o = "\\+";
+            const s = "\\?";
+            const r = "\\/";
+            const a = "(?=.)";
+            const i = "[^/]";
+            const c = `(?:${r}|$)`;
+            const p = `(?:^|${r})`;
+            const l = `${n}{1,2}${c}`;
+            const f = `(?!${n})`;
+            const A = `(?!${p}${l})`;
+            const _ = `(?!${n}{0,1}${c})`;
+            const R = `(?!${l})`;
+            const E = `[^.${r}]`;
+            const h = `${i}*?`;
+            const g = "/";
+            const b = {
+                DOT_LITERAL: n,
+                PLUS_LITERAL: o,
+                QMARK_LITERAL: s,
+                SLASH_LITERAL: r,
+                ONE_CHAR: a,
+                QMARK: i,
+                END_ANCHOR: c,
+                DOTS_SLASH: l,
+                NO_DOT: f,
+                NO_DOTS: A,
+                NO_DOT_SLASH: _,
+                NO_DOTS_SLASH: R,
+                QMARK_NO_DOT: E,
+                STAR: h,
+                START_ANCHOR: p,
+                SEP: g
+            };
+            const C = {
+                ...b,
+                SLASH_LITERAL: `[${e}]`,
+                QMARK: u,
+                STAR: `${u}*?`,
+                DOTS_SLASH: `${n}{1,2}(?:[${e}]|$)`,
+                NO_DOT: `(?!${n})`,
+                NO_DOTS: `(?!(?:^|[${e}])${n}{1,2}(?:[${e}]|$))`,
+                NO_DOT_SLASH: `(?!${n}{0,1}(?:[${e}]|$))`,
+                NO_DOTS_SLASH: `(?!${n}{1,2}(?:[${e}]|$))`,
+                QMARK_NO_DOT: `[^.${e}]`,
+                START_ANCHOR: `(?:^|[${e}])`,
+                END_ANCHOR: `(?:[${e}]|$)`,
+                SEP: "\\"
+            };
+            const y = {
+                alnum: "a-zA-Z0-9",
+                alpha: "a-zA-Z",
+                ascii: "\\x00-\\x7F",
+                blank: " \\t",
+                cntrl: "\\x00-\\x1F\\x7F",
+                digit: "0-9",
+                graph: "\\x21-\\x7E",
+                lower: "a-z",
+                print: "\\x20-\\x7E ",
+                punct: "\\-!\"#$%&'()\\*+,./:;<=>?@[\\]^_`{|}~",
+                space: " \\t\\r\\n\\v\\f",
+                upper: "A-Z",
+                word: "A-Za-z0-9_",
+                xdigit: "A-Fa-f0-9"
+            };
+            t.exports = {
+                MAX_LENGTH: 1024 * 64,
+                POSIX_REGEX_SOURCE: y,
+                REGEX_BACKSLASH: /\\(?![*+?^${}(|)[\]])/g,
+                REGEX_NON_SPECIAL_CHARS: /^[^@![\].,$*+?^{}()|\\/]+/,
+                REGEX_SPECIAL_CHARS: /[-*+?.^${}(|)[\]]/,
+                REGEX_SPECIAL_CHARS_BACKREF: /(\\?)((\W)(\3*))/g,
+                REGEX_SPECIAL_CHARS_GLOBAL: /([-*+?.^${}(|)[\]])/g,
+                REGEX_REMOVE_BACKSLASH: /(?:\[.*?[^\\]\]|\\(?=.))/g,
+                REPLACEMENTS: {
+                    "***": "*",
+                    "**/**": "**",
+                    "**/**/**": "**"
+                },
+                CHAR_0: 48,
+                CHAR_9: 57,
+                CHAR_UPPERCASE_A: 65,
+                CHAR_LOWERCASE_A: 97,
+                CHAR_UPPERCASE_Z: 90,
+                CHAR_LOWERCASE_Z: 122,
+                CHAR_LEFT_PARENTHESES: 40,
+                CHAR_RIGHT_PARENTHESES: 41,
+                CHAR_ASTERISK: 42,
+                CHAR_AMPERSAND: 38,
+                CHAR_AT: 64,
+                CHAR_BACKWARD_SLASH: 92,
+                CHAR_CARRIAGE_RETURN: 13,
+                CHAR_CIRCUMFLEX_ACCENT: 94,
+                CHAR_COLON: 58,
+                CHAR_COMMA: 44,
+                CHAR_DOT: 46,
+                CHAR_DOUBLE_QUOTE: 34,
+                CHAR_EQUAL: 61,
+                CHAR_EXCLAMATION_MARK: 33,
+                CHAR_FORM_FEED: 12,
+                CHAR_FORWARD_SLASH: 47,
+                CHAR_GRAVE_ACCENT: 96,
+                CHAR_HASH: 35,
+                CHAR_HYPHEN_MINUS: 45,
+                CHAR_LEFT_ANGLE_BRACKET: 60,
+                CHAR_LEFT_CURLY_BRACE: 123,
+                CHAR_LEFT_SQUARE_BRACKET: 91,
+                CHAR_LINE_FEED: 10,
+                CHAR_NO_BREAK_SPACE: 160,
+                CHAR_PERCENT: 37,
+                CHAR_PLUS: 43,
+                CHAR_QUESTION_MARK: 63,
+                CHAR_RIGHT_ANGLE_BRACKET: 62,
+                CHAR_RIGHT_CURLY_BRACE: 125,
+                CHAR_RIGHT_SQUARE_BRACKET: 93,
+                CHAR_SEMICOLON: 59,
+                CHAR_SINGLE_QUOTE: 39,
+                CHAR_SPACE: 32,
+                CHAR_TAB: 9,
+                CHAR_UNDERSCORE: 95,
+                CHAR_VERTICAL_LINE: 124,
+                CHAR_ZERO_WIDTH_NOBREAK_SPACE: 65279,
+                extglobChars (t) {
+                    return {
+                        "!": {
+                            type: "negate",
+                            open: "(?:(?!(?:",
+                            close: `))${t.STAR})`
+                        },
+                        "?": {
+                            type: "qmark",
+                            open: "(?:",
+                            close: ")?"
+                        },
+                        "+": {
+                            type: "plus",
+                            open: "(?:",
+                            close: ")+"
+                        },
+                        "*": {
+                            type: "star",
+                            open: "(?:",
+                            close: ")*"
+                        },
+                        "@": {
+                            type: "at",
+                            open: "(?:",
+                            close: ")"
+                        }
+                    };
+                },
+                globChars (t) {
+                    return t === true ? C : b;
+                }
+            };
+        },
+        697: (t, e, u)=>{
+            const n = u(154);
+            const o = u(96);
+            const { MAX_LENGTH: s, POSIX_REGEX_SOURCE: r, REGEX_NON_SPECIAL_CHARS: a, REGEX_SPECIAL_CHARS_BACKREF: i, REPLACEMENTS: c } = n;
+            const expandRange = (t, e)=>{
+                if (typeof e.expandRange === "function") {
+                    return e.expandRange(...t, e);
+                }
+                t.sort();
+                const u = `[${t.join("-")}]`;
+                try {
+                    new RegExp(u);
+                } catch (e) {
+                    return t.map((t)=>o.escapeRegex(t)).join("..");
+                }
+                return u;
+            };
+            const syntaxError = (t, e)=>`Missing ${t}: "${e}" - use "\\\\${e}" to match literal characters`;
+            const parse = (t, e)=>{
+                if (typeof t !== "string") {
+                    throw new TypeError("Expected a string");
+                }
+                t = c[t] || t;
+                const u = {
+                    ...e
+                };
+                const p = typeof u.maxLength === "number" ? Math.min(s, u.maxLength) : s;
+                let l = t.length;
+                if (l > p) {
+                    throw new SyntaxError(`Input length: ${l}, exceeds maximum allowed length: ${p}`);
+                }
+                const f = {
+                    type: "bos",
+                    value: "",
+                    output: u.prepend || ""
+                };
+                const A = [
+                    f
+                ];
+                const _ = u.capture ? "" : "?:";
+                const R = n.globChars(u.windows);
+                const E = n.extglobChars(R);
+                const { DOT_LITERAL: h, PLUS_LITERAL: g, SLASH_LITERAL: b, ONE_CHAR: C, DOTS_SLASH: y, NO_DOT: $, NO_DOT_SLASH: x, NO_DOTS_SLASH: S, QMARK: H, QMARK_NO_DOT: v, STAR: d, START_ANCHOR: L } = R;
+                const globstar = (t)=>`(${_}(?:(?!${L}${t.dot ? y : h}).)*?)`;
+                const T = u.dot ? "" : $;
+                const O = u.dot ? H : v;
+                let k = u.bash === true ? globstar(u) : d;
+                if (u.capture) {
+                    k = `(${k})`;
+                }
+                if (typeof u.noext === "boolean") {
+                    u.noextglob = u.noext;
+                }
+                const m = {
+                    input: t,
+                    index: -1,
+                    start: 0,
+                    dot: u.dot === true,
+                    consumed: "",
+                    output: "",
+                    prefix: "",
+                    backtrack: false,
+                    negated: false,
+                    brackets: 0,
+                    braces: 0,
+                    parens: 0,
+                    quotes: 0,
+                    globstar: false,
+                    tokens: A
+                };
+                t = o.removePrefix(t, m);
+                l = t.length;
+                const w = [];
+                const N = [];
+                const I = [];
+                let B = f;
+                let G;
+                const eos = ()=>m.index === l - 1;
+                const D = m.peek = (e = 1)=>t[m.index + e];
+                const M = m.advance = ()=>t[++m.index] || "";
+                const remaining = ()=>t.slice(m.index + 1);
+                const consume = (t = "", e = 0)=>{
+                    m.consumed += t;
+                    m.index += e;
+                };
+                const append = (t)=>{
+                    m.output += t.output != null ? t.output : t.value;
+                    consume(t.value);
+                };
+                const negate = ()=>{
+                    let t = 1;
+                    while(D() === "!" && (D(2) !== "(" || D(3) === "?")){
+                        M();
+                        m.start++;
+                        t++;
+                    }
+                    if (t % 2 === 0) {
+                        return false;
+                    }
+                    m.negated = true;
+                    m.start++;
+                    return true;
+                };
+                const increment = (t)=>{
+                    m[t]++;
+                    I.push(t);
+                };
+                const decrement = (t)=>{
+                    m[t]--;
+                    I.pop();
+                };
+                const push = (t)=>{
+                    if (B.type === "globstar") {
+                        const e = m.braces > 0 && (t.type === "comma" || t.type === "brace");
+                        const u = t.extglob === true || w.length && (t.type === "pipe" || t.type === "paren");
+                        if (t.type !== "slash" && t.type !== "paren" && !e && !u) {
+                            m.output = m.output.slice(0, -B.output.length);
+                            B.type = "star";
+                            B.value = "*";
+                            B.output = k;
+                            m.output += B.output;
+                        }
+                    }
+                    if (w.length && t.type !== "paren") {
+                        w[w.length - 1].inner += t.value;
+                    }
+                    if (t.value || t.output) append(t);
+                    if (B && B.type === "text" && t.type === "text") {
+                        B.output = (B.output || B.value) + t.value;
+                        B.value += t.value;
+                        return;
+                    }
+                    t.prev = B;
+                    A.push(t);
+                    B = t;
+                };
+                const extglobOpen = (t, e)=>{
+                    const n = {
+                        ...E[e],
+                        conditions: 1,
+                        inner: ""
+                    };
+                    n.prev = B;
+                    n.parens = m.parens;
+                    n.output = m.output;
+                    const o = (u.capture ? "(" : "") + n.open;
+                    increment("parens");
+                    push({
+                        type: t,
+                        value: e,
+                        output: m.output ? "" : C
+                    });
+                    push({
+                        type: "paren",
+                        extglob: true,
+                        value: M(),
+                        output: o
+                    });
+                    w.push(n);
+                };
+                const extglobClose = (t)=>{
+                    let n = t.close + (u.capture ? ")" : "");
+                    let o;
+                    if (t.type === "negate") {
+                        let s = k;
+                        if (t.inner && t.inner.length > 1 && t.inner.includes("/")) {
+                            s = globstar(u);
+                        }
+                        if (s !== k || eos() || /^\)+$/.test(remaining())) {
+                            n = t.close = `)$))${s}`;
+                        }
+                        if (t.inner.includes("*") && (o = remaining()) && /^\.[^\\/.]+$/.test(o)) {
+                            const u = parse(o, {
+                                ...e,
+                                fastpaths: false
+                            }).output;
+                            n = t.close = `)${u})${s})`;
+                        }
+                        if (t.prev.type === "bos") {
+                            m.negatedExtglob = true;
+                        }
+                    }
+                    push({
+                        type: "paren",
+                        extglob: true,
+                        value: G,
+                        output: n
+                    });
+                    decrement("parens");
+                };
+                if (u.fastpaths !== false && !/(^[*!]|[/()[\]{}"])/.test(t)) {
+                    let n = false;
+                    let s = t.replace(i, (t, e, u, o, s, r)=>{
+                        if (o === "\\") {
+                            n = true;
+                            return t;
+                        }
+                        if (o === "?") {
+                            if (e) {
+                                return e + o + (s ? H.repeat(s.length) : "");
+                            }
+                            if (r === 0) {
+                                return O + (s ? H.repeat(s.length) : "");
+                            }
+                            return H.repeat(u.length);
+                        }
+                        if (o === ".") {
+                            return h.repeat(u.length);
+                        }
+                        if (o === "*") {
+                            if (e) {
+                                return e + o + (s ? k : "");
+                            }
+                            return k;
+                        }
+                        return e ? t : `\\${t}`;
+                    });
+                    if (n === true) {
+                        if (u.unescape === true) {
+                            s = s.replace(/\\/g, "");
+                        } else {
+                            s = s.replace(/\\+/g, (t)=>t.length % 2 === 0 ? "\\\\" : t ? "\\" : "");
+                        }
+                    }
+                    if (s === t && u.contains === true) {
+                        m.output = t;
+                        return m;
+                    }
+                    m.output = o.wrapOutput(s, m, e);
+                    return m;
+                }
+                while(!eos()){
+                    G = M();
+                    if (G === "\0") {
+                        continue;
+                    }
+                    if (G === "\\") {
+                        const t = D();
+                        if (t === "/" && u.bash !== true) {
+                            continue;
+                        }
+                        if (t === "." || t === ";") {
+                            continue;
+                        }
+                        if (!t) {
+                            G += "\\";
+                            push({
+                                type: "text",
+                                value: G
+                            });
+                            continue;
+                        }
+                        const e = /^\\+/.exec(remaining());
+                        let n = 0;
+                        if (e && e[0].length > 2) {
+                            n = e[0].length;
+                            m.index += n;
+                            if (n % 2 !== 0) {
+                                G += "\\";
+                            }
+                        }
+                        if (u.unescape === true) {
+                            G = M();
+                        } else {
+                            G += M();
+                        }
+                        if (m.brackets === 0) {
+                            push({
+                                type: "text",
+                                value: G
+                            });
+                            continue;
+                        }
+                    }
+                    if (m.brackets > 0 && (G !== "]" || B.value === "[" || B.value === "[^")) {
+                        if (u.posix !== false && G === ":") {
+                            const t = B.value.slice(1);
+                            if (t.includes("[")) {
+                                B.posix = true;
+                                if (t.includes(":")) {
+                                    const t = B.value.lastIndexOf("[");
+                                    const e = B.value.slice(0, t);
+                                    const u = B.value.slice(t + 2);
+                                    const n = r[u];
+                                    if (n) {
+                                        B.value = e + n;
+                                        m.backtrack = true;
+                                        M();
+                                        if (!f.output && A.indexOf(B) === 1) {
+                                            f.output = C;
+                                        }
+                                        continue;
+                                    }
+                                }
+                            }
+                        }
+                        if (G === "[" && D() !== ":" || G === "-" && D() === "]") {
+                            G = `\\${G}`;
+                        }
+                        if (G === "]" && (B.value === "[" || B.value === "[^")) {
+                            G = `\\${G}`;
+                        }
+                        if (u.posix === true && G === "!" && B.value === "[") {
+                            G = "^";
+                        }
+                        B.value += G;
+                        append({
+                            value: G
+                        });
+                        continue;
+                    }
+                    if (m.quotes === 1 && G !== '"') {
+                        G = o.escapeRegex(G);
+                        B.value += G;
+                        append({
+                            value: G
+                        });
+                        continue;
+                    }
+                    if (G === '"') {
+                        m.quotes = m.quotes === 1 ? 0 : 1;
+                        if (u.keepQuotes === true) {
+                            push({
+                                type: "text",
+                                value: G
+                            });
+                        }
+                        continue;
+                    }
+                    if (G === "(") {
+                        increment("parens");
+                        push({
+                            type: "paren",
+                            value: G
+                        });
+                        continue;
+                    }
+                    if (G === ")") {
+                        if (m.parens === 0 && u.strictBrackets === true) {
+                            throw new SyntaxError(syntaxError("opening", "("));
+                        }
+                        const t = w[w.length - 1];
+                        if (t && m.parens === t.parens + 1) {
+                            extglobClose(w.pop());
+                            continue;
+                        }
+                        push({
+                            type: "paren",
+                            value: G,
+                            output: m.parens ? ")" : "\\)"
+                        });
+                        decrement("parens");
+                        continue;
+                    }
+                    if (G === "[") {
+                        if (u.nobracket === true || !remaining().includes("]")) {
+                            if (u.nobracket !== true && u.strictBrackets === true) {
+                                throw new SyntaxError(syntaxError("closing", "]"));
+                            }
+                            G = `\\${G}`;
+                        } else {
+                            increment("brackets");
+                        }
+                        push({
+                            type: "bracket",
+                            value: G
+                        });
+                        continue;
+                    }
+                    if (G === "]") {
+                        if (u.nobracket === true || B && B.type === "bracket" && B.value.length === 1) {
+                            push({
+                                type: "text",
+                                value: G,
+                                output: `\\${G}`
+                            });
+                            continue;
+                        }
+                        if (m.brackets === 0) {
+                            if (u.strictBrackets === true) {
+                                throw new SyntaxError(syntaxError("opening", "["));
+                            }
+                            push({
+                                type: "text",
+                                value: G,
+                                output: `\\${G}`
+                            });
+                            continue;
+                        }
+                        decrement("brackets");
+                        const t = B.value.slice(1);
+                        if (B.posix !== true && t[0] === "^" && !t.includes("/")) {
+                            G = `/${G}`;
+                        }
+                        B.value += G;
+                        append({
+                            value: G
+                        });
+                        if (u.literalBrackets === false || o.hasRegexChars(t)) {
+                            continue;
+                        }
+                        const e = o.escapeRegex(B.value);
+                        m.output = m.output.slice(0, -B.value.length);
+                        if (u.literalBrackets === true) {
+                            m.output += e;
+                            B.value = e;
+                            continue;
+                        }
+                        B.value = `(${_}${e}|${B.value})`;
+                        m.output += B.value;
+                        continue;
+                    }
+                    if (G === "{" && u.nobrace !== true) {
+                        increment("braces");
+                        const t = {
+                            type: "brace",
+                            value: G,
+                            output: "(",
+                            outputIndex: m.output.length,
+                            tokensIndex: m.tokens.length
+                        };
+                        N.push(t);
+                        push(t);
+                        continue;
+                    }
+                    if (G === "}") {
+                        const t = N[N.length - 1];
+                        if (u.nobrace === true || !t) {
+                            push({
+                                type: "text",
+                                value: G,
+                                output: G
+                            });
+                            continue;
+                        }
+                        let e = ")";
+                        if (t.dots === true) {
+                            const t = A.slice();
+                            const n = [];
+                            for(let e = t.length - 1; e >= 0; e--){
+                                A.pop();
+                                if (t[e].type === "brace") {
+                                    break;
+                                }
+                                if (t[e].type !== "dots") {
+                                    n.unshift(t[e].value);
+                                }
+                            }
+                            e = expandRange(n, u);
+                            m.backtrack = true;
+                        }
+                        if (t.comma !== true && t.dots !== true) {
+                            const u = m.output.slice(0, t.outputIndex);
+                            const n = m.tokens.slice(t.tokensIndex);
+                            t.value = t.output = "\\{";
+                            G = e = "\\}";
+                            m.output = u;
+                            for (const t of n){
+                                m.output += t.output || t.value;
+                            }
+                        }
+                        push({
+                            type: "brace",
+                            value: G,
+                            output: e
+                        });
+                        decrement("braces");
+                        N.pop();
+                        continue;
+                    }
+                    if (G === "|") {
+                        if (w.length > 0) {
+                            w[w.length - 1].conditions++;
+                        }
+                        push({
+                            type: "text",
+                            value: G
+                        });
+                        continue;
+                    }
+                    if (G === ",") {
+                        let t = G;
+                        const e = N[N.length - 1];
+                        if (e && I[I.length - 1] === "braces") {
+                            e.comma = true;
+                            t = "|";
+                        }
+                        push({
+                            type: "comma",
+                            value: G,
+                            output: t
+                        });
+                        continue;
+                    }
+                    if (G === "/") {
+                        if (B.type === "dot" && m.index === m.start + 1) {
+                            m.start = m.index + 1;
+                            m.consumed = "";
+                            m.output = "";
+                            A.pop();
+                            B = f;
+                            continue;
+                        }
+                        push({
+                            type: "slash",
+                            value: G,
+                            output: b
+                        });
+                        continue;
+                    }
+                    if (G === ".") {
+                        if (m.braces > 0 && B.type === "dot") {
+                            if (B.value === ".") B.output = h;
+                            const t = N[N.length - 1];
+                            B.type = "dots";
+                            B.output += G;
+                            B.value += G;
+                            t.dots = true;
+                            continue;
+                        }
+                        if (m.braces + m.parens === 0 && B.type !== "bos" && B.type !== "slash") {
+                            push({
+                                type: "text",
+                                value: G,
+                                output: h
+                            });
+                            continue;
+                        }
+                        push({
+                            type: "dot",
+                            value: G,
+                            output: h
+                        });
+                        continue;
+                    }
+                    if (G === "?") {
+                        const t = B && B.value === "(";
+                        if (!t && u.noextglob !== true && D() === "(" && D(2) !== "?") {
+                            extglobOpen("qmark", G);
+                            continue;
+                        }
+                        if (B && B.type === "paren") {
+                            const t = D();
+                            let e = G;
+                            if (B.value === "(" && !/[!=<:]/.test(t) || t === "<" && !/<([!=]|\w+>)/.test(remaining())) {
+                                e = `\\${G}`;
+                            }
+                            push({
+                                type: "text",
+                                value: G,
+                                output: e
+                            });
+                            continue;
+                        }
+                        if (u.dot !== true && (B.type === "slash" || B.type === "bos")) {
+                            push({
+                                type: "qmark",
+                                value: G,
+                                output: v
+                            });
+                            continue;
+                        }
+                        push({
+                            type: "qmark",
+                            value: G,
+                            output: H
+                        });
+                        continue;
+                    }
+                    if (G === "!") {
+                        if (u.noextglob !== true && D() === "(") {
+                            if (D(2) !== "?" || !/[!=<:]/.test(D(3))) {
+                                extglobOpen("negate", G);
+                                continue;
+                            }
+                        }
+                        if (u.nonegate !== true && m.index === 0) {
+                            negate();
+                            continue;
+                        }
+                    }
+                    if (G === "+") {
+                        if (u.noextglob !== true && D() === "(" && D(2) !== "?") {
+                            extglobOpen("plus", G);
+                            continue;
+                        }
+                        if (B && B.value === "(" || u.regex === false) {
+                            push({
+                                type: "plus",
+                                value: G,
+                                output: g
+                            });
+                            continue;
+                        }
+                        if (B && (B.type === "bracket" || B.type === "paren" || B.type === "brace") || m.parens > 0) {
+                            push({
+                                type: "plus",
+                                value: G
+                            });
+                            continue;
+                        }
+                        push({
+                            type: "plus",
+                            value: g
+                        });
+                        continue;
+                    }
+                    if (G === "@") {
+                        if (u.noextglob !== true && D() === "(" && D(2) !== "?") {
+                            push({
+                                type: "at",
+                                extglob: true,
+                                value: G,
+                                output: ""
+                            });
+                            continue;
+                        }
+                        push({
+                            type: "text",
+                            value: G
+                        });
+                        continue;
+                    }
+                    if (G !== "*") {
+                        if (G === "$" || G === "^") {
+                            G = `\\${G}`;
+                        }
+                        const t = a.exec(remaining());
+                        if (t) {
+                            G += t[0];
+                            m.index += t[0].length;
+                        }
+                        push({
+                            type: "text",
+                            value: G
+                        });
+                        continue;
+                    }
+                    if (B && (B.type === "globstar" || B.star === true)) {
+                        B.type = "star";
+                        B.star = true;
+                        B.value += G;
+                        B.output = k;
+                        m.backtrack = true;
+                        m.globstar = true;
+                        consume(G);
+                        continue;
+                    }
+                    let e = remaining();
+                    if (u.noextglob !== true && /^\([^?]/.test(e)) {
+                        extglobOpen("star", G);
+                        continue;
+                    }
+                    if (B.type === "star") {
+                        if (u.noglobstar === true) {
+                            consume(G);
+                            continue;
+                        }
+                        const n = B.prev;
+                        const o = n.prev;
+                        const s = n.type === "slash" || n.type === "bos";
+                        const r = o && (o.type === "star" || o.type === "globstar");
+                        if (u.bash === true && (!s || e[0] && e[0] !== "/")) {
+                            push({
+                                type: "star",
+                                value: G,
+                                output: ""
+                            });
+                            continue;
+                        }
+                        const a = m.braces > 0 && (n.type === "comma" || n.type === "brace");
+                        const i = w.length && (n.type === "pipe" || n.type === "paren");
+                        if (!s && n.type !== "paren" && !a && !i) {
+                            push({
+                                type: "star",
+                                value: G,
+                                output: ""
+                            });
+                            continue;
+                        }
+                        while(e.slice(0, 3) === "/**"){
+                            const u = t[m.index + 4];
+                            if (u && u !== "/") {
+                                break;
+                            }
+                            e = e.slice(3);
+                            consume("/**", 3);
+                        }
+                        if (n.type === "bos" && eos()) {
+                            B.type = "globstar";
+                            B.value += G;
+                            B.output = globstar(u);
+                            m.output = B.output;
+                            m.globstar = true;
+                            consume(G);
+                            continue;
+                        }
+                        if (n.type === "slash" && n.prev.type !== "bos" && !r && eos()) {
+                            m.output = m.output.slice(0, -(n.output + B.output).length);
+                            n.output = `(?:${n.output}`;
+                            B.type = "globstar";
+                            B.output = globstar(u) + (u.strictSlashes ? ")" : "|$)");
+                            B.value += G;
+                            m.globstar = true;
+                            m.output += n.output + B.output;
+                            consume(G);
+                            continue;
+                        }
+                        if (n.type === "slash" && n.prev.type !== "bos" && e[0] === "/") {
+                            const t = e[1] !== void 0 ? "|$" : "";
+                            m.output = m.output.slice(0, -(n.output + B.output).length);
+                            n.output = `(?:${n.output}`;
+                            B.type = "globstar";
+                            B.output = `${globstar(u)}${b}|${b}${t})`;
+                            B.value += G;
+                            m.output += n.output + B.output;
+                            m.globstar = true;
+                            consume(G + M());
+                            push({
+                                type: "slash",
+                                value: "/",
+                                output: ""
+                            });
+                            continue;
+                        }
+                        if (n.type === "bos" && e[0] === "/") {
+                            B.type = "globstar";
+                            B.value += G;
+                            B.output = `(?:^|${b}|${globstar(u)}${b})`;
+                            m.output = B.output;
+                            m.globstar = true;
+                            consume(G + M());
+                            push({
+                                type: "slash",
+                                value: "/",
+                                output: ""
+                            });
+                            continue;
+                        }
+                        m.output = m.output.slice(0, -B.output.length);
+                        B.type = "globstar";
+                        B.output = globstar(u);
+                        B.value += G;
+                        m.output += B.output;
+                        m.globstar = true;
+                        consume(G);
+                        continue;
+                    }
+                    const n = {
+                        type: "star",
+                        value: G,
+                        output: k
+                    };
+                    if (u.bash === true) {
+                        n.output = ".*?";
+                        if (B.type === "bos" || B.type === "slash") {
+                            n.output = T + n.output;
+                        }
+                        push(n);
+                        continue;
+                    }
+                    if (B && (B.type === "bracket" || B.type === "paren") && u.regex === true) {
+                        n.output = G;
+                        push(n);
+                        continue;
+                    }
+                    if (m.index === m.start || B.type === "slash" || B.type === "dot") {
+                        if (B.type === "dot") {
+                            m.output += x;
+                            B.output += x;
+                        } else if (u.dot === true) {
+                            m.output += S;
+                            B.output += S;
+                        } else {
+                            m.output += T;
+                            B.output += T;
+                        }
+                        if (D() !== "*") {
+                            m.output += C;
+                            B.output += C;
+                        }
+                    }
+                    push(n);
+                }
+                while(m.brackets > 0){
+                    if (u.strictBrackets === true) throw new SyntaxError(syntaxError("closing", "]"));
+                    m.output = o.escapeLast(m.output, "[");
+                    decrement("brackets");
+                }
+                while(m.parens > 0){
+                    if (u.strictBrackets === true) throw new SyntaxError(syntaxError("closing", ")"));
+                    m.output = o.escapeLast(m.output, "(");
+                    decrement("parens");
+                }
+                while(m.braces > 0){
+                    if (u.strictBrackets === true) throw new SyntaxError(syntaxError("closing", "}"));
+                    m.output = o.escapeLast(m.output, "{");
+                    decrement("braces");
+                }
+                if (u.strictSlashes !== true && (B.type === "star" || B.type === "bracket")) {
+                    push({
+                        type: "maybe_slash",
+                        value: "",
+                        output: `${b}?`
+                    });
+                }
+                if (m.backtrack === true) {
+                    m.output = "";
+                    for (const t of m.tokens){
+                        m.output += t.output != null ? t.output : t.value;
+                        if (t.suffix) {
+                            m.output += t.suffix;
+                        }
+                    }
+                }
+                return m;
+            };
+            parse.fastpaths = (t, e)=>{
+                const u = {
+                    ...e
+                };
+                const r = typeof u.maxLength === "number" ? Math.min(s, u.maxLength) : s;
+                const a = t.length;
+                if (a > r) {
+                    throw new SyntaxError(`Input length: ${a}, exceeds maximum allowed length: ${r}`);
+                }
+                t = c[t] || t;
+                const { DOT_LITERAL: i, SLASH_LITERAL: p, ONE_CHAR: l, DOTS_SLASH: f, NO_DOT: A, NO_DOTS: _, NO_DOTS_SLASH: R, STAR: E, START_ANCHOR: h } = n.globChars(u.windows);
+                const g = u.dot ? _ : A;
+                const b = u.dot ? R : A;
+                const C = u.capture ? "" : "?:";
+                const y = {
+                    negated: false,
+                    prefix: ""
+                };
+                let $ = u.bash === true ? ".*?" : E;
+                if (u.capture) {
+                    $ = `(${$})`;
+                }
+                const globstar = (t)=>{
+                    if (t.noglobstar === true) return $;
+                    return `(${C}(?:(?!${h}${t.dot ? f : i}).)*?)`;
+                };
+                const create = (t)=>{
+                    switch(t){
+                        case "*":
+                            return `${g}${l}${$}`;
+                        case ".*":
+                            return `${i}${l}${$}`;
+                        case "*.*":
+                            return `${g}${$}${i}${l}${$}`;
+                        case "*/*":
+                            return `${g}${$}${p}${l}${b}${$}`;
+                        case "**":
+                            return g + globstar(u);
+                        case "**/*":
+                            return `(?:${g}${globstar(u)}${p})?${b}${l}${$}`;
+                        case "**/*.*":
+                            return `(?:${g}${globstar(u)}${p})?${b}${$}${i}${l}${$}`;
+                        case "**/.*":
+                            return `(?:${g}${globstar(u)}${p})?${i}${l}${$}`;
+                        default:
+                            {
+                                const e = /^(.*?)\.(\w+)$/.exec(t);
+                                if (!e) return;
+                                const u = create(e[1]);
+                                if (!u) return;
+                                return u + i + e[2];
+                            }
+                    }
+                };
+                const x = o.removePrefix(t, y);
+                let S = create(x);
+                if (S && u.strictSlashes !== true) {
+                    S += `${p}?`;
+                }
+                return S;
+            };
+            t.exports = parse;
+        },
+        510: (t, e, u)=>{
+            const n = u(716);
+            const o = u(697);
+            const s = u(96);
+            const r = u(154);
+            const isObject = (t)=>t && typeof t === "object" && !Array.isArray(t);
+            const picomatch = (t, e, u = false)=>{
+                if (Array.isArray(t)) {
+                    const n = t.map((t)=>picomatch(t, e, u));
+                    const arrayMatcher = (t)=>{
+                        for (const e of n){
+                            const u = e(t);
+                            if (u) return u;
+                        }
+                        return false;
+                    };
+                    return arrayMatcher;
+                }
+                const n = isObject(t) && t.tokens && t.input;
+                if (t === "" || typeof t !== "string" && !n) {
+                    throw new TypeError("Expected pattern to be a non-empty string");
+                }
+                const o = e || {};
+                const s = o.windows;
+                const r = n ? picomatch.compileRe(t, e) : picomatch.makeRe(t, e, false, true);
+                const a = r.state;
+                delete r.state;
+                let isIgnored = ()=>false;
+                if (o.ignore) {
+                    const t = {
+                        ...e,
+                        ignore: null,
+                        onMatch: null,
+                        onResult: null
+                    };
+                    isIgnored = picomatch(o.ignore, t, u);
+                }
+                const matcher = (u, n = false)=>{
+                    const { isMatch: i, match: c, output: p } = picomatch.test(u, r, e, {
+                        glob: t,
+                        posix: s
+                    });
+                    const l = {
+                        glob: t,
+                        state: a,
+                        regex: r,
+                        posix: s,
+                        input: u,
+                        output: p,
+                        match: c,
+                        isMatch: i
+                    };
+                    if (typeof o.onResult === "function") {
+                        o.onResult(l);
+                    }
+                    if (i === false) {
+                        l.isMatch = false;
+                        return n ? l : false;
+                    }
+                    if (isIgnored(u)) {
+                        if (typeof o.onIgnore === "function") {
+                            o.onIgnore(l);
+                        }
+                        l.isMatch = false;
+                        return n ? l : false;
+                    }
+                    if (typeof o.onMatch === "function") {
+                        o.onMatch(l);
+                    }
+                    return n ? l : true;
+                };
+                if (u) {
+                    matcher.state = a;
+                }
+                return matcher;
+            };
+            picomatch.test = (t, e, u, { glob: n, posix: o } = {})=>{
+                if (typeof t !== "string") {
+                    throw new TypeError("Expected input to be a string");
+                }
+                if (t === "") {
+                    return {
+                        isMatch: false,
+                        output: ""
+                    };
+                }
+                const r = u || {};
+                const a = r.format || (o ? s.toPosixSlashes : null);
+                let i = t === n;
+                let c = i && a ? a(t) : t;
+                if (i === false) {
+                    c = a ? a(t) : t;
+                    i = c === n;
+                }
+                if (i === false || r.capture === true) {
+                    if (r.matchBase === true || r.basename === true) {
+                        i = picomatch.matchBase(t, e, u, o);
+                    } else {
+                        i = e.exec(c);
+                    }
+                }
+                return {
+                    isMatch: Boolean(i),
+                    match: i,
+                    output: c
+                };
+            };
+            picomatch.matchBase = (t, e, u)=>{
+                const n = e instanceof RegExp ? e : picomatch.makeRe(e, u);
+                return n.test(s.basename(t));
+            };
+            picomatch.isMatch = (t, e, u)=>picomatch(e, u)(t);
+            picomatch.parse = (t, e)=>{
+                if (Array.isArray(t)) return t.map((t)=>picomatch.parse(t, e));
+                return o(t, {
+                    ...e,
+                    fastpaths: false
+                });
+            };
+            picomatch.scan = (t, e)=>n(t, e);
+            picomatch.compileRe = (t, e, u = false, n = false)=>{
+                if (u === true) {
+                    return t.output;
+                }
+                const o = e || {};
+                const s = o.contains ? "" : "^";
+                const r = o.contains ? "" : "$";
+                let a = `${s}(?:${t.output})${r}`;
+                if (t && t.negated === true) {
+                    a = `^(?!${a}).*$`;
+                }
+                const i = picomatch.toRegex(a, e);
+                if (n === true) {
+                    i.state = t;
+                }
+                return i;
+            };
+            picomatch.makeRe = (t, e = {}, u = false, n = false)=>{
+                if (!t || typeof t !== "string") {
+                    throw new TypeError("Expected a non-empty string");
+                }
+                let s = {
+                    negated: false,
+                    fastpaths: true
+                };
+                if (e.fastpaths !== false && (t[0] === "." || t[0] === "*")) {
+                    s.output = o.fastpaths(t, e);
+                }
+                if (!s.output) {
+                    s = o(t, e);
+                }
+                return picomatch.compileRe(s, e, u, n);
+            };
+            picomatch.toRegex = (t, e)=>{
+                try {
+                    const u = e || {};
+                    return new RegExp(t, u.flags || (u.nocase ? "i" : ""));
+                } catch (t) {
+                    if (e && e.debug === true) throw t;
+                    return /$^/;
+                }
+            };
+            picomatch.constants = r;
+            t.exports = picomatch;
+        },
+        716: (t, e, u)=>{
+            const n = u(96);
+            const { CHAR_ASTERISK: o, CHAR_AT: s, CHAR_BACKWARD_SLASH: r, CHAR_COMMA: a, CHAR_DOT: i, CHAR_EXCLAMATION_MARK: c, CHAR_FORWARD_SLASH: p, CHAR_LEFT_CURLY_BRACE: l, CHAR_LEFT_PARENTHESES: f, CHAR_LEFT_SQUARE_BRACKET: A, CHAR_PLUS: _, CHAR_QUESTION_MARK: R, CHAR_RIGHT_CURLY_BRACE: E, CHAR_RIGHT_PARENTHESES: h, CHAR_RIGHT_SQUARE_BRACKET: g } = u(154);
+            const isPathSeparator = (t)=>t === p || t === r;
+            const depth = (t)=>{
+                if (t.isPrefix !== true) {
+                    t.depth = t.isGlobstar ? Infinity : 1;
+                }
+            };
+            const scan = (t, e)=>{
+                const u = e || {};
+                const b = t.length - 1;
+                const C = u.parts === true || u.scanToEnd === true;
+                const y = [];
+                const $ = [];
+                const x = [];
+                let S = t;
+                let H = -1;
+                let v = 0;
+                let d = 0;
+                let L = false;
+                let T = false;
+                let O = false;
+                let k = false;
+                let m = false;
+                let w = false;
+                let N = false;
+                let I = false;
+                let B = false;
+                let G = false;
+                let D = 0;
+                let M;
+                let P;
+                let K = {
+                    value: "",
+                    depth: 0,
+                    isGlob: false
+                };
+                const eos = ()=>H >= b;
+                const peek = ()=>S.charCodeAt(H + 1);
+                const advance = ()=>{
+                    M = P;
+                    return S.charCodeAt(++H);
+                };
+                while(H < b){
+                    P = advance();
+                    let t;
+                    if (P === r) {
+                        N = K.backslashes = true;
+                        P = advance();
+                        if (P === l) {
+                            w = true;
+                        }
+                        continue;
+                    }
+                    if (w === true || P === l) {
+                        D++;
+                        while(eos() !== true && (P = advance())){
+                            if (P === r) {
+                                N = K.backslashes = true;
+                                advance();
+                                continue;
+                            }
+                            if (P === l) {
+                                D++;
+                                continue;
+                            }
+                            if (w !== true && P === i && (P = advance()) === i) {
+                                L = K.isBrace = true;
+                                O = K.isGlob = true;
+                                G = true;
+                                if (C === true) {
+                                    continue;
+                                }
+                                break;
+                            }
+                            if (w !== true && P === a) {
+                                L = K.isBrace = true;
+                                O = K.isGlob = true;
+                                G = true;
+                                if (C === true) {
+                                    continue;
+                                }
+                                break;
+                            }
+                            if (P === E) {
+                                D--;
+                                if (D === 0) {
+                                    w = false;
+                                    L = K.isBrace = true;
+                                    G = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (C === true) {
+                            continue;
+                        }
+                        break;
+                    }
+                    if (P === p) {
+                        y.push(H);
+                        $.push(K);
+                        K = {
+                            value: "",
+                            depth: 0,
+                            isGlob: false
+                        };
+                        if (G === true) continue;
+                        if (M === i && H === v + 1) {
+                            v += 2;
+                            continue;
+                        }
+                        d = H + 1;
+                        continue;
+                    }
+                    if (u.noext !== true) {
+                        const t = P === _ || P === s || P === o || P === R || P === c;
+                        if (t === true && peek() === f) {
+                            O = K.isGlob = true;
+                            k = K.isExtglob = true;
+                            G = true;
+                            if (P === c && H === v) {
+                                B = true;
+                            }
+                            if (C === true) {
+                                while(eos() !== true && (P = advance())){
+                                    if (P === r) {
+                                        N = K.backslashes = true;
+                                        P = advance();
+                                        continue;
+                                    }
+                                    if (P === h) {
+                                        O = K.isGlob = true;
+                                        G = true;
+                                        break;
+                                    }
+                                }
+                                continue;
+                            }
+                            break;
+                        }
+                    }
+                    if (P === o) {
+                        if (M === o) m = K.isGlobstar = true;
+                        O = K.isGlob = true;
+                        G = true;
+                        if (C === true) {
+                            continue;
+                        }
+                        break;
+                    }
+                    if (P === R) {
+                        O = K.isGlob = true;
+                        G = true;
+                        if (C === true) {
+                            continue;
+                        }
+                        break;
+                    }
+                    if (P === A) {
+                        while(eos() !== true && (t = advance())){
+                            if (t === r) {
+                                N = K.backslashes = true;
+                                advance();
+                                continue;
+                            }
+                            if (t === g) {
+                                T = K.isBracket = true;
+                                O = K.isGlob = true;
+                                G = true;
+                                break;
+                            }
+                        }
+                        if (C === true) {
+                            continue;
+                        }
+                        break;
+                    }
+                    if (u.nonegate !== true && P === c && H === v) {
+                        I = K.negated = true;
+                        v++;
+                        continue;
+                    }
+                    if (u.noparen !== true && P === f) {
+                        O = K.isGlob = true;
+                        if (C === true) {
+                            while(eos() !== true && (P = advance())){
+                                if (P === f) {
+                                    N = K.backslashes = true;
+                                    P = advance();
+                                    continue;
+                                }
+                                if (P === h) {
+                                    G = true;
+                                    break;
+                                }
+                            }
+                            continue;
+                        }
+                        break;
+                    }
+                    if (O === true) {
+                        G = true;
+                        if (C === true) {
+                            continue;
+                        }
+                        break;
+                    }
+                }
+                if (u.noext === true) {
+                    k = false;
+                    O = false;
+                }
+                let U = S;
+                let X = "";
+                let F = "";
+                if (v > 0) {
+                    X = S.slice(0, v);
+                    S = S.slice(v);
+                    d -= v;
+                }
+                if (U && O === true && d > 0) {
+                    U = S.slice(0, d);
+                    F = S.slice(d);
+                } else if (O === true) {
+                    U = "";
+                    F = S;
+                } else {
+                    U = S;
+                }
+                if (U && U !== "" && U !== "/" && U !== S) {
+                    if (isPathSeparator(U.charCodeAt(U.length - 1))) {
+                        U = U.slice(0, -1);
+                    }
+                }
+                if (u.unescape === true) {
+                    if (F) F = n.removeBackslashes(F);
+                    if (U && N === true) {
+                        U = n.removeBackslashes(U);
+                    }
+                }
+                const Q = {
+                    prefix: X,
+                    input: t,
+                    start: v,
+                    base: U,
+                    glob: F,
+                    isBrace: L,
+                    isBracket: T,
+                    isGlob: O,
+                    isExtglob: k,
+                    isGlobstar: m,
+                    negated: I,
+                    negatedExtglob: B
+                };
+                if (u.tokens === true) {
+                    Q.maxDepth = 0;
+                    if (!isPathSeparator(P)) {
+                        $.push(K);
+                    }
+                    Q.tokens = $;
+                }
+                if (u.parts === true || u.tokens === true) {
+                    let e;
+                    for(let n = 0; n < y.length; n++){
+                        const o = e ? e + 1 : v;
+                        const s = y[n];
+                        const r = t.slice(o, s);
+                        if (u.tokens) {
+                            if (n === 0 && v !== 0) {
+                                $[n].isPrefix = true;
+                                $[n].value = X;
+                            } else {
+                                $[n].value = r;
+                            }
+                            depth($[n]);
+                            Q.maxDepth += $[n].depth;
+                        }
+                        if (n !== 0 || r !== "") {
+                            x.push(r);
+                        }
+                        e = s;
+                    }
+                    if (e && e + 1 < t.length) {
+                        const n = t.slice(e + 1);
+                        x.push(n);
+                        if (u.tokens) {
+                            $[$.length - 1].value = n;
+                            depth($[$.length - 1]);
+                            Q.maxDepth += $[$.length - 1].depth;
+                        }
+                    }
+                    Q.slashes = y;
+                    Q.parts = x;
+                }
+                return Q;
+            };
+            t.exports = scan;
+        },
+        96: (t, e, u)=>{
+            const { REGEX_BACKSLASH: n, REGEX_REMOVE_BACKSLASH: o, REGEX_SPECIAL_CHARS: s, REGEX_SPECIAL_CHARS_GLOBAL: r } = u(154);
+            e.isObject = (t)=>t !== null && typeof t === "object" && !Array.isArray(t);
+            e.hasRegexChars = (t)=>s.test(t);
+            e.isRegexChar = (t)=>t.length === 1 && e.hasRegexChars(t);
+            e.escapeRegex = (t)=>t.replace(r, "\\$1");
+            e.toPosixSlashes = (t)=>t.replace(n, "/");
+            e.removeBackslashes = (t)=>t.replace(o, (t)=>t === "\\" ? "" : t);
+            e.escapeLast = (t, u, n)=>{
+                const o = t.lastIndexOf(u, n);
+                if (o === -1) return t;
+                if (t[o - 1] === "\\") return e.escapeLast(t, u, o - 1);
+                return `${t.slice(0, o)}\\${t.slice(o)}`;
+            };
+            e.removePrefix = (t, e = {})=>{
+                let u = t;
+                if (u.startsWith("./")) {
+                    u = u.slice(2);
+                    e.prefix = "./";
+                }
+                return u;
+            };
+            e.wrapOutput = (t, e = {}, u = {})=>{
+                const n = u.contains ? "" : "^";
+                const o = u.contains ? "" : "$";
+                let s = `${n}(?:${t})${o}`;
+                if (e.negated === true) {
+                    s = `(?:^(?!${s}).*$)`;
+                }
+                return s;
+            };
+            e.basename = (t, { windows: e } = {})=>{
+                const u = t.split(e ? /[\\/]/ : "/");
+                const n = u[u.length - 1];
+                if (n === "") {
+                    return u[u.length - 2];
+                }
+                return n;
+            };
+        }
+    };
+    var e = {};
+    function __nccwpck_require__(u) {
+        var n = e[u];
+        if (n !== undefined) {
+            return n.exports;
+        }
+        var o = e[u] = {
+            exports: {}
+        };
+        var s = true;
+        try {
+            t[u](o, o.exports, __nccwpck_require__);
+            s = false;
+        } finally{
+            if (s) delete e[u];
+        }
+        return o.exports;
+    }
+    if (typeof __nccwpck_require__ !== "undefined") __nccwpck_require__.ab = ("TURBOPACK compile-time value", "/ROOT/seva-hr-landing/node_modules/next/dist/compiled/picomatch") + "/";
+    var u = __nccwpck_require__(170);
+    module.exports = u;
+})();
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/match-local-pattern.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    hasLocalMatch: null,
+    matchLocalPattern: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    hasLocalMatch: function() {
+        return hasLocalMatch;
+    },
+    matchLocalPattern: function() {
+        return matchLocalPattern;
+    }
+});
+const _picomatch = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/picomatch/index.js [app-client] (ecmascript)");
+function matchLocalPattern(pattern, url) {
+    if (pattern.search !== undefined) {
+        if (pattern.search !== url.search) {
+            return false;
+        }
+    }
+    if (!(0, _picomatch.makeRe)(pattern.pathname ?? '**', {
+        dot: true
+    }).test(url.pathname)) {
+        return false;
+    }
+    return true;
+}
+function hasLocalMatch(localPatterns, urlPathAndQuery) {
+    if (!localPatterns) {
+        // if the user didn't define "localPatterns", we allow all local images
+        return true;
+    }
+    const url = new URL(urlPathAndQuery, 'http://n');
+    return localPatterns.some((p)=>matchLocalPattern(p, url));
+} //# sourceMappingURL=match-local-pattern.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/match-remote-pattern.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    hasRemoteMatch: null,
+    matchRemotePattern: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    hasRemoteMatch: function() {
+        return hasRemoteMatch;
+    },
+    matchRemotePattern: function() {
+        return matchRemotePattern;
+    }
+});
+const _picomatch = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/picomatch/index.js [app-client] (ecmascript)");
+function matchRemotePattern(pattern, url) {
+    if (pattern.protocol !== undefined) {
+        if (pattern.protocol.replace(/:$/, '') !== url.protocol.replace(/:$/, '')) {
+            return false;
+        }
+    }
+    if (pattern.port !== undefined) {
+        if (pattern.port !== url.port) {
+            return false;
+        }
+    }
+    if (pattern.hostname === undefined) {
+        throw Object.defineProperty(new Error(`Pattern should define hostname but found\n${JSON.stringify(pattern)}`), "__NEXT_ERROR_CODE", {
+            value: "E410",
+            enumerable: false,
+            configurable: true
+        });
+    } else {
+        if (!(0, _picomatch.makeRe)(pattern.hostname).test(url.hostname)) {
+            return false;
+        }
+    }
+    if (pattern.search !== undefined) {
+        if (pattern.search !== url.search) {
+            return false;
+        }
+    }
+    // Should be the same as writeImagesManifest()
+    if (!(0, _picomatch.makeRe)(pattern.pathname ?? '**', {
+        dot: true
+    }).test(url.pathname)) {
+        return false;
+    }
+    return true;
+}
+function hasRemoteMatch(domains, remotePatterns, url) {
+    return domains.some((domain)=>url.hostname === domain) || remotePatterns.some((p)=>matchRemotePattern(p, url));
+} //# sourceMappingURL=match-remote-pattern.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "default", {
+    enumerable: true,
+    get: function() {
+        return _default;
+    }
+});
+const _findclosestquality = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/find-closest-quality.js [app-client] (ecmascript)");
+const _deploymentid = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/deployment-id.js [app-client] (ecmascript)");
+function defaultLoader({ config, src, width, quality }) {
+    if (src.startsWith('/') && src.includes('?') && config.localPatterns?.length === 1 && config.localPatterns[0].pathname === '**' && config.localPatterns[0].search === '') {
+        throw Object.defineProperty(new Error(`Image with src "${src}" is using a query string which is not configured in images.localPatterns.` + `\nRead more: https://nextjs.org/docs/messages/next-image-unconfigured-localpatterns`), "__NEXT_ERROR_CODE", {
+            value: "E871",
+            enumerable: false,
+            configurable: true
+        });
+    }
+    if ("TURBOPACK compile-time truthy", 1) {
+        const missingValues = [];
+        // these should always be provided but make sure they are
+        if (!src) missingValues.push('src');
+        if (!width) missingValues.push('width');
+        if (missingValues.length > 0) {
+            throw Object.defineProperty(new Error(`Next Image Optimization requires ${missingValues.join(', ')} to be provided. Make sure you pass them as props to the \`next/image\` component. Received: ${JSON.stringify({
+                src,
+                width,
+                quality
+            })}`), "__NEXT_ERROR_CODE", {
+                value: "E188",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        if (src.startsWith('//')) {
+            throw Object.defineProperty(new Error(`Failed to parse src "${src}" on \`next/image\`, protocol-relative URL (//) must be changed to an absolute URL (http:// or https://)`), "__NEXT_ERROR_CODE", {
+                value: "E360",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        if (src.startsWith('/') && config.localPatterns) {
+            if ("TURBOPACK compile-time truthy", 1) {
+                // We use dynamic require because this should only error in development
+                const { hasLocalMatch } = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/match-local-pattern.js [app-client] (ecmascript)");
+                if (!hasLocalMatch(config.localPatterns, src)) {
+                    throw Object.defineProperty(new Error(`Invalid src prop (${src}) on \`next/image\` does not match \`images.localPatterns\` configured in your \`next.config.js\`\n` + `See more info: https://nextjs.org/docs/messages/next-image-unconfigured-localpatterns`), "__NEXT_ERROR_CODE", {
+                        value: "E426",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+            }
+        }
+        if (!src.startsWith('/') && (config.domains || config.remotePatterns)) {
+            let parsedSrc;
+            try {
+                parsedSrc = new URL(src);
+            } catch (err) {
+                console.error(err);
+                throw Object.defineProperty(new Error(`Failed to parse src "${src}" on \`next/image\`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)`), "__NEXT_ERROR_CODE", {
+                    value: "E63",
+                    enumerable: false,
+                    configurable: true
+                });
+            }
+            if ("TURBOPACK compile-time truthy", 1) {
+                // We use dynamic require because this should only error in development
+                const { hasRemoteMatch } = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/match-remote-pattern.js [app-client] (ecmascript)");
+                if (!hasRemoteMatch(config.domains, config.remotePatterns, parsedSrc)) {
+                    throw Object.defineProperty(new Error(`Invalid src prop (${src}) on \`next/image\`, hostname "${parsedSrc.hostname}" is not configured under images in your \`next.config.js\`\n` + `See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host`), "__NEXT_ERROR_CODE", {
+                        value: "E231",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+            }
+        }
+    }
+    const q = (0, _findclosestquality.findClosestQuality)(quality, config);
+    let deploymentId = (0, _deploymentid.getDeploymentId)();
+    return `${config.path}?url=${encodeURIComponent(src)}&w=${width}&q=${q}${src.startsWith('/') && deploymentId ? `&dpl=${deploymentId}` : ''}`;
+}
+// We use this to determine if the import is the default loader
+// or a custom loader defined by the user in next.config.js
+defaultLoader.__next_img_default = true;
+const _default = defaultLoader; //# sourceMappingURL=image-loader.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/client/use-merged-ref.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "useMergedRef", {
+    enumerable: true,
+    get: function() {
+        return useMergedRef;
+    }
+});
+const _react = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+function useMergedRef(refA, refB) {
+    const cleanupA = (0, _react.useRef)(null);
+    const cleanupB = (0, _react.useRef)(null);
+    // NOTE: In theory, we could skip the wrapping if only one of the refs is non-null.
+    // (this happens often if the user doesn't pass a ref to Link/Form/Image)
+    // But this can cause us to leak a cleanup-ref into user code (previously via `<Link legacyBehavior>`),
+    // and the user might pass that ref into ref-merging library that doesn't support cleanup refs
+    // (because it hasn't been updated for React 19)
+    // which can then cause things to blow up, because a cleanup-returning ref gets called with `null`.
+    // So in practice, it's safer to be defensive and always wrap the ref, even on React 19.
+    return (0, _react.useCallback)((current)=>{
+        if (current === null) {
+            const cleanupFnA = cleanupA.current;
+            if (cleanupFnA) {
+                cleanupA.current = null;
+                cleanupFnA();
+            }
+            const cleanupFnB = cleanupB.current;
+            if (cleanupFnB) {
+                cleanupB.current = null;
+                cleanupFnB();
+            }
+        } else {
+            if (refA) {
+                cleanupA.current = applyRef(refA, current);
+            }
+            if (refB) {
+                cleanupB.current = applyRef(refB, current);
+            }
+        }
+    }, [
+        refA,
+        refB
+    ]);
+}
+function applyRef(refA, current) {
+    if (typeof refA === 'function') {
+        const cleanup = refA(current);
+        if (typeof cleanup === 'function') {
+            return cleanup;
+        } else {
+            return ()=>refA(null);
+        }
+    } else {
+        refA.current = current;
+        return ()=>{
+            refA.current = null;
+        };
+    }
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=use-merged-ref.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/client/image-component.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+'use client';
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "Image", {
+    enumerable: true,
+    get: function() {
+        return Image;
+    }
+});
+const _interop_require_default = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
+const _interop_require_wildcard = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-client] (ecmascript)");
+const _jsxruntime = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _reactdom = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react-dom/index.js [app-client] (ecmascript)"));
+const _head = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/head.js [app-client] (ecmascript)"));
+const _getimgprops = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/get-img-props.js [app-client] (ecmascript)");
+const _imageconfig = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/image-config.js [app-client] (ecmascript)");
+const _imageconfigcontextsharedruntime = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/image-config-context.shared-runtime.js [app-client] (ecmascript)");
+const _warnonce = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript)");
+const _routercontextsharedruntime = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/router-context.shared-runtime.js [app-client] (ecmascript)");
+const _imageloader = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript)"));
+const _usemergedref = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/client/use-merged-ref.js [app-client] (ecmascript)");
+// This is replaced by webpack define plugin
+const configEnv = ("TURBOPACK compile-time value", {
+    "deviceSizes": ("TURBOPACK compile-time value", [
+        ("TURBOPACK compile-time value", 640),
+        ("TURBOPACK compile-time value", 750),
+        ("TURBOPACK compile-time value", 828),
+        ("TURBOPACK compile-time value", 1080),
+        ("TURBOPACK compile-time value", 1200),
+        ("TURBOPACK compile-time value", 1920),
+        ("TURBOPACK compile-time value", 2048),
+        ("TURBOPACK compile-time value", 3840)
+    ]),
+    "imageSizes": ("TURBOPACK compile-time value", [
+        ("TURBOPACK compile-time value", 32),
+        ("TURBOPACK compile-time value", 48),
+        ("TURBOPACK compile-time value", 64),
+        ("TURBOPACK compile-time value", 96),
+        ("TURBOPACK compile-time value", 128),
+        ("TURBOPACK compile-time value", 256),
+        ("TURBOPACK compile-time value", 384)
+    ]),
+    "qualities": ("TURBOPACK compile-time value", [
+        ("TURBOPACK compile-time value", 75)
+    ]),
+    "path": ("TURBOPACK compile-time value", "/_next/image"),
+    "loader": ("TURBOPACK compile-time value", "default"),
+    "dangerouslyAllowSVG": ("TURBOPACK compile-time value", false),
+    "unoptimized": ("TURBOPACK compile-time value", true),
+    "domains": ("TURBOPACK compile-time value", []),
+    "remotePatterns": ("TURBOPACK compile-time value", []),
+    "localPatterns": ("TURBOPACK compile-time value", [
+        ("TURBOPACK compile-time value", {
+            "pathname": ("TURBOPACK compile-time value", "**"),
+            "search": ("TURBOPACK compile-time value", "")
+        })
+    ]),
+    "output": ("TURBOPACK compile-time value", "export")
+});
+if (typeof window === 'undefined') {
+    ;
+    globalThis.__NEXT_IMAGE_IMPORTED = true;
+}
+// See https://stackoverflow.com/q/39777833/266535 for why we use this ref
+// handler instead of the img's onLoad attribute.
+function handleLoading(img, placeholder, onLoadRef, onLoadingCompleteRef, setBlurComplete, unoptimized, sizesInput) {
+    const src = img?.src;
+    if (!img || img['data-loaded-src'] === src) {
+        return;
+    }
+    img['data-loaded-src'] = src;
+    const p = 'decode' in img ? img.decode() : Promise.resolve();
+    p.catch(()=>{}).then(()=>{
+        if (!img.parentElement || !img.isConnected) {
+            // Exit early in case of race condition:
+            // - onload() is called
+            // - decode() is called but incomplete
+            // - unmount is called
+            // - decode() completes
+            return;
+        }
+        if (placeholder !== 'empty') {
+            setBlurComplete(true);
+        }
+        if (onLoadRef?.current) {
+            // Since we don't have the SyntheticEvent here,
+            // we must create one with the same shape.
+            // See https://reactjs.org/docs/events.html
+            const event = new Event('load');
+            Object.defineProperty(event, 'target', {
+                writable: false,
+                value: img
+            });
+            let prevented = false;
+            let stopped = false;
+            onLoadRef.current({
+                ...event,
+                nativeEvent: event,
+                currentTarget: img,
+                target: img,
+                isDefaultPrevented: ()=>prevented,
+                isPropagationStopped: ()=>stopped,
+                persist: ()=>{},
+                preventDefault: ()=>{
+                    prevented = true;
+                    event.preventDefault();
+                },
+                stopPropagation: ()=>{
+                    stopped = true;
+                    event.stopPropagation();
+                }
+            });
+        }
+        if (onLoadingCompleteRef?.current) {
+            onLoadingCompleteRef.current(img);
+        }
+        if ("TURBOPACK compile-time truthy", 1) {
+            const origSrc = new URL(src, 'http://n').searchParams.get('url') || src;
+            if (img.getAttribute('data-nimg') === 'fill') {
+                if (!unoptimized && (!sizesInput || sizesInput === '100vw')) {
+                    let widthViewportRatio = img.getBoundingClientRect().width / window.innerWidth;
+                    if (widthViewportRatio < 0.6) {
+                        if (sizesInput === '100vw') {
+                            (0, _warnonce.warnOnce)(`Image with src "${origSrc}" has "fill" prop and "sizes" prop of "100vw", but image is not rendered at full viewport width. Please adjust "sizes" to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes`);
+                        } else {
+                            (0, _warnonce.warnOnce)(`Image with src "${origSrc}" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes`);
+                        }
+                    }
+                }
+                if (img.parentElement) {
+                    const { position } = window.getComputedStyle(img.parentElement);
+                    const valid = [
+                        'absolute',
+                        'fixed',
+                        'relative'
+                    ];
+                    if (!valid.includes(position)) {
+                        (0, _warnonce.warnOnce)(`Image with src "${origSrc}" has "fill" and parent element with invalid "position". Provided "${position}" should be one of ${valid.map(String).join(',')}.`);
+                    }
+                }
+                if (img.height === 0) {
+                    (0, _warnonce.warnOnce)(`Image with src "${origSrc}" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.`);
+                }
+            }
+            const heightModified = img.height.toString() !== img.getAttribute('height');
+            const widthModified = img.width.toString() !== img.getAttribute('width');
+            if (heightModified && !widthModified || !heightModified && widthModified) {
+                (0, _warnonce.warnOnce)(`Image with src "${origSrc}" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.`);
+            }
+        }
+    });
+}
+function getDynamicProps(fetchPriority) {
+    if (Boolean(_react.use)) {
+        // In React 19.0.0 or newer, we must use camelCase
+        // prop to avoid "Warning: Invalid DOM property".
+        // See https://github.com/facebook/react/pull/25927
+        return {
+            fetchPriority
+        };
+    }
+    // In React 18.2.0 or older, we must use lowercase prop
+    // to avoid "Warning: Invalid DOM property".
+    return {
+        fetchpriority: fetchPriority
+    };
+}
+const ImageElement = /*#__PURE__*/ (0, _react.forwardRef)(({ src, srcSet, sizes, height, width, decoding, className, style, fetchPriority, placeholder, loading, unoptimized, fill, onLoadRef, onLoadingCompleteRef, setBlurComplete, setShowAltText, sizesInput, onLoad, onError, ...rest }, forwardedRef)=>{
+    const ownRef = (0, _react.useCallback)((img)=>{
+        if (!img) {
+            return;
+        }
+        if (onError) {
+            // If the image has an error before react hydrates, then the error is lost.
+            // The workaround is to wait until the image is mounted which is after hydration,
+            // then we set the src again to trigger the error handler (if there was an error).
+            // eslint-disable-next-line no-self-assign
+            img.src = img.src;
+        }
+        if ("TURBOPACK compile-time truthy", 1) {
+            if (!src) {
+                console.error(`Image is missing required "src" property:`, img);
+            }
+            if (img.getAttribute('alt') === null) {
+                console.error(`Image is missing required "alt" property. Please add Alternative Text to describe the image for screen readers and search engines.`);
+            }
+        }
+        if (img.complete) {
+            handleLoading(img, placeholder, onLoadRef, onLoadingCompleteRef, setBlurComplete, unoptimized, sizesInput);
+        }
+    }, [
+        src,
+        placeholder,
+        onLoadRef,
+        onLoadingCompleteRef,
+        setBlurComplete,
+        onError,
+        unoptimized,
+        sizesInput
+    ]);
+    const ref = (0, _usemergedref.useMergedRef)(forwardedRef, ownRef);
+    return /*#__PURE__*/ (0, _jsxruntime.jsx)("img", {
+        ...rest,
+        ...getDynamicProps(fetchPriority),
+        // It's intended to keep `loading` before `src` because React updates
+        // props in order which causes Safari/Firefox to not lazy load properly.
+        // See https://github.com/facebook/react/issues/25883
+        loading: loading,
+        width: width,
+        height: height,
+        decoding: decoding,
+        "data-nimg": fill ? 'fill' : '1',
+        className: className,
+        style: style,
+        // It's intended to keep `src` the last attribute because React updates
+        // attributes in order. If we keep `src` the first one, Safari will
+        // immediately start to fetch `src`, before `sizes` and `srcSet` are even
+        // updated by React. That causes multiple unnecessary requests if `srcSet`
+        // and `sizes` are defined.
+        // This bug cannot be reproduced in Chrome or Firefox.
+        sizes: sizes,
+        srcSet: srcSet,
+        src: src,
+        ref: ref,
+        onLoad: (event)=>{
+            const img = event.currentTarget;
+            handleLoading(img, placeholder, onLoadRef, onLoadingCompleteRef, setBlurComplete, unoptimized, sizesInput);
+        },
+        onError: (event)=>{
+            // if the real image fails to load, this will ensure "alt" is visible
+            setShowAltText(true);
+            if (placeholder !== 'empty') {
+                // If the real image fails to load, this will still remove the placeholder.
+                setBlurComplete(true);
+            }
+            if (onError) {
+                onError(event);
+            }
+        }
+    });
+});
+function ImagePreload({ isAppRouter, imgAttributes }) {
+    const opts = {
+        as: 'image',
+        imageSrcSet: imgAttributes.srcSet,
+        imageSizes: imgAttributes.sizes,
+        crossOrigin: imgAttributes.crossOrigin,
+        referrerPolicy: imgAttributes.referrerPolicy,
+        ...getDynamicProps(imgAttributes.fetchPriority)
+    };
+    if (isAppRouter && _reactdom.default.preload) {
+        _reactdom.default.preload(imgAttributes.src, opts);
+        return null;
+    }
+    return /*#__PURE__*/ (0, _jsxruntime.jsx)(_head.default, {
+        children: /*#__PURE__*/ (0, _jsxruntime.jsx)("link", {
+            rel: "preload",
+            // Note how we omit the `href` attribute, as it would only be relevant
+            // for browsers that do not support `imagesrcset`, and in those cases
+            // it would cause the incorrect image to be preloaded.
+            //
+            // https://html.spec.whatwg.org/multipage/semantics.html#attr-link-imagesrcset
+            href: imgAttributes.srcSet ? undefined : imgAttributes.src,
+            ...opts
+        }, '__nimg-' + imgAttributes.src + imgAttributes.srcSet + imgAttributes.sizes)
+    });
+}
+const Image = /*#__PURE__*/ (0, _react.forwardRef)((props, forwardedRef)=>{
+    const pagesRouter = (0, _react.useContext)(_routercontextsharedruntime.RouterContext);
+    // We're in the app directory if there is no pages router.
+    const isAppRouter = !pagesRouter;
+    const configContext = (0, _react.useContext)(_imageconfigcontextsharedruntime.ImageConfigContext);
+    const config = (0, _react.useMemo)(()=>{
+        const c = configEnv || configContext || _imageconfig.imageConfigDefault;
+        const allSizes = [
+            ...c.deviceSizes,
+            ...c.imageSizes
+        ].sort((a, b)=>a - b);
+        const deviceSizes = c.deviceSizes.sort((a, b)=>a - b);
+        const qualities = c.qualities?.sort((a, b)=>a - b);
+        return {
+            ...c,
+            allSizes,
+            deviceSizes,
+            qualities,
+            // During the SSR, configEnv (__NEXT_IMAGE_OPTS) does not include
+            // security sensitive configs like `localPatterns`, which is needed
+            // during the server render to ensure it's validated. Therefore use
+            // configContext, which holds the config from the server for validation.
+            localPatterns: typeof window === 'undefined' ? configContext?.localPatterns : c.localPatterns
+        };
+    }, [
+        configContext
+    ]);
+    const { onLoad, onLoadingComplete } = props;
+    const onLoadRef = (0, _react.useRef)(onLoad);
+    (0, _react.useEffect)(()=>{
+        onLoadRef.current = onLoad;
+    }, [
+        onLoad
+    ]);
+    const onLoadingCompleteRef = (0, _react.useRef)(onLoadingComplete);
+    (0, _react.useEffect)(()=>{
+        onLoadingCompleteRef.current = onLoadingComplete;
+    }, [
+        onLoadingComplete
+    ]);
+    const [blurComplete, setBlurComplete] = (0, _react.useState)(false);
+    const [showAltText, setShowAltText] = (0, _react.useState)(false);
+    const { props: imgAttributes, meta: imgMeta } = (0, _getimgprops.getImgProps)(props, {
+        defaultLoader: _imageloader.default,
+        imgConf: config,
+        blurComplete,
+        showAltText
+    });
+    return /*#__PURE__*/ (0, _jsxruntime.jsxs)(_jsxruntime.Fragment, {
+        children: [
+            /*#__PURE__*/ (0, _jsxruntime.jsx)(ImageElement, {
+                ...imgAttributes,
+                unoptimized: imgMeta.unoptimized,
+                placeholder: imgMeta.placeholder,
+                fill: imgMeta.fill,
+                onLoadRef: onLoadRef,
+                onLoadingCompleteRef: onLoadingCompleteRef,
+                setBlurComplete: setBlurComplete,
+                setShowAltText: setShowAltText,
+                sizesInput: props.sizes,
+                ref: forwardedRef
+            }),
+            imgMeta.preload ? /*#__PURE__*/ (0, _jsxruntime.jsx)(ImagePreload, {
+                isAppRouter: isAppRouter,
+                imgAttributes: imgAttributes
+            }) : null
+        ]
+    });
+});
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=image-component.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/image-external.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    default: null,
+    getImageProps: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    default: function() {
+        return _default;
+    },
+    getImageProps: function() {
+        return getImageProps;
+    }
+});
+const _interop_require_default = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
+const _getimgprops = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/get-img-props.js [app-client] (ecmascript)");
+const _imagecomponent = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/client/image-component.js [app-client] (ecmascript)");
+const _imageloader = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/image-loader.js [app-client] (ecmascript)"));
+function getImageProps(imgProps) {
+    const { props } = (0, _getimgprops.getImgProps)(imgProps, {
+        defaultLoader: _imageloader.default,
+        // This is replaced by webpack define plugin
+        imgConf: ("TURBOPACK compile-time value", {
+            "deviceSizes": ("TURBOPACK compile-time value", [
+                ("TURBOPACK compile-time value", 640),
+                ("TURBOPACK compile-time value", 750),
+                ("TURBOPACK compile-time value", 828),
+                ("TURBOPACK compile-time value", 1080),
+                ("TURBOPACK compile-time value", 1200),
+                ("TURBOPACK compile-time value", 1920),
+                ("TURBOPACK compile-time value", 2048),
+                ("TURBOPACK compile-time value", 3840)
+            ]),
+            "imageSizes": ("TURBOPACK compile-time value", [
+                ("TURBOPACK compile-time value", 32),
+                ("TURBOPACK compile-time value", 48),
+                ("TURBOPACK compile-time value", 64),
+                ("TURBOPACK compile-time value", 96),
+                ("TURBOPACK compile-time value", 128),
+                ("TURBOPACK compile-time value", 256),
+                ("TURBOPACK compile-time value", 384)
+            ]),
+            "qualities": ("TURBOPACK compile-time value", [
+                ("TURBOPACK compile-time value", 75)
+            ]),
+            "path": ("TURBOPACK compile-time value", "/_next/image"),
+            "loader": ("TURBOPACK compile-time value", "default"),
+            "dangerouslyAllowSVG": ("TURBOPACK compile-time value", false),
+            "unoptimized": ("TURBOPACK compile-time value", true),
+            "domains": ("TURBOPACK compile-time value", []),
+            "remotePatterns": ("TURBOPACK compile-time value", []),
+            "localPatterns": ("TURBOPACK compile-time value", [
+                ("TURBOPACK compile-time value", {
+                    "pathname": ("TURBOPACK compile-time value", "**"),
+                    "search": ("TURBOPACK compile-time value", "")
+                })
+            ]),
+            "output": ("TURBOPACK compile-time value", "export")
+        })
+    });
+    // Normally we don't care about undefined props because we pass to JSX,
+    // but this exported function could be used by the end user for anything
+    // so we delete undefined props to clean it up a little.
+    for (const [key, value] of Object.entries(props)){
+        if (value === undefined) {
+            delete props[key];
+        }
+    }
+    return {
+        props
+    };
+}
+const _default = _imagecomponent.Image; //# sourceMappingURL=image-external.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/image.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+module.exports = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/image-external.js [app-client] (ecmascript)");
+}),
+"[project]/seva-hr-landing/node_modules/lodash.throttle/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */ /** Used as the `TypeError` message for "Functions" methods. */ var FUNC_ERROR_TEXT = 'Expected a function';
+/** Used as references for various `Number` constants. */ var NAN = 0 / 0;
+/** `Object#toString` result references. */ var symbolTag = '[object Symbol]';
+/** Used to match leading and trailing whitespace. */ var reTrim = /^\s+|\s+$/g;
+/** Used to detect bad signed hexadecimal string values. */ var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+/** Used to detect binary string values. */ var reIsBinary = /^0b[01]+$/i;
+/** Used to detect octal string values. */ var reIsOctal = /^0o[0-7]+$/i;
+/** Built-in method references without a dependency on `root`. */ var freeParseInt = parseInt;
+/** Detect free variable `global` from Node.js. */ var freeGlobal = ("TURBOPACK compile-time value", "object") == 'object' && /*TURBOPACK member replacement*/ __turbopack_context__.g && /*TURBOPACK member replacement*/ __turbopack_context__.g.Object === Object && /*TURBOPACK member replacement*/ __turbopack_context__.g;
+/** Detect free variable `self`. */ var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+/** Used as a reference to the global object. */ var root = freeGlobal || freeSelf || Function('return this')();
+/** Used for built-in method references. */ var objectProto = Object.prototype;
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */ var objectToString = objectProto.toString;
+/* Built-in method references for those with the same name as other `lodash` methods. */ var nativeMax = Math.max, nativeMin = Math.min;
+/**
+ * Gets the timestamp of the number of milliseconds that have elapsed since
+ * the Unix epoch (1 January 1970 00:00:00 UTC).
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Date
+ * @returns {number} Returns the timestamp.
+ * @example
+ *
+ * _.defer(function(stamp) {
+ *   console.log(_.now() - stamp);
+ * }, _.now());
+ * // => Logs the number of milliseconds it took for the deferred invocation.
+ */ var now = function() {
+    return root.Date.now();
+};
+/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was
+ * invoked. The debounced function comes with a `cancel` method to cancel
+ * delayed `func` invocations and a `flush` method to immediately invoke them.
+ * Provide `options` to indicate whether `func` should be invoked on the
+ * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
+ * with the last arguments provided to the debounced function. Subsequent
+ * calls to the debounced function return the result of the last `func`
+ * invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the debounced function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.debounce` and `_.throttle`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to debounce.
+ * @param {number} [wait=0] The number of milliseconds to delay.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=false]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {number} [options.maxWait]
+ *  The maximum time `func` is allowed to be delayed before it's invoked.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new debounced function.
+ * @example
+ *
+ * // Avoid costly calculations while the window size is in flux.
+ * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+ *
+ * // Invoke `sendMail` when clicked, debouncing subsequent calls.
+ * jQuery(element).on('click', _.debounce(sendMail, 300, {
+ *   'leading': true,
+ *   'trailing': false
+ * }));
+ *
+ * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
+ * var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
+ * var source = new EventSource('/stream');
+ * jQuery(source).on('message', debounced);
+ *
+ * // Cancel the trailing debounced invocation.
+ * jQuery(window).on('popstate', debounced.cancel);
+ */ function debounce(func, wait, options) {
+    var lastArgs, lastThis, maxWait, result, timerId, lastCallTime, lastInvokeTime = 0, leading = false, maxing = false, trailing = true;
+    if (typeof func != 'function') {
+        throw new TypeError(FUNC_ERROR_TEXT);
+    }
+    wait = toNumber(wait) || 0;
+    if (isObject(options)) {
+        leading = !!options.leading;
+        maxing = 'maxWait' in options;
+        maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
+        trailing = 'trailing' in options ? !!options.trailing : trailing;
+    }
+    function invokeFunc(time) {
+        var args = lastArgs, thisArg = lastThis;
+        lastArgs = lastThis = undefined;
+        lastInvokeTime = time;
+        result = func.apply(thisArg, args);
+        return result;
+    }
+    function leadingEdge(time) {
+        // Reset any `maxWait` timer.
+        lastInvokeTime = time;
+        // Start the timer for the trailing edge.
+        timerId = setTimeout(timerExpired, wait);
+        // Invoke the leading edge.
+        return leading ? invokeFunc(time) : result;
+    }
+    function remainingWait(time) {
+        var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime, result = wait - timeSinceLastCall;
+        return maxing ? nativeMin(result, maxWait - timeSinceLastInvoke) : result;
+    }
+    function shouldInvoke(time) {
+        var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime;
+        // Either this is the first call, activity has stopped and we're at the
+        // trailing edge, the system time has gone backwards and we're treating
+        // it as the trailing edge, or we've hit the `maxWait` limit.
+        return lastCallTime === undefined || timeSinceLastCall >= wait || timeSinceLastCall < 0 || maxing && timeSinceLastInvoke >= maxWait;
+    }
+    function timerExpired() {
+        var time = now();
+        if (shouldInvoke(time)) {
+            return trailingEdge(time);
+        }
+        // Restart the timer.
+        timerId = setTimeout(timerExpired, remainingWait(time));
+    }
+    function trailingEdge(time) {
+        timerId = undefined;
+        // Only invoke if we have `lastArgs` which means `func` has been
+        // debounced at least once.
+        if (trailing && lastArgs) {
+            return invokeFunc(time);
+        }
+        lastArgs = lastThis = undefined;
+        return result;
+    }
+    function cancel() {
+        if (timerId !== undefined) {
+            clearTimeout(timerId);
+        }
+        lastInvokeTime = 0;
+        lastArgs = lastCallTime = lastThis = timerId = undefined;
+    }
+    function flush() {
+        return timerId === undefined ? result : trailingEdge(now());
+    }
+    function debounced() {
+        var time = now(), isInvoking = shouldInvoke(time);
+        lastArgs = arguments;
+        lastThis = this;
+        lastCallTime = time;
+        if (isInvoking) {
+            if (timerId === undefined) {
+                return leadingEdge(lastCallTime);
+            }
+            if (maxing) {
+                // Handle invocations in a tight loop.
+                timerId = setTimeout(timerExpired, wait);
+                return invokeFunc(lastCallTime);
+            }
+        }
+        if (timerId === undefined) {
+            timerId = setTimeout(timerExpired, wait);
+        }
+        return result;
+    }
+    debounced.cancel = cancel;
+    debounced.flush = flush;
+    return debounced;
+}
+/**
+ * Creates a throttled function that only invokes `func` at most once per
+ * every `wait` milliseconds. The throttled function comes with a `cancel`
+ * method to cancel delayed `func` invocations and a `flush` method to
+ * immediately invoke them. Provide `options` to indicate whether `func`
+ * should be invoked on the leading and/or trailing edge of the `wait`
+ * timeout. The `func` is invoked with the last arguments provided to the
+ * throttled function. Subsequent calls to the throttled function return the
+ * result of the last `func` invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the throttled function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.throttle` and `_.debounce`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to throttle.
+ * @param {number} [wait=0] The number of milliseconds to throttle invocations to.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=true]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new throttled function.
+ * @example
+ *
+ * // Avoid excessively updating the position while scrolling.
+ * jQuery(window).on('scroll', _.throttle(updatePosition, 100));
+ *
+ * // Invoke `renewToken` when the click event is fired, but not more than once every 5 minutes.
+ * var throttled = _.throttle(renewToken, 300000, { 'trailing': false });
+ * jQuery(element).on('click', throttled);
+ *
+ * // Cancel the trailing throttled invocation.
+ * jQuery(window).on('popstate', throttled.cancel);
+ */ function throttle(func, wait, options) {
+    var leading = true, trailing = true;
+    if (typeof func != 'function') {
+        throw new TypeError(FUNC_ERROR_TEXT);
+    }
+    if (isObject(options)) {
+        leading = 'leading' in options ? !!options.leading : leading;
+        trailing = 'trailing' in options ? !!options.trailing : trailing;
+    }
+    return debounce(func, wait, {
+        'leading': leading,
+        'maxWait': wait,
+        'trailing': trailing
+    });
+}
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */ function isObject(value) {
+    var type = typeof value;
+    return !!value && (type == 'object' || type == 'function');
+}
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */ function isObjectLike(value) {
+    return !!value && typeof value == 'object';
+}
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */ function isSymbol(value) {
+    return typeof value == 'symbol' || isObjectLike(value) && objectToString.call(value) == symbolTag;
+}
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */ function toNumber(value) {
+    if (typeof value == 'number') {
+        return value;
+    }
+    if (isSymbol(value)) {
+        return NAN;
+    }
+    if (isObject(value)) {
+        var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+        value = isObject(other) ? other + '' : other;
+    }
+    if (typeof value != 'string') {
+        return value === 0 ? value : +value;
+    }
+    value = value.replace(reTrim, '');
+    var isBinary = reIsBinary.test(value);
+    return isBinary || reIsOctal.test(value) ? freeParseInt(value.slice(2), isBinary ? 2 : 8) : reIsBadHex.test(value) ? NAN : +value;
+}
+module.exports = throttle;
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/passive-event-listeners.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+/*
+ * Tell the browser that the event listener won't prevent a scroll.
+ * Allowing the browser to continue scrolling without having to
+ * to wait for the listener to return.
+ */ var addPassiveEventListener = exports.addPassiveEventListener = function addPassiveEventListener(target, eventName, listener) {
+    var listenerName = listener.name;
+    if (!listenerName) {
+        listenerName = eventName;
+        console.warn('Listener must be a named function.');
+    }
+    if (!attachedListeners.has(eventName)) attachedListeners.set(eventName, new Set());
+    var listeners = attachedListeners.get(eventName);
+    if (listeners.has(listenerName)) return;
+    var supportsPassiveOption = function() {
+        var supportsPassiveOption = false;
+        try {
+            var opts = Object.defineProperty({}, 'passive', {
+                get: function get() {
+                    supportsPassiveOption = true;
+                }
+            });
+            window.addEventListener('test', null, opts);
+        } catch (e) {}
+        return supportsPassiveOption;
+    }();
+    target.addEventListener(eventName, listener, supportsPassiveOption ? {
+        passive: true
+    } : false);
+    listeners.add(listenerName);
+};
+var removePassiveEventListener = exports.removePassiveEventListener = function removePassiveEventListener(target, eventName, listener) {
+    target.removeEventListener(eventName, listener);
+    attachedListeners.get(eventName).delete(listener.name || eventName);
+};
+var attachedListeners = new Map();
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-spy.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _lodash = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/lodash.throttle/index.js [app-client] (ecmascript)");
+var _lodash2 = _interopRequireDefault(_lodash);
+var _passiveEventListeners = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/passive-event-listeners.js [app-client] (ecmascript)");
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+// The eventHandler will execute at a rate of 15fps by default
+var eventThrottler = function eventThrottler(eventHandler) {
+    var throttleAmount = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 66;
+    return (0, _lodash2.default)(eventHandler, throttleAmount);
+};
+var scrollSpy = {
+    spyCallbacks: [],
+    spySetState: [],
+    scrollSpyContainers: [],
+    mount: function mount(scrollSpyContainer, throttle) {
+        if (scrollSpyContainer) {
+            var eventHandler = eventThrottler(function(event) {
+                scrollSpy.scrollHandler(scrollSpyContainer);
+            }, throttle);
+            scrollSpy.scrollSpyContainers.push(scrollSpyContainer);
+            (0, _passiveEventListeners.addPassiveEventListener)(scrollSpyContainer, 'scroll', eventHandler);
+            return function() {
+                (0, _passiveEventListeners.removePassiveEventListener)(scrollSpyContainer, 'scroll', eventHandler);
+                scrollSpy.scrollSpyContainers.splice(scrollSpy.scrollSpyContainers.indexOf(scrollSpyContainer), 1);
+            };
+        }
+        return function() {};
+    },
+    isMounted: function isMounted(scrollSpyContainer) {
+        return scrollSpy.scrollSpyContainers.indexOf(scrollSpyContainer) !== -1;
+    },
+    currentPositionX: function currentPositionX(scrollSpyContainer) {
+        if (scrollSpyContainer === document) {
+            var supportPageOffset = window.scrollY !== undefined;
+            var isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
+            return supportPageOffset ? window.scrollX : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft;
+        } else {
+            return scrollSpyContainer.scrollLeft;
+        }
+    },
+    currentPositionY: function currentPositionY(scrollSpyContainer) {
+        if (scrollSpyContainer === document) {
+            var supportPageOffset = window.scrollX !== undefined;
+            var isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
+            return supportPageOffset ? window.scrollY : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+        } else {
+            return scrollSpyContainer.scrollTop;
+        }
+    },
+    scrollHandler: function scrollHandler(scrollSpyContainer) {
+        var callbacks = scrollSpy.scrollSpyContainers[scrollSpy.scrollSpyContainers.indexOf(scrollSpyContainer)].spyCallbacks || [];
+        callbacks.forEach(function(c) {
+            return c(scrollSpy.currentPositionX(scrollSpyContainer), scrollSpy.currentPositionY(scrollSpyContainer));
+        });
+    },
+    addStateHandler: function addStateHandler(handler) {
+        scrollSpy.spySetState.push(handler);
+    },
+    addSpyHandler: function addSpyHandler(handler, scrollSpyContainer) {
+        var container = scrollSpy.scrollSpyContainers[scrollSpy.scrollSpyContainers.indexOf(scrollSpyContainer)];
+        if (!container.spyCallbacks) {
+            container.spyCallbacks = [];
+        }
+        container.spyCallbacks.push(handler);
+    },
+    updateStates: function updateStates() {
+        scrollSpy.spySetState.forEach(function(s) {
+            return s();
+        });
+    },
+    unmount: function unmount(stateHandler, spyHandler) {
+        scrollSpy.scrollSpyContainers.forEach(function(c) {
+            return c.spyCallbacks && c.spyCallbacks.length && c.spyCallbacks.indexOf(spyHandler) > -1 && c.spyCallbacks.splice(c.spyCallbacks.indexOf(spyHandler), 1);
+        });
+        if (scrollSpy.spySetState && scrollSpy.spySetState.length && scrollSpy.spySetState.indexOf(stateHandler) > -1) {
+            scrollSpy.spySetState.splice(scrollSpy.spySetState.indexOf(stateHandler), 1);
+        }
+        document.removeEventListener('scroll', scrollSpy.scrollHandler);
+    },
+    update: function update() {
+        return scrollSpy.scrollSpyContainers.forEach(function(c) {
+            return scrollSpy.scrollHandler(c);
+        });
+    }
+};
+exports.default = scrollSpy;
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/utils.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var updateHash = function updateHash(hash, historyUpdate) {
+    var hashVal = hash.indexOf("#") === 0 ? hash.substring(1) : hash;
+    var hashToUpdate = hashVal ? "#" + hashVal : "";
+    var curLoc = window && window.location;
+    var urlToPush = hashToUpdate ? curLoc.pathname + curLoc.search + hashToUpdate : curLoc.pathname + curLoc.search;
+    historyUpdate ? history.pushState(history.state, "", urlToPush) : history.replaceState(history.state, "", urlToPush);
+};
+var getHash = function getHash() {
+    return window.location.hash.replace(/^#/, "");
+};
+var filterElementInContainer = function filterElementInContainer(container) {
+    return function(element) {
+        return container.contains ? container != element && container.contains(element) : !!(container.compareDocumentPosition(element) & 16);
+    };
+};
+var isPositioned = function isPositioned(element) {
+    return getComputedStyle(element).position !== "static";
+};
+var getElementOffsetInfoUntil = function getElementOffsetInfoUntil(element, predicate) {
+    var offsetTop = element.offsetTop;
+    var currentOffsetParent = element.offsetParent;
+    while(currentOffsetParent && !predicate(currentOffsetParent)){
+        offsetTop += currentOffsetParent.offsetTop;
+        currentOffsetParent = currentOffsetParent.offsetParent;
+    }
+    return {
+        offsetTop: offsetTop,
+        offsetParent: currentOffsetParent
+    };
+};
+var scrollOffset = function scrollOffset(c, t, horizontal) {
+    if (horizontal) {
+        return c === document ? t.getBoundingClientRect().left + (window.scrollX || window.pageXOffset) : getComputedStyle(c).position !== "static" ? t.offsetLeft : t.offsetLeft - c.offsetLeft;
+    } else {
+        if (c === document) {
+            return t.getBoundingClientRect().top + (window.scrollY || window.pageYOffset);
+        }
+        // The offsetParent of an element, according to MDN, is its nearest positioned
+        // (an element whose position is anything other than static) ancestor. The offsetTop
+        // of an element is taken with respect to its offsetParent which may not neccessarily
+        // be its parentElement except the parent itself is positioned.
+        // So if containerElement is positioned, then it must be an offsetParent somewhere
+        // If it happens that targetElement is a descendant of the containerElement, and there
+        // is not intermediate positioned element between the two of them, i.e.
+        // targetElement"s offsetParent is the same as the containerElement, then the
+        // distance between the two will be the offsetTop of the targetElement.
+        // If, on the other hand, there are intermediate positioned elements between the
+        // two entities, the distance between the targetElement and the containerElement
+        // will be the accumulation of the offsetTop of the element and that of its
+        // subsequent offsetParent until the containerElement is reached, since it
+        // will also be an offsetParent at some point due to the fact that it is positioned.
+        // If the containerElement is not positioned, then it can"t be an offsetParent,
+        // which means that the offsetTop of the targetElement would not be with respect to it.
+        // However, if the two of them happen to have the same offsetParent, then
+        // the distance between them will be the difference between their offsetTop
+        // since they are both taken with respect to the same entity.
+        // The last resort would be to accumulate their offsetTop until a common
+        // offsetParent is reached (usually the document) and taking the difference
+        // between the accumulated offsetTops
+        if (isPositioned(c)) {
+            if (t.offsetParent !== c) {
+                var isContainerElementOrDocument = function isContainerElementOrDocument(e) {
+                    return e === c || e === document;
+                };
+                var _getElementOffsetInfo = getElementOffsetInfoUntil(t, isContainerElementOrDocument), offsetTop = _getElementOffsetInfo.offsetTop, offsetParent = _getElementOffsetInfo.offsetParent;
+                if (offsetParent !== c) {
+                    throw new Error("Seems containerElement is not an ancestor of the Element");
+                }
+                return offsetTop;
+            }
+            return t.offsetTop;
+        }
+        if (t.offsetParent === c.offsetParent) {
+            return t.offsetTop - c.offsetTop;
+        }
+        var isDocument = function isDocument(e) {
+            return e === document;
+        };
+        return getElementOffsetInfoUntil(t, isDocument).offsetTop - getElementOffsetInfoUntil(c, isDocument).offsetTop;
+    }
+};
+exports.default = {
+    updateHash: updateHash,
+    getHash: getHash,
+    filterElementInContainer: filterElementInContainer,
+    scrollOffset: scrollOffset
+};
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/smooth.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    /*
+   * https://github.com/oblador/angular-scroll (duScrollDefaultEasing)
+   */ defaultEasing: function defaultEasing(x) {
+        if (x < 0.5) {
+            return Math.pow(x * 2, 2) / 2;
+        }
+        return 1 - Math.pow((1 - x) * 2, 2) / 2;
+    },
+    /*
+   * https://gist.github.com/gre/1650294
+   */ // no easing, no acceleration
+    linear: function linear(x) {
+        return x;
+    },
+    // accelerating from zero velocity
+    easeInQuad: function easeInQuad(x) {
+        return x * x;
+    },
+    // decelerating to zero velocity
+    easeOutQuad: function easeOutQuad(x) {
+        return x * (2 - x);
+    },
+    // acceleration until halfway, then deceleration
+    easeInOutQuad: function easeInOutQuad(x) {
+        return x < .5 ? 2 * x * x : -1 + (4 - 2 * x) * x;
+    },
+    // accelerating from zero velocity 
+    easeInCubic: function easeInCubic(x) {
+        return x * x * x;
+    },
+    // decelerating to zero velocity π
+    easeOutCubic: function easeOutCubic(x) {
+        return --x * x * x + 1;
+    },
+    // acceleration until halfway, then deceleration 
+    easeInOutCubic: function easeInOutCubic(x) {
+        return x < .5 ? 4 * x * x * x : (x - 1) * (2 * x - 2) * (2 * x - 2) + 1;
+    },
+    // accelerating from zero velocity 
+    easeInQuart: function easeInQuart(x) {
+        return x * x * x * x;
+    },
+    // decelerating to zero velocity 
+    easeOutQuart: function easeOutQuart(x) {
+        return 1 - --x * x * x * x;
+    },
+    // acceleration until halfway, then deceleration
+    easeInOutQuart: function easeInOutQuart(x) {
+        return x < .5 ? 8 * x * x * x * x : 1 - 8 * --x * x * x * x;
+    },
+    // accelerating from zero velocity
+    easeInQuint: function easeInQuint(x) {
+        return x * x * x * x * x;
+    },
+    // decelerating to zero velocity
+    easeOutQuint: function easeOutQuint(x) {
+        return 1 + --x * x * x * x * x;
+    },
+    // acceleration until halfway, then deceleration 
+    easeInOutQuint: function easeInOutQuint(x) {
+        return x < .5 ? 16 * x * x * x * x * x : 1 + 16 * --x * x * x * x * x;
+    }
+};
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/cancel-events.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _passiveEventListeners = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/passive-event-listeners.js [app-client] (ecmascript)");
+var events = [
+    'mousedown',
+    'wheel',
+    'touchmove',
+    'keydown'
+];
+exports.default = {
+    subscribe: function subscribe(cancelEvent) {
+        return typeof document !== 'undefined' && events.forEach(function(event) {
+            return (0, _passiveEventListeners.addPassiveEventListener)(document, event, cancelEvent);
+        });
+    }
+};
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-events.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var Events = {
+    registered: {},
+    scrollEvent: {
+        register: function register(evtName, callback) {
+            Events.registered[evtName] = callback;
+        },
+        remove: function remove(evtName) {
+            Events.registered[evtName] = null;
+        }
+    }
+};
+exports.default = Events;
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/animate-scroll.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _extends = Object.assign || function(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = arguments[i];
+        for(var key in source){
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+                target[key] = source[key];
+            }
+        }
+    }
+    return target;
+};
+var _utils = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/utils.js [app-client] (ecmascript)");
+var _utils2 = _interopRequireDefault(_utils);
+var _smooth = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/smooth.js [app-client] (ecmascript)");
+var _smooth2 = _interopRequireDefault(_smooth);
+var _cancelEvents = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/cancel-events.js [app-client] (ecmascript)");
+var _cancelEvents2 = _interopRequireDefault(_cancelEvents);
+var _scrollEvents = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-events.js [app-client] (ecmascript)");
+var _scrollEvents2 = _interopRequireDefault(_scrollEvents);
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+/*
+ * Gets the easing type from the smooth prop within options.
+ */ var getAnimationType = function getAnimationType(options) {
+    return _smooth2.default[options.smooth] || _smooth2.default.defaultEasing;
+};
+/*
+ * Function helper
+ */ var functionWrapper = function functionWrapper(value) {
+    return typeof value === 'function' ? value : function() {
+        return value;
+    };
+};
+/*
+ * Wraps window properties to allow server side rendering
+ */ var currentWindowProperties = function currentWindowProperties() {
+    if (typeof window !== 'undefined') {
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame;
+    }
+};
+/*
+ * Helper function to never extend 60fps on the webpage.
+ */ var requestAnimationFrameHelper = function() {
+    return currentWindowProperties() || function(callback, element, delay) {
+        window.setTimeout(callback, delay || 1000 / 60, new Date().getTime());
+    };
+}();
+var makeData = function makeData() {
+    return {
+        currentPosition: 0,
+        startPosition: 0,
+        targetPosition: 0,
+        progress: 0,
+        duration: 0,
+        cancel: false,
+        target: null,
+        containerElement: null,
+        to: null,
+        start: null,
+        delta: null,
+        percent: null,
+        delayTimeout: null
+    };
+};
+var currentPositionX = function currentPositionX(options) {
+    var containerElement = options.data.containerElement;
+    if (containerElement && containerElement !== document && containerElement !== document.body) {
+        return containerElement.scrollLeft;
+    } else {
+        var supportPageOffset = window.pageXOffset !== undefined;
+        var isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
+        return supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft;
+    }
+};
+var currentPositionY = function currentPositionY(options) {
+    var containerElement = options.data.containerElement;
+    if (containerElement && containerElement !== document && containerElement !== document.body) {
+        return containerElement.scrollTop;
+    } else {
+        var supportPageOffset = window.pageXOffset !== undefined;
+        var isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
+        return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+    }
+};
+var scrollContainerWidth = function scrollContainerWidth(options) {
+    var containerElement = options.data.containerElement;
+    if (containerElement && containerElement !== document && containerElement !== document.body) {
+        return containerElement.scrollWidth - containerElement.offsetWidth;
+    } else {
+        var body = document.body;
+        var html = document.documentElement;
+        return Math.max(body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth);
+    }
+};
+var scrollContainerHeight = function scrollContainerHeight(options) {
+    var containerElement = options.data.containerElement;
+    if (containerElement && containerElement !== document && containerElement !== document.body) {
+        return containerElement.scrollHeight - containerElement.offsetHeight;
+    } else {
+        var body = document.body;
+        var html = document.documentElement;
+        return Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+    }
+};
+var animateScroll = function animateScroll(easing, options, timestamp) {
+    var data = options.data;
+    // Cancel on specific events
+    if (!options.ignoreCancelEvents && data.cancel) {
+        if (_scrollEvents2.default.registered['end']) {
+            _scrollEvents2.default.registered['end'](data.to, data.target, data.currentPositionY);
+        }
+        return;
+    }
+    ;
+    data.delta = Math.round(data.targetPosition - data.startPosition);
+    if (data.start === null) {
+        data.start = timestamp;
+    }
+    data.progress = timestamp - data.start;
+    data.percent = data.progress >= data.duration ? 1 : easing(data.progress / data.duration);
+    data.currentPosition = data.startPosition + Math.ceil(data.delta * data.percent);
+    if (data.containerElement && data.containerElement !== document && data.containerElement !== document.body) {
+        if (options.horizontal) {
+            data.containerElement.scrollLeft = data.currentPosition;
+        } else {
+            data.containerElement.scrollTop = data.currentPosition;
+        }
+    } else {
+        if (options.horizontal) {
+            window.scrollTo(data.currentPosition, 0);
+        } else {
+            window.scrollTo(0, data.currentPosition);
+        }
+    }
+    if (data.percent < 1) {
+        var easedAnimate = animateScroll.bind(null, easing, options);
+        requestAnimationFrameHelper.call(window, easedAnimate);
+        return;
+    }
+    if (_scrollEvents2.default.registered['end']) {
+        _scrollEvents2.default.registered['end'](data.to, data.target, data.currentPosition);
+    }
+};
+var setContainer = function setContainer(options) {
+    options.data.containerElement = !options ? null : options.containerId ? document.getElementById(options.containerId) : options.container && options.container.nodeType ? options.container : document;
+};
+var animateTopScroll = function animateTopScroll(scrollOffset, options, to, target) {
+    options.data = options.data || makeData();
+    window.clearTimeout(options.data.delayTimeout);
+    var setCancel = function setCancel() {
+        options.data.cancel = true;
+    };
+    _cancelEvents2.default.subscribe(setCancel);
+    setContainer(options);
+    options.data.start = null;
+    options.data.cancel = false;
+    options.data.startPosition = options.horizontal ? currentPositionX(options) : currentPositionY(options);
+    options.data.targetPosition = options.absolute ? scrollOffset : scrollOffset + options.data.startPosition;
+    if (options.data.startPosition === options.data.targetPosition) {
+        if (_scrollEvents2.default.registered['end']) {
+            _scrollEvents2.default.registered['end'](options.data.to, options.data.target, options.data.currentPosition);
+        }
+        return;
+    }
+    options.data.delta = Math.round(options.data.targetPosition - options.data.startPosition);
+    options.data.duration = functionWrapper(options.duration)(options.data.delta);
+    options.data.duration = isNaN(parseFloat(options.data.duration)) ? 1000 : parseFloat(options.data.duration);
+    options.data.to = to;
+    options.data.target = target;
+    var easing = getAnimationType(options);
+    var easedAnimate = animateScroll.bind(null, easing, options);
+    if (options && options.delay > 0) {
+        options.data.delayTimeout = window.setTimeout(function() {
+            if (_scrollEvents2.default.registered['begin']) {
+                _scrollEvents2.default.registered['begin'](options.data.to, options.data.target);
+            }
+            requestAnimationFrameHelper.call(window, easedAnimate);
+        }, options.delay);
+        return;
+    }
+    if (_scrollEvents2.default.registered['begin']) {
+        _scrollEvents2.default.registered['begin'](options.data.to, options.data.target);
+    }
+    requestAnimationFrameHelper.call(window, easedAnimate);
+};
+var proceedOptions = function proceedOptions(options) {
+    options = _extends({}, options);
+    options.data = options.data || makeData();
+    options.absolute = true;
+    return options;
+};
+var scrollToTop = function scrollToTop(options) {
+    animateTopScroll(0, proceedOptions(options));
+};
+var scrollTo = function scrollTo(toPosition, options) {
+    animateTopScroll(toPosition, proceedOptions(options));
+};
+var scrollToBottom = function scrollToBottom(options) {
+    options = proceedOptions(options);
+    setContainer(options);
+    animateTopScroll(options.horizontal ? scrollContainerWidth(options) : scrollContainerHeight(options), options);
+};
+var scrollMore = function scrollMore(toPosition, options) {
+    options = proceedOptions(options);
+    setContainer(options);
+    var currentPosition = options.horizontal ? currentPositionX(options) : currentPositionY(options);
+    animateTopScroll(toPosition + currentPosition, options);
+};
+exports.default = {
+    animateTopScroll: animateTopScroll,
+    getAnimationType: getAnimationType,
+    scrollToTop: scrollToTop,
+    scrollToBottom: scrollToBottom,
+    scrollTo: scrollTo,
+    scrollMore: scrollMore
+};
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroller.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _extends = Object.assign || function(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = arguments[i];
+        for(var key in source){
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+                target[key] = source[key];
+            }
+        }
+    }
+    return target;
+};
+var _utils = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/utils.js [app-client] (ecmascript)");
+var _utils2 = _interopRequireDefault(_utils);
+var _animateScroll = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/animate-scroll.js [app-client] (ecmascript)");
+var _animateScroll2 = _interopRequireDefault(_animateScroll);
+var _scrollEvents = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-events.js [app-client] (ecmascript)");
+var _scrollEvents2 = _interopRequireDefault(_scrollEvents);
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+var __mapped = {};
+var __activeLink = void 0;
+exports.default = {
+    unmount: function unmount() {
+        __mapped = {};
+    },
+    register: function register(name, element) {
+        __mapped[name] = element;
+    },
+    unregister: function unregister(name) {
+        delete __mapped[name];
+    },
+    get: function get(name) {
+        return __mapped[name] || document.getElementById(name) || document.getElementsByName(name)[0] || document.getElementsByClassName(name)[0];
+    },
+    setActiveLink: function setActiveLink(link) {
+        return __activeLink = link;
+    },
+    getActiveLink: function getActiveLink() {
+        return __activeLink;
+    },
+    scrollTo: function scrollTo(to, props) {
+        var target = this.get(to);
+        if (!target) {
+            console.warn("target Element not found");
+            return;
+        }
+        props = _extends({}, props, {
+            absolute: false
+        });
+        var containerId = props.containerId;
+        var container = props.container;
+        var containerElement = void 0;
+        if (containerId) {
+            containerElement = document.getElementById(containerId);
+        } else if (container && container.nodeType) {
+            containerElement = container;
+        } else {
+            containerElement = document;
+        }
+        props.absolute = true;
+        var horizontal = props.horizontal;
+        var scrollOffset = _utils2.default.scrollOffset(containerElement, target, horizontal) + (props.offset || 0);
+        /*
+     * if animate is not provided just scroll into the view
+     */ if (!props.smooth) {
+            if (_scrollEvents2.default.registered['begin']) {
+                _scrollEvents2.default.registered['begin'](to, target);
+            }
+            if (containerElement === document) {
+                if (props.horizontal) {
+                    window.scrollTo(scrollOffset, 0);
+                } else {
+                    window.scrollTo(0, scrollOffset);
+                }
+            } else {
+                containerElement.scrollTop = scrollOffset;
+            }
+            if (_scrollEvents2.default.registered['end']) {
+                _scrollEvents2.default.registered['end'](to, target);
+            }
+            return;
+        }
+        /*
+     * Animate scrolling
+     */ _animateScroll2.default.animateTopScroll(scrollOffset, props, to, target);
+    }
+};
+}),
+"[project]/seva-hr-landing/node_modules/react-is/cjs/react-is.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ 'use strict';
+if ("TURBOPACK compile-time truthy", 1) {
+    (function() {
+        'use strict';
+        // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+        // nor polyfill, then a plain number is used for performance.
+        var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+        var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+        var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+        var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+        var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+        var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+        var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+        var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+        // (unstable) APIs that have been removed. Can we remove the symbols?
+        var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+        var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+        var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+        var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+        var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+        var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+        var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+        var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+        var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+        var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+        var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+        function isValidElementType(type) {
+            return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+            type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+        }
+        function typeOf(object) {
+            if (typeof object === 'object' && object !== null) {
+                var $$typeof = object.$$typeof;
+                switch($$typeof){
+                    case REACT_ELEMENT_TYPE:
+                        var type = object.type;
+                        switch(type){
+                            case REACT_ASYNC_MODE_TYPE:
+                            case REACT_CONCURRENT_MODE_TYPE:
+                            case REACT_FRAGMENT_TYPE:
+                            case REACT_PROFILER_TYPE:
+                            case REACT_STRICT_MODE_TYPE:
+                            case REACT_SUSPENSE_TYPE:
+                                return type;
+                            default:
+                                var $$typeofType = type && type.$$typeof;
+                                switch($$typeofType){
+                                    case REACT_CONTEXT_TYPE:
+                                    case REACT_FORWARD_REF_TYPE:
+                                    case REACT_LAZY_TYPE:
+                                    case REACT_MEMO_TYPE:
+                                    case REACT_PROVIDER_TYPE:
+                                        return $$typeofType;
+                                    default:
+                                        return $$typeof;
+                                }
+                        }
+                    case REACT_PORTAL_TYPE:
+                        return $$typeof;
+                }
+            }
+            return undefined;
+        } // AsyncMode is deprecated along with isAsyncMode
+        var AsyncMode = REACT_ASYNC_MODE_TYPE;
+        var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+        var ContextConsumer = REACT_CONTEXT_TYPE;
+        var ContextProvider = REACT_PROVIDER_TYPE;
+        var Element = REACT_ELEMENT_TYPE;
+        var ForwardRef = REACT_FORWARD_REF_TYPE;
+        var Fragment = REACT_FRAGMENT_TYPE;
+        var Lazy = REACT_LAZY_TYPE;
+        var Memo = REACT_MEMO_TYPE;
+        var Portal = REACT_PORTAL_TYPE;
+        var Profiler = REACT_PROFILER_TYPE;
+        var StrictMode = REACT_STRICT_MODE_TYPE;
+        var Suspense = REACT_SUSPENSE_TYPE;
+        var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+        function isAsyncMode(object) {
+            {
+                if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+                    hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+                    console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+                }
+            }
+            return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+        }
+        function isConcurrentMode(object) {
+            return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+        }
+        function isContextConsumer(object) {
+            return typeOf(object) === REACT_CONTEXT_TYPE;
+        }
+        function isContextProvider(object) {
+            return typeOf(object) === REACT_PROVIDER_TYPE;
+        }
+        function isElement(object) {
+            return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+        }
+        function isForwardRef(object) {
+            return typeOf(object) === REACT_FORWARD_REF_TYPE;
+        }
+        function isFragment(object) {
+            return typeOf(object) === REACT_FRAGMENT_TYPE;
+        }
+        function isLazy(object) {
+            return typeOf(object) === REACT_LAZY_TYPE;
+        }
+        function isMemo(object) {
+            return typeOf(object) === REACT_MEMO_TYPE;
+        }
+        function isPortal(object) {
+            return typeOf(object) === REACT_PORTAL_TYPE;
+        }
+        function isProfiler(object) {
+            return typeOf(object) === REACT_PROFILER_TYPE;
+        }
+        function isStrictMode(object) {
+            return typeOf(object) === REACT_STRICT_MODE_TYPE;
+        }
+        function isSuspense(object) {
+            return typeOf(object) === REACT_SUSPENSE_TYPE;
+        }
+        exports.AsyncMode = AsyncMode;
+        exports.ConcurrentMode = ConcurrentMode;
+        exports.ContextConsumer = ContextConsumer;
+        exports.ContextProvider = ContextProvider;
+        exports.Element = Element;
+        exports.ForwardRef = ForwardRef;
+        exports.Fragment = Fragment;
+        exports.Lazy = Lazy;
+        exports.Memo = Memo;
+        exports.Portal = Portal;
+        exports.Profiler = Profiler;
+        exports.StrictMode = StrictMode;
+        exports.Suspense = Suspense;
+        exports.isAsyncMode = isAsyncMode;
+        exports.isConcurrentMode = isConcurrentMode;
+        exports.isContextConsumer = isContextConsumer;
+        exports.isContextProvider = isContextProvider;
+        exports.isElement = isElement;
+        exports.isForwardRef = isForwardRef;
+        exports.isFragment = isFragment;
+        exports.isLazy = isLazy;
+        exports.isMemo = isMemo;
+        exports.isPortal = isPortal;
+        exports.isProfiler = isProfiler;
+        exports.isStrictMode = isStrictMode;
+        exports.isSuspense = isSuspense;
+        exports.isValidElementType = isValidElementType;
+        exports.typeOf = typeOf;
+    })();
+}
+}),
+"[project]/seva-hr-landing/node_modules/react-is/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+'use strict';
+if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+;
+else {
+    module.exports = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-is/cjs/react-is.development.js [app-client] (ecmascript)");
+}
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/object-assign.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var assign = Object.assign.bind(Object);
+module.exports = assign;
+module.exports.default = module.exports; //# sourceMappingURL=object-assign.js.map
+}),
+"[project]/seva-hr-landing/node_modules/prop-types/lib/ReactPropTypesSecret.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+module.exports = ReactPropTypesSecret;
+}),
+"[project]/seva-hr-landing/node_modules/prop-types/lib/has.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
+}),
+"[project]/seva-hr-landing/node_modules/prop-types/checkPropTypes.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ 'use strict';
+var printWarning = function() {};
+if ("TURBOPACK compile-time truthy", 1) {
+    var ReactPropTypesSecret = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/prop-types/lib/ReactPropTypesSecret.js [app-client] (ecmascript)");
+    var loggedTypeFailures = {};
+    var has = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/prop-types/lib/has.js [app-client] (ecmascript)");
+    printWarning = function(text) {
+        var message = 'Warning: ' + text;
+        if (typeof console !== 'undefined') {
+            console.error(message);
+        }
+        try {
+            // --- Welcome to debugging React ---
+            // This error was thrown as a convenience so that you can use this stack
+            // to find the callsite that caused this warning to fire.
+            throw new Error(message);
+        } catch (x) {}
+    };
+}
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+    if ("TURBOPACK compile-time truthy", 1) {
+        for(var typeSpecName in typeSpecs){
+            if (has(typeSpecs, typeSpecName)) {
+                var error;
+                // Prop type validation may throw. In case they do, we don't want to
+                // fail the render phase where it didn't fail before. So we log it.
+                // After these have been cleaned up, we'll let them throw.
+                try {
+                    // This is intentionally an invariant that gets caught. It's the same
+                    // behavior as without this statement except with a better message.
+                    if (typeof typeSpecs[typeSpecName] !== 'function') {
+                        var err = Error((componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' + 'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' + 'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.');
+                        err.name = 'Invariant Violation';
+                        throw err;
+                    }
+                    error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+                } catch (ex) {
+                    error = ex;
+                }
+                if (error && !(error instanceof Error)) {
+                    printWarning((componentName || 'React class') + ': type specification of ' + location + ' `' + typeSpecName + '` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a ' + typeof error + '. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).');
+                }
+                if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+                    // Only monitor this failure once because there tends to be a lot of the
+                    // same error.
+                    loggedTypeFailures[error.message] = true;
+                    var stack = getStack ? getStack() : '';
+                    printWarning('Failed ' + location + ' type: ' + error.message + (stack != null ? stack : ''));
+                }
+            }
+        }
+    }
+}
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */ checkPropTypes.resetWarningCache = function() {
+    if (("TURBOPACK compile-time value", "development") !== 'production') {
+        loggedTypeFailures = {};
+    }
+};
+module.exports = checkPropTypes;
+}),
+"[project]/seva-hr-landing/node_modules/prop-types/factoryWithTypeCheckers.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ 'use strict';
+var ReactIs = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-is/index.js [app-client] (ecmascript)");
+var assign = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/object-assign.js [app-client] (ecmascript)");
+var ReactPropTypesSecret = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/prop-types/lib/ReactPropTypesSecret.js [app-client] (ecmascript)");
+var has = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/prop-types/lib/has.js [app-client] (ecmascript)");
+var checkPropTypes = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/prop-types/checkPropTypes.js [app-client] (ecmascript)");
+var printWarning = function() {};
+if ("TURBOPACK compile-time truthy", 1) {
+    printWarning = function(text) {
+        var message = 'Warning: ' + text;
+        if (typeof console !== 'undefined') {
+            console.error(message);
+        }
+        try {
+            // --- Welcome to debugging React ---
+            // This error was thrown as a convenience so that you can use this stack
+            // to find the callsite that caused this warning to fire.
+            throw new Error(message);
+        } catch (x) {}
+    };
+}
+function emptyFunctionThatReturnsNull() {
+    return null;
+}
+module.exports = function(isValidElement, throwOnDirectAccess) {
+    /* global Symbol */ var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+    var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+    /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */ function getIteratorFn(maybeIterable) {
+        var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+        if (typeof iteratorFn === 'function') {
+            return iteratorFn;
+        }
+    }
+    /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */ var ANONYMOUS = '<<anonymous>>';
+    // Important!
+    // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+    var ReactPropTypes = {
+        array: createPrimitiveTypeChecker('array'),
+        bigint: createPrimitiveTypeChecker('bigint'),
+        bool: createPrimitiveTypeChecker('boolean'),
+        func: createPrimitiveTypeChecker('function'),
+        number: createPrimitiveTypeChecker('number'),
+        object: createPrimitiveTypeChecker('object'),
+        string: createPrimitiveTypeChecker('string'),
+        symbol: createPrimitiveTypeChecker('symbol'),
+        any: createAnyTypeChecker(),
+        arrayOf: createArrayOfTypeChecker,
+        element: createElementTypeChecker(),
+        elementType: createElementTypeTypeChecker(),
+        instanceOf: createInstanceTypeChecker,
+        node: createNodeChecker(),
+        objectOf: createObjectOfTypeChecker,
+        oneOf: createEnumTypeChecker,
+        oneOfType: createUnionTypeChecker,
+        shape: createShapeTypeChecker,
+        exact: createStrictShapeTypeChecker
+    };
+    /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */ /*eslint-disable no-self-compare*/ function is(x, y) {
+        // SameValue algorithm
+        if (x === y) {
+            // Steps 1-5, 7-10
+            // Steps 6.b-6.e: +0 != -0
+            return x !== 0 || 1 / x === 1 / y;
+        } else {
+            // Step 6.a: NaN == NaN
+            return x !== x && y !== y;
+        }
+    }
+    /*eslint-enable no-self-compare*/ /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */ function PropTypeError(message, data) {
+        this.message = message;
+        this.data = data && typeof data === 'object' ? data : {};
+        this.stack = '';
+    }
+    // Make `instanceof Error` still work for returned errors.
+    PropTypeError.prototype = Error.prototype;
+    function createChainableTypeChecker(validate) {
+        if (("TURBOPACK compile-time value", "development") !== 'production') {
+            var manualPropTypeCallCache = {};
+            var manualPropTypeWarningCount = 0;
+        }
+        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+            componentName = componentName || ANONYMOUS;
+            propFullName = propFullName || propName;
+            if (secret !== ReactPropTypesSecret) {
+                if (throwOnDirectAccess) {
+                    // New behavior only for users of `prop-types` package
+                    var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use `PropTypes.checkPropTypes()` to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+                    err.name = 'Invariant Violation';
+                    throw err;
+                } else if (("TURBOPACK compile-time value", "development") !== 'production' && typeof console !== 'undefined') {
+                    // Old behavior for people using React.PropTypes
+                    var cacheKey = componentName + ':' + propName;
+                    if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
+                    manualPropTypeWarningCount < 3) {
+                        printWarning('You are manually calling a React.PropTypes validation ' + 'function for the `' + propFullName + '` prop on `' + componentName + '`. This is deprecated ' + 'and will throw in the standalone `prop-types` package. ' + 'You may be seeing this warning due to a third-party PropTypes ' + 'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.');
+                        manualPropTypeCallCache[cacheKey] = true;
+                        manualPropTypeWarningCount++;
+                    }
+                }
+            }
+            if (props[propName] == null) {
+                if (isRequired) {
+                    if (props[propName] === null) {
+                        return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+                    }
+                    return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+                }
+                return null;
+            } else {
+                return validate(props, propName, componentName, location, propFullName);
+            }
+        }
+        var chainedCheckType = checkType.bind(null, false);
+        chainedCheckType.isRequired = checkType.bind(null, true);
+        return chainedCheckType;
+    }
+    function createPrimitiveTypeChecker(expectedType) {
+        function validate(props, propName, componentName, location, propFullName, secret) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== expectedType) {
+                // `propValue` being instance of, say, date/regexp, pass the 'object'
+                // check, but we can offer a more precise error message here rather than
+                // 'of type `object`'.
+                var preciseType = getPreciseType(propValue);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'), {
+                    expectedType: expectedType
+                });
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createAnyTypeChecker() {
+        return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+    }
+    function createArrayOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== 'function') {
+                return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+            }
+            var propValue = props[propName];
+            if (!Array.isArray(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+            }
+            for(var i = 0; i < propValue.length; i++){
+                var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+                if (error instanceof Error) {
+                    return error;
+                }
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!isValidElement(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!ReactIs.isValidElementType(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createInstanceTypeChecker(expectedClass) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!(props[propName] instanceof expectedClass)) {
+                var expectedClassName = expectedClass.name || ANONYMOUS;
+                var actualClassName = getClassName(props[propName]);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createEnumTypeChecker(expectedValues) {
+        if (!Array.isArray(expectedValues)) {
+            if ("TURBOPACK compile-time truthy", 1) {
+                if (arguments.length > 1) {
+                    printWarning('Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' + 'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).');
+                } else {
+                    printWarning('Invalid argument supplied to oneOf, expected an array.');
+                }
+            }
+            return emptyFunctionThatReturnsNull;
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            for(var i = 0; i < expectedValues.length; i++){
+                if (is(propValue, expectedValues[i])) {
+                    return null;
+                }
+            }
+            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+                var type = getPreciseType(value);
+                if (type === 'symbol') {
+                    return String(value);
+                }
+                return value;
+            });
+            return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createObjectOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== 'function') {
+                return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+            }
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== 'object') {
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+            }
+            for(var key in propValue){
+                if (has(propValue, key)) {
+                    var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+                    if (error instanceof Error) {
+                        return error;
+                    }
+                }
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createUnionTypeChecker(arrayOfTypeCheckers) {
+        if (!Array.isArray(arrayOfTypeCheckers)) {
+            ("TURBOPACK compile-time truthy", 1) ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : "TURBOPACK unreachable";
+            return emptyFunctionThatReturnsNull;
+        }
+        for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+            var checker = arrayOfTypeCheckers[i];
+            if (typeof checker !== 'function') {
+                printWarning('Invalid argument supplied to oneOfType. Expected an array of check functions, but ' + 'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.');
+                return emptyFunctionThatReturnsNull;
+            }
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var expectedTypes = [];
+            for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+                var checker = arrayOfTypeCheckers[i];
+                var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+                if (checkerResult == null) {
+                    return null;
+                }
+                if (checkerResult.data && has(checkerResult.data, 'expectedType')) {
+                    expectedTypes.push(checkerResult.data.expectedType);
+                }
+            }
+            var expectedTypesMessage = expectedTypes.length > 0 ? ', expected one of type [' + expectedTypes.join(', ') + ']' : '';
+            return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`' + expectedTypesMessage + '.'));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createNodeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!isNode(props[propName])) {
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function invalidValidatorError(componentName, location, propFullName, key, type) {
+        return new PropTypeError((componentName || 'React class') + ': ' + location + ' type `' + propFullName + '.' + key + '` is invalid; ' + 'it must be a function, usually from the `prop-types` package, but received `' + type + '`.');
+    }
+    function createShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== 'object') {
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+            }
+            for(var key in shapeTypes){
+                var checker = shapeTypes[key];
+                if (typeof checker !== 'function') {
+                    return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                }
+                var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+                if (error) {
+                    return error;
+                }
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createStrictShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== 'object') {
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+            }
+            // We need to check all keys in case some are required but missing from props.
+            var allKeys = assign({}, props[propName], shapeTypes);
+            for(var key in allKeys){
+                var checker = shapeTypes[key];
+                if (has(shapeTypes, key) && typeof checker !== 'function') {
+                    return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                }
+                if (!checker) {
+                    return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' + '\nBad object: ' + JSON.stringify(props[propName], null, '  ') + '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  '));
+                }
+                var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+                if (error) {
+                    return error;
+                }
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function isNode(propValue) {
+        switch(typeof propValue){
+            case 'number':
+            case 'string':
+            case 'undefined':
+                return true;
+            case 'boolean':
+                return !propValue;
+            case 'object':
+                if (Array.isArray(propValue)) {
+                    return propValue.every(isNode);
+                }
+                if (propValue === null || isValidElement(propValue)) {
+                    return true;
+                }
+                var iteratorFn = getIteratorFn(propValue);
+                if (iteratorFn) {
+                    var iterator = iteratorFn.call(propValue);
+                    var step;
+                    if (iteratorFn !== propValue.entries) {
+                        while(!(step = iterator.next()).done){
+                            if (!isNode(step.value)) {
+                                return false;
+                            }
+                        }
+                    } else {
+                        // Iterator will provide entry [k,v] tuples rather than values.
+                        while(!(step = iterator.next()).done){
+                            var entry = step.value;
+                            if (entry) {
+                                if (!isNode(entry[1])) {
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    return false;
+                }
+                return true;
+            default:
+                return false;
+        }
+    }
+    function isSymbol(propType, propValue) {
+        // Native Symbol.
+        if (propType === 'symbol') {
+            return true;
+        }
+        // falsy value can't be a Symbol
+        if (!propValue) {
+            return false;
+        }
+        // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+        if (propValue['@@toStringTag'] === 'Symbol') {
+            return true;
+        }
+        // Fallback for non-spec compliant Symbols which are polyfilled.
+        if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+            return true;
+        }
+        return false;
+    }
+    // Equivalent of `typeof` but with special handling for array and regexp.
+    function getPropType(propValue) {
+        var propType = typeof propValue;
+        if (Array.isArray(propValue)) {
+            return 'array';
+        }
+        if (propValue instanceof RegExp) {
+            // Old webkits (at least until Android 4.0) return 'function' rather than
+            // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+            // passes PropTypes.object.
+            return 'object';
+        }
+        if (isSymbol(propType, propValue)) {
+            return 'symbol';
+        }
+        return propType;
+    }
+    // This handles more types than `getPropType`. Only used for error messages.
+    // See `createPrimitiveTypeChecker`.
+    function getPreciseType(propValue) {
+        if (typeof propValue === 'undefined' || propValue === null) {
+            return '' + propValue;
+        }
+        var propType = getPropType(propValue);
+        if (propType === 'object') {
+            if (propValue instanceof Date) {
+                return 'date';
+            } else if (propValue instanceof RegExp) {
+                return 'regexp';
+            }
+        }
+        return propType;
+    }
+    // Returns a string that is postfixed to a warning about an invalid type.
+    // For example, "undefined" or "of type array"
+    function getPostfixForTypeWarning(value) {
+        var type = getPreciseType(value);
+        switch(type){
+            case 'array':
+            case 'object':
+                return 'an ' + type;
+            case 'boolean':
+            case 'date':
+            case 'regexp':
+                return 'a ' + type;
+            default:
+                return type;
+        }
+    }
+    // Returns class name of the object, if any.
+    function getClassName(propValue) {
+        if (!propValue.constructor || !propValue.constructor.name) {
+            return ANONYMOUS;
+        }
+        return propValue.constructor.name;
+    }
+    ReactPropTypes.checkPropTypes = checkPropTypes;
+    ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+    ReactPropTypes.PropTypes = ReactPropTypes;
+    return ReactPropTypes;
+};
+}),
+"[project]/seva-hr-landing/node_modules/prop-types/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ if ("TURBOPACK compile-time truthy", 1) {
+    var ReactIs = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-is/index.js [app-client] (ecmascript)");
+    // By explicitly using `prop-types` you are opting into new development behavior.
+    // http://fb.me/prop-types-in-prod
+    var throwOnDirectAccess = true;
+    module.exports = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/prop-types/factoryWithTypeCheckers.js [app-client] (ecmascript)")(ReactIs.isElement, throwOnDirectAccess);
+} else //TURBOPACK unreachable
+;
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-hash.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _passiveEventListeners = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/passive-event-listeners.js [app-client] (ecmascript)");
+var _utils = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/utils.js [app-client] (ecmascript)");
+var _utils2 = _interopRequireDefault(_utils);
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+var scrollHash = {
+    mountFlag: false,
+    initialized: false,
+    scroller: null,
+    containers: {},
+    mount: function mount(scroller) {
+        this.scroller = scroller;
+        this.handleHashChange = this.handleHashChange.bind(this);
+        window.addEventListener('hashchange', this.handleHashChange);
+        this.initStateFromHash();
+        this.mountFlag = true;
+    },
+    mapContainer: function mapContainer(to, container) {
+        this.containers[to] = container;
+    },
+    isMounted: function isMounted() {
+        return this.mountFlag;
+    },
+    isInitialized: function isInitialized() {
+        return this.initialized;
+    },
+    initStateFromHash: function initStateFromHash() {
+        var _this = this;
+        var hash = this.getHash();
+        if (hash) {
+            window.setTimeout(function() {
+                _this.scrollTo(hash, true);
+                _this.initialized = true;
+            }, 10);
+        } else {
+            this.initialized = true;
+        }
+    },
+    scrollTo: function scrollTo(to, isInit) {
+        var scroller = this.scroller;
+        var element = scroller.get(to);
+        if (element && (isInit || to !== scroller.getActiveLink())) {
+            var container = this.containers[to] || document;
+            scroller.scrollTo(to, {
+                container: container
+            });
+        }
+    },
+    getHash: function getHash() {
+        return _utils2.default.getHash();
+    },
+    changeHash: function changeHash(to, saveHashHistory) {
+        if (this.isInitialized() && _utils2.default.getHash() !== to) {
+            _utils2.default.updateHash(to, saveHashHistory);
+        }
+    },
+    handleHashChange: function handleHashChange() {
+        this.scrollTo(this.getHash());
+    },
+    unmount: function unmount() {
+        this.scroller = null;
+        this.containers = null;
+        window.removeEventListener('hashchange', this.handleHashChange);
+    }
+};
+exports.default = scrollHash;
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-link.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _extends = Object.assign || function(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = arguments[i];
+        for(var key in source){
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+                target[key] = source[key];
+            }
+        }
+    }
+    return target;
+};
+var _createClass = function() {
+    function defineProperties(target, props) {
+        for(var i = 0; i < props.length; i++){
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }
+    return function(Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);
+        if (staticProps) defineProperties(Constructor, staticProps);
+        return Constructor;
+    };
+}();
+var _react = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var _react2 = _interopRequireDefault(_react);
+var _scrollSpy = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-spy.js [app-client] (ecmascript)");
+var _scrollSpy2 = _interopRequireDefault(_scrollSpy);
+var _scroller = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroller.js [app-client] (ecmascript)");
+var _scroller2 = _interopRequireDefault(_scroller);
+var _propTypes = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/prop-types/index.js [app-client] (ecmascript)");
+var _propTypes2 = _interopRequireDefault(_propTypes);
+var _scrollHash = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-hash.js [app-client] (ecmascript)");
+var _scrollHash2 = _interopRequireDefault(_scrollHash);
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function _possibleConstructorReturn(self, call) {
+    if (!self) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+var protoTypes = {
+    to: _propTypes2.default.string.isRequired,
+    containerId: _propTypes2.default.string,
+    container: _propTypes2.default.object,
+    activeClass: _propTypes2.default.string,
+    activeStyle: _propTypes2.default.object,
+    spy: _propTypes2.default.bool,
+    horizontal: _propTypes2.default.bool,
+    smooth: _propTypes2.default.oneOfType([
+        _propTypes2.default.bool,
+        _propTypes2.default.string
+    ]),
+    offset: _propTypes2.default.number,
+    delay: _propTypes2.default.number,
+    isDynamic: _propTypes2.default.bool,
+    onClick: _propTypes2.default.func,
+    duration: _propTypes2.default.oneOfType([
+        _propTypes2.default.number,
+        _propTypes2.default.func
+    ]),
+    absolute: _propTypes2.default.bool,
+    onSetActive: _propTypes2.default.func,
+    onSetInactive: _propTypes2.default.func,
+    ignoreCancelEvents: _propTypes2.default.bool,
+    hashSpy: _propTypes2.default.bool,
+    saveHashHistory: _propTypes2.default.bool,
+    spyThrottle: _propTypes2.default.number
+};
+exports.default = function(Component, customScroller) {
+    var scroller = customScroller || _scroller2.default;
+    var Link = function(_React$PureComponent) {
+        _inherits(Link, _React$PureComponent);
+        function Link(props) {
+            _classCallCheck(this, Link);
+            var _this = _possibleConstructorReturn(this, (Link.__proto__ || Object.getPrototypeOf(Link)).call(this, props));
+            _initialiseProps.call(_this);
+            _this.state = {
+                active: false
+            };
+            _this.beforeUnmountCallbacks = [];
+            return _this;
+        }
+        _createClass(Link, [
+            {
+                key: "getScrollSpyContainer",
+                value: function getScrollSpyContainer() {
+                    var containerId = this.props.containerId;
+                    var container = this.props.container;
+                    if (containerId && !container) {
+                        return document.getElementById(containerId);
+                    }
+                    if (container && container.nodeType) {
+                        return container;
+                    }
+                    return document;
+                }
+            },
+            {
+                key: "componentDidMount",
+                value: function componentDidMount() {
+                    if (this.props.spy || this.props.hashSpy) {
+                        var scrollSpyContainer = this.getScrollSpyContainer();
+                        if (!_scrollSpy2.default.isMounted(scrollSpyContainer)) {
+                            var fn = _scrollSpy2.default.mount(scrollSpyContainer, this.props.spyThrottle);
+                            this.beforeUnmountCallbacks.push(fn);
+                        }
+                        if (this.props.hashSpy) {
+                            if (!_scrollHash2.default.isMounted()) {
+                                _scrollHash2.default.mount(scroller);
+                            }
+                            _scrollHash2.default.mapContainer(this.props.to, scrollSpyContainer);
+                        }
+                        _scrollSpy2.default.addSpyHandler(this.spyHandler, scrollSpyContainer);
+                        this.setState({
+                            container: scrollSpyContainer
+                        });
+                    }
+                }
+            },
+            {
+                key: "componentWillUnmount",
+                value: function componentWillUnmount() {
+                    _scrollSpy2.default.unmount(this.stateHandler, this.spyHandler);
+                    this.beforeUnmountCallbacks.forEach(function(fn) {
+                        return fn();
+                    });
+                }
+            },
+            {
+                key: "render",
+                value: function render() {
+                    var className = "";
+                    if (this.state && this.state.active) {
+                        className = ((this.props.className || "") + " " + (this.props.activeClass || "active")).trim();
+                    } else {
+                        className = this.props.className;
+                    }
+                    var style = {};
+                    if (this.state && this.state.active) {
+                        style = _extends({}, this.props.style, this.props.activeStyle);
+                    } else {
+                        style = _extends({}, this.props.style);
+                    }
+                    var props = _extends({}, this.props);
+                    for(var prop in protoTypes){
+                        if (props.hasOwnProperty(prop)) {
+                            delete props[prop];
+                        }
+                    }
+                    props.className = className;
+                    props.style = style;
+                    props.onClick = this.handleClick;
+                    return _react2.default.createElement(Component, props);
+                }
+            }
+        ]);
+        return Link;
+    }(_react2.default.PureComponent);
+    var _initialiseProps = function _initialiseProps() {
+        var _this2 = this;
+        this.scrollTo = function(to, props) {
+            scroller.scrollTo(to, _extends({}, _this2.state, props));
+        };
+        this.handleClick = function(event) {
+            /*
+       * give the posibility to override onClick
+       */ if (_this2.props.onClick) {
+                _this2.props.onClick(event);
+            }
+            /*
+       * dont bubble the navigation
+       */ if (event.stopPropagation) event.stopPropagation();
+            if (event.preventDefault) event.preventDefault();
+            /*
+       * do the magic!
+       */ _this2.scrollTo(_this2.props.to, _this2.props);
+        };
+        this.spyHandler = function(x, y) {
+            var scrollSpyContainer = _this2.getScrollSpyContainer();
+            if (_scrollHash2.default.isMounted() && !_scrollHash2.default.isInitialized()) {
+                return;
+            }
+            var horizontal = _this2.props.horizontal;
+            var to = _this2.props.to;
+            var element = null;
+            var isInside = void 0;
+            var isOutside = void 0;
+            if (horizontal) {
+                var elemLeftBound = 0;
+                var elemRightBound = 0;
+                var containerLeft = 0;
+                if (scrollSpyContainer.getBoundingClientRect) {
+                    var containerCords = scrollSpyContainer.getBoundingClientRect();
+                    containerLeft = containerCords.left;
+                }
+                if (!element || _this2.props.isDynamic) {
+                    element = scroller.get(to);
+                    if (!element) {
+                        return;
+                    }
+                    var cords = element.getBoundingClientRect();
+                    elemLeftBound = cords.left - containerLeft + x;
+                    elemRightBound = elemLeftBound + cords.width;
+                }
+                var offsetX = x - _this2.props.offset;
+                isInside = offsetX >= Math.floor(elemLeftBound) && offsetX < Math.floor(elemRightBound);
+                isOutside = offsetX < Math.floor(elemLeftBound) || offsetX >= Math.floor(elemRightBound);
+            } else {
+                var elemTopBound = 0;
+                var elemBottomBound = 0;
+                var containerTop = 0;
+                if (scrollSpyContainer.getBoundingClientRect) {
+                    var _containerCords = scrollSpyContainer.getBoundingClientRect();
+                    containerTop = _containerCords.top;
+                }
+                if (!element || _this2.props.isDynamic) {
+                    element = scroller.get(to);
+                    if (!element) {
+                        return;
+                    }
+                    var _cords = element.getBoundingClientRect();
+                    elemTopBound = _cords.top - containerTop + y;
+                    elemBottomBound = elemTopBound + _cords.height;
+                }
+                var offsetY = y - _this2.props.offset;
+                isInside = offsetY >= Math.floor(elemTopBound) && offsetY < Math.floor(elemBottomBound);
+                isOutside = offsetY < Math.floor(elemTopBound) || offsetY >= Math.floor(elemBottomBound);
+            }
+            var activeLink = scroller.getActiveLink();
+            if (isOutside) {
+                if (to === activeLink) {
+                    scroller.setActiveLink(void 0);
+                }
+                if (_this2.props.hashSpy && _scrollHash2.default.getHash() === to) {
+                    var _props$saveHashHistor = _this2.props.saveHashHistory, saveHashHistory = _props$saveHashHistor === undefined ? false : _props$saveHashHistor;
+                    _scrollHash2.default.changeHash("", saveHashHistory);
+                }
+                if (_this2.props.spy && _this2.state.active) {
+                    _this2.setState({
+                        active: false
+                    });
+                    _this2.props.onSetInactive && _this2.props.onSetInactive(to, element);
+                }
+            }
+            if (isInside && (activeLink !== to || _this2.state.active === false)) {
+                scroller.setActiveLink(to);
+                var _props$saveHashHistor2 = _this2.props.saveHashHistory, _saveHashHistory = _props$saveHashHistor2 === undefined ? false : _props$saveHashHistor2;
+                _this2.props.hashSpy && _scrollHash2.default.changeHash(to, _saveHashHistory);
+                if (_this2.props.spy) {
+                    _this2.setState({
+                        active: true
+                    });
+                    _this2.props.onSetActive && _this2.props.onSetActive(to, element);
+                }
+            }
+        };
+    };
+    Link.propTypes = protoTypes;
+    Link.defaultProps = {
+        offset: 0
+    };
+    return Link;
+};
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/components/Link.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _react = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var _react2 = _interopRequireDefault(_react);
+var _scrollLink = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-link.js [app-client] (ecmascript)");
+var _scrollLink2 = _interopRequireDefault(_scrollLink);
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function _possibleConstructorReturn(self, call) {
+    if (!self) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+var LinkElement = function(_React$Component) {
+    _inherits(LinkElement, _React$Component);
+    function LinkElement() {
+        var _ref;
+        var _temp, _this, _ret;
+        _classCallCheck(this, LinkElement);
+        for(var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++){
+            args[_key] = arguments[_key];
+        }
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = LinkElement.__proto__ || Object.getPrototypeOf(LinkElement)).call.apply(_ref, [
+            this
+        ].concat(args))), _this), _this.render = function() {
+            return _react2.default.createElement('a', _this.props, _this.props.children);
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+    return LinkElement;
+}(_react2.default.Component);
+;
+exports.default = (0, _scrollLink2.default)(LinkElement);
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/components/Button.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _createClass = function() {
+    function defineProperties(target, props) {
+        for(var i = 0; i < props.length; i++){
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }
+    return function(Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);
+        if (staticProps) defineProperties(Constructor, staticProps);
+        return Constructor;
+    };
+}();
+var _react = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var _react2 = _interopRequireDefault(_react);
+var _scrollLink = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-link.js [app-client] (ecmascript)");
+var _scrollLink2 = _interopRequireDefault(_scrollLink);
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function _possibleConstructorReturn(self, call) {
+    if (!self) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+var ButtonElement = function(_React$Component) {
+    _inherits(ButtonElement, _React$Component);
+    function ButtonElement() {
+        _classCallCheck(this, ButtonElement);
+        return _possibleConstructorReturn(this, (ButtonElement.__proto__ || Object.getPrototypeOf(ButtonElement)).apply(this, arguments));
+    }
+    _createClass(ButtonElement, [
+        {
+            key: 'render',
+            value: function render() {
+                return _react2.default.createElement('button', this.props, this.props.children);
+            }
+        }
+    ]);
+    return ButtonElement;
+}(_react2.default.Component);
+;
+exports.default = (0, _scrollLink2.default)(ButtonElement);
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-element.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _extends = Object.assign || function(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = arguments[i];
+        for(var key in source){
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+                target[key] = source[key];
+            }
+        }
+    }
+    return target;
+};
+var _createClass = function() {
+    function defineProperties(target, props) {
+        for(var i = 0; i < props.length; i++){
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }
+    return function(Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);
+        if (staticProps) defineProperties(Constructor, staticProps);
+        return Constructor;
+    };
+}();
+var _react = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var _react2 = _interopRequireDefault(_react);
+var _reactDom = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react-dom/index.js [app-client] (ecmascript)");
+var _reactDom2 = _interopRequireDefault(_reactDom);
+var _scroller = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroller.js [app-client] (ecmascript)");
+var _scroller2 = _interopRequireDefault(_scroller);
+var _propTypes = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/prop-types/index.js [app-client] (ecmascript)");
+var _propTypes2 = _interopRequireDefault(_propTypes);
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function _possibleConstructorReturn(self, call) {
+    if (!self) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+exports.default = function(Component) {
+    var Element = function(_React$Component) {
+        _inherits(Element, _React$Component);
+        function Element(props) {
+            _classCallCheck(this, Element);
+            var _this = _possibleConstructorReturn(this, (Element.__proto__ || Object.getPrototypeOf(Element)).call(this, props));
+            _this.childBindings = {
+                domNode: null
+            };
+            return _this;
+        }
+        _createClass(Element, [
+            {
+                key: 'componentDidMount',
+                value: function componentDidMount() {
+                    if (typeof window === 'undefined') {
+                        return false;
+                    }
+                    this.registerElems(this.props.name);
+                }
+            },
+            {
+                key: 'componentDidUpdate',
+                value: function componentDidUpdate(prevProps) {
+                    if (this.props.name !== prevProps.name) {
+                        this.registerElems(this.props.name);
+                    }
+                }
+            },
+            {
+                key: 'componentWillUnmount',
+                value: function componentWillUnmount() {
+                    if (typeof window === 'undefined') {
+                        return false;
+                    }
+                    _scroller2.default.unregister(this.props.name);
+                }
+            },
+            {
+                key: 'registerElems',
+                value: function registerElems(name) {
+                    _scroller2.default.register(name, this.childBindings.domNode);
+                }
+            },
+            {
+                key: 'render',
+                value: function render() {
+                    return _react2.default.createElement(Component, _extends({}, this.props, {
+                        parentBindings: this.childBindings
+                    }));
+                }
+            }
+        ]);
+        return Element;
+    }(_react2.default.Component);
+    ;
+    Element.propTypes = {
+        name: _propTypes2.default.string,
+        id: _propTypes2.default.string
+    };
+    return Element;
+};
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/components/Element.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _extends = Object.assign || function(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = arguments[i];
+        for(var key in source){
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+                target[key] = source[key];
+            }
+        }
+    }
+    return target;
+};
+var _createClass = function() {
+    function defineProperties(target, props) {
+        for(var i = 0; i < props.length; i++){
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }
+    return function(Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);
+        if (staticProps) defineProperties(Constructor, staticProps);
+        return Constructor;
+    };
+}();
+var _react = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var _react2 = _interopRequireDefault(_react);
+var _scrollElement = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-element.js [app-client] (ecmascript)");
+var _scrollElement2 = _interopRequireDefault(_scrollElement);
+var _propTypes = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/prop-types/index.js [app-client] (ecmascript)");
+var _propTypes2 = _interopRequireDefault(_propTypes);
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function _possibleConstructorReturn(self, call) {
+    if (!self) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+var ElementWrapper = function(_React$Component) {
+    _inherits(ElementWrapper, _React$Component);
+    function ElementWrapper() {
+        _classCallCheck(this, ElementWrapper);
+        return _possibleConstructorReturn(this, (ElementWrapper.__proto__ || Object.getPrototypeOf(ElementWrapper)).apply(this, arguments));
+    }
+    _createClass(ElementWrapper, [
+        {
+            key: 'render',
+            value: function render() {
+                var _this2 = this;
+                // Remove `parentBindings` and `name` from props
+                var newProps = _extends({}, this.props);
+                delete newProps.name;
+                if (newProps.parentBindings) {
+                    delete newProps.parentBindings;
+                }
+                return _react2.default.createElement('div', _extends({}, newProps, {
+                    ref: function ref(el) {
+                        _this2.props.parentBindings.domNode = el;
+                    }
+                }), this.props.children);
+            }
+        }
+    ]);
+    return ElementWrapper;
+}(_react2.default.Component);
+;
+ElementWrapper.propTypes = {
+    name: _propTypes2.default.string,
+    id: _propTypes2.default.string
+};
+exports.default = (0, _scrollElement2.default)(ElementWrapper);
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/Helpers.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/* DEPRECATED */ var _extends = Object.assign || function(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = arguments[i];
+        for(var key in source){
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+                target[key] = source[key];
+            }
+        }
+    }
+    return target;
+};
+var _createClass = function() {
+    function defineProperties(target, props) {
+        for(var i = 0; i < props.length; i++){
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }
+    return function(Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);
+        if (staticProps) defineProperties(Constructor, staticProps);
+        return Constructor;
+    };
+}();
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function _possibleConstructorReturn(self, call) {
+    if (!self) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+var React = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var ReactDOM = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react-dom/index.js [app-client] (ecmascript)");
+var utils = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/utils.js [app-client] (ecmascript)");
+var scrollSpy = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-spy.js [app-client] (ecmascript)");
+var defaultScroller = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroller.js [app-client] (ecmascript)");
+var PropTypes = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/prop-types/index.js [app-client] (ecmascript)");
+var scrollHash = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-hash.js [app-client] (ecmascript)");
+var protoTypes = {
+    to: PropTypes.string.isRequired,
+    containerId: PropTypes.string,
+    container: PropTypes.object,
+    activeClass: PropTypes.string,
+    spy: PropTypes.bool,
+    smooth: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.string
+    ]),
+    offset: PropTypes.number,
+    delay: PropTypes.number,
+    isDynamic: PropTypes.bool,
+    onClick: PropTypes.func,
+    duration: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.func
+    ]),
+    absolute: PropTypes.bool,
+    onSetActive: PropTypes.func,
+    onSetInactive: PropTypes.func,
+    ignoreCancelEvents: PropTypes.bool,
+    hashSpy: PropTypes.bool,
+    spyThrottle: PropTypes.number
+};
+var Helpers = {
+    Scroll: function Scroll(Component, customScroller) {
+        console.warn("Helpers.Scroll is deprecated since v1.7.0");
+        var scroller = customScroller || defaultScroller;
+        var Scroll = function(_React$Component) {
+            _inherits(Scroll, _React$Component);
+            function Scroll(props) {
+                _classCallCheck(this, Scroll);
+                var _this = _possibleConstructorReturn(this, (Scroll.__proto__ || Object.getPrototypeOf(Scroll)).call(this, props));
+                _initialiseProps.call(_this);
+                _this.state = {
+                    active: false
+                };
+                return _this;
+            }
+            _createClass(Scroll, [
+                {
+                    key: 'getScrollSpyContainer',
+                    value: function getScrollSpyContainer() {
+                        var containerId = this.props.containerId;
+                        var container = this.props.container;
+                        if (containerId) {
+                            return document.getElementById(containerId);
+                        }
+                        if (container && container.nodeType) {
+                            return container;
+                        }
+                        return document;
+                    }
+                },
+                {
+                    key: 'componentDidMount',
+                    value: function componentDidMount() {
+                        if (this.props.spy || this.props.hashSpy) {
+                            var scrollSpyContainer = this.getScrollSpyContainer();
+                            if (!scrollSpy.isMounted(scrollSpyContainer)) {
+                                scrollSpy.mount(scrollSpyContainer, this.props.spyThrottle);
+                            }
+                            if (this.props.hashSpy) {
+                                if (!scrollHash.isMounted()) {
+                                    scrollHash.mount(scroller);
+                                }
+                                scrollHash.mapContainer(this.props.to, scrollSpyContainer);
+                            }
+                            if (this.props.spy) {
+                                scrollSpy.addStateHandler(this.stateHandler);
+                            }
+                            scrollSpy.addSpyHandler(this.spyHandler, scrollSpyContainer);
+                            this.setState({
+                                container: scrollSpyContainer
+                            });
+                        }
+                    }
+                },
+                {
+                    key: 'componentWillUnmount',
+                    value: function componentWillUnmount() {
+                        scrollSpy.unmount(this.stateHandler, this.spyHandler);
+                    }
+                },
+                {
+                    key: 'render',
+                    value: function render() {
+                        var className = "";
+                        if (this.state && this.state.active) {
+                            className = ((this.props.className || "") + " " + (this.props.activeClass || "active")).trim();
+                        } else {
+                            className = this.props.className;
+                        }
+                        var props = _extends({}, this.props);
+                        for(var prop in protoTypes){
+                            if (props.hasOwnProperty(prop)) {
+                                delete props[prop];
+                            }
+                        }
+                        props.className = className;
+                        props.onClick = this.handleClick;
+                        return React.createElement(Component, props);
+                    }
+                }
+            ]);
+            return Scroll;
+        }(React.Component);
+        var _initialiseProps = function _initialiseProps() {
+            var _this2 = this;
+            this.scrollTo = function(to, props) {
+                scroller.scrollTo(to, _extends({}, _this2.state, props));
+            };
+            this.handleClick = function(event) {
+                /*
+         * give the posibility to override onClick
+         */ if (_this2.props.onClick) {
+                    _this2.props.onClick(event);
+                }
+                /*
+         * dont bubble the navigation
+         */ if (event.stopPropagation) event.stopPropagation();
+                if (event.preventDefault) event.preventDefault();
+                /*
+         * do the magic!
+         */ _this2.scrollTo(_this2.props.to, _this2.props);
+            };
+            this.stateHandler = function() {
+                if (scroller.getActiveLink() !== _this2.props.to) {
+                    if (_this2.state !== null && _this2.state.active && _this2.props.onSetInactive) {
+                        _this2.props.onSetInactive();
+                    }
+                    _this2.setState({
+                        active: false
+                    });
+                }
+            };
+            this.spyHandler = function(y) {
+                var scrollSpyContainer = _this2.getScrollSpyContainer();
+                if (scrollHash.isMounted() && !scrollHash.isInitialized()) {
+                    return;
+                }
+                var to = _this2.props.to;
+                var element = null;
+                var elemTopBound = 0;
+                var elemBottomBound = 0;
+                var containerTop = 0;
+                if (scrollSpyContainer.getBoundingClientRect) {
+                    var containerCords = scrollSpyContainer.getBoundingClientRect();
+                    containerTop = containerCords.top;
+                }
+                if (!element || _this2.props.isDynamic) {
+                    element = scroller.get(to);
+                    if (!element) {
+                        return;
+                    }
+                    var cords = element.getBoundingClientRect();
+                    elemTopBound = cords.top - containerTop + y;
+                    elemBottomBound = elemTopBound + cords.height;
+                }
+                var offsetY = y - _this2.props.offset;
+                var isInside = offsetY >= Math.floor(elemTopBound) && offsetY < Math.floor(elemBottomBound);
+                var isOutside = offsetY < Math.floor(elemTopBound) || offsetY >= Math.floor(elemBottomBound);
+                var activeLink = scroller.getActiveLink();
+                if (isOutside) {
+                    if (to === activeLink) {
+                        scroller.setActiveLink(void 0);
+                    }
+                    if (_this2.props.hashSpy && scrollHash.getHash() === to) {
+                        scrollHash.changeHash();
+                    }
+                    if (_this2.props.spy && _this2.state.active) {
+                        _this2.setState({
+                            active: false
+                        });
+                        _this2.props.onSetInactive && _this2.props.onSetInactive();
+                    }
+                    return scrollSpy.updateStates();
+                }
+                if (isInside && activeLink !== to) {
+                    scroller.setActiveLink(to);
+                    _this2.props.hashSpy && scrollHash.changeHash(to);
+                    if (_this2.props.spy) {
+                        _this2.setState({
+                            active: true
+                        });
+                        _this2.props.onSetActive && _this2.props.onSetActive(to);
+                    }
+                    return scrollSpy.updateStates();
+                }
+            };
+        };
+        ;
+        Scroll.propTypes = protoTypes;
+        Scroll.defaultProps = {
+            offset: 0
+        };
+        return Scroll;
+    },
+    Element: function Element(Component) {
+        console.warn("Helpers.Element is deprecated since v1.7.0");
+        var Element = function(_React$Component2) {
+            _inherits(Element, _React$Component2);
+            function Element(props) {
+                _classCallCheck(this, Element);
+                var _this3 = _possibleConstructorReturn(this, (Element.__proto__ || Object.getPrototypeOf(Element)).call(this, props));
+                _this3.childBindings = {
+                    domNode: null
+                };
+                return _this3;
+            }
+            _createClass(Element, [
+                {
+                    key: 'componentDidMount',
+                    value: function componentDidMount() {
+                        if (typeof window === 'undefined') {
+                            return false;
+                        }
+                        this.registerElems(this.props.name);
+                    }
+                },
+                {
+                    key: 'componentDidUpdate',
+                    value: function componentDidUpdate(prevProps) {
+                        if (this.props.name !== prevProps.name) {
+                            this.registerElems(this.props.name);
+                        }
+                    }
+                },
+                {
+                    key: 'componentWillUnmount',
+                    value: function componentWillUnmount() {
+                        if (typeof window === 'undefined') {
+                            return false;
+                        }
+                        defaultScroller.unregister(this.props.name);
+                    }
+                },
+                {
+                    key: 'registerElems',
+                    value: function registerElems(name) {
+                        defaultScroller.register(name, this.childBindings.domNode);
+                    }
+                },
+                {
+                    key: 'render',
+                    value: function render() {
+                        return React.createElement(Component, _extends({}, this.props, {
+                            parentBindings: this.childBindings
+                        }));
+                    }
+                }
+            ]);
+            return Element;
+        }(React.Component);
+        ;
+        Element.propTypes = {
+            name: PropTypes.string,
+            id: PropTypes.string
+        };
+        return Element;
+    }
+};
+module.exports = Helpers;
+}),
+"[project]/seva-hr-landing/node_modules/react-scroll/modules/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Helpers = exports.ScrollElement = exports.ScrollLink = exports.animateScroll = exports.scrollSpy = exports.Events = exports.scroller = exports.Element = exports.Button = exports.Link = undefined;
+var _Link = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/components/Link.js [app-client] (ecmascript)");
+var _Link2 = _interopRequireDefault(_Link);
+var _Button = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/components/Button.js [app-client] (ecmascript)");
+var _Button2 = _interopRequireDefault(_Button);
+var _Element = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/components/Element.js [app-client] (ecmascript)");
+var _Element2 = _interopRequireDefault(_Element);
+var _scroller = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroller.js [app-client] (ecmascript)");
+var _scroller2 = _interopRequireDefault(_scroller);
+var _scrollEvents = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-events.js [app-client] (ecmascript)");
+var _scrollEvents2 = _interopRequireDefault(_scrollEvents);
+var _scrollSpy = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-spy.js [app-client] (ecmascript)");
+var _scrollSpy2 = _interopRequireDefault(_scrollSpy);
+var _animateScroll = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/animate-scroll.js [app-client] (ecmascript)");
+var _animateScroll2 = _interopRequireDefault(_animateScroll);
+var _scrollLink = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-link.js [app-client] (ecmascript)");
+var _scrollLink2 = _interopRequireDefault(_scrollLink);
+var _scrollElement = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/scroll-element.js [app-client] (ecmascript)");
+var _scrollElement2 = _interopRequireDefault(_scrollElement);
+var _Helpers = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/react-scroll/modules/mixins/Helpers.js [app-client] (ecmascript)");
+var _Helpers2 = _interopRequireDefault(_Helpers);
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+exports.Link = _Link2.default;
+exports.Button = _Button2.default;
+exports.Element = _Element2.default;
+exports.scroller = _scroller2.default;
+exports.Events = _scrollEvents2.default;
+exports.scrollSpy = _scrollSpy2.default;
+exports.animateScroll = _animateScroll2.default;
+exports.ScrollLink = _scrollLink2.default;
+exports.ScrollElement = _scrollElement2.default;
+exports.Helpers = _Helpers2.default;
+exports.default = {
+    Link: _Link2.default,
+    Button: _Button2.default,
+    Element: _Element2.default,
+    scroller: _scroller2.default,
+    Events: _scrollEvents2.default,
+    scrollSpy: _scrollSpy2.default,
+    animateScroll: _animateScroll2.default,
+    ScrollLink: _scrollLink2.default,
+    ScrollElement: _scrollElement2.default,
+    Helpers: _Helpers2.default
+};
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/router/utils/querystring.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    assign: null,
+    searchParamsToUrlQuery: null,
+    urlQueryToSearchParams: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    assign: function() {
+        return assign;
+    },
+    searchParamsToUrlQuery: function() {
+        return searchParamsToUrlQuery;
+    },
+    urlQueryToSearchParams: function() {
+        return urlQueryToSearchParams;
+    }
+});
+function searchParamsToUrlQuery(searchParams) {
+    const query = {};
+    for (const [key, value] of searchParams.entries()){
+        const existing = query[key];
+        if (typeof existing === 'undefined') {
+            query[key] = value;
+        } else if (Array.isArray(existing)) {
+            existing.push(value);
+        } else {
+            query[key] = [
+                existing,
+                value
+            ];
+        }
+    }
+    return query;
+}
+function stringifyUrlQueryParam(param) {
+    if (typeof param === 'string') {
+        return param;
+    }
+    if (typeof param === 'number' && !isNaN(param) || typeof param === 'boolean') {
+        return String(param);
+    } else {
+        return '';
+    }
+}
+function urlQueryToSearchParams(query) {
+    const searchParams = new URLSearchParams();
+    for (const [key, value] of Object.entries(query)){
+        if (Array.isArray(value)) {
+            for (const item of value){
+                searchParams.append(key, stringifyUrlQueryParam(item));
+            }
+        } else {
+            searchParams.set(key, stringifyUrlQueryParam(value));
+        }
+    }
+    return searchParams;
+}
+function assign(target, ...searchParamsList) {
+    for (const searchParams of searchParamsList){
+        for (const key of searchParams.keys()){
+            target.delete(key);
+        }
+        for (const [key, value] of searchParams.entries()){
+            target.append(key, value);
+        }
+    }
+    return target;
+} //# sourceMappingURL=querystring.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/router/utils/format-url.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+// Format function modified from nodejs
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    formatUrl: null,
+    formatWithValidation: null,
+    urlObjectKeys: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    formatUrl: function() {
+        return formatUrl;
+    },
+    formatWithValidation: function() {
+        return formatWithValidation;
+    },
+    urlObjectKeys: function() {
+        return urlObjectKeys;
+    }
+});
+const _interop_require_wildcard = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-client] (ecmascript)");
+const _querystring = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/router/utils/querystring.js [app-client] (ecmascript)"));
+const slashedProtocols = /https?|ftp|gopher|file/;
+function formatUrl(urlObj) {
+    let { auth, hostname } = urlObj;
+    let protocol = urlObj.protocol || '';
+    let pathname = urlObj.pathname || '';
+    let hash = urlObj.hash || '';
+    let query = urlObj.query || '';
+    let host = false;
+    auth = auth ? encodeURIComponent(auth).replace(/%3A/i, ':') + '@' : '';
+    if (urlObj.host) {
+        host = auth + urlObj.host;
+    } else if (hostname) {
+        host = auth + (~hostname.indexOf(':') ? `[${hostname}]` : hostname);
+        if (urlObj.port) {
+            host += ':' + urlObj.port;
+        }
+    }
+    if (query && typeof query === 'object') {
+        query = String(_querystring.urlQueryToSearchParams(query));
+    }
+    let search = urlObj.search || query && `?${query}` || '';
+    if (protocol && !protocol.endsWith(':')) protocol += ':';
+    if (urlObj.slashes || (!protocol || slashedProtocols.test(protocol)) && host !== false) {
+        host = '//' + (host || '');
+        if (pathname && pathname[0] !== '/') pathname = '/' + pathname;
+    } else if (!host) {
+        host = '';
+    }
+    if (hash && hash[0] !== '#') hash = '#' + hash;
+    if (search && search[0] !== '?') search = '?' + search;
+    pathname = pathname.replace(/[?#]/g, encodeURIComponent);
+    search = search.replace('#', '%23');
+    return `${protocol}${host}${pathname}${search}${hash}`;
+}
+const urlObjectKeys = [
+    'auth',
+    'hash',
+    'host',
+    'hostname',
+    'href',
+    'path',
+    'pathname',
+    'port',
+    'protocol',
+    'query',
+    'search',
+    'slashes'
+];
+function formatWithValidation(url) {
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (url !== null && typeof url === 'object') {
+            Object.keys(url).forEach((key)=>{
+                if (!urlObjectKeys.includes(key)) {
+                    console.warn(`Unknown key passed via urlObject into url.format: ${key}`);
+                }
+            });
+        }
+    }
+    return formatUrl(url);
+} //# sourceMappingURL=format-url.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/utils.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    DecodeError: null,
+    MiddlewareNotFoundError: null,
+    MissingStaticPage: null,
+    NormalizeError: null,
+    PageNotFoundError: null,
+    SP: null,
+    ST: null,
+    WEB_VITALS: null,
+    execOnce: null,
+    getDisplayName: null,
+    getLocationOrigin: null,
+    getURL: null,
+    isAbsoluteUrl: null,
+    isResSent: null,
+    loadGetInitialProps: null,
+    normalizeRepeatedSlashes: null,
+    stringifyError: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    DecodeError: function() {
+        return DecodeError;
+    },
+    MiddlewareNotFoundError: function() {
+        return MiddlewareNotFoundError;
+    },
+    MissingStaticPage: function() {
+        return MissingStaticPage;
+    },
+    NormalizeError: function() {
+        return NormalizeError;
+    },
+    PageNotFoundError: function() {
+        return PageNotFoundError;
+    },
+    SP: function() {
+        return SP;
+    },
+    ST: function() {
+        return ST;
+    },
+    WEB_VITALS: function() {
+        return WEB_VITALS;
+    },
+    execOnce: function() {
+        return execOnce;
+    },
+    getDisplayName: function() {
+        return getDisplayName;
+    },
+    getLocationOrigin: function() {
+        return getLocationOrigin;
+    },
+    getURL: function() {
+        return getURL;
+    },
+    isAbsoluteUrl: function() {
+        return isAbsoluteUrl;
+    },
+    isResSent: function() {
+        return isResSent;
+    },
+    loadGetInitialProps: function() {
+        return loadGetInitialProps;
+    },
+    normalizeRepeatedSlashes: function() {
+        return normalizeRepeatedSlashes;
+    },
+    stringifyError: function() {
+        return stringifyError;
+    }
+});
+const WEB_VITALS = [
+    'CLS',
+    'FCP',
+    'FID',
+    'INP',
+    'LCP',
+    'TTFB'
+];
+function execOnce(fn) {
+    let used = false;
+    let result;
+    return (...args)=>{
+        if (!used) {
+            used = true;
+            result = fn(...args);
+        }
+        return result;
+    };
+}
+// Scheme: https://tools.ietf.org/html/rfc3986#section-3.1
+// Absolute URL: https://tools.ietf.org/html/rfc3986#section-4.3
+const ABSOLUTE_URL_REGEX = /^[a-zA-Z][a-zA-Z\d+\-.]*?:/;
+const isAbsoluteUrl = (url)=>ABSOLUTE_URL_REGEX.test(url);
+function getLocationOrigin() {
+    const { protocol, hostname, port } = window.location;
+    return `${protocol}//${hostname}${port ? ':' + port : ''}`;
+}
+function getURL() {
+    const { href } = window.location;
+    const origin = getLocationOrigin();
+    return href.substring(origin.length);
+}
+function getDisplayName(Component) {
+    return typeof Component === 'string' ? Component : Component.displayName || Component.name || 'Unknown';
+}
+function isResSent(res) {
+    return res.finished || res.headersSent;
+}
+function normalizeRepeatedSlashes(url) {
+    const urlParts = url.split('?');
+    const urlNoQuery = urlParts[0];
+    return urlNoQuery // first we replace any non-encoded backslashes with forward
+    // then normalize repeated forward slashes
+    .replace(/\\/g, '/').replace(/\/\/+/g, '/') + (urlParts[1] ? `?${urlParts.slice(1).join('?')}` : '');
+}
+async function loadGetInitialProps(App, ctx) {
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (App.prototype?.getInitialProps) {
+            const message = `"${getDisplayName(App)}.getInitialProps()" is defined as an instance method - visit https://nextjs.org/docs/messages/get-initial-props-as-an-instance-method for more information.`;
+            throw Object.defineProperty(new Error(message), "__NEXT_ERROR_CODE", {
+                value: "E394",
+                enumerable: false,
+                configurable: true
+            });
+        }
+    }
+    // when called from _app `ctx` is nested in `ctx`
+    const res = ctx.res || ctx.ctx && ctx.ctx.res;
+    if (!App.getInitialProps) {
+        if (ctx.ctx && ctx.Component) {
+            // @ts-ignore pageProps default
+            return {
+                pageProps: await loadGetInitialProps(ctx.Component, ctx.ctx)
+            };
+        }
+        return {};
+    }
+    const props = await App.getInitialProps(ctx);
+    if (res && isResSent(res)) {
+        return props;
+    }
+    if (!props) {
+        const message = `"${getDisplayName(App)}.getInitialProps()" should resolve to an object. But found "${props}" instead.`;
+        throw Object.defineProperty(new Error(message), "__NEXT_ERROR_CODE", {
+            value: "E394",
+            enumerable: false,
+            configurable: true
+        });
+    }
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (Object.keys(props).length === 0 && !ctx.ctx) {
+            console.warn(`${getDisplayName(App)} returned an empty object from \`getInitialProps\`. This de-optimizes and prevents automatic static optimization. https://nextjs.org/docs/messages/empty-object-getInitialProps`);
+        }
+    }
+    return props;
+}
+const SP = typeof performance !== 'undefined';
+const ST = SP && [
+    'mark',
+    'measure',
+    'getEntriesByName'
+].every((method)=>typeof performance[method] === 'function');
+class DecodeError extends Error {
+}
+class NormalizeError extends Error {
+}
+class PageNotFoundError extends Error {
+    constructor(page){
+        super();
+        this.code = 'ENOENT';
+        this.name = 'PageNotFoundError';
+        this.message = `Cannot find module for page: ${page}`;
+    }
+}
+class MissingStaticPage extends Error {
+    constructor(page, message){
+        super();
+        this.message = `Failed to load static file for page: ${page} ${message}`;
+    }
+}
+class MiddlewareNotFoundError extends Error {
+    constructor(){
+        super();
+        this.code = 'ENOENT';
+        this.message = `Cannot find the middleware module`;
+    }
+}
+function stringifyError(error) {
+    return JSON.stringify({
+        message: error.message,
+        stack: error.stack
+    });
+} //# sourceMappingURL=utils.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/router/utils/is-local-url.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "isLocalURL", {
+    enumerable: true,
+    get: function() {
+        return isLocalURL;
+    }
+});
+const _utils = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/utils.js [app-client] (ecmascript)");
+const _hasbasepath = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/client/has-base-path.js [app-client] (ecmascript)");
+function isLocalURL(url) {
+    // prevent a hydration mismatch on href for url with anchor refs
+    if (!(0, _utils.isAbsoluteUrl)(url)) return true;
+    try {
+        // absolute urls can be local if they are on the same origin
+        const locationOrigin = (0, _utils.getLocationOrigin)();
+        const resolved = new URL(url, locationOrigin);
+        return resolved.origin === locationOrigin && (0, _hasbasepath.hasBasePath)(resolved.pathname);
+    } catch (_) {
+        return false;
+    }
+} //# sourceMappingURL=is-local-url.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/shared/lib/utils/error-once.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "errorOnce", {
+    enumerable: true,
+    get: function() {
+        return errorOnce;
+    }
+});
+let errorOnce = (_)=>{};
+if ("TURBOPACK compile-time truthy", 1) {
+    const errors = new Set();
+    errorOnce = (msg)=>{
+        if (!errors.has(msg)) {
+            console.error(msg);
+        }
+        errors.add(msg);
+    };
+} //# sourceMappingURL=error-once.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$seva$2d$hr$2d$landing$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/seva-hr-landing/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+'use client';
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    default: null,
+    useLinkStatus: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    /**
+ * A React component that extends the HTML `<a>` element to provide
+ * [prefetching](https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#2-prefetching)
+ * and client-side navigation. This is the primary way to navigate between routes in Next.js.
+ *
+ * @remarks
+ * - Prefetching is only enabled in production.
+ *
+ * @see https://nextjs.org/docs/app/api-reference/components/link
+ */ default: function() {
+        return LinkComponent;
+    },
+    useLinkStatus: function() {
+        return useLinkStatus;
+    }
+});
+const _interop_require_wildcard = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-client] (ecmascript)");
+const _jsxruntime = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _formaturl = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/router/utils/format-url.js [app-client] (ecmascript)");
+const _approutercontextsharedruntime = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js [app-client] (ecmascript)");
+const _usemergedref = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/client/use-merged-ref.js [app-client] (ecmascript)");
+const _utils = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/utils.js [app-client] (ecmascript)");
+const _addbasepath = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/client/add-base-path.js [app-client] (ecmascript)");
+const _warnonce = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript)");
+const _links = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/client/components/links.js [app-client] (ecmascript)");
+const _islocalurl = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/router/utils/is-local-url.js [app-client] (ecmascript)");
+const _types = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/client/components/segment-cache/types.js [app-client] (ecmascript)");
+const _erroronce = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/shared/lib/utils/error-once.js [app-client] (ecmascript)");
+function isModifiedEvent(event) {
+    const eventTarget = event.currentTarget;
+    const target = eventTarget.getAttribute('target');
+    return target && target !== '_self' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || // triggers resource download
+    event.nativeEvent && event.nativeEvent.which === 2;
+}
+function linkClicked(e, href, as, linkInstanceRef, replace, scroll, onNavigate) {
+    if (typeof window !== 'undefined') {
+        const { nodeName } = e.currentTarget;
+        // anchors inside an svg have a lowercase nodeName
+        const isAnchorNodeName = nodeName.toUpperCase() === 'A';
+        if (isAnchorNodeName && isModifiedEvent(e) || e.currentTarget.hasAttribute('download')) {
+            // ignore click for browser’s default behavior
+            return;
+        }
+        if (!(0, _islocalurl.isLocalURL)(href)) {
+            if (replace) {
+                // browser default behavior does not replace the history state
+                // so we need to do it manually
+                e.preventDefault();
+                location.replace(href);
+            }
+            // ignore click for browser’s default behavior
+            return;
+        }
+        e.preventDefault();
+        if (onNavigate) {
+            let isDefaultPrevented = false;
+            onNavigate({
+                preventDefault: ()=>{
+                    isDefaultPrevented = true;
+                }
+            });
+            if (isDefaultPrevented) {
+                return;
+            }
+        }
+        const { dispatchNavigateAction } = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/client/components/app-router-instance.js [app-client] (ecmascript)");
+        _react.default.startTransition(()=>{
+            dispatchNavigateAction(as || href, replace ? 'replace' : 'push', scroll ?? true, linkInstanceRef.current);
+        });
+    }
+}
+function formatStringOrUrl(urlObjOrString) {
+    if (typeof urlObjOrString === 'string') {
+        return urlObjOrString;
+    }
+    return (0, _formaturl.formatUrl)(urlObjOrString);
+}
+function LinkComponent(props) {
+    const [linkStatus, setOptimisticLinkStatus] = (0, _react.useOptimistic)(_links.IDLE_LINK_STATUS);
+    let children;
+    const linkInstanceRef = (0, _react.useRef)(null);
+    const { href: hrefProp, as: asProp, children: childrenProp, prefetch: prefetchProp = null, passHref, replace, shallow, scroll, onClick, onMouseEnter: onMouseEnterProp, onTouchStart: onTouchStartProp, legacyBehavior = false, onNavigate, ref: forwardedRef, unstable_dynamicOnHover, ...restProps } = props;
+    children = childrenProp;
+    if (legacyBehavior && (typeof children === 'string' || typeof children === 'number')) {
+        children = /*#__PURE__*/ (0, _jsxruntime.jsx)("a", {
+            children: children
+        });
+    }
+    const router = _react.default.useContext(_approutercontextsharedruntime.AppRouterContext);
+    const prefetchEnabled = prefetchProp !== false;
+    const fetchStrategy = prefetchProp !== false ? getFetchStrategyFromPrefetchProp(prefetchProp) : _types.FetchStrategy.PPR;
+    if ("TURBOPACK compile-time truthy", 1) {
+        function createPropError(args) {
+            return Object.defineProperty(new Error(`Failed prop type: The prop \`${args.key}\` expects a ${args.expected} in \`<Link>\`, but got \`${args.actual}\` instead.` + (typeof window !== 'undefined' ? "\nOpen your browser's console to view the Component stack trace." : '')), "__NEXT_ERROR_CODE", {
+                value: "E319",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        // TypeScript trick for type-guarding:
+        const requiredPropsGuard = {
+            href: true
+        };
+        const requiredProps = Object.keys(requiredPropsGuard);
+        requiredProps.forEach((key)=>{
+            if (key === 'href') {
+                if (props[key] == null || typeof props[key] !== 'string' && typeof props[key] !== 'object') {
+                    throw createPropError({
+                        key,
+                        expected: '`string` or `object`',
+                        actual: props[key] === null ? 'null' : typeof props[key]
+                    });
+                }
+            } else {
+                // TypeScript trick for type-guarding:
+                const _ = key;
+            }
+        });
+        // TypeScript trick for type-guarding:
+        const optionalPropsGuard = {
+            as: true,
+            replace: true,
+            scroll: true,
+            shallow: true,
+            passHref: true,
+            prefetch: true,
+            unstable_dynamicOnHover: true,
+            onClick: true,
+            onMouseEnter: true,
+            onTouchStart: true,
+            legacyBehavior: true,
+            onNavigate: true
+        };
+        const optionalProps = Object.keys(optionalPropsGuard);
+        optionalProps.forEach((key)=>{
+            const valType = typeof props[key];
+            if (key === 'as') {
+                if (props[key] && valType !== 'string' && valType !== 'object') {
+                    throw createPropError({
+                        key,
+                        expected: '`string` or `object`',
+                        actual: valType
+                    });
+                }
+            } else if (key === 'onClick' || key === 'onMouseEnter' || key === 'onTouchStart' || key === 'onNavigate') {
+                if (props[key] && valType !== 'function') {
+                    throw createPropError({
+                        key,
+                        expected: '`function`',
+                        actual: valType
+                    });
+                }
+            } else if (key === 'replace' || key === 'scroll' || key === 'shallow' || key === 'passHref' || key === 'legacyBehavior' || key === 'unstable_dynamicOnHover') {
+                if (props[key] != null && valType !== 'boolean') {
+                    throw createPropError({
+                        key,
+                        expected: '`boolean`',
+                        actual: valType
+                    });
+                }
+            } else if (key === 'prefetch') {
+                if (props[key] != null && valType !== 'boolean' && props[key] !== 'auto') {
+                    throw createPropError({
+                        key,
+                        expected: '`boolean | "auto"`',
+                        actual: valType
+                    });
+                }
+            } else {
+                // TypeScript trick for type-guarding:
+                const _ = key;
+            }
+        });
+    }
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (props.locale) {
+            (0, _warnonce.warnOnce)('The `locale` prop is not supported in `next/link` while using the `app` router. Read more about app router internalization: https://nextjs.org/docs/app/building-your-application/routing/internationalization');
+        }
+        if (!asProp) {
+            let href;
+            if (typeof hrefProp === 'string') {
+                href = hrefProp;
+            } else if (typeof hrefProp === 'object' && typeof hrefProp.pathname === 'string') {
+                href = hrefProp.pathname;
+            }
+            if (href) {
+                const hasDynamicSegment = href.split('/').some((segment)=>segment.startsWith('[') && segment.endsWith(']'));
+                if (hasDynamicSegment) {
+                    throw Object.defineProperty(new Error(`Dynamic href \`${href}\` found in <Link> while using the \`/app\` router, this is not supported. Read more: https://nextjs.org/docs/messages/app-dir-dynamic-href`), "__NEXT_ERROR_CODE", {
+                        value: "E267",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+            }
+        }
+    }
+    const { href, as } = _react.default.useMemo({
+        "LinkComponent.useMemo": ()=>{
+            const resolvedHref = formatStringOrUrl(hrefProp);
+            return {
+                href: resolvedHref,
+                as: asProp ? formatStringOrUrl(asProp) : resolvedHref
+            };
+        }
+    }["LinkComponent.useMemo"], [
+        hrefProp,
+        asProp
+    ]);
+    // This will return the first child, if multiple are provided it will throw an error
+    let child;
+    if (legacyBehavior) {
+        if (children?.$$typeof === Symbol.for('react.lazy')) {
+            throw Object.defineProperty(new Error(`\`<Link legacyBehavior>\` received a direct child that is either a Server Component, or JSX that was loaded with React.lazy(). This is not supported. Either remove legacyBehavior, or make the direct child a Client Component that renders the Link's \`<a>\` tag.`), "__NEXT_ERROR_CODE", {
+                value: "E863",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        if ("TURBOPACK compile-time truthy", 1) {
+            if (onClick) {
+                console.warn(`"onClick" was passed to <Link> with \`href\` of \`${hrefProp}\` but "legacyBehavior" was set. The legacy behavior requires onClick be set on the child of next/link`);
+            }
+            if (onMouseEnterProp) {
+                console.warn(`"onMouseEnter" was passed to <Link> with \`href\` of \`${hrefProp}\` but "legacyBehavior" was set. The legacy behavior requires onMouseEnter be set on the child of next/link`);
+            }
+            try {
+                child = _react.default.Children.only(children);
+            } catch (err) {
+                if (!children) {
+                    throw Object.defineProperty(new Error(`No children were passed to <Link> with \`href\` of \`${hrefProp}\` but one child is required https://nextjs.org/docs/messages/link-no-children`), "__NEXT_ERROR_CODE", {
+                        value: "E320",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+                throw Object.defineProperty(new Error(`Multiple children were passed to <Link> with \`href\` of \`${hrefProp}\` but only one child is supported https://nextjs.org/docs/messages/link-multiple-children` + (typeof window !== 'undefined' ? " \nOpen your browser's console to view the Component stack trace." : '')), "__NEXT_ERROR_CODE", {
+                    value: "E266",
+                    enumerable: false,
+                    configurable: true
+                });
+            }
+        } else //TURBOPACK unreachable
+        ;
+    } else {
+        if ("TURBOPACK compile-time truthy", 1) {
+            if (children?.type === 'a') {
+                throw Object.defineProperty(new Error('Invalid <Link> with <a> child. Please remove <a> or use <Link legacyBehavior>.\nLearn more: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor'), "__NEXT_ERROR_CODE", {
+                    value: "E209",
+                    enumerable: false,
+                    configurable: true
+                });
+            }
+        }
+    }
+    const childRef = legacyBehavior ? child && typeof child === 'object' && child.ref : forwardedRef;
+    // Use a callback ref to attach an IntersectionObserver to the anchor tag on
+    // mount. In the future we will also use this to keep track of all the
+    // currently mounted <Link> instances, e.g. so we can re-prefetch them after
+    // a revalidation or refresh.
+    const observeLinkVisibilityOnMount = _react.default.useCallback({
+        "LinkComponent.useCallback[observeLinkVisibilityOnMount]": (element)=>{
+            if (router !== null) {
+                linkInstanceRef.current = (0, _links.mountLinkInstance)(element, href, router, fetchStrategy, prefetchEnabled, setOptimisticLinkStatus);
+            }
+            return ({
+                "LinkComponent.useCallback[observeLinkVisibilityOnMount]": ()=>{
+                    if (linkInstanceRef.current) {
+                        (0, _links.unmountLinkForCurrentNavigation)(linkInstanceRef.current);
+                        linkInstanceRef.current = null;
+                    }
+                    (0, _links.unmountPrefetchableInstance)(element);
+                }
+            })["LinkComponent.useCallback[observeLinkVisibilityOnMount]"];
+        }
+    }["LinkComponent.useCallback[observeLinkVisibilityOnMount]"], [
+        prefetchEnabled,
+        href,
+        router,
+        fetchStrategy,
+        setOptimisticLinkStatus
+    ]);
+    const mergedRef = (0, _usemergedref.useMergedRef)(observeLinkVisibilityOnMount, childRef);
+    const childProps = {
+        ref: mergedRef,
+        onClick (e) {
+            if ("TURBOPACK compile-time truthy", 1) {
+                if (!e) {
+                    throw Object.defineProperty(new Error(`Component rendered inside next/link has to pass click event to "onClick" prop.`), "__NEXT_ERROR_CODE", {
+                        value: "E312",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+            }
+            if (!legacyBehavior && typeof onClick === 'function') {
+                onClick(e);
+            }
+            if (legacyBehavior && child.props && typeof child.props.onClick === 'function') {
+                child.props.onClick(e);
+            }
+            if (!router) {
+                return;
+            }
+            if (e.defaultPrevented) {
+                return;
+            }
+            linkClicked(e, href, as, linkInstanceRef, replace, scroll, onNavigate);
+        },
+        onMouseEnter (e) {
+            if (!legacyBehavior && typeof onMouseEnterProp === 'function') {
+                onMouseEnterProp(e);
+            }
+            if (legacyBehavior && child.props && typeof child.props.onMouseEnter === 'function') {
+                child.props.onMouseEnter(e);
+            }
+            if (!router) {
+                return;
+            }
+            if ("TURBOPACK compile-time truthy", 1) {
+                return;
+            }
+            //TURBOPACK unreachable
+            ;
+            const upgradeToDynamicPrefetch = undefined;
+        },
+        onTouchStart: ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : function onTouchStart(e) {
+            if (!legacyBehavior && typeof onTouchStartProp === 'function') {
+                onTouchStartProp(e);
+            }
+            if (legacyBehavior && child.props && typeof child.props.onTouchStart === 'function') {
+                child.props.onTouchStart(e);
+            }
+            if (!router) {
+                return;
+            }
+            if (!prefetchEnabled) {
+                return;
+            }
+            const upgradeToDynamicPrefetch = unstable_dynamicOnHover === true;
+            (0, _links.onNavigationIntent)(e.currentTarget, upgradeToDynamicPrefetch);
+        }
+    };
+    // If the url is absolute, we can bypass the logic to prepend the basePath.
+    if ((0, _utils.isAbsoluteUrl)(as)) {
+        childProps.href = as;
+    } else if (!legacyBehavior || passHref || child.type === 'a' && !('href' in child.props)) {
+        childProps.href = (0, _addbasepath.addBasePath)(as);
+    }
+    let link;
+    if (legacyBehavior) {
+        if ("TURBOPACK compile-time truthy", 1) {
+            (0, _erroronce.errorOnce)('`legacyBehavior` is deprecated and will be removed in a future ' + 'release. A codemod is available to upgrade your components:\n\n' + 'npx @next/codemod@latest new-link .\n\n' + 'Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components');
+        }
+        link = /*#__PURE__*/ _react.default.cloneElement(child, childProps);
+    } else {
+        link = /*#__PURE__*/ (0, _jsxruntime.jsx)("a", {
+            ...restProps,
+            ...childProps,
+            children: children
+        });
+    }
+    return /*#__PURE__*/ (0, _jsxruntime.jsx)(LinkStatusContext.Provider, {
+        value: linkStatus,
+        children: link
+    });
+}
+const LinkStatusContext = /*#__PURE__*/ (0, _react.createContext)(_links.IDLE_LINK_STATUS);
+const useLinkStatus = ()=>{
+    return (0, _react.useContext)(LinkStatusContext);
+};
+function getFetchStrategyFromPrefetchProp(prefetchProp) {
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    else {
+        return prefetchProp === null || prefetchProp === 'auto' ? _types.FetchStrategy.PPR : // (although invalid values should've been filtered out by prop validation in dev)
+        _types.FetchStrategy.Full;
+    }
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=link.js.map
+}),
+"[project]/seva-hr-landing/node_modules/next/navigation.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+module.exports = __turbopack_context__.r("[project]/seva-hr-landing/node_modules/next/dist/client/components/navigation.js [app-client] (ecmascript)");
+}),
+]);
+
+//# sourceMappingURL=c3693_8029d730._.js.map
