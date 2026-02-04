@@ -21,7 +21,7 @@ jobs:
         run: npm install --f
 
       - name: Build project
-        run: NODE_OPTIONS="--max-old-space-size=8192" npm run build:prod
+        run: NODE_OPTIONS="--max-old-space-size=8192" npm run build
 
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@v0.5.1
