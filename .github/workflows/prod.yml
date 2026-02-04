@@ -32,7 +32,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.ORG_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.ORG_REGION }}
           AWS_S3_BUCKET: "sevahr-landing"
-          SOURCE_DIR: "./build"
+          SOURCE_DIR: "./dist"
 
       - name: Invalidate CloudFront cache
         env:
