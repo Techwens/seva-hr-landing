@@ -650,7 +650,8 @@ const CompanyOnboardingNew = () => {
         slugCheckController.current.abort();
       }
     };
-  }, [checkSlugAvailability, formData.slug]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [formData.slug]);
 
 
   const checkPasswordStrength = (pass) => {
