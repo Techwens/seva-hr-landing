@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Onbording from './pages/Onbording';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import DataSecurity from './pages/DataSecurity';
 const App = () => {
   return (
     <>
@@ -15,6 +16,7 @@ const App = () => {
             <Route path="/onboarding" element={<Onbording />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/data-security" element={<DataSecurity />} />
           </Route>
         </Routes>
       </BrowserRouter>
