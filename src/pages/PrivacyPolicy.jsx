@@ -291,7 +291,7 @@ const PrivacyPolicy = () => {
               Customer (your Employer), who acts as the <strong>Data Controller</strong>.
             </p>
             <ConsentNote>
-              By downloading, installing, or using the <strong>SEVA HR</strong> App, you agree to this Privacy Policy. If you do not agree, please do not use the App.
+              By accessing or using any part of the <strong>SEVA HR</strong> platform — including the web dashboard, mobile application, or related services — you agree to this Privacy Policy. If you do not agree, please do not use the Service.
             </ConsentNote>
           </Header>
 
@@ -308,10 +308,10 @@ const PrivacyPolicy = () => {
             <p>You may upload documents (such as KYC files, PAN cards, resumes, or tax forms) directly through the App. This data is processed securely and shared only with your Employer for verification and compliance purposes.</p>
 
             <h3>1.3 Photos and Camera Access</h3>
-            <p>The App requests access to your device's camera to allow you to upload a profile picture or capture a live selfie. This is used strictly for identity verification during daily attendance check-ins and profile management. <strong>The App will display an in-app disclosure screen before requesting camera permission.</strong></p>
+            <p>The SEVA HR mobile app requests access to your device's camera to allow you to upload a profile picture or capture a live selfie. This is used strictly for identity verification during daily attendance check-ins and profile management. <strong>The App will display an in-app disclosure screen before requesting camera permission.</strong> On the web dashboard, you may upload profile photos and documents using your browser's standard file upload interface.</p>
 
             <h3>1.4 Location Information</h3>
-            <p>If your employer utilizes our geo-fenced Time and Attendance tracking, the App will request access to your precise and approximate location. <strong>The App will display an in-app disclosure screen before requesting location permission</strong>, explaining exactly how your location will be used. Specifically:</p>
+            <p>If your employer utilizes our geo-fenced Time and Attendance tracking, the SEVA HR mobile app will request access to your precise and approximate location. <strong>The App will display an in-app disclosure screen before requesting location permission</strong>, explaining exactly how your location will be used. Location data is collected exclusively through the mobile app; the web dashboard does not collect location information. Specifically:</p>
             <ul>
               <li><strong>Foreground Location:</strong> GPS coordinates (latitude, longitude, accuracy) are captured only at the moment you check in or check out. The App does not continuously track your location.</li>
               <li><strong>Background Location (Optional — User-Controlled):</strong> If you choose to enable this feature, the App monitors geofence boundaries to send arrival/departure notifications at your registered work location. This feature is <strong>off by default</strong> and can be enabled or disabled at any time in your device settings. Techwens does not enable background location without your explicit action.</li>
@@ -332,6 +332,36 @@ const PrivacyPolicy = () => {
               <li><strong>Session Recordings:</strong> Anonymized screen recordings of your app interactions (taps, scrolls, navigation) to understand usability patterns. Sensitive screens are automatically excluded. See Section 4.4 for details.</li>
               <li><strong>Network Information:</strong> API request metadata (timestamps, response times, error codes) for performance monitoring.</li>
             </ul>
+
+            <h3>1.8 Web Dashboard Data</h3>
+            <p>When you access SEVA HR through the web dashboard (typically used by HR administrators, managers, and authorized personnel), we additionally collect:</p>
+            <ul>
+              <li><strong>Browser Information:</strong> Browser type, version, operating system, screen resolution, and language preferences for compatibility and analytics purposes.</li>
+              <li><strong>Web Analytics:</strong> Page views, feature usage patterns, and navigation flows through Google Analytics 4 (GA4). Our GA4 implementation routes analytics data through our own servers (analytics proxy) rather than directly to Google, providing an additional layer of control over the data transmitted.</li>
+              <li><strong>Session Recordings (Web):</strong> Microsoft Clarity records anonymized session replays on the web dashboard to identify usability issues. Sensitive pages (payroll details, salary information, statutory data) are masked from recordings.</li>
+              <li><strong>IP Address:</strong> Collected for security logging, rate limiting, and fraud detection.</li>
+            </ul>
+            <Highlight>The SEVA HR web dashboard does not use cookies for advertising or cross-site tracking. Cookies are used solely for authentication session management and essential platform functionality.</Highlight>
+
+            <h3>1.9 Payroll, Statutory &amp; Financial Data</h3>
+            <p>To facilitate payroll processing and statutory compliance, your Employer provides or the system calculates the following sensitive data:</p>
+            <ul>
+              <li><strong>Salary Information:</strong> Salary structure, components (Basic, HRA, DA, etc.), deductions, bonuses, arrears, and incentives.</li>
+              <li><strong>Statutory Identifiers:</strong> PF (Provident Fund) number, UAN (Universal Account Number), ESI number, PAN, and other government-issued identifiers required for statutory filings.</li>
+              <li><strong>Tax Data:</strong> Tax declarations (Section 80C, 80D, etc.), TDS calculations, tax regime selection (Old vs. New), and Form 16 generation data.</li>
+              <li><strong>Bank Details:</strong> Bank account number and IFSC code for salary disbursement.</li>
+              <li><strong>Loan &amp; Advance Records:</strong> Loan applications, repayment schedules, and payroll deductions.</li>
+            </ul>
+            <p>This data is processed exclusively for employment-related purposes and is accessible only to authorized personnel within your organization's HR and finance teams, as governed by their role-based access permissions.</p>
+
+            <h3>1.10 Recruitment Data</h3>
+            <p>If your organization uses SEVA HR's recruitment module, the following data may be collected from job applicants:</p>
+            <ul>
+              <li><strong>Application Data:</strong> Resumes, cover letters, educational qualifications, work experience, and contact details submitted by candidates.</li>
+              <li><strong>AI-Assisted Resume Parsing:</strong> Uploaded resumes may be processed using <strong>Google Generative AI</strong> to automatically extract structured candidate information (name, skills, experience, education). This processing is performed via Google's API — resume content is transmitted securely to Google's servers for parsing and the extracted data is returned to SEVA HR. Google's use of this data is governed by their <a href="https://cloud.google.com/terms/data-processing-addendum" target="_blank" rel="noopener noreferrer">Data Processing Addendum</a>.</li>
+              <li><strong>Interview Records:</strong> Scheduling data, interviewer feedback, scorecards, and hiring decisions.</li>
+            </ul>
+            <Warning>Recruitment data is managed by the Customer (Employer). Candidates' data rights — including access, correction, and deletion — are handled by the Customer as the Data Controller.</Warning>
 
             {/* Section 2 */}
             <h2>2. Biometric Login</h2>
@@ -361,6 +391,10 @@ const PrivacyPolicy = () => {
                   <tr><td>Send notifications about approvals, shifts, and announcements</td><td>Device tokens, employee preferences</td><td>Contract performance</td></tr>
                   <tr><td>Secure your account and detect unauthorized access</td><td>Device ID, authentication events, audit logs</td><td>Legitimate interest / Legal obligation</td></tr>
                   <tr><td>Send OTPs and system notifications</td><td>Phone number, email address</td><td>Contract performance</td></tr>
+                  <tr><td>Process payroll and statutory compliance (EPF, ESI, PT, TDS)</td><td>Salary data, statutory IDs, tax declarations, bank details</td><td>Legal obligation / Contract performance</td></tr>
+                  <tr><td>Manage recruitment and hiring</td><td>Resumes, candidate data, interview records</td><td>Legitimate interest / Contract performance</td></tr>
+                  <tr><td>AI-powered resume parsing for candidate screening</td><td>Resume content (sent to Google Generative AI)</td><td>Legitimate interest</td></tr>
+                  <tr><td>Provide HR administration via web dashboard</td><td>Browser info, IP address, usage analytics</td><td>Contract performance</td></tr>
                 </tbody>
               </table>
             </TableWrap>
@@ -388,10 +422,11 @@ const PrivacyPolicy = () => {
               </AnalyticsCard>
 
               <AnalyticsCard>
-                <h4>4.3 Firebase Analytics / Google Analytics for Firebase (GA4)</h4>
+                <h4>4.3 Google Analytics 4 (GA4)</h4>
                 <p><strong>Provider:</strong> Google LLC</p>
-                <p><strong>Purpose:</strong> Tracks screen views, user journeys, and business events (check-ins, leave applications, payslip views) to understand feature adoption and improve the App.</p>
-                <p><strong>Data Collected:</strong> Screen names, custom events with parameters, user properties (organization, department, designation), session data, device info.</p>
+                <p><strong>Purpose:</strong> Tracks screen views, user journeys, and business events (check-ins, leave applications, payslip views) to understand feature adoption and improve the platform.</p>
+                <p><strong>Mobile App:</strong> Integrated via Firebase Analytics for Firebase (GA4). Tracks screen names, custom events with parameters, user properties (organization, department, designation), session data, and device info.</p>
+                <p><strong>Web Dashboard:</strong> Integrated via GA4 web property. Analytics requests are routed through our own analytics proxy server rather than directly to Google, giving us additional control over data transmission. Tracks page views, navigation patterns, and feature usage.</p>
                 <p><strong>Data NOT Collected:</strong> We do not collect advertising identifiers (IDFA/GAID) for ad targeting. Analytics is used solely for product improvement.</p>
                 <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy &rarr;</a>
               </AnalyticsCard>
@@ -399,8 +434,8 @@ const PrivacyPolicy = () => {
               <AnalyticsCard>
                 <h4>4.4 Microsoft Clarity — Session Replay &amp; Behavioral Analytics</h4>
                 <p><strong>Provider:</strong> Microsoft Corporation</p>
-                <p><strong>Purpose:</strong> Records anonymized session replays to understand how users interact with the App — identifying UX issues, dead taps, and navigation friction.</p>
-                <p><strong>Data Collected:</strong> Screen interactions (taps, scrolls, navigation), screen names, user ID, organization tags, session metadata.</p>
+                <p><strong>Purpose:</strong> Records anonymized session replays on both the mobile app and web dashboard to understand how users interact with the platform — identifying UX issues, dead taps, and navigation friction.</p>
+                <p><strong>Data Collected:</strong> Screen/page interactions (taps, clicks, scrolls, navigation), screen/page names, user ID, organization tags, session metadata.</p>
                 <p><strong>Sensitive Screen Masking — Automatically excluded from all recordings:</strong></p>
                 <MaskedList>
                   <li>Salary Structure</li>
@@ -422,6 +457,7 @@ const PrivacyPolicy = () => {
               <li><strong>Cloud Hosting Providers:</strong> We use AWS and Contabo to securely store and process platform data.</li>
               <li><strong>Communication Gateways:</strong> We utilize third-party SMS/Email gateways to send One-Time Passwords (OTPs) and system notifications to your registered phone number or email address.</li>
               <li><strong>Analytics &amp; Monitoring Providers:</strong> The services listed in Section 4 (Sentry, Firebase, Microsoft Clarity) process data on our behalf strictly for error tracking, crash reporting, and usability improvement.</li>
+              <li><strong>AI Processing Provider:</strong> If your organization uses our recruitment module, resume data may be processed by <strong>Google Generative AI</strong> for automated candidate information extraction. Google processes this data under their Data Processing Addendum and does not use it for model training or advertising.</li>
             </ul>
             <p>All service providers are legally bound to process your data solely on our behalf, under strict confidentiality agreements, and are prohibited from using your personal information for any other purpose.</p>
 
@@ -437,8 +473,8 @@ const PrivacyPolicy = () => {
             <p>The data we collect is hosted on secure cloud infrastructure provided by Amazon Web Services (AWS) and Contabo. We implement industry-standard security measures to protect your data:</p>
             <ul>
               <li><strong>Encryption in Transit:</strong> All data transmitted between the App and our servers uses HTTPS/TLS 1.2+ encryption.</li>
-              <li><strong>Encryption at Rest:</strong> Sensitive data stored on your device (authentication tokens, refresh tokens) is encrypted using the platform's secure storage (Android Keystore).</li>
-              <li><strong>Authentication Security:</strong> Biometric templates are stored locally on your device and never transmitted to our servers. Session tokens are rotated and expire automatically.</li>
+              <li><strong>Encryption at Rest:</strong> On mobile devices, sensitive data (authentication tokens, refresh tokens) is encrypted using the platform's secure storage (Android Keystore / iOS Keychain). On the web dashboard, session tokens are managed through secure, HTTP-only mechanisms.</li>
+              <li><strong>Authentication Security:</strong> Biometric templates (fingerprint, face) used for app unlock are stored locally on your device and never transmitted to our servers. Session tokens are rotated and expire automatically.</li>
               <li><strong>Data Sanitization:</strong> Sensitive fields (passwords, tokens, API keys, financial identifiers) are automatically redacted from error reports before transmission to third-party monitoring services.</li>
               <li><strong>Access Controls:</strong> Multi-tenant architecture ensures organizational data is strictly isolated. Employees can only access their own data.</li>
               <li><strong>Device Registration:</strong> Each device must be registered and approved. Administrators can remotely de-register devices to revoke access instantly.</li>
@@ -456,14 +492,16 @@ const PrivacyPolicy = () => {
               <li><strong>Analytics Data:</strong> Retained for up to 14 months in Firebase Analytics (Google's default retention). Clarity session recordings are retained for up to 30 days.</li>
               <li><strong>On Logout/De-registration:</strong> When you log out or your device is de-registered, all locally stored data (tokens, cached data, preferences) is permanently deleted from your device.</li>
               <li><strong>Automated Deletion:</strong> After termination of services by a Customer (Employer), an automated process will begin that permanently deletes the associated data in the next system cycle. Once begun, this process cannot be reversed.</li>
+              <li><strong>Recruitment Data:</strong> Candidate data is retained for the duration specified by the Customer's hiring policy. Unsuccessful candidate data may be retained in the talent pool per the organization's configuration, after which it is permanently deleted.</li>
+              <li><strong>Payroll &amp; Statutory Records:</strong> Retained per applicable Indian labor law requirements (including the Payment of Wages Act, EPF Act, and Income Tax Act), which may require retention for 5-8 years after the relevant financial year.</li>
             </ul>
             <h3>User Deletion Requests</h3>
-            <p>As an End User, you have the right to request the deletion of your account and personal data. You may initiate this request directly within the <strong>SEVA HR</strong> mobile app or by contacting your Employer. Because your Employer is the Data Controller, deletion requests are subject to their final approval and any prevailing labor law data retention requirements.</p>
+            <p>As an End User, you have the right to request the deletion of your account and personal data. You may initiate this request directly within the <strong>SEVA HR</strong> mobile app, through the web dashboard, or by contacting your Employer. Because your Employer is the Data Controller, deletion requests are subject to their final approval and any prevailing labor law data retention requirements.</p>
 
             {/* Section 9 */}
             <h2>9. Google API Services Disclosure</h2>
-            <p><strong>SEVA HR</strong> integrates Google APIs (including Firebase Analytics and Firebase Crashlytics) to provide core app functionality such as performance monitoring, crash reporting, and usage analytics. These integrations operate at the application level and <strong>do not require users to connect or authenticate with their personal Google accounts.</strong></p>
-            <p>Techwens's use and transfer of information received from Google APIs to any other app will <strong>strictly adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the Limited Use requirements.</strong> Data received through Google APIs is used solely for the purposes described in Section 4 of this policy and is never used for advertising, profiling, or any purpose beyond what is necessary to operate the App.</p>
+            <p><strong>SEVA HR</strong> integrates Google APIs (including Firebase Analytics, Firebase Crashlytics, Google Analytics 4, and Google Generative AI) to provide core platform functionality such as performance monitoring, crash reporting, usage analytics, and AI-powered resume parsing. These integrations operate at the application/server level and <strong>do not require users to connect or authenticate with their personal Google accounts.</strong></p>
+            <p>Techwens's use and transfer of information received from Google APIs to any other app will <strong>strictly adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the Limited Use requirements.</strong> Data received through Google APIs is used solely for the purposes described in Sections 1.10 and 4 of this policy and is never used for advertising, profiling, or any purpose beyond what is necessary to operate the Service.</p>
 
             {/* Section 10 */}
             <h2>10. Your Rights</h2>

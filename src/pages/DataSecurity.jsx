@@ -267,8 +267,9 @@ const DataSecurity = () => {
             <h3>2.2 Data at Rest</h3>
             <ul>
               <li><strong>Server-side:</strong> All data stored on our cloud infrastructure (AWS and Contabo) is encrypted at rest using AES-256 encryption provided by the hosting platform.</li>
-              <li><strong>Client-side:</strong> Sensitive data on the mobile device (authentication tokens, refresh tokens) is stored in the platform's secure storage — <strong>Android Keystore</strong> on Android devices — which provides hardware-backed encryption.</li>
-              <li>Biometric templates (fingerprint, face) are <strong>never transmitted</strong> to our servers. They remain entirely on the device, managed by the OS security subsystem.</li>
+              <li><strong>Client-side (Mobile):</strong> Sensitive data on mobile devices (authentication tokens, refresh tokens) is stored in the platform's secure storage — <strong>Android Keystore</strong> on Android and <strong>iOS Keychain</strong> on iOS — which provides hardware-backed encryption.</li>
+              <li><strong>Client-side (Web):</strong> The web dashboard uses secure, HTTP-only session management. Sensitive data is not stored in browser local storage or session storage. Authentication tokens are managed through secure HTTP-only mechanisms with automatic expiration.</li>
+              <li>Biometric templates (fingerprint, face) used for mobile app unlock are <strong>never transmitted</strong> to our servers. They remain entirely on the device, managed by the OS security subsystem.</li>
             </ul>
 
             <h3>2.3 Data in Error Reports</h3>
@@ -295,24 +296,34 @@ const DataSecurity = () => {
                   <tr><td>OTP (SMS/Email)</td><td>Time-limited one-time password sent to registered phone/email</td><td>Standard</td></tr>
                   <tr><td>Biometric</td><td>Device-native fingerprint or face unlock; only success/fail signal sent to App</td><td>High</td></tr>
                   <tr><td>Passcode</td><td>App-level numeric passcode for quick re-authentication</td><td>Standard</td></tr>
+                  <tr><td>Web Session (Dashboard)</td><td>JWT-based authentication with automatic token rotation and expiration</td><td>High</td></tr>
                 </tbody>
               </table>
             </TableWrap>
 
             <h3>3.2 Session Management</h3>
             <ul>
-              <li><strong>JWT Tokens:</strong> Short-lived access tokens with automatic rotation. Expired tokens are rejected immediately.</li>
-              <li><strong>Refresh Tokens:</strong> Securely stored in Android Keystore. Used to obtain new access tokens without re-authentication. Refresh tokens expire and are rotated on each use.</li>
-              <li><strong>Forced Logout:</strong> If the server detects a token refresh failure or security anomaly, the App forces a logout and clears all local data.</li>
-              <li><strong>Concurrent Sessions:</strong> Device binding ensures one active device per employee account, preventing unauthorized access from multiple devices.</li>
+              <li><strong>JWT Tokens:</strong> Short-lived access tokens with automatic rotation. Expired tokens are rejected immediately. This applies to both mobile and web sessions.</li>
+              <li><strong>Refresh Tokens:</strong> On mobile, securely stored in Android Keystore / iOS Keychain. On the web dashboard, managed through secure HTTP-only mechanisms. Used to obtain new access tokens without re-authentication. Refresh tokens expire and are rotated on each use.</li>
+              <li><strong>Forced Logout:</strong> If the server detects a token refresh failure or security anomaly, the platform forces a logout and clears all local/session data.</li>
+              <li><strong>Mobile Device Binding:</strong> On mobile, device binding ensures one active device per employee account, preventing unauthorized access from multiple devices.</li>
+              <li><strong>Web Session Security:</strong> The web dashboard enforces session timeouts, CORS (Cross-Origin Resource Sharing) policies that restrict API access to authorized domains, and rate limiting to prevent brute-force attacks.</li>
             </ul>
 
-            <h3>3.3 Device Registration &amp; Binding</h3>
+            <h3>3.3 Mobile Device Registration &amp; Binding</h3>
             <ul>
-              <li>Each employee account is bound to a registered mobile device using a persistent, unique device identifier.</li>
-              <li>Administrators can view registered devices and <strong>remotely de-register</strong> any device at any time, immediately revoking access.</li>
+              <li>Each employee's mobile account is bound to a registered device using a persistent, unique device identifier.</li>
+              <li>Administrators can view registered devices and <strong>remotely de-register</strong> any device at any time, immediately revoking mobile access.</li>
               <li>Device de-registration triggers permanent deletion of all locally stored data (tokens, cache, preferences).</li>
               <li>This prevents "buddy punching" and unauthorized access from unregistered devices.</li>
+            </ul>
+
+            <h3>3.4 Web Dashboard Access Controls</h3>
+            <ul>
+              <li>Web dashboard access is governed by the same RBAC system that controls the entire platform. Each user can only access features and data permitted by their assigned role.</li>
+              <li>All web sessions are subject to automatic timeout after periods of inactivity.</li>
+              <li>API requests from the web dashboard are validated against CORS policies, ensuring requests originate only from authorized domains.</li>
+              <li>Administrative actions (role changes, employee data modifications, payroll processing) are logged in the audit trail with timestamps, user context, and IP addresses.</li>
             </ul>
 
             {/* Section 4 */}
@@ -350,6 +361,9 @@ const DataSecurity = () => {
               <li><strong>XSS Prevention:</strong> React's built-in escaping prevents cross-site scripting. No <code>dangerouslySetInnerHTML</code> is used with user-supplied content.</li>
               <li><strong>CSRF Protection:</strong> API authentication via JWT bearer tokens (not cookies) inherently prevents cross-site request forgery.</li>
               <li><strong>Dependency Auditing:</strong> Regular <code>npm audit</code> scans identify and patch known vulnerabilities in third-party dependencies.</li>
+              <li><strong>CORS Policy:</strong> The web dashboard API enforces strict Cross-Origin Resource Sharing rules, accepting requests only from authorized frontend domains.</li>
+              <li><strong>Security Headers:</strong> HTTP security headers (Cross-Origin-Resource-Policy, X-Content-Type-Options, referrer policy) are enforced on all responses to prevent common web attacks.</li>
+              <li><strong>Analytics Proxy:</strong> Web analytics (GA4) traffic is routed through our own server-side proxy rather than directly to Google, reducing client-side exposure and providing additional control over transmitted data.</li>
             </ul>
 
             <h3>5.2 API Security</h3>
@@ -358,6 +372,7 @@ const DataSecurity = () => {
               <li>RBAC middleware enforces permissions at the route level — unauthorized requests receive <code>403 Forbidden</code>.</li>
               <li>Request payloads are size-limited to prevent denial-of-service via oversized bodies.</li>
               <li>File uploads are validated for type, size, and content before processing.</li>
+              <li><strong>Third-party AI Processing:</strong> Resume data processed by Google Generative AI for recruitment is transmitted via HTTPS and is governed by Google's Data Processing Addendum. No employee PII beyond resume content is sent to the AI service.</li>
             </ul>
 
             <h3>5.3 Attendance Integrity</h3>
@@ -386,6 +401,8 @@ const DataSecurity = () => {
                   <tr><td>Analytics data</td><td>Up to 14 months (Firebase GA4)</td><td>Auto-purged by Google</td></tr>
                   <tr><td>Session recordings</td><td>Up to 30 days (Microsoft Clarity)</td><td>Auto-purged by Microsoft</td></tr>
                   <tr><td>Local device data</td><td>Until logout or de-registration</td><td>Immediate permanent deletion</td></tr>
+                  <tr><td>Recruitment data</td><td>Per organization's hiring policy</td><td>Automated per retention rules</td></tr>
+                  <tr><td>Payroll &amp; statutory records</td><td>Per Indian labor law (5-8 years)</td><td>Automated after retention period</td></tr>
                 </tbody>
               </table>
             </TableWrap>
@@ -436,6 +453,7 @@ const DataSecurity = () => {
                   <tr><td>Google API Services User Data Policy</td><td>Compliant</td><td>Limited Use requirements for Firebase API data</td></tr>
                   <tr><td>Google Play Data Safety</td><td>Declared</td><td>Full data collection and sharing disclosures submitted</td></tr>
                   <tr><td>OWASP Mobile Top 10</td><td>Addressed</td><td>Security controls cover all OWASP mobile risk categories</td></tr>
+                  <tr><td>OWASP Web Top 10</td><td>Addressed</td><td>Input validation, parameterized queries, CSRF protection, XSS prevention, security headers</td></tr>
                 </tbody>
               </table>
             </TableWrap>
@@ -450,6 +468,8 @@ const DataSecurity = () => {
               <li>Reporting any suspicious activity on your account to your Employer immediately</li>
               <li>Not using rooted/jailbroken devices, which may compromise security protections</li>
               <li>Locking your device when unattended to prevent unauthorized attendance marking</li>
+              <li>Logging out of the web dashboard when using shared or public computers</li>
+              <li>Ensuring your browser is up to date to benefit from the latest security patches</li>
             </ul>
 
             {/* Section 11 */}

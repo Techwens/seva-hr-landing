@@ -173,11 +173,11 @@ const TermsOfService = () => {
             <p className="tagline">
               These Terms of Service ("<strong>Terms</strong>") constitute a legally binding agreement between you and
               <strong> Techwens Software Private Limited</strong> ("Techwens", "we", "us", or "our"), governing your
-              access to and use of the <strong>SEVA HR</strong> mobile application (the "<strong>App</strong>") and
-              related services (collectively, the "<strong>Service</strong>").
+              access to and use of the <strong>SEVA HR</strong> platform — including the web dashboard, mobile application,
+              APIs, and all related services (collectively, the "<strong>Service</strong>").
             </p>
             <ConsentNote>
-              By accessing or using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree, you must not use the Service.
+              By accessing or using any part of the Service — whether through the web dashboard, mobile app, or any related interface — you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree, you must not use the Service.
             </ConsentNote>
           </Header>
 
@@ -188,7 +188,7 @@ const TermsOfService = () => {
             <ul>
               <li><strong>"Customer"</strong> means an entity (employer or organization) that has executed a service agreement with Techwens to use the SEVA HR platform.</li>
               <li><strong>"End User"</strong> means an individual employee or authorized user of a Customer who accesses the App.</li>
-              <li><strong>"Service"</strong> means the SEVA HR cloud-based HRMS platform, including the mobile application, web dashboard, APIs, and all related features.</li>
+              <li><strong>"Service"</strong> means the SEVA HR cloud-based HRMS platform, including the web dashboard (Company Admin), mobile application (Employee Self-Service), APIs, background processing systems, and all related features and interfaces.</li>
               <li><strong>"Content"</strong> means any data, documents, files, text, images, or other materials uploaded, submitted, or generated through the Service.</li>
               <li><strong>"Personal Data"</strong> means any information relating to an identified or identifiable individual, as defined under applicable data protection laws.</li>
             </ul>
@@ -201,20 +201,25 @@ const TermsOfService = () => {
             <h3>2.2 Account Provisioning</h3>
             <p>Your account is provisioned by your Employer (Customer). You are responsible for maintaining the confidentiality of your login credentials, passcode, and any biometric authentication configured on your device. You agree to notify your Employer immediately of any unauthorized use of your account.</p>
 
-            <h3>2.3 Device Registration</h3>
-            <p>The App may require you to register a specific mobile device for security purposes. Your Employer's administrator may de-register your device at any time, which will revoke your access and delete all locally stored data.</p>
+            <h3>2.3 Web Dashboard Access</h3>
+            <p>Access to the SEVA HR web dashboard is granted by your Employer based on your assigned role and permissions. Administrators, HR managers, and other authorized personnel may access features appropriate to their role through the web interface. You must not share your web dashboard credentials or leave sessions unattended on shared devices.</p>
+
+            <h3>2.4 Mobile Device Registration</h3>
+            <p>The mobile app may require you to register a specific mobile device for security purposes. Your Employer's administrator may de-register your device at any time, which will revoke your mobile access and delete all locally stored data.</p>
 
             {/* Section 3 */}
             <h2>3. Use of the Service</h2>
             <h3>3.1 Permitted Use</h3>
-            <p>You may use the Service solely for legitimate employment-related purposes as intended by the App's features, including but not limited to:</p>
+            <p>You may use the Service solely for legitimate employment-related purposes as intended by the platform's features, including but not limited to:</p>
             <ul>
-              <li>Marking attendance (check-in/check-out) at designated work locations</li>
+              <li>Marking attendance (check-in/check-out) at designated work locations via the mobile app</li>
               <li>Viewing and managing leave balances and applications</li>
               <li>Accessing payslips and salary information</li>
-              <li>Submitting reimbursement claims and supporting documents</li>
+              <li>Submitting reimbursement and expense claims with supporting documents</li>
               <li>Viewing organizational announcements and approvals</li>
               <li>Managing your employee profile and documents</li>
+              <li>Administering HR functions through the web dashboard (if authorized by your Employer)</li>
+              <li>Processing payroll, statutory compliance, and recruitment workflows (for authorized administrators)</li>
             </ul>
 
             <h3>3.2 Prohibited Conduct</h3>
@@ -229,6 +234,8 @@ const TermsOfService = () => {
               <li>Use automated scripts, bots, or scrapers to access the Service</li>
               <li>Reproduce, distribute, or create derivative works from the Service</li>
               <li>Use the Service in a manner that could damage, overburden, or impair Techwens' servers or networks</li>
+              <li>Export, download, or scrape bulk data from the web dashboard beyond what is necessary for legitimate HR purposes</li>
+              <li>Grant unauthorized third parties access to the web dashboard or share login credentials</li>
             </ul>
 
             <Warning>
@@ -236,8 +243,8 @@ const TermsOfService = () => {
             </Warning>
 
             {/* Section 4 */}
-            <h2>4. Location Services</h2>
-            <p>Certain features of the App require access to your device's location services. By using attendance features, you acknowledge and consent to the following:</p>
+            <h2>4. Location Services (Mobile App)</h2>
+            <p>Certain features of the SEVA HR mobile app require access to your device's location services. By using mobile attendance features, you acknowledge and consent to the following:</p>
             <ul>
               <li>The App will request your precise location (GPS) when you check in or check out to verify your presence at an approved work location.</li>
               <li>Location data is collected only during the attendance action and is not continuously tracked.</li>
@@ -261,8 +268,10 @@ const TermsOfService = () => {
             <p>The Service integrates with third-party services for functionality, analytics, and monitoring (as described in our <a href="/privacy-policy">Privacy Policy</a>). These include:</p>
             <ul>
               <li>Firebase (Google LLC) — Analytics, Crashlytics, and push notifications</li>
+              <li>Google Analytics 4 (Google LLC) — Web and mobile usage analytics</li>
+              <li>Google Generative AI (Google LLC) — AI-powered resume parsing for recruitment</li>
               <li>Sentry (Functional Software, Inc.) — Error tracking</li>
-              <li>Microsoft Clarity — Session replay and behavioral analytics</li>
+              <li>Microsoft Clarity (Microsoft Corporation) — Session replay and behavioral analytics on mobile and web</li>
               <li>AWS and Contabo — Cloud hosting infrastructure</li>
               <li>Third-party SMS/Email gateways — OTP delivery and notifications</li>
             </ul>
@@ -276,7 +285,8 @@ const TermsOfService = () => {
               <li>Techwens acts as a <strong>Data Processor</strong>; your Employer is the <strong>Data Controller</strong>.</li>
               <li>We process Personal Data only as necessary to provide the Service and as instructed by the Customer.</li>
               <li>We do not sell, rent, or share your data with advertisers or data brokers.</li>
-              <li>Biometric authentication data (fingerprint, face scan) is processed locally on your device and never transmitted to our servers.</li>
+              <li>Biometric authentication data (fingerprint, face scan) used for mobile app unlock is processed locally on your device and never transmitted to our servers.</li>
+              <li>Recruitment data may be processed by third-party AI services (Google Generative AI) for resume parsing, as described in our Privacy Policy.</li>
             </ul>
 
             {/* Section 8 */}
@@ -288,7 +298,7 @@ const TermsOfService = () => {
             <p>Techwens reserves the right to modify, update, or discontinue any part of the Service at any time, with or without notice. We will make reasonable efforts to notify Customers of material changes through the App or via email. Continued use of the Service after modifications constitutes acceptance of the updated features.</p>
 
             <h3>8.3 Over-the-Air (OTA) Updates</h3>
-            <p>The App may receive OTA updates that modify the application's JavaScript bundle without requiring a new download from the app store. These updates are used to deliver bug fixes, performance improvements, and minor feature enhancements.</p>
+            <p>The SEVA HR mobile app may receive OTA updates that modify the application's JavaScript bundle without requiring a new download from the app store. These updates are used to deliver bug fixes, performance improvements, and minor feature enhancements. The web dashboard is updated server-side and does not require user action.</p>
 
             {/* Section 9 */}
             <h2>9. Disclaimer of Warranties</h2>
