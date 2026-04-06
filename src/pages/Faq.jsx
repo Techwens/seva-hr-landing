@@ -6,9 +6,10 @@ const PageWrapper = styled.div({
   background: '#F8FAFC',
 })
 
-/* ── Hero (light) ── */
+/* ── Hero (dark) ── */
 const HeroSection = styled.section({
-  background: '#fff',
+  background: 'linear-gradient(180deg, #0F172A 0%, #1E293B 100%)',
+  position: 'relative', overflow: 'hidden',
   paddingBlock: '8rem 5rem',
   textAlign: 'center',
   '@media (max-width: 575px)': { paddingBlock: '6rem 3rem' },
@@ -32,16 +33,17 @@ const GridOverlay = styled.div({
 const Badge = styled.h3({
   display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
   padding: '0.625rem 1.25rem', borderRadius: '3rem',
-  background: 'linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)',
-  border: '1px solid rgba(71,111,255,0.15)',
-  boxShadow: '0 4px 15px rgba(71,111,255,0.08)',
+  background: 'rgba(255,255,255,0.08)',
+  backdropFilter: 'blur(10px)',
+  border: '1px solid rgba(255,255,255,0.1)',
+  color: '#fff',
   fontSize: '0.875rem',
   marginBottom: '1rem',
   '@media (max-width: 575px)': { padding: '0.3rem 0.6rem', fontSize: '0.688rem', gap: '0.25rem' },
-  '& span': { fontSize: '0.875rem', fontWeight: 600, background: 'linear-gradient(90deg, #476FFF 0%, #7B60FF 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', '@media (max-width: 575px)': { fontSize: '0.688rem' } },
+  '& span': { fontSize: '0.875rem', fontWeight: 600, '@media (max-width: 575px)': { fontSize: '0.688rem' } },
 })
 const HeroTitle = styled.h1({
-  color: '#1a1a2e', marginBottom: '1rem',
+  color: '#fff', marginBottom: '1rem',
   '& span': {
     background: 'linear-gradient(90deg, #FF6600 0%, #7B60FF 80.8%)',
     WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
@@ -49,7 +51,7 @@ const HeroTitle = styled.h1({
   },
 })
 const HeroSubtitle = styled.p({
-  color: '#64748B', maxWidth: '36rem', margin: '0 auto', lineHeight: 1.7,
+  color: 'rgba(255,255,255,0.85)', maxWidth: '36rem', margin: '0 auto', lineHeight: 1.7,
 })
 const SparkleIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -218,7 +220,10 @@ export const Faq = () => {
     <PageWrapper>
       {/* ── Hero ── */}
       <HeroSection>
-        <div className="container">
+        <HeroOrb $top="-10%" $left="-5%" $size="30rem" $delay="0s" />
+        <HeroOrb $top="30%" $right="-8%" $size="22rem" $color="radial-gradient(circle, rgba(123,96,255,0.12) 0%, transparent 70%)" $delay="2s" />
+        <GridOverlay />
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <Badge><SparkleIcon /><span>FAQ</span></Badge>
           <HeroTitle>Frequently Asked <span>Questions</span></HeroTitle>
           <HeroSubtitle>Everything you need to know about SEVA HR. Can't find what you're looking for? Contact us.</HeroSubtitle>

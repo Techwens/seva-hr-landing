@@ -3,10 +3,10 @@ import styled from 'styled-components'
 
 const PageWrapper = styled.div({ minHeight: '100vh', background: '#F8FAFC' })
 
-/* -- Hero (light) -- */
+/* -- Hero (dark) -- */
 const HeroSection = styled.section({
   position: 'relative', overflow: 'hidden',
-  background: '#fff',
+  background: 'linear-gradient(180deg, #0F172A 0%, #1E293B 100%)',
   paddingBlock: '8rem 5rem', textAlign: 'center',
   '@media (max-width: 575px)': { paddingBlock: '6rem 3rem' },
 })
@@ -26,17 +26,17 @@ const Grid = styled.div({
 const DarkBadge = styled.h3({
   display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
   padding: '0.625rem 1.25rem', borderRadius: '3rem',
-  background: 'linear-gradient(135deg, #EEF2FF 0%, #FDF4FF 100%)',
-  border: '1px solid rgba(71,111,255,0.15)', boxShadow: '0 4px 15px rgba(71,111,255,0.08)',
+  background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)',
+  border: '1px solid rgba(255,255,255,0.1)', color: '#fff',
   fontSize: '0.875rem', marginBottom: '1rem',
   '@media (max-width: 575px)': { padding: '0.3rem 0.6rem', fontSize: '0.688rem', gap: '0.25rem' },
-  '& span': { fontWeight: 600, background: 'linear-gradient(90deg, #476FFF, #7B60FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' },
+  '& span': { fontWeight: 600 },
 })
 const HeroTitle = styled.h1({
-  color: '#1a1a2e', marginBottom: '1rem',
+  color: '#fff', marginBottom: '1rem',
   '& span': { background: 'linear-gradient(90deg, #FF6600 0%, #7B60FF 80.8%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', color: 'transparent' },
 })
-const HeroSub = styled.p({ color: '#64748B', maxWidth: '40rem', margin: '0 auto', lineHeight: 1.7 })
+const HeroSub = styled.p({ color: 'rgba(255,255,255,0.85)', maxWidth: '40rem', margin: '0 auto', lineHeight: 1.7 })
 const Sparkle = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="url(#spr)"/><defs><linearGradient id="spr" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse"><stop stopColor="#60A5FA"/><stop offset="1" stopColor="#A78BFA"/></linearGradient></defs></svg>
 )
@@ -216,6 +216,9 @@ export const FeaturePayroll = () => {
     <PageWrapper>
       {/* -- Hero -- */}
       <HeroSection>
+        <Orb $top="-10%" $left="-5%" $size="30rem" $delay="0s" />
+        <Orb $top="30%" $right="-8%" $size="22rem" $color="radial-gradient(circle, rgba(123,96,255,0.12) 0%, transparent 70%)" $delay="2s" />
+        <Grid />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <DarkBadge><Sparkle /><span>Payroll</span></DarkBadge>
           <HeroTitle>Payroll Processing,<br /><span>Simplified</span></HeroTitle>
