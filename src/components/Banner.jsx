@@ -312,7 +312,7 @@ export default function Banner() {
                   <path d="M17.1742 8.963C16.7552 8.249 15.8352 8.009 15.1212 8.429L14.6522 8.704C14.3292 8.471 13.9422 8.3 13.4992 8.184V7.5C13.4992 6.672 12.8272 6 11.9992 6C11.1712 6 10.4992 6.672 10.4992 7.5V8.184C10.0562 8.3 9.66924 8.47 9.34624 8.704L8.87724 8.429C8.16324 8.01 7.24324 8.249 6.82424 8.963C6.40524 9.677 6.64424 10.597 7.35824 11.016L8.02724 11.409C8.00924 11.597 7.99824 11.793 7.99824 12.001C7.99824 12.209 8.00924 12.404 8.02724 12.593L7.35824 12.986C6.64424 13.405 6.40424 14.325 6.82424 15.039C7.24324 15.753 8.16324 15.993 8.87724 15.573L9.34624 15.298C9.66924 15.531 10.0562 15.702 10.4992 15.818V16.502C10.4992 17.33 11.1712 18.002 11.9992 18.002C12.8272 18.002 13.4992 17.33 13.4992 16.502V15.818C13.9422 15.702 14.3292 15.532 14.6522 15.298L15.1212 15.573C15.8352 15.992 16.7552 15.753 17.1742 15.039C17.5932 14.325 17.3542 13.405 16.6402 12.986L15.9712 12.593C15.9892 12.405 16.0002 12.209 16.0002 12.001C16.0002 11.793 15.9892 11.598 15.9712 11.409L16.6402 11.016C17.3542 10.597 17.5942 9.677 17.1742 8.963ZM12.0002 13.5C10.8082 13.5 10.5002 13.192 10.5002 12C10.5002 10.808 10.8082 10.5 12.0002 10.5C13.1922 10.5 13.5002 10.808 13.5002 12C13.5002 13.192 13.1922 13.5 12.0002 13.5ZM22.9952 12.531C22.8462 19.771 19.4542 23 12.0002 23C8.50724 23 6.00324 22.31 4.22624 20.864L2.88824 22.202C2.61524 22.475 2.21024 22.569 1.84824 22.448C1.48324 22.326 1.21824 22.008 1.16324 21.626C0.946238 20.1 0.946238 18.552 1.16324 17.027C1.22724 16.58 1.57824 16.228 2.02624 16.164C2.78924 16.055 3.55824 16 4.32624 16C5.09424 16 5.86424 16.055 6.62724 16.164C7.00824 16.218 7.32624 16.484 7.44724 16.849C7.56924 17.214 7.47424 17.617 7.20224 17.889L6.36924 18.722C7.60024 19.585 9.41724 20.001 11.9992 20.001C17.7872 20.001 19.8792 18.03 19.9952 12.47C20.0112 11.642 20.7012 10.983 21.5262 11.002C22.3542 11.019 23.0112 11.704 22.9942 12.533L22.9952 12.531ZM1.00524 11.469C1.15524 4.229 4.54624 1 12.0002 1C15.4822 1 18.0022 1.691 19.7762 3.134L21.1122 1.798C21.3852 1.525 21.7902 1.431 22.1532 1.552C22.5182 1.674 22.7832 1.992 22.8382 2.374C23.0552 3.9 23.0552 5.448 22.8382 6.974C22.7742 7.421 22.4232 7.773 21.9752 7.837C21.2122 7.946 20.4432 8.001 19.6752 8.001C18.9072 8.001 18.1372 7.946 17.3742 7.837C16.9932 7.783 16.6752 7.517 16.5542 7.152C16.4322 6.787 16.5272 6.384 16.7992 6.112L17.6402 5.271C16.6562 4.586 15.0022 4.001 12.0012 4.001C6.21324 4.001 4.12124 5.972 4.00524 11.532C3.98824 12.349 3.32024 13.001 2.50624 13.001C1.66724 13.001 0.988238 12.31 1.00624 11.47L1.00524 11.469Z" fill="#476FFF" />
                 </svg>
               </div>
-              Built for Complex Shift-Based Operations
+              Complete Cloud HRMS Platform
               <div className="new">
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
@@ -341,9 +341,9 @@ export default function Banner() {
                   allowTouchMove={false}
                 >
                   {[
-                    "Shift-Based Industries",
-                    "Workforce Fairness",
-                    "High Productivity",
+                    "Every Indian Business",
+                    "Growing Teams",
+                    "Complete Compliance",
                   ].map((text, i) => (
                     <SwiperSlide key={i}>
                       <GradientText>{text}</GradientText>
@@ -354,31 +354,35 @@ export default function Banner() {
             </Heading>
 
             <Subtitle>
-              plete workforce management solution built for complex operations — from manufacturing floors to healthcare facilities, logistics centers to service industries.
+              Complete workforce management solution for Indian businesses of all sizes — from startups and IT companies to manufacturing, healthcare, retail, and beyond. Payroll, attendance, compliance, and more in one platform.
             </Subtitle>
 
             <ButtonGroup>
-              <PrimaryButton>
-                <span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="15" viewBox="0 0 13 15" fill="none">
-                  <path d="M0 7.0286V2.46182C0 0.569748 2.0486 -0.613826 3.68528 0.333582L7.64243 2.61835L11.5996 4.90311C13.239 5.84777 13.239 8.21492 11.5996 9.15958L7.64243 11.4443L3.68528 13.7291C2.0486 14.671 0 13.4902 0 11.5981V7.0286Z" fill="white" />
-                </svg></span>
-                Watch Demo
-              </PrimaryButton>
-              <SecondaryButton>
-                <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path d="M10.0035 3.40804L1.41153 12L0 10.5885L8.59096 1.99651H1.01922V0H12V10.9808H10.0035V3.40804Z" fill="black" />
-                    <path d="M10.0035 3.40804L1.41153 12L0 10.5885L8.59096 1.99651H1.01922V0H12V10.9808H10.0035V3.40804Z" fill="url(#paint0_linear_3927_981)" />
-                    <defs>
-                      <linearGradient id="paint0_linear_3927_981" x1="-3.68589e-07" y1="11.5" x2="8.5" y2="3" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#FF6600" />
-                        <stop offset="1" stopColor="#7B60FF" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </span>
-                Get Started Free
-              </SecondaryButton>
+              <a href="/contact" style={{ textDecoration: 'none' }}>
+                <PrimaryButton as="div">
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="15" viewBox="0 0 13 15" fill="none">
+                    <path d="M0 7.0286V2.46182C0 0.569748 2.0486 -0.613826 3.68528 0.333582L7.64243 2.61835L11.5996 4.90311C13.239 5.84777 13.239 8.21492 11.5996 9.15958L7.64243 11.4443L3.68528 13.7291C2.0486 14.671 0 13.4902 0 11.5981V7.0286Z" fill="white" />
+                  </svg></span>
+                  Book a Demo
+                </PrimaryButton>
+              </a>
+              <a href="/contact" style={{ textDecoration: 'none' }}>
+                <SecondaryButton as="div">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path d="M10.0035 3.40804L1.41153 12L0 10.5885L8.59096 1.99651H1.01922V0H12V10.9808H10.0035V3.40804Z" fill="black" />
+                      <path d="M10.0035 3.40804L1.41153 12L0 10.5885L8.59096 1.99651H1.01922V0H12V10.9808H10.0035V3.40804Z" fill="url(#paint0_linear_3927_981)" />
+                      <defs>
+                        <linearGradient id="paint0_linear_3927_981" x1="-3.68589e-07" y1="11.5" x2="8.5" y2="3" gradientUnits="userSpaceOnUse">
+                          <stop stopColor="#FF6600" />
+                          <stop offset="1" stopColor="#7B60FF" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </span>
+                  Get Started Free
+                </SecondaryButton>
+              </a>
             </ButtonGroup>
           </Wrapper>
         </div>

@@ -674,8 +674,8 @@ export default function Security() {
                   </svg>
                 </CertIcon>
                 <CertText>
-                  <p>100+ Enterprises</p>
-                  <span>Trust our platform</span>
+                  <p>AES-256</p>
+                  <span>Encryption at Rest</span>
                 </CertText>
               </CertBadge>
               <CertBadge>
@@ -749,8 +749,8 @@ export default function Security() {
                   <div className="label">Data Breaches</div>
                 </FloatingStat>
                 <FloatingStat $bottom="0" $left="20%">
-                  <div className="value">99.9%</div>
-                  <div className="label">Uptime SLA</div>
+                  <div className="value">24/7</div>
+                  <div className="label">Monitoring</div>
                 </FloatingStat>
               </ShieldVisual>
             </ShieldSection>

@@ -111,6 +111,15 @@ const FooterList = styled.ul({
       color: "#fff",
     },
   },
+
+  "& ul li a": {
+    color: "inherit",
+    textDecoration: "none",
+    transition: "color 0.25s ease",
+    "&:hover": {
+      color: "#fff",
+    },
+  },
 });
 
 const Logo = styled.div({
@@ -252,11 +261,11 @@ const Footer = () => {
               completely compliant with all regulatory requirements.
             </p>
             <Contact>
-              <a href="tel:+918045678900" aria-label="Call SevaHR at +91-80-4567-8900">
+              <a href="tel:+919477047816" aria-label="Call SevaHR at +91-94770-47816">
                 <span>
                   <img src={WhiteCallIcon} alt="" aria-hidden="true" />
                 </span>
-                +91-80-4567-8900
+                +91-94770-47816
               </a>
               <a href="mailto:hello@sevahr.com" aria-label="Email SevaHR at hello@sevahr.com">
                 <span>
@@ -283,28 +292,27 @@ const Footer = () => {
           <li className="col-features">
             <h4>Features</h4>
             <ul>
-              <li>Employee Management</li>
-              <li>Payroll Processing</li>
-              <li>Attendance Tracking</li>
-              <li>Performance Reviews</li>
+              <li><a href="/features/employee-management">Employee Management</a></li>
+              <li><a href="/features/payroll">Payroll Processing</a></li>
+              <li><a href="/features/attendance">Attendance & Shifts</a></li>
+              <li><a href="/features/compliance">Compliance</a></li>
             </ul>
           </li>
           <li className="col-compliance">
-            <h4>Compliance</h4>
+            <h4>Product</h4>
             <ul>
-              <li>EPF & ESI Returns</li>
-              <li>TDS Calculations</li>
-              <li>Form 16 Generation</li>
-              <li>Labor Law Updates</li>
+              <li><a href="/mobile-app">Mobile App (ESS)</a></li>
+              <li><a href="/features/performance">Performance (Coming Soon)</a></li>
+              <li>SevaAttendance (Coming Soon)</li>
             </ul>
           </li>
           <li className="col-support">
-            <h4>Support</h4>
+            <h4>Company</h4>
             <ul>
-              <li>Help Center</li>
-              <li>Documentation</li>
-              <li>Video Tutorials</li>
-              <li>Contact Support</li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+              <li><a href="/faq">FAQ</a></li>
+              <li><a href="mailto:hello@sevahr.com">hello@sevahr.com</a></li>
             </ul>
           </li>
         </FooterList>
@@ -316,12 +324,13 @@ const Footer = () => {
                 <path d="M12 6.34254C12.0021 5.31797 11.7684 4.30817 11.3188 3.39991C10.8693 2.49166 10.2174 1.71209 9.41925 1.12821C8.62106 0.544334 7.7004 0.173593 6.73638 0.0478463C5.77237 -0.0779004 4.79382 0.0451073 3.88482 0.4063C2.97582 0.767493 2.16356 1.35607 1.51781 2.12146C0.87206 2.88685 0.412143 3.80617 0.177574 4.80042C-0.0569955 5.79467 -0.0592028 6.83413 0.171142 7.82948C0.401486 8.82483 0.857495 9.74631 1.49999 10.5147V17.0222C1.49998 17.3948 1.59974 17.7598 1.78778 18.0752C1.97583 18.3905 2.2445 18.6435 2.56286 18.8049C2.88122 18.9662 3.23631 19.0295 3.58726 18.9873C3.9382 18.9451 4.2707 18.7992 4.54649 18.5665L5.99999 17.3387L7.45349 18.5649C7.72917 18.7976 8.06154 18.9434 8.41234 18.9857C8.76315 19.0279 9.11813 18.9648 9.43644 18.8036C9.75474 18.6424 10.0234 18.3897 10.2116 18.0746C10.3997 17.7595 10.4997 17.3947 10.5 17.0222V10.5147C11.4662 9.36387 11.9998 7.87982 12 6.34254ZM5.99999 1.59601C6.89 1.59601 7.76003 1.87439 8.50005 2.39594C9.24007 2.9175 9.81685 3.65881 10.1574 4.52612C10.498 5.39344 10.5872 6.34781 10.4135 7.26855C10.2399 8.18928 9.8113 9.03504 9.18197 9.69885C8.55263 10.3627 7.75081 10.8147 6.87789 10.9979C6.00498 11.181 5.10018 11.087 4.27791 10.7278C3.45564 10.3685 2.75284 9.76014 2.25837 8.97958C1.76391 8.19901 1.49999 7.28132 1.49999 6.34254C1.50118 5.08407 1.97567 3.8775 2.81932 2.98762C3.66298 2.09775 4.80688 1.59727 5.99999 1.59601ZM8.78774 17.3767C8.72428 17.4098 8.6531 17.423 8.58273 17.4146C8.51236 17.4061 8.44579 17.3765 8.39099 17.3292L5.99999 15.3111L3.60974 17.3292C3.5547 17.3758 3.48832 17.4051 3.41823 17.4136C3.34813 17.4222 3.27716 17.4098 3.21347 17.3777C3.14978 17.3457 3.09596 17.2953 3.0582 17.2324C3.02043 17.1695 3.00026 17.0967 2.99999 17.0222V11.8153C3.91046 12.3758 4.94576 12.6712 5.99999 12.6712C7.05421 12.6712 8.08951 12.3758 8.99999 11.8153V17.0222C9.00082 17.0966 8.98122 17.1697 8.94356 17.2326C8.9059 17.2955 8.85178 17.3455 8.78774 17.3767Z" fill="white" />
               </svg>
             </div>
-            Made in India | ISO 27001 Certified | GDPR Compliant</span>
+            Made in India | ISO 27001 Certified | DPDP Act Compliant</span>
 
           <nav className="terms" aria-label="Legal links">
             <a href="/privacy-policy">Privacy Policy</a>
             <a href="/terms-of-service">Terms of Service</a>
             <a href="/data-security">Data Security</a>
+            <a href="/refund-policy">Refund Policy</a>
           </nav>
         </Copyright>
 

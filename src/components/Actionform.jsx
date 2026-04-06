@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
+import { submitDemoRequest } from "../config/api"
 import packlock from "../assets/padlock-check 2.svg"
 import WebinarPlay from "../assets/svg/WebinarPlay"
 import RoadMap from "../assets/svg/RoadMap"
@@ -543,20 +544,23 @@ export default function Actionform() {
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      await submitDemoRequest({
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        employeeCount: formData.employees,
+        subject: 'Book a Demo',
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    // Reset form after success
-    setFormData({
-      fullName: "",
-      company: "",
-      phone: "",
-      email: "",
-      employees: "",
-    });
+      setIsSubmitted(true);
+      setFormData({ fullName: "", company: "", phone: "", email: "", employees: "" });
+    } catch (err) {
+      setErrors({ submit: err.message });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

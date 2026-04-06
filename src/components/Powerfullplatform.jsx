@@ -419,33 +419,33 @@ export default function Powerfullplatform() {
   }, []);
   const features = [
     {
-      title: "One Smart Shift Management",
-      description: "Manual shift registers causing errors",
+      title: "Smart Attendance & Shifts",
+      description: "GPS-verified check-in, geofencing, and shift scheduling",
       icon: <PowerfullplatformIcon1 />
     },
     {
-      title: "Zero Overtime Disputes",
-      description: "Salary mismatches creating conflicts",
+      title: "Error-Free Payroll",
+      description: "Auto-computed salaries with zero calculation disputes",
       icon: <PowerfullplatformIcon2 />
     },
     {
-      title: "Real-Time accuracy",
-      description: "No idea where workers are",
+      title: "Leave & Expense Management",
+      description: "Digital leave requests, expense claims, and approvals",
       icon: <PowerfullplatformIcon3 />
     },
     {
       title: "Multi-Branch Control",
-      description: "Scattered workforce across locations",
+      description: "Manage workforce across all your office locations",
       icon: <PowerfullplatformIcon4 />
     },
     {
-      title: "60% Less HR Work For you",
-      description: "Drowning in manual paperwork",
+      title: "60% Less HR Work",
+      description: "Automate repetitive tasks and free your HR team",
       icon: <PowerfullplatformIcon5 />
     },
     {
       title: "Compliance on Autopilot",
-      description: "Government filing stress & penalties",
+      description: "EPF, ESI, PT, TDS auto-calculated and audit-ready",
       icon: <PowerfullplatformIcon6 />
     },
   ]
@@ -463,7 +463,7 @@ export default function Powerfullplatform() {
           </Badge>
         </div>
         <h2>Everything You Need in<br /><span>One Powerful Platform</span></h2>
-        <Subtitle>One unified platform for HR, Attendance, Payroll, Compliance, and Analytics — built for complex shift-based operations across all industries.</Subtitle>
+        <Subtitle>One unified platform for HR, Attendance, Payroll, Leave, Compliance, and more — built for Indian businesses across all industries.</Subtitle>
         <SectionRow ref={sectionRef}>
           <Left className="animate">
             <ul>
@@ -513,7 +513,7 @@ export default function Powerfullplatform() {
                     />
                   </svg>
                 </div>
-                <h6>Smart Shift & Attendance</h6>
+                <h6>Smart Attendance & Shifts</h6>
               </li>
               <li>
                 <div>
@@ -545,21 +545,73 @@ export default function Powerfullplatform() {
                     />
                   </svg>
                 </div>
-                <h6>Geo-Fencing & GPS Tracking</h6>
+                <h6>Leave & Expense Management</h6>
+              </li>
+              <li>
+                <div>
+                  <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="24" fill="#4F6BFF" />
+                    <path
+                      d="M14 24.5L21 31L34 17"
+                      fill="none"
+                      stroke="#FFFFFF"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h6>Statutory Compliance</h6>
+              </li>
+              <li>
+                <div>
+                  <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="24" fill="#4F6BFF" />
+                    <path
+                      d="M14 24.5L21 31L34 17"
+                      fill="none"
+                      stroke="#FFFFFF"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h6>Recruitment & Performance (Coming Soon)</h6>
+              </li>
+              <li>
+                <div>
+                  <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="24" fill="#4F6BFF" />
+                    <path
+                      d="M14 24.5L21 31L34 17"
+                      fill="none"
+                      stroke="#FFFFFF"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h6>Mobile App (Employee Self-Service)</h6>
               </li>
             </ul>
             <Buttonwrap>
-              <CtaButton>
-                <span>Book your demo</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13" fill="none">
-                  <path d="M6.71165 12.8863L5.22869 11.4161L9.12145 7.52339H0V5.36288H9.12145L5.22869 1.47652L6.71165 -4.45843e-05L13.1548 6.44314L6.71165 12.8863Z" fill="white" />
-                </svg>
-              </CtaButton>
-              <GetStartButton>Get Started Free
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13" fill="none">
-                  <path d="M6.71165 12.8863L5.22869 11.4161L9.12145 7.52339H0V5.36288H9.12145L5.22869 1.47652L6.71165 -4.45843e-05L13.1548 6.44314L6.71165 12.8863Z" fill="black" />
-                </svg>
-              </GetStartButton>
+              <a href="/contact" style={{ textDecoration: 'none', width: '100%' }}>
+                <CtaButton as="div">
+                  <span>Book your demo</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13" fill="none">
+                    <path d="M6.71165 12.8863L5.22869 11.4161L9.12145 7.52339H0V5.36288H9.12145L5.22869 1.47652L6.71165 -4.45843e-05L13.1548 6.44314L6.71165 12.8863Z" fill="white" />
+                  </svg>
+                </CtaButton>
+              </a>
+              <a href="/contact" style={{ textDecoration: 'none', width: '100%' }}>
+                <GetStartButton as="div">Get Started Free
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13" fill="none">
+                    <path d="M6.71165 12.8863L5.22869 11.4161L9.12145 7.52339H0V5.36288H9.12145L5.22869 1.47652L6.71165 -4.45843e-05L13.1548 6.44314L6.71165 12.8863Z" fill="black" />
+                  </svg>
+                </GetStartButton>
+              </a>
             </Buttonwrap>
 
           </Right>

@@ -211,33 +211,33 @@ const SparkleIcon = () => (
 
 const cardData = [
   {
-    title: "ISO 27001",
-    subtitle: "Certified Ready",
+    title: "10+ Modules",
+    subtitle: "And Growing",
     image: Badge1,
   },
   {
-    title: "Bank-Grade",
-    subtitle: "Security",
+    title: "Mobile App",
+    subtitle: "iOS & Android ESS",
     image: Badge1,
   },
   {
-    title: "Fully Compliant",
-    subtitle: "EPF, ESI, TDS",
+    title: "Auto Compliance",
+    subtitle: "EPF, ESI, PT, TDS",
     image: Badge2,
   },
   {
-    title: "100+",
-    subtitle: "Organisations",
+    title: "Multi-Branch",
+    subtitle: "All Locations",
     image: Badge2,
   },
   {
-    title: "10,000+",
-    subtitle: "Employees Managed",
+    title: "Custom Roles",
+    subtitle: "Fine-Grained RBAC",
     image: Badge3,
   },
   {
-    title: "100%",
-    subtitle: "Compliance Rate",
+    title: "Made in India",
+    subtitle: "For Indian Businesses",
     image: Badge3,
   },
 ]
@@ -256,9 +256,9 @@ export default function Revolutionhr() {
               Revolutionize Your HR Management
             </h2>
             <p>
-              Complete workforce management solution built for complex
-              operations — from manufacturing floors, healthcare facilities,
-              logistics centers to service industries.
+              Complete workforce management solution for Indian businesses
+              — from IT companies and startups to manufacturing, healthcare,
+              retail, education, and professional services.
             </p>
           </Left>
 

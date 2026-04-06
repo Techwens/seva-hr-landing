@@ -450,7 +450,7 @@ export default function Features() {
           </Badge>
         </div>
         <h2>Built for<br /><span>Operational Excellence</span></h2>
-        <p>Purpose-built for shift-based, multi-location operations with transparent automation and real-time visibility</p>
+        <p>Automate HR operations across your entire organization with transparent payroll, real-time attendance, and complete statutory compliance</p>
         <FeatureList role="list" aria-label="Key features of SevaHR">
           <li>
             <FeatureItem className="FeatureItem">
@@ -487,7 +487,7 @@ export default function Features() {
                 <PayrollIcon />
               </IconWrap>
               <h4>Multi-Level Payroll Engine</h4>
-              <p>Scalable framework built specifically for factories with unlimited configurations</p>
+              <p>Scalable payroll framework with formula-based calculations and unlimited salary configurations</p>
               <div className="activity">
                 <h5>Unlimited Configs</h5>
                 {/* <span><ArrowIcon /></span> */}
@@ -528,39 +528,39 @@ export default function Features() {
           <li className="statitem">
             <StatItem>
               <div className="activity">
-                <h4>5+</h4>
+                <h4>10+</h4>
                 <span><ArrowIcon /></span>
               </div>
-              <p>Core Modules</p>
+              <p>Modules & Growing</p>
             </StatItem>
             <StatItem>
               <div className="activity">
-                <h4>Cloud</h4>
+                <h4>Web + App</h4>
                 <span><ArrowIcon /></span>
               </div>
-              <p>Based Platform</p>
+              <p>Cross-Platform Access</p>
             </StatItem>
           </li>
           <li className="statitem">
             <StatItem>
               <div className="activity">
-                <h4>20+</h4>
+                <h4>50+</h4>
                 <span><ArrowIcon /></span>
               </div>
-              <p>Smart Features</p>
+              <p>Built-in Reports</p>
             </StatItem>
             <StatItem>
               <div className="activity">
-                <h4>99.9%</h4>
+                <h4>24hr</h4>
                 <span><ArrowIcon /></span>
               </div>
-              <p>System Uptime</p>
+              <p>Quick Setup</p>
             </StatItem>
           </li>
           <li>
             <CtaList>
               <h4>Ready to Transform?</h4>
-              <p>Experience the future of manufacturing HR management</p>
+              <p>Experience the future of HR management for your business</p>
               <ol>
                 <li>
                   <div><CheckIcon /></div>
@@ -576,9 +576,11 @@ export default function Features() {
                 </li>
               </ol>
             </CtaList>
-            <CtaButton type="button" aria-label="Book a free demo of SevaHR">
-              <span>Book Free Demo</span>
-            </CtaButton>
+            <a href="/contact" style={{ textDecoration: 'none' }}>
+              <CtaButton as="div" aria-label="Book a free demo of SevaHR">
+                <span>Book Free Demo</span>
+              </CtaButton>
+            </a>
           </li>
         </FeatureList>
       </div>

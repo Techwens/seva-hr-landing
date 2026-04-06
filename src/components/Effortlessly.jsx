@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components';
-import EffortlesslyImg from "../assets/EffortlesslyImg.png";
-import SparkleBg from "../assets/sparkle.svg"
+import EnterpriseDashboard from "../assets/svg/EnterpriseDashboard"
 
 // Reusable checkmark icon component
 const CheckIcon = () => (
@@ -392,42 +391,45 @@ const Effortlessly = () => {
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#476FFF">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
               </svg>
-              <span>Effortlessly Simple for Everyone</span>
+              <span>Powerful Platform, Guided Onboarding</span>
             </Badge>
-            <Title>A User-Friendly HRMS Anyone Can Operate</Title>
-            <Subtitle><span>No training required</span> — SEVA HR is built with simplicity at its core.</Subtitle>
+            <Title>A Growing Platform, Built Right</Title>
+            <Subtitle><span>Guided onboarding</span> — our team sets you up and walks you through every module.</Subtitle>
             <Description>
-              SEVA HR is designed to make HR tasks effortless for every user, regardless of technical expertise.
-              The clean, intuitive interface ensures that employees, managers, and HR teams can easily navigate
-              the platform from day one.
+              SEVA HR is a comprehensive HRMS platform with robust capabilities across payroll, attendance,
+              leave, and statutory compliance — with new modules shipping regularly. Our dedicated onboarding
+              team configures the platform for your organization and provides hands-on training so your HR
+              team is productive from day one.
             </Description>
 
             <Subtitle><span>Benefit Highlights</span></Subtitle>
             <BenefitsList role="list" aria-label="Benefits of SEVA HR">
               <BenefitItem>
                 <div><CheckIcon /></div>
-                Smart Automation
+                Dedicated Onboarding Support
               </BenefitItem>
               <BenefitItem>
                 <div><CheckIcon /></div>
-                Zero Manual Work
+                Hands-On Training for Your Team
               </BenefitItem>
               <BenefitItem>
                 <div><CheckIcon /></div>
-                Instant Insights
+                Ongoing Customer Success
               </BenefitItem>
             </BenefitsList>
 
-            <CtaButton type="button" aria-label="Book a free demo of SevaHR">
-              <span>Book Free Demo</span>
-            </CtaButton>
+            <a href="/contact" style={{ textDecoration: 'none' }}>
+              <CtaButton as="div" aria-label="Book a free demo of SevaHR">
+                <span>Book Free Demo</span>
+              </CtaButton>
+            </a>
           </LeftContent>
 
           <RightContent className="animate">
             <ImageContainer>
               <ImageFrame />
               <ImageWrapper>
-                <img src={EffortlesslyImg} alt="SEVA HR intuitive dashboard interface" priority />
+                <EnterpriseDashboard />
               </ImageWrapper>
 
               {/* Floating feature cards */}
@@ -450,8 +452,8 @@ const Effortlessly = () => {
                   </svg>
                 </CardIcon>
                 <CardText>
-                  <strong>Instant Access</strong>
-                  <span>No training needed</span>
+                  <strong>Guided Setup</strong>
+                  <span>Hands-on onboarding</span>
                 </CardText>
               </FloatingCard>
 
