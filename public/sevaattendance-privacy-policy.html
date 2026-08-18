@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SevaAttendance Privacy Policy</title>
+    <style>
+      body {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 32px 20px 64px;
+        color: #17202a;
+        font: 16px/1.65 system-ui, sans-serif;
+      }
+      h1,
+      h2 {
+        line-height: 1.25;
+        color: #0b1f33;
+      }
+      h2 {
+        margin-top: 2rem;
+      }
+      .meta {
+        color: #52606d;
+      }
+      li {
+        margin: 0.45rem 0;
+      }
+      a {
+        color: #075985;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SevaAttendance Privacy Policy</h1>
+    <p class="meta"><strong>Effective:</strong> 17 August 2026</p>
+    <p>
+      SevaAttendance is a managed workplace attendance application provided by
+      Techwens for organisations that use SevaHR. This policy explains how the
+      SevaAttendance Android app accesses, collects, uses, transmits, retains
+      and protects data.
+    </p>
+
+    <h2>Roles and scope</h2>
+    <p>
+      Your employer or organisation determines why employee attendance and
+      biometric data is processed and is normally the data controller or data
+      fiduciary. Techwens processes that data to provide SevaHR and
+      SevaAttendance under its agreement with the organisation. The app is not a
+      standalone consumer service and employees do not create an account in it.
+    </p>
+
+    <h2>Data the app processes</h2>
+    <ul>
+      <li>
+        <strong>Employee information:</strong> internal employee ID/code, name,
+        department, designation, employment status, workplace assignment and
+        profile-photo reference.
+      </li>
+      <li>
+        <strong>Attendance:</strong> arrival, departure and break timestamps,
+        device and shift context, match method and confidence, duplicate status
+        and optional local evidence photo.
+      </li>
+      <li>
+        <strong>Biometric enrollment and recognition:</strong> enrollment
+        photos, mathematical face templates, pose/model metadata, consent
+        timestamp, liveness and presentation-attack signals, and limited
+        face-decision diagnostics. Camera frames are analysed transiently; the
+        app does not record continuous video.
+      </li>
+      <li>
+        <strong>Device and security:</strong> managed device/installation
+        identifier, tenant/location assignment, pairing epoch, app/version,
+        battery/storage/memory state, queue/sync state and Google Play Integrity
+        verdict.
+      </li>
+      <li>
+        <strong>Reliability and analytics:</strong> crash reports, performance
+        traces, screen/feature events, pseudonymous attendance/enrollment/sync
+        metrics, and approximate city/country information derived by Firebase
+        Analytics from a masked IP address. Firebase Performance also processes
+        the source IP address to map performance events to a country.
+      </li>
+    </ul>
+    <p>
+      The current app does not request device-location permission or collect
+      precise GPS/device-location sensor coordinates, contacts, microphone,
+      call/SMS logs, calendar, health, financial or advertising-ID data.
+      Attendance records send no device-location coordinates. The limited
+      network-derived approximate geography used for reliability and analytics
+      is described above.
+    </p>
+
+    <h2>Purposes</h2>
+    <p>
+      Data is used to register authorised employees, verify workplace
+      attendance, work offline, synchronise managed kiosks, prevent spoofing and
+      duplicate punches, investigate recognition and reliability problems,
+      secure the service, support employees and administrators, and meet the
+      organisation’s employment and legal obligations. Techwens does not sell
+      this data or use it for advertising.
+    </p>
+
+    <h2>Where data goes</h2>
+    <p>
+      The kiosk stores an encrypted offline copy of the roster, face templates,
+      attendance awaiting synchronisation and operational records. Enrollment
+      photos, templates, attendance and diagnostics are transmitted over HTTPS
+      to the organisation’s tenant-scoped SevaHR service. Techwens uses
+      infrastructure/service providers including Google Firebase (analytics,
+      performance and crash reporting), Google Play Integrity (security
+      attestation) and Sentry (error monitoring). Firebase also processes
+      masked/source IP information for coarse geographic analytics and
+      country-level performance reporting. These providers process limited data
+      to provide their services and are not authorised by Techwens to use
+      employee biometric or attendance data for advertising.
+    </p>
+
+    <h2>Consent and choice</h2>
+    <p>
+      Before face enrollment, the kiosk displays an employee-specific biometric
+      disclosure and requires an affirmative “I Consent” action. Declining does
+      not create a face template. An employee may contact the organisation’s HR
+      administrator to withdraw consent or request another attendance
+      arrangement, subject to the organisation’s policies and applicable law.
+    </p>
+
+    <h2>Retention and deletion</h2>
+    <p>
+      Local attendance, evidence photos, diagnostics and audit records are
+      removed according to server-configured retention periods. Staged
+      enrollment photos are deleted from the kiosk after successful upload.
+      Server data is retained under the organisation’s retention schedule and
+      applicable legal obligations. Employees may request access, correction,
+      consent withdrawal or deletion through their HR administrator; the
+      organisation verifies identity and scope before an authorised deletion is
+      performed. Some attendance or employment records may be retained where law
+      requires it.
+    </p>
+
+    <h2>Security</h2>
+    <p>
+      Controls include SQLCipher-encrypted local storage, Android secure secret
+      storage, HTTPS-only production communication, short-lived pairing codes,
+      pairing-bound device tokens, tenant isolation, server-authorised
+      identity-changing operations, presentation-attack controls, Play Integrity
+      verification, role-based access, attributable command/audit records, and
+      release-window protection against screenshots, screen recording, casting
+      and recent-task previews. No system can be guaranteed completely secure;
+      suspected incidents should be reported promptly.
+    </p>
+
+    <h2>Individual requests and contact</h2>
+    <p>
+      For access, correction, consent or deletion requests, contact your HR
+      administrator first so the request can be linked to the correct
+      organisation and employee. Privacy or security questions for Techwens can
+      be sent to <a href="mailto:support@techwens.com">support@techwens.com</a>.
+    </p>
+    <p>
+      Techwens<br />2nd Floor, Indo Japan Building, EP-J I/12, EP Block, Sector
+      V, Bidhannagar, Kolkata, West Bengal 700091, India
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      We may update this policy when the app, service providers or legal
+      requirements change. The effective date above identifies the current
+      version. Material changes will be communicated through the organisation or
+      updated app/service notice as appropriate.
+    </p>
+  </body>
+</html>
